@@ -1,0 +1,9 @@
+{
+	"Debug With Log": {
+		"prefix": "log",
+		"body": [
+			"log::$1(\"$2\", $3);",
+		],
+		"description": "Debug with Log"
+	}
+}

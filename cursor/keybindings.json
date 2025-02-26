@@ -1,0 +1,127 @@
+[
+  {
+    "key": "cmd+,",
+    "command": "-workbench.action.openSettings"
+  },
+  {
+    "key": "cmd+,",
+    "command": "breadcrumbs.focusAndSelect"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "hideSuggestWidget",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  // leap collides with this action
+  // {
+  //   "key": "cmd+left",
+  //   "command": "editor.fold",
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "cmd+right",
+  //   "command": "editor.unfoldRecursively",
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+f",
+  //   "command": "cursorMove",
+  //   "args": {
+  //     "to": "down",
+  //     "by": "line",
+  //     "value": 14,
+  //     "select": true
+  //   },
+  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'" // editorHasSelection
+  // },
+  // {
+  //   "key": "ctrl+b",
+  //   "command": "cursorMove",
+  //   "args": {
+  //     "to": "up",
+  //     "by": "line",
+  //     "value": 14,
+  //     "select": true
+  //   },
+  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "cursorMove",
+  //   "args": {
+  //     "to": "down",
+  //     "by": "line",
+  //     "value": 7,
+  //     "select": true
+  //   },
+  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "cursorMove",
+  //   "args": {
+  //     "to": "down",
+  //     "by": "line",
+  //     "value": 7,
+  //     "select": true
+  //   },
+  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  // },
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "cursorMove",
+  //   "args": {
+  //     "to": "up",
+  //     "by": "line",
+  //     "value": 7,
+  //     "select": true
+  //   },
+  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  // },
+  // this is not necessary right now
+  {
+    "key": "cmd+0",
+    "command": "workbench.panel.aichat.view.focus"
+  },
+  // git source control toggle
+  {
+    "key": "cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  // file tree toggle
+  {
+    "key": "cmd+e",
+    "command": "-actions.findWithSelection"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  // does this only work with github copilot?
+  {
+    "key": "ctrl+cmd+s",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.action.openRecent"
+  }
+]

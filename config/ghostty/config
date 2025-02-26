@@ -1,0 +1,20 @@
+font-family="JetBrainsMono Nerd Font"
+title="alex"
+font-size=18
+window-padding-x=0
+window-padding-y=0
+window-height=3000
+window-width=2000
+macos-titlebar-style=
+theme = "GruvboxDark"
+quit-after-last-window-closed=true
+confirm-close-surface=true
+# gh issues suggest this
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+command = /opt/homebrew/bin/fish --login --interactive
+
+# cursor-style="bar"
+# cursor-style-blink=true
+# adjust-cursor-thickness=5

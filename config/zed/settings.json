@@ -1,0 +1,38 @@
+// docs: "https://zed.dev/docs/configuring-zed"
+// default settings `zed: open default settings`
+{
+  "show_edit_predictions": false,
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "current_line_highlight": "none",
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "vim_mode": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_size": 18,
+  "buffer_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Gruvbox Dark Hard"
+  }
+}
