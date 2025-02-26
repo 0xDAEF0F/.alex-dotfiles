@@ -19,6 +19,6 @@
 
 - `tmux-mem-cpu-load`
 
-## Cursor vscode extensions
+## Cursor extensions
 
-- TODO
+-
