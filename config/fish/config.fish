@@ -14,8 +14,6 @@ abbr -a gaa "git add ."
 abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gp "git push"
 
-abbr -a lc "history | head -n 1 | pbcopy"
-
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
 
@@ -43,6 +41,10 @@ abbr -a tree "eza -T -a --level 3 --ignore-glob ''"
 
 # Utility abbreviations
 abbr -a rmrf "rm -rf" # Delete directory recursively
+
+# Better `cp` and `mv`
+abbr -a cp "rsync -a --progress --human-readable"
+abbr -a mv "rsync -a --progress --human-readable --remove-source-files"
 
 # source autojump
 begin
