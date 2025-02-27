@@ -1,0 +1,10 @@
+/* Sidebar (Explorer, Search, etc.) */
+.monaco-workbench .sidebar,
+.monaco-workbench .auxiliarybar {
+  font-size: 14px !important;
+}
+
+.mac {
+  font-family: "JetBrainsMono Nerd Font", Menlo, Monaco, "Courier New",
+    monospace !important;
+}

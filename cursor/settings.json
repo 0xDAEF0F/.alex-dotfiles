@@ -47,6 +47,7 @@
   "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
@@ -119,6 +120,10 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
+  "vscode_custom_css.imports": [
+    "file:///Users/ale/Library/Application Support/Cursor/User/custom.css"
+  ],
+  "vscode_custom_css.policy": true,
   "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "editorGutter.addedBackground": "#66bb6a", // For added lines - softer green
