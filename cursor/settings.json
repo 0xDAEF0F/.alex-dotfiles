@@ -9,7 +9,7 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.tabSize": 4,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1002
+    "files.autoSaveDelay": 1001
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -28,7 +28,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
-  "editor.fontWeight": "400",
+  "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 0,
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "command": "multiCommand.saveAndSortJson",
+      "command": "multiCommand.sortJson",
       "sequence": [
         "json.sort",
         "workbench.action.files.save",

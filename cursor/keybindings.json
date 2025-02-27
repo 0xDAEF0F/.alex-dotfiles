@@ -22,76 +22,10 @@
     "key": "ctrl+c",
     "when": "suggestWidgetVisible && textInputFocus"
   },
-  // leap collides with this action
-  // {
-  //   "key": "cmd+left",
-  //   "command": "editor.fold",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "cmd+right",
-  //   "command": "editor.unfoldRecursively",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+f",
-  //   "command": "cursorMove",
-  //   "args": {
-  //     "to": "down",
-  //     "by": "line",
-  //     "value": 14,
-  //     "select": true
-  //   },
-  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'" // editorHasSelection
-  // },
-  // {
-  //   "key": "ctrl+b",
-  //   "command": "cursorMove",
-  //   "args": {
-  //     "to": "up",
-  //     "by": "line",
-  //     "value": 14,
-  //     "select": true
-  //   },
-  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
-  // },
-  // {
-  //   "key": "ctrl+d",
-  //   "command": "cursorMove",
-  //   "args": {
-  //     "to": "down",
-  //     "by": "line",
-  //     "value": 7,
-  //     "select": true
-  //   },
-  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
-  // },
-  // {
-  //   "key": "ctrl+d",
-  //   "command": "cursorMove",
-  //   "args": {
-  //     "to": "down",
-  //     "by": "line",
-  //     "value": 7,
-  //     "select": true
-  //   },
-  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
-  // },
-  // {
-  //   "key": "ctrl+u",
-  //   "command": "cursorMove",
-  //   "args": {
-  //     "to": "up",
-  //     "by": "line",
-  //     "value": 7,
-  //     "select": true
-  //   },
-  //   "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
-  // },
-  // this is not necessary right now
   {
+    // this is not necessary right now
     "command": "workbench.panel.aichat.view.focus",
-    "key": "cmd+0"
+    "key": "cmd+2"
   },
   // git source control toggle
   {
@@ -132,5 +66,15 @@
   {
     "command": "-workbench.action.quickOpenView",
     "key": "ctrl+q"
+  },
+  {
+    "command": "-editor.action.previousMatchFindAction",
+    "key": "shift+cmd+g",
+    "when": "editorFocus"
+  },
+  {
+    "command": "multiCommand.sortJson",
+    "key": "cmd+s",
+    "when": "resourceExtname == '.json'"
   }
 ]
