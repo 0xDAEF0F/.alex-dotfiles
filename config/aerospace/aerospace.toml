@@ -3,7 +3,7 @@ after-login-command = [
     'exec-and-forget open -n /Applications/Ghostty.app/',
     'exec-and-forget open -n /Applications/Google\ Chrome.app/',
     'exec-and-forget open -n /Applications/Cursor.app/',
-    'exec-and-forget open -n /Applications/Spotify.app/'
+    'exec-and-forget open -n /Applications/Spotify.app/',
 ]
 after-startup-command = []
 
@@ -37,11 +37,11 @@ preset = 'qwerty'
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 [gaps]
 inner.horizontal = 0
-inner.vertical =   0
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
 
 # Main binding mode (default)
 [mode.main.binding]
@@ -98,7 +98,7 @@ f4 = 'workspace 4'
 f5 = 'workspace 5'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-shift-f1= 'move-node-to-workspace 1 --focus-follows-window'
+shift-f1 = 'move-node-to-workspace 1 --focus-follows-window'
 shift-f2 = 'move-node-to-workspace 2 --focus-follows-window'
 shift-f3 = 'move-node-to-workspace 3 --focus-follows-window'
 shift-f4 = 'move-node-to-workspace 4 --focus-follows-window'
@@ -112,7 +112,10 @@ alt-x = 'mode service'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+    'layout floating tiling',
+    'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # Join windows
@@ -121,22 +124,31 @@ j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
 
-# For ghostty (disabled)
-# [[on-window-detected]]
-# if.app-id = 'com.mitchellh.ghostty'
-# run = "move-node-to-workspace 1"
+[[on-window-detected]]
+# if.app-name-regex-substring = 'Ghostty'
+if.app-id = 'com.mitchellh.ghostty'
+run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = "move-node-to-workspace 2"
 
-# cursor
+# Cursor
 [[on-window-detected]]
+# if.app-name-regex-substring = 'Cursor'
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Notes'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
+run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'WhatsApp'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
@@ -151,6 +163,7 @@ run = "move-node-to-workspace 5"
 if.app-name-regex-substring = 'System Settings'
 run = "move-node-to-workspace 5"
 
+# Not working
 [[on-window-detected]]
-if.app-name-regex-substring = 'Notes'
+if.app-name-regex-substring = 'Karabiner-Elements Settings'
 run = "move-node-to-workspace 5"

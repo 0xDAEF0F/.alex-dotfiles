@@ -1,15 +1,11 @@
 ### Todos
 
-- when ai gives commands always give the full name flags. (no shorthands)
-- move the zmk stuff to `.dotfiles`
-- vim registers (again)
-- quit vim with ctrl-q
-- tmux start in home unless specified otherwise
 - Nvim-vscode cmd+bspc => ctrl+u
 - Figure out how the jumplist works exactly in vscode-nvim.
 - search backwards in fish in insert mode, too
+- move the zmk stuff to `.dotfiles`
 - Fix karabiner mod-morph issue
-- ctrl-q in nvim exits with `zz`
+- vim registers.
 - Google chrome open a new tab and jump into it with cmd + click
 - Two finger gesture to switch tabs would be awesome!
 - Research for: `BetterTouchTool` for mouse selection words delimiters.
@@ -23,13 +19,13 @@
 - focus parts of windows fast
 - Toggle the bar on/off in vscode that appears at the bottom of the screen.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
-- color scheme eza
 - highlight on the browser double click (words should count as such with special characters)
 - focus to text efficiently
 - More vertical space vs code
 - Check out zen browser.
 - Clear the scroll bar on the files panel vscode.
 - How to change models with keyboard shortcuts.
+- color scheme eza
 
 ### Links
 

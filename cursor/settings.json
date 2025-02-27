@@ -16,6 +16,16 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
+  "scm.diffDecorationsGutterWidth": 4,
+  "scm.diffDecorationsGutterPattern": {
+    "added": false,
+    "modified": false
+  },
+  "workbench.colorCustomizations": {
+    "editorGutter.deletedBackground": "#ff0000",
+    "editorGutter.modifiedBackground": "#5c6bc0", // For modified lines - softer blue
+    "editorGutter.addedBackground": "#66bb6a" // For added lines - softer green
+  },
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "diffEditor.ignoreTrimWhitespace": true,
