@@ -1,12 +1,14 @@
 ### Todos
 
-- Nvim-vscode cmd+bspc => ctrl+u
-- Folds are now working.
+- Adjust the scroll amount with `ctrl+du`
+- After leap in nvim do `zz` to recalibrate the scroll
+- Search backwards in fish in insert mode, too
 - Figure out how the jumplist works exactly in vscode-nvim.
-- search backwards in fish in insert mode, too
+- Folds are now working integrate them pls
 - move the zmk stuff to `.dotfiles`
 - Fix karabiner mod-morph issue
-- vim registers.
+- Vim registers master.
+- Highlight on the browser double click (words should count as such with special characters)
 - Google chrome open a new tab and jump into it with cmd + click
 - Two finger gesture to switch tabs would be awesome!
 - Research for: `BetterTouchTool` for mouse selection words delimiters.
@@ -14,19 +16,17 @@
 - List on terminal the files I edit the most and just enter to go in nvim to them.
 - fish/ghostty cursor issues.
 - Highlight incrementally on search in TMUX.
-- Whatsapp aerospace to 4
-- better touch command abbrv
-- change gutter colors in vscode to identify which operation is which
-- focus parts of windows fast
-- Toggle the bar on/off in vscode that appears at the bottom of the screen.
+- Better touch command abbrv
+- Focus parts of windows fast in browser, vscode, etc
+- Toggle the bar on/off in vscode that appears at the bottom of the screen for more real estate.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
-- highlight on the browser double click (words should count as such with special characters)
 - focus to text efficiently
 - More vertical space vs code
 - Check out zen browser.
 - Clear the scroll bar on the files panel vscode.
 - How to change models with keyboard shortcuts.
 - color scheme eza
+- add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
 
 ### Links
 

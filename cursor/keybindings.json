@@ -76,5 +76,15 @@
     "command": "multiCommand.sortJson",
     "key": "cmd+s",
     "when": "resourceExtname == '.json'"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "vscode-neovim.ctrl-u",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-vscode-neovim.ctrl-u",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   }
 ]

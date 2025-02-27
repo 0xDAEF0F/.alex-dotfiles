@@ -177,7 +177,7 @@
                         ]
                     },
                     {
-                        "description": "ctrl+u => cmd+backspace (todo)",
+                        "description": "ctrl+u => cmd+backspace (all)",
                         "manipulators": [
                             {
                                 "from": {

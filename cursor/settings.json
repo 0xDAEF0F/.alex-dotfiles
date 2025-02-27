@@ -1,9 +1,10 @@
 {
-  "[json]": {
-    "editor.formatOnSave": true
-  },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "[markdown]": {
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1001
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
@@ -22,7 +23,7 @@
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "editor.cursorSurroundingLines": 0,
+  "editor.cursorSurroundingLines": 0, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "JetBrainsMono Nerd Font",
@@ -51,7 +52,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -120,7 +121,7 @@
   "workbench.colorCustomizations": {
     "editorGutter.addedBackground": "#66bb6a", // For added lines - softer green
     "editorGutter.deletedBackground": "#ff0000",
-    "editorGutter.modifiedBackground": "#5c6bc0" // For modified lines - softer blue
+    "editorGutter.modifiedBackground": "#007ACC" // For modified lines - VS Code blue
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",

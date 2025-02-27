@@ -25,6 +25,27 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {
       labels = "rtneiohysvafumkljcpgdqxbz",
+      action = function(match, state)
+        require("flash.jump").jump(match, state)
+        require("flash.jump").on_jump(state)
+
+        -- Could be vscode native events:
+        --   * editorScroll
+        --   * revealLine
+        --   * cursorMove
+
+        vim.schedule(function()
+          local vscode = require("vscode")
+          vscode.notify("Flash jump occurred!")
+          vscode.action("_ping", {
+            callback = function(err, res)
+              if err == nil then
+                print(res) -- outputs: pong
+              end
+            end,
+          })
+        end)
+      end,
     },
     keys = {
       {
