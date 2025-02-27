@@ -4,19 +4,16 @@ export BUN_INSTALL="$HOME/.bun"
 export LANG=en_US.UTF-8
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
-export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.config/.foundry/bin:$PATH" # foundry
 export PATH="$HOME/go/bin:$PATH" # go
 export PATH="$BUN_INSTALL/bin:$PATH" # bun
 export PATH="/Users/ale/.local/share/solana/install/active_release/bin:$PATH" # solana
 export PATH="$HOME/Documents/zig-macos:$PATH" # zig
 # XDG SPECS
-export HELIX_RUNTIME=$HOME/Documents/helix/runtime
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
-export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-$HOST
 export NVM_HOMEBREW=$(brew --prefix nvm)
 export NVM_DIR="$HOME/.nvm"
 

@@ -92,7 +92,8 @@ vim.o.scrolloff = 0
 vim.o.timeoutlen = 600
 
 -- Toggle highlight search
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- (interfering with leap)
+vim.keymap.set("n", "<leader>j", ":nohlsearch<CR>", { silent = true })
 
 -- Rename symbol
 vim.keymap.set(

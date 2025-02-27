@@ -9,7 +9,7 @@
 - Figure out how the jumplist works exactly in vscode-nvim.
 - search backwards in fish in insert mode, too
 - Fix karabiner mod-morph issue
-- cmd-q in nvim exits with `zz`
+- ctrl-q in nvim exits with `zz`
 - Google chrome open a new tab and jump into it with cmd + click
 - Two finger gesture to switch tabs would be awesome!
 - Research for: `BetterTouchTool` for mouse selection words delimiters.

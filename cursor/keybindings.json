@@ -123,5 +123,14 @@
   {
     "key": "alt+r",
     "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.q && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
   }
 ]

@@ -1,6 +1,24 @@
-/opt/homebrew/bin/brew shellenv | source # dont know if this is needed at all
+fish_add_path /opt/homebrew/bin
+fish_add_path $HOME/.cargo/bin
 
+fnm env | source # source fnm
+starship init fish | source # source starship
+
+# source autojump
+begin
+    set --local AUTOJUMP_PATH /opt/homebrew/share/autojump/autojump.fish
+    if test -e $AUTOJUMP_PATH
+        source $AUTOJUMP_PATH
+    end
+end
+
+# XDG Specs
 set -Ux XDG_CONFIG_HOME ~/.config
+set -Ux XDG_DATA_HOME ~/.local/share
+set -Ux XDG_STATE_HOME ~/.local/state
+set -Ux XDG_CACHE_HOME ~/.cache
+
+# Homebrew update time
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
 
 # Git abbreviations
@@ -33,11 +51,19 @@ abbr -a tn "tmux new -s alex"
 abbr -a tks "tmux kill-server"
 
 # Eza
-abbr -a ls "eza -w 90 --icons --classify --sort=modified --group-directories-last -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-abbr -a lx "eza -a -f -w 90 --show-symlinks --icons --classify --sort=modified -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-abbr -a ll "eza -a --width 90 --icons --classify --sort=modified --group-directories-last -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-abbr -a la "eza -l -a --no-user --icons --classify --sort=modified --group-directories-last -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-abbr -a tree "eza -T -a --level 3 --ignore-glob ''"
+abbr -a ls "eza -w 90 --icons --classify --sort=modified --group-directories-last\
+  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
+# shows only `.` files
+abbr -a lx "eza -a -f -w 90 --show-symlinks --icons --classify --sort=modified\
+  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
+# `.` and regular
+abbr -a ll "eza -a --width 90 --icons --classify --sort=modified --group-directories-last\
+  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
+# long format
+abbr -a la "eza -l -a --no-user --icons --classify --sort=modified --group-directories-last\
+  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
+# tree list
+abbr -a tree "eza -T -a --level 2 --ignore-glob ''"
 
 # Utility abbreviations
 abbr -a rmrf "rm -rf" # Delete directory recursively
@@ -46,23 +72,7 @@ abbr -a rmrf "rm -rf" # Delete directory recursively
 abbr -a cp "rsync -a --progress --human-readable"
 abbr -a mv "rsync -a --progress --human-readable --remove-source-files"
 
-# source autojump
-begin
-    set --local AUTOJUMP_PATH /opt/homebrew/share/autojump/autojump.fish
-    if test -e $AUTOJUMP_PATH
-        source $AUTOJUMP_PATH
-    end
-end
-
-function jj
-    set -l output (cat ~/Library/autojump/autojump.txt | sort -nr | awk '{print $2}' | fzf --height 40%)
-    if test -n "$output"
-        cd "$output"
-    end
-end
-
+# make `y` work like in vim
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
-
-starship init fish | source
