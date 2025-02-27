@@ -154,7 +154,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com\\.google\\.Chrome$",
-                                            "^com\\.todesktop\\.230313mzl4w4u92$"
+                                            "^com\\.todesktop\\.230313mzl4w4u92$",
+                                            "^net\\.whatsapp\\.WhatsApp$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
