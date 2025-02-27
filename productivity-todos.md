@@ -3,25 +3,23 @@
 - when ai gives commands always give the full name flags. (no shorthands)
 - move the zmk stuff to `.dotfiles`
 - vim registers (again)
-- change gutter colors in vscode to identify which operation is which
+- quit vim with ctrl-q
 - tmux start in home unless specified otherwise
 - Nvim-vscode cmd+bspc => ctrl+u
 - Figure out how the jumplist works exactly in vscode-nvim.
-- Google chrome open a new tab and jump into it with cmd + click
-- Research for: `BetterTouchTool` for mouse selection words delimiters.
-- Two finger gesture to switch tabs would be awesome!
 - search backwards in fish in insert mode, too
-
+- Fix karabiner mod-morph issue
 - cmd-q in nvim exits with `zz`
-- Fix all my dotfiles
-- copy command to rsync alias
+- Google chrome open a new tab and jump into it with cmd + click
+- Two finger gesture to switch tabs would be awesome!
+- Research for: `BetterTouchTool` for mouse selection words delimiters.
 - Detect when there are more than one tmux pane and if so make font smaller.
 - List on terminal the files I edit the most and just enter to go in nvim to them.
-- Whatsapp aerospace to 4
-- Fix karabiner mod-morph issue
 - fish/ghostty cursor issues.
-- Highlight incrementally on TMUX.
+- Highlight incrementally on search in TMUX.
+- Whatsapp aerospace to 4
 - better touch command abbrv
+- change gutter colors in vscode to identify which operation is which
 - focus parts of windows fast
 - Toggle the bar on/off in vscode that appears at the bottom of the screen.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
@@ -56,6 +54,7 @@
 
 ### Notes
 
+- `ctrl+l` forces neovim to redraw in vscode.
 - Mac key bindings location: `~/Library/Keybindings/DefaultKeyBinding.dict`
 - The unnamed register `"` is where you copy and cut stuff to. The default register.
 - `a-z` are registers you can use explicitly to copy and cut text.

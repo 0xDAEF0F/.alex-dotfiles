@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -82,39 +86,13 @@ require("lazy").setup({
   },
 }, {})
 
--- Remove the clipboard setting
-vim.g.clipboard = nil
-vim.opt.clipboard = "" -- Don't use system clipboard by default
-
--- Handle the different operations with a more targeted approach
-vim.api.nvim_create_autocmd("TextYankPost", {
-  pattern = "*",
-  callback = function()
-    local event = vim.v.event
-    -- Delete / Change operations
-    if event.operator == "d" or event.operator == "c" then
-      local content = vim.fn.getreg('"')
-      vim.fn.setreg("1", content)
-      vim.fn.setreg("+", vim.fn.getreg("+")) -- better safe than sorry
-    elseif event.operator == "y" then
-      local content = vim.fn.getreg('"')
-      vim.fn.setreg("+", content)
-      vim.fn.setreg("*", content)
-    end
-  end,
-})
-
--- Paste always from system clipboard.
-vim.keymap.set({ "n", "v" }, "p", '"+p', { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "P", '"+P', { noremap = true, silent = true })
-
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 0
 vim.o.timeoutlen = 600
 
 -- Toggle highlight search
-vim.keymap.set("n", "<leader>j", ":nohlsearch<CR>", { silent = true })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Rename symbol
 vim.keymap.set(

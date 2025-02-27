@@ -25,6 +25,7 @@
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.inlayHints.fontSize": 9,
+  "editor.lineNumbers": "relative",
   "editor.inlayHints.maximumLength": 0,
   "editor.inlayHints.padding": false,
   "editor.occurrencesHighlight": "off",
@@ -51,34 +52,6 @@
     "scminput": false
   },
   "highlight-selection.backgroundColor": "#F5F5F580",
-  "leap.customLabels": [
-    "r", // s -> r
-    "t", // f -> t
-    "n", // n -> n (unchanged)
-    "e", // j -> e
-    "i", // k -> i
-    "o", // l -> o
-    "h", // h -> h (unchanged)
-    "y", // o -> y
-    "s", // d -> s
-    "v", // w -> v
-    "f", // e -> f
-    "u", // i -> u
-    "m", // m -> m (unchanged)
-    "k", // b -> k
-    "l", // u -> l
-    "j", // y -> j
-    "c", // v -> c
-    "p", // r -> p
-    "g", // g -> g (unchanged)
-    "d", // t -> d
-    "a", // a -> a (unchanged)
-    "q", // q -> q (unchanged)
-    ";", // p -> ;
-    "x", // c -> x
-    "b", // x -> b
-    "z" // z -> z (unchanged)
-  ],
   "multiCommand.commands": [
     {
       "command": "multiCommand.toggleInlineSuggestions",
@@ -122,97 +95,6 @@
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
-  "vim.enableNeovim": true,
-  "vim.hlsearch": true,
-  "vim.incsearch": true,
-  "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["s"],
-      "commands": ["leap.findForward"]
-    },
-    {
-      "before": ["S"],
-      "commands": ["leap.findBackward"]
-    },
-    {
-      "before": ["<leader>", "j"],
-      "commands": [":nohl"]
-    },
-    // editor commands
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["editor.action.commentLine"]
-    },
-    {
-      "before": ["g", "d"],
-      "commands": ["editor.action.revealDefinition"]
-    },
-    {
-      "before": ["g", "D"],
-      "commands": ["editor.action.goToTypeDefinition"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["g", "R"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.action.marker.next"]
-    },
-    {
-      "before": ["<leader>", "D"],
-      "commands": ["editor.action.marker.prev"]
-    },
-    // bookmark commands
-    {
-      "before": ["<leader>", "h"],
-      "commands": ["bookmarks.listFromAllFiles"] // list from all files
-    },
-    {
-      "before": ["<leader>", "m"],
-      "commands": ["bookmarks.toggle"] // toggle mark
-    },
-    {
-      "before": ["<leader>", "r"],
-      "commands": ["bookmarks.jumpToNext"] // next mark
-    },
-    {
-      "before": ["<leader>", "a"],
-      "commands": ["bookmarks.jumpToPrevious"] // previous mark
-    },
-    {
-      "before": ["<leader>", "g"],
-      "commands": ["multiCommand.toggleInlineSuggestions"]
-    },
-    {
-      "before": ["<leader>", "p"],
-      "commands": [":registers"]
-    }
-  ],
-  "vim.scroll": 9,
-  "vim.smartRelativeLine": true,
-  "vim.smartcase": true,
-  "vim.useSystemClipboard": true,
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["editor.action.commentLine"],
-      "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-      "before": ["s"],
-      "commands": ["leap.findForward"]
-    },
-    {
-      "before": ["S"],
-      "commands": ["leap.findBackward"]
-    }
-  ],
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Gruvbox Dark Hard",
