@@ -24,7 +24,7 @@
 - More vertical space vs code
 - Check out zen browser.
 - Clear the scroll bar on the files panel vscode.
-- How to change models with keyboard shortcuts.
+- Vim highlight selected word in visual but case sensitive.
 - color scheme eza
 - add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
 - command to open the current editor's git diff

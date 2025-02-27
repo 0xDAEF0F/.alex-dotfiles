@@ -72,6 +72,7 @@ require("lazy").setup({
         end,
         desc = "Treesitter Search",
       },
+      -- This is not working
       {
         "<c-s>",
         mode = { "c" },
