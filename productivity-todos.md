@@ -1,8 +1,9 @@
 ### Todos
 
 - when ai gives commands always give the full name flags. (no shorthands)
-- zmk paren and colon
+- move the zmk stuff to `.dotfiles`
 - vim registers (again)
+- change gutter colors in vscode to identify which operation is which
 - tmux start in home unless specified otherwise
 - Nvim-vscode cmd+bspc => ctrl+u
 - Figure out how the jumplist works exactly in vscode-nvim.
@@ -16,6 +17,7 @@
 - copy command to rsync alias
 - Detect when there are more than one tmux pane and if so make font smaller.
 - List on terminal the files I edit the most and just enter to go in nvim to them.
+- Whatsapp aerospace to 4
 - Fix karabiner mod-morph issue
 - fish/ghostty cursor issues.
 - Highlight incrementally on TMUX.

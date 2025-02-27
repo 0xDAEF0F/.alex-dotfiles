@@ -213,12 +213,13 @@
       "commands": ["leap.findBackward"]
     }
   ],
-  "vscode-neovim.neovimInitVimPaths.darwin": "~/.vscode-nvim-config/nvim/init.lua",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.zoomLevel": 1,
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": true,
+  "explorer.confirmPasteNative": false
 }
