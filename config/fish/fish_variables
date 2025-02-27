@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export BUN_INSTALL:/Users/ale/\x2ebun
 SETUVAR --export HOMEBREW_AUTO_UPDATE_SECS:86400
 SETUVAR --export XDG_CACHE_HOME:/Users/ale/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/Users/ale/\x2econfig
@@ -35,4 +36,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/Users/ale/\x2ecargo/bin\x1e/opt/homebrew/bin
+SETUVAR fish_user_paths:/Users/ale/\x2ezig/zig\x2dmacos\x1e/Users/ale/\x2ebun/bin\x1e/Users/ale/go/bin\x1e/Users/ale/\x2econfig/\x2efoundry/bin\x1e/Users/ale/\x2ecargo/bin\x1e/opt/homebrew/bin

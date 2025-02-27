@@ -1,5 +1,10 @@
+fish_add_path $HOME/go/bin # go
+fish_add_path $HOME/.bun/bin # bun
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.config/.foundry/bin # foundry
+fish_add_path $HOME/.zig/zig-macos # zig
+
 
 fnm env | source # source fnm
 starship init fish | source # source starship
@@ -11,6 +16,9 @@ begin
         source $AUTOJUMP_PATH
     end
 end
+
+# Bun
+set -Ux BUN_INSTALL $HOME/.bun
 
 # XDG Specs
 set -Ux XDG_CONFIG_HOME ~/.config
@@ -31,6 +39,7 @@ abbr -a grh "git reset --hard"
 abbr -a gaa "git add ."
 abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gp "git push"
+abbr -a grv "git remote -v"
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
