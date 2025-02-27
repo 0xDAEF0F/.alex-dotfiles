@@ -1,4 +1,7 @@
 {
+  "[json]": {
+    "editor.formatOnSave": true
+  },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
@@ -16,16 +19,6 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
-  "scm.diffDecorationsGutterWidth": 4,
-  "scm.diffDecorationsGutterPattern": {
-    "added": false,
-    "modified": false
-  },
-  "workbench.colorCustomizations": {
-    "editorGutter.deletedBackground": "#ff0000",
-    "editorGutter.modifiedBackground": "#5c6bc0", // For modified lines - softer blue
-    "editorGutter.addedBackground": "#66bb6a" // For added lines - softer green
-  },
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "diffEditor.ignoreTrimWhitespace": true,
@@ -35,7 +28,7 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
-  "editor.fontWeight": "normal",
+  "editor.fontWeight": "400",
   "editor.formatOnSave": true,
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 0,
@@ -73,6 +66,14 @@
         "editor.cpp.toggle",
         "settings.cycle.multicommand.toggleCopilot"
       ]
+    },
+    {
+      "command": "multiCommand.saveAndSortJson",
+      "sequence": [
+        "json.sort",
+        "workbench.action.files.save",
+        "editor.action.formatDocument"
+      ]
     }
   ],
   "rust-analyzer.check.command": "clippy",
@@ -88,6 +89,11 @@
   "rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
   "rust-analyzer.typing.triggerChars": "=.",
   "rust-analyzer.workspace.symbol.search.limit": 256, // Default is 128
+  "scm.diffDecorationsGutterPattern": {
+    "added": false,
+    "modified": false
+  },
+  "scm.diffDecorationsGutterWidth": 4,
   "settings.cycle": [
     {
       "id": "multicommand.toggleCopilot",
@@ -111,6 +117,11 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "editorGutter.addedBackground": "#66bb6a", // For added lines - softer green
+    "editorGutter.deletedBackground": "#ff0000",
+    "editorGutter.modifiedBackground": "#5c6bc0" // For modified lines - softer blue
+  },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",
   "workbench.fontAliasing": "antialiased",

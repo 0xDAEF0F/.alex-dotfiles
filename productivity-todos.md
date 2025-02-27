@@ -1,6 +1,7 @@
 ### Todos
 
 - Nvim-vscode cmd+bspc => ctrl+u
+- Folds are now working.
 - Figure out how the jumplist works exactly in vscode-nvim.
 - search backwards in fish in insert mode, too
 - move the zmk stuff to `.dotfiles`

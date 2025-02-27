@@ -1,25 +1,25 @@
 [
   {
-    "key": "cmd+,",
-    "command": "-workbench.action.openSettings"
+    "command": "-workbench.action.openSettings",
+    "key": "cmd+,"
   },
   {
-    "key": "cmd+,",
-    "command": "breadcrumbs.focusAndSelect"
+    "command": "breadcrumbs.focusAndSelect",
+    "key": "cmd+,"
   },
   {
-    "key": "ctrl+o",
     "command": "workbench.action.navigateBack",
+    "key": "ctrl+o",
     "when": "canNavigateBack"
   },
   {
-    "key": "ctrl+i",
     "command": "workbench.action.navigateForward",
+    "key": "ctrl+i",
     "when": "canNavigateForward"
   },
   {
-    "key": "ctrl+c",
     "command": "hideSuggestWidget",
+    "key": "ctrl+c",
     "when": "suggestWidgetVisible && textInputFocus"
   },
   // leap collides with this action
@@ -90,47 +90,47 @@
   // },
   // this is not necessary right now
   {
-    "key": "cmd+0",
-    "command": "workbench.panel.aichat.view.focus"
+    "command": "workbench.panel.aichat.view.focus",
+    "key": "cmd+0"
   },
   // git source control toggle
   {
-    "key": "cmd+g",
     "command": "workbench.view.scm",
+    "key": "cmd+g",
     "when": "workbench.scm.active"
   },
   {
-    "key": "ctrl+shift+g",
     "command": "-workbench.view.scm",
+    "key": "ctrl+shift+g",
     "when": "workbench.scm.active"
   },
   // file tree toggle
   {
-    "key": "cmd+e",
-    "command": "-actions.findWithSelection"
+    "command": "-actions.findWithSelection",
+    "key": "cmd+e"
   },
   {
-    "key": "cmd+e",
     "command": "workbench.view.explorer",
+    "key": "cmd+e",
     "when": "viewContainer.workbench.view.explorer.enabled"
   },
   // does this only work with github copilot?
   {
-    "key": "ctrl+cmd+s",
     "command": "editor.action.inlineSuggest.trigger",
+    "key": "ctrl+cmd+s",
     "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
   },
   {
-    "key": "alt+r",
-    "command": "workbench.action.openRecent"
+    "command": "workbench.action.openRecent",
+    "key": "alt+r"
   },
   {
-    "key": "ctrl+q",
     "command": "-vscode-neovim.send",
+    "key": "ctrl+q",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.q && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
-    "key": "ctrl+q",
-    "command": "-workbench.action.quickOpenView"
+    "command": "-workbench.action.quickOpenView",
+    "key": "ctrl+q"
   }
 ]
