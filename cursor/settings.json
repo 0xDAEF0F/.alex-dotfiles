@@ -8,6 +8,9 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1002
   },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   "[typescript]": {
     "editor.tabSize": 2,
     "files.autoSave": "afterDelay",
@@ -25,9 +28,9 @@
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.inlayHints.fontSize": 9,
-  "editor.lineNumbers": "relative",
   "editor.inlayHints.maximumLength": 0,
   "editor.inlayHints.padding": false,
+  "editor.lineNumbers": "relative",
   "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [90],
@@ -38,6 +41,7 @@
   "editor.smoothScrolling": true,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
+  "explorer.confirmPasteNative": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -102,6 +106,5 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": true,
-  "explorer.confirmPasteNative": false
+  "workbench.statusBar.visible": true
 }
