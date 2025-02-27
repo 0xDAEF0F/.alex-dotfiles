@@ -28,23 +28,15 @@ require("lazy").setup({
       action = function(match, state)
         require("flash.jump").jump(match, state)
         require("flash.jump").on_jump(state)
-
-        -- Could be vscode native events:
-        --   * editorScroll
-        --   * revealLine
-        --   * cursorMove
-
-        vim.schedule(function()
-          local vscode = require("vscode")
-          vscode.notify("Flash jump occurred!")
-          vscode.action("_ping", {
-            callback = function(err, res)
-              if err == nil then
-                print(res) -- outputs: pong
-              end
-            end,
-          })
-        end)
+        -- Centers the screen on the current line
+        require("vscode").eval_async([[
+          const editor = vscode.window.activeTextEditor;
+          if (editor) {
+            const position = editor.selection.active;
+            const range = new vscode.Range(position, position);
+            editor.revealRange(range, vscode.TextEditorRevealType.InCenter);
+          }
+        ]])
       end,
     },
     keys = {

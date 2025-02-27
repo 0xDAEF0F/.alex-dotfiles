@@ -1,11 +1,11 @@
 ### Todos
 
 - Adjust the scroll amount with `ctrl+du`
-- After leap in nvim do `zz` to recalibrate the scroll
 - Search backwards in fish in insert mode, too
 - Figure out how the jumplist works exactly in vscode-nvim.
 - Folds are now working integrate them pls
 - move the zmk stuff to `.dotfiles`
+- make only the ui text bigger in vscode
 - Fix karabiner mod-morph issue
 - Vim registers master.
 - Highlight on the browser double click (words should count as such with special characters)
@@ -27,6 +27,7 @@
 - How to change models with keyboard shortcuts.
 - color scheme eza
 - add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
+- command to open the current editor's git diff
 
 ### Links
 
@@ -40,6 +41,10 @@
   [fish-vi-mode-docs]("https://fishshell.com/docs/current/interactive.html#command-mode")
 - Better touch tool docs:
   [docs on better touch tool]("https://docs.folivora.ai/")
+- Vscode api docs:
+  [vscode-docs]("https://code.visualstudio.com/api/references/vscode-api")
+- Vscode commands docs:
+  [vscode-commands-docs]("https://code.visualstudio.com/api/references/commands")
 
 ### commands
 

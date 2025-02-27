@@ -1,6 +1,8 @@
 {
   "[lua]": {
-    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1001
   },
   "[markdown]": {
     "files.autoSave": "afterDelay",
