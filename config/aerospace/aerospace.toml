@@ -3,8 +3,6 @@ after-login-command = [
     'exec-and-forget open -n /Applications/Ghostty.app/',
     'exec-and-forget open -n /Applications/Google\ Chrome.app/',
     'exec-and-forget open -n /Applications/Cursor.app/',
-    'exec-and-forget open -n /Applications/Spotify.app/',
-    'exec-and-forget open -n /Applications/WhatsApp.app/',
 ]
 after-startup-command = []
 

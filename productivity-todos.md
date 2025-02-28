@@ -1,16 +1,16 @@
 ### Todos
 
+- Detect when there is more than one tmux pane and if so make font smaller in terminal.
+- Add `q` to motion in nvim for quotes instead of literal quotes.
 - Figure out how the jumplist works exactly in vscode-nvim.
-- Fix karabiner mod-morph issue
-- Add `-` to word delimiters on a system wide level. (impossible to do without third party tools)
-- Adjust the scroll amount with `ctrl+du`
+- Fix karabiner mod-morph issue.
+- Adjust the scroll amount with `ctrl+du`.
+- Add `-` to word delimiters on a system wide level.
+- Vim highlight selected word in visual but case sensitive.
 
-- Detect when there are more than one tmux pane and if so make font smaller.
+- Change the suggestions color since it confuses me with comments.
 - Folds are now working integrate them pls
-- Google chrome open a new tab and jump into it with cmd + click
-- Two finger gesture to switch tabs would be awesome!
 - move the zmk stuff to `.dotfiles`
-- List on terminal the files I edit the most and just enter to go in nvim to them.
 - Highlight incrementally on search in TMUX.
 - Better touch command abbrv
 - Focus parts of windows fast in browser, vscode, etc
@@ -20,10 +20,9 @@
 - More vertical space vs code
 - Check out zen browser.
 - Clear the scroll bar on the files panel vscode.
-- Vim highlight selected word in visual but case sensitive.
-- color scheme eza
 - add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
-- command to open the current editor's git diff
+- break formatting in json max-width
+- Practice regex
 
 ### Links
 

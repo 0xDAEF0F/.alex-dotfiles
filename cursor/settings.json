@@ -22,6 +22,7 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
+  "cursor.composer.shouldAutoScrollToBottom": false,
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
@@ -32,9 +33,6 @@
   "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
-    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
-    ".sidebar .title-label": "padding: 0 !important",
-    ".monaco-list-row.focused": "outline: none !important",
     ".sidebar .monaco-workbench .auxiliarybar": "font-size: 14px !important"
   },
   "diffEditor.ignoreTrimWhitespace": true,
@@ -56,10 +54,11 @@
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [90],
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.vertical": "auto",
+  // "editor.scrollbar.vertical": "auto",
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
-  "editor.smoothScrolling": true,
+  "editor.smoothScrolling": false,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -77,6 +76,8 @@
     "plaintext": false,
     "scminput": false
   },
+  "gitlens.currentLine.enabled": false,
+  "gitlens.views.commitDetails.files.layout": "tree",
   "highlight-selection.backgroundColor": "#F5F5F580",
   "multiCommand.commands": [
     {
@@ -95,6 +96,7 @@
       ]
     }
   ],
+  "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.completion.limit": 200, // Default is null (unlimited)
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
@@ -135,10 +137,6 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
-  "vscode_custom_css.imports": [
-    "file:///Users/ale/Library/Application Support/Cursor/User/custom.css"
-  ],
-  "vscode_custom_css.policy": true,
   "window.customTitleBarVisibility": "never",
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,

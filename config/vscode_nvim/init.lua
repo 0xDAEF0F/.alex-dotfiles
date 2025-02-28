@@ -119,6 +119,10 @@ vim.keymap.set("n", "<leader>j", ":nohlsearch<CR>", { silent = true })
 -- multicursor like in vscode
 vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
 
+-- `ci"` can now be done with `ciq`
+vim.keymap.set("x", "iq", [[:<C-u>normal! T"vt"<CR>]], { noremap = true, silent = true })
+vim.keymap.set("o", "iq", ':normal vi"<CR>', { noremap = true, silent = true })
+
 -- Rename symbol
 vim.keymap.set(
   "n",
