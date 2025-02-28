@@ -73,18 +73,25 @@
     "when": "editorFocus"
   },
   {
-    "command": "multiCommand.sortJson",
-    "key": "cmd+s",
-    "when": "resourceExtname == '.json'"
-  },
-  {
-    "key": "cmd+backspace",
     "command": "vscode-neovim.ctrl-u",
+    "key": "cmd+backspace",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
-    "key": "ctrl+u",
     "command": "-vscode-neovim.ctrl-u",
+    "key": "ctrl+u",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-markdown.extension.editing.toggleBold",
+    "key": "cmd+b",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   }
 ]
+
+// Its quite buggy
+// {
+//   "command": "multiCommand.sortJson",
+//   "key": "cmd+s",
+//   "when": "resourceExtname == '.json'"
+// },
