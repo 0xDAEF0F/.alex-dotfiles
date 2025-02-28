@@ -24,6 +24,19 @@
   },
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
+  "custom-ui-style.electron": {
+    // Frameless window (no title bar)
+    "frame": false,
+    "roundedCorners": false
+  },
+  "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
+  "custom-ui-style.stylesheet": {
+    ".quick-input-widget": "top: 10vh !important",
+    ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
+    ".sidebar .title-label": "padding: 0 !important",
+    ".monaco-list-row.focused": "outline: none !important",
+    ".sidebar .monaco-workbench .auxiliarybar": "font-size: 14px !important"
+  },
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderIndicators": false,
   "diffEditor.renderSideBySide": false,
@@ -126,6 +139,8 @@
     "file:///Users/ale/Library/Application Support/Cursor/User/custom.css"
   ],
   "vscode_custom_css.policy": true,
+  "window.customTitleBarVisibility": "never",
+  "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "editorGutter.addedBackground": "#66bb6a", // For added lines - softer green

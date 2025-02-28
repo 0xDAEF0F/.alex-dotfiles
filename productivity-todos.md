@@ -55,11 +55,3 @@
 
 - `ctrl+l` forces neovim to redraw in vscode.
 - Mac key bindings location: `~/Library/Keybindings/DefaultKeyBinding.dict`
-- The unnamed register `"` is where you copy and cut stuff to. The default register.
-- `a-z` are registers you can use explicitly to copy and cut text.
-- The yank register `0` stores the last thing you have yanked.
-- The cut registers `1-9` store the last 9 things you deleted/cut.
-- Functionality I want for the registers:
-  - Delete/Change should send to the "1 register.
-  - Yank should put it in the + and " register (as now).
-  - Put/Paste should paste from the +/" register (as now).
