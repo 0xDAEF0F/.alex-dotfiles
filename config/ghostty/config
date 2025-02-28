@@ -9,13 +9,14 @@ window-height=3000
 window-width=2000
 
 font-family="JetBrainsMono Nerd Font"
-theme = "catpuccin-mocha"
+theme = "GruvboxDark"
 
 quit-after-last-window-closed=true
 confirm-close-surface=true
 cursor-style = block
 cursor-style-blink = false
 
+# theme = "catpuccin-mocha"
 # theme = "GruvboxDark"
 # theme = "catpuccin-frappe"
 # shell-integration = fish
