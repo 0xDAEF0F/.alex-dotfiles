@@ -1,3 +1,9 @@
+# `set -U`: universal variable shared across fish sessions.
+# they are not exported to the environment.
+
+# `set -Ux`: universal exportable variable. and is available
+# to child processes.
+
 fish_add_path $HOME/go/bin # go
 fish_add_path $HOME/.bun/bin # bun
 fish_add_path /opt/homebrew/bin
@@ -5,9 +11,15 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 
-
 fnm env | source # source fnm
 starship init fish | source # source starship
+
+# enable vi cursor in Ghostty
+if status is-interactive
+    if string match -q -- '*ghostty*' $TERM
+        set -g fish_vi_force_cursor 1
+    end
+end
 
 # source autojump
 begin
@@ -16,6 +28,12 @@ begin
         source $AUTOJUMP_PATH
     end
 end
+
+# Cursor styles
+set -U fish_cursor_default "block"
+set -U fish_cursor_insert "line" "blink"
+set -U fish_cursor_replace_one "underscore"
+set -U fish_cursor_visual "block"
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
@@ -28,6 +46,10 @@ set -Ux XDG_CACHE_HOME ~/.cache
 
 # Homebrew update time
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
+
+# Binds history pager to `C-r` just like the old times
+bind -M insert \cr 'commandline -f history-pager'
+bind -M default \cr 'commandline -f history-pager'
 
 # Git abbreviations
 abbr -a gc "git checkout"

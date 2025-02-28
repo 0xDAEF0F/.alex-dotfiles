@@ -137,5 +137,5 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": true
+  "workbench.statusBar.visible": false
 }

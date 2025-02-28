@@ -99,6 +99,12 @@ require("lazy").setup({
     end,
   },
   { "tenxsoydev/karen-yank.nvim", config = true },
+  {
+    "vscode-neovim/vscode-multi-cursor.nvim",
+    event = "VeryLazy",
+    cond = not not vim.g.vscode,
+    opts = {},
+  },
 }, {})
 
 vim.o.ignorecase = true
@@ -109,6 +115,9 @@ vim.o.timeoutlen = 500
 -- Toggle highlight search
 -- vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- (interfering with leap)
 vim.keymap.set("n", "<leader>j", ":nohlsearch<CR>", { silent = true })
+
+-- multicursor like in vscode
+vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
 
 -- Rename symbol
 vim.keymap.set(

@@ -1,18 +1,16 @@
 ### Todos
 
-- Add `-` to word delimiters on a system wide level.
-- Search backwards in fish in insert mode, too
 - Figure out how the jumplist works exactly in vscode-nvim.
 - Fix karabiner mod-morph issue
+- Add `-` to word delimiters on a system wide level. (impossible to do without third party tools)
 - Adjust the scroll amount with `ctrl+du`
 
-- Folds are now working integrate them pls
 - Detect when there are more than one tmux pane and if so make font smaller.
+- Folds are now working integrate them pls
 - Google chrome open a new tab and jump into it with cmd + click
 - Two finger gesture to switch tabs would be awesome!
 - move the zmk stuff to `.dotfiles`
 - List on terminal the files I edit the most and just enter to go in nvim to them.
-- fish/ghostty cursor issues.
 - Highlight incrementally on search in TMUX.
 - Better touch command abbrv
 - Focus parts of windows fast in browser, vscode, etc
