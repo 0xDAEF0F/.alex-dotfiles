@@ -98,12 +98,13 @@ require("lazy").setup({
       pcall(require("nvim-treesitter.install").update({ with_sync = true }))
     end,
   },
+  { "tenxsoydev/karen-yank.nvim", config = true },
 }, {})
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 0
-vim.o.timeoutlen = 600
+vim.o.timeoutlen = 500
 
 -- Toggle highlight search
 -- vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- (interfering with leap)

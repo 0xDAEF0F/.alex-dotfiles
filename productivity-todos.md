@@ -1,18 +1,16 @@
 ### Todos
 
-- Adjust the scroll amount with `ctrl+du`
+- Add `-` to word delimiters on a system wide level.
 - Search backwards in fish in insert mode, too
 - Figure out how the jumplist works exactly in vscode-nvim.
-- Folds are now working integrate them pls
-- move the zmk stuff to `.dotfiles`
-- make only the ui text bigger in vscode
 - Fix karabiner mod-morph issue
-- Vim registers master.
-- Highlight on the browser double click (words should count as such with special characters)
+- Adjust the scroll amount with `ctrl+du`
+
+- Folds are now working integrate them pls
+- Detect when there are more than one tmux pane and if so make font smaller.
 - Google chrome open a new tab and jump into it with cmd + click
 - Two finger gesture to switch tabs would be awesome!
-- Research for: `BetterTouchTool` for mouse selection words delimiters.
-- Detect when there are more than one tmux pane and if so make font smaller.
+- move the zmk stuff to `.dotfiles`
 - List on terminal the files I edit the most and just enter to go in nvim to them.
 - fish/ghostty cursor issues.
 - Highlight incrementally on search in TMUX.
@@ -35,6 +33,7 @@
   [vim-register-tutorial](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/copy-paste/)
 - Vscode Neovim:
   [vscode-neovim]("https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim")
+  [keybindings]("https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim#explorerlist-navigation-bindings")
 - Karabiner Elements:
   [karabiner-elements]("https://karabiner-elements.pqrs.org/docs/")
 - Fish vi mode docs:

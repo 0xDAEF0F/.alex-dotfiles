@@ -912,6 +912,7 @@ require("lazy").setup({
       lazy = "💤 ",
     },
   },
+  { "tenxsoydev/karen-yank.nvim", config = true },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
