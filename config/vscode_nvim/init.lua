@@ -187,6 +187,10 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
+vim.keymap.set({ "n" }, "gD", function()
+  require("vscode").call("editor.action.goToTypeDefinition")
+end)
+
 function ToggleInlineSuggestionsAndNotify()
   local vscode = require("vscode")
   local hadAutocompletion = vscode.get_config("github.copilot.editor.enableAutoCompletions")
@@ -198,35 +202,52 @@ vim.keymap.set({ "n", "x" }, "<C-u>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height * 2 / 3 do
+  for i = 1, height / 4 do
     vim.api.nvim_feedkeys("k", "n", false)
   end
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end)
+
 vim.keymap.set({ "n", "x" }, "<C-d>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height * 2 / 3 do
+  for i = 1, height / 4 do
     vim.api.nvim_feedkeys("j", "n", false)
   end
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end)
+
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height do
+  for i = 1, height / 2 do
     vim.api.nvim_feedkeys("j", "n", false)
   end
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end)
+
 vim.keymap.set({ "n", "x" }, "<C-b>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height do
+  for i = 1, height / 2 do
     vim.api.nvim_feedkeys("k", "n", false)
   end
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end)
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  pattern = "*",
+  callback = function()
+    local mode = vim.api.nvim_get_mode().mode
+    if mode == "i" then
+      require("vscode").action("neovim-ui-indicator.insert")
+    elseif mode == "v" then
+      require("vscode").action("neovim-ui-indicator.visual")
+    elseif mode == "n" then
+      require("vscode").action("neovim-ui-indicator.normal")
+    end
+  end,
+})

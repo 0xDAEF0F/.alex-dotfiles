@@ -78,6 +78,8 @@
     "scminput": false
   },
   "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
   "highlight-selection.backgroundColor": "#F5F5F580",
   "multiCommand.commands": [
@@ -97,6 +99,10 @@
       ]
     }
   ],
+  "neovim-ui-indicator.disableColor": "#71B4DD00",
+  "neovim-ui-indicator.insertColor": "#71B4DD00",
+  "neovim-ui-indicator.normalColor": "#71B4DD15",
+  "neovim-ui-indicator.visualColor": "#71B4DD00",
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.completion.limit": 200, // Default is null (unlimited)
