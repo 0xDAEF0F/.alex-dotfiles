@@ -26,7 +26,7 @@
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
-    // Frameless window (no title bar)
+    // Frameless window (no title bar and macos semaphore)
     "frame": false,
     "roundedCorners": false
   },
@@ -54,11 +54,12 @@
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [90],
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "auto",
-  // "editor.scrollbar.vertical": "auto",
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
-  "editor.smoothScrolling": false,
+  "editor.smoothScrolling": true,
+  "editor.tokenColorCustomizations": {
+    "comments": "#b0c4debc" // LightSteelBlue with 50% transparency
+  },
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -69,7 +70,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -138,12 +139,17 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.customTitleBarVisibility": "never",
+  "window.newWindowDimensions": "maximized", // although window switching is not working
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
-    "editorGutter.addedBackground": "#66bb6a", // For added lines - softer green
+    // git gutter (addedLine, deletedLine, modifiedLine)
+    "editorGutter.addedBackground": "#66bb6a",
     "editorGutter.deletedBackground": "#ff0000",
-    "editorGutter.modifiedBackground": "#007ACC" // For modified lines - VS Code blue
+    "editorGutter.modifiedBackground": "#007ACC",
+    // git vertical bar
+    "editorOverviewRuler.infoForeground": "#00000000",
+    "editorOverviewRuler.warningForeground": "#00000000"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",
