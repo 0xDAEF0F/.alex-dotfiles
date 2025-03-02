@@ -1,18 +1,15 @@
 ### Todos
 
+- Focus to text efficiently with ai on cursor.
 - Detect when there is more than one tmux pane and if so make font smaller in terminal.
-- Fix karabiner mod-morph issue.
 - Vim highlight selected word in visual but case sensitive.
 - Add `-` to word delimiters on a system wide level.
 - Folds are now working integrate them pls
-- move the zmk stuff to `.dotfiles`
 - Highlight incrementally on search in TMUX.
-- Modify font size preview suggestions are not so big.
-- Focus parts of windows fast in browser, vscode, etc
+- Modify font size so preview suggestions are not so big.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
-- Focus to text efficiently
+- Add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
 - Check out zen browser.
-- add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
 
 ### Links
 

@@ -32,7 +32,8 @@
   "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
-    ".sidebar .monaco-workbench .auxiliarybar": "font-size: 14px !important"
+    "h1": "font-size: 15px !important",
+    "h2": "font-size: 14px !important"
   },
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderIndicators": false,
@@ -53,6 +54,7 @@
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [90],
   "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
   "editor.smoothScrolling": true,
@@ -69,16 +71,16 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": false,
     "scminput": false
   },
-  "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
   "highlight-selection.backgroundColor": "#F5F5F580",
   "multiCommand.commands": [
@@ -136,9 +138,18 @@
     }
   ],
   "stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
+  "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.fontFamily": "OperatorMonoLig Nerd Font Mono",
   "terminal.integrated.fontLigatures": true,
   "terminal.integrated.fontSize": 11,
+  "terminal.integrated.profiles.osx": {
+    "fish": {
+      "args": ["-l"],
+      "path": "/opt/homebrew/bin/fish"
+    }
+  },
+  "terminal.integrated.shellIntegration.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,

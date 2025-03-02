@@ -9,6 +9,7 @@
     - to stow "config" `stow --target=$XDG_CONFIG_HOME config`
     - to stow "home" `stow --target=$HOME home`
     - to stow "cursor" `stow --target=$HOME/Library/Application\ Support/Cursor/User cursor`
+    - ".corneish-kbd" should not be stowed since it is just configuration for the keyboard.
 
 - navigate into the directory.
 - to stow/unstow:
