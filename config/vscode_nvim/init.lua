@@ -207,12 +207,12 @@ vim.keymap.set({ "n" }, "gD", function()
 end)
 
 vim.keymap.set("n", "n", function()
-  vim.cmd("normal! n")
+  pcall(vim.cmd, "normal! n") -- `pcall` prevents an error to throw up if there is no next occurrence.
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "N", function()
-  vim.cmd("normal! N")
+  pcall(vim.cmd, "normal! N")
   require("vscode").action("neovim-ui-indicator.cursorCenter")
 end, { noremap = true, silent = true })
 
