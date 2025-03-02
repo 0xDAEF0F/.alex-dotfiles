@@ -1,0 +1,9 @@
+# This workflow is used to build the zmk firmware.
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      config_path: .corneish-kbd
+      build_matrix_path: .corneish-kbd/build.yaml

@@ -4,7 +4,6 @@
 - Fix karabiner mod-morph issue.
 - Vim highlight selected word in visual but case sensitive.
 - Add `-` to word delimiters on a system wide level.
-- Change the suggestions color since it confuses me with comments.
 - Folds are now working integrate them pls
 - move the zmk stuff to `.dotfiles`
 - Highlight incrementally on search in TMUX.

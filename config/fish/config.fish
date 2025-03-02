@@ -44,8 +44,8 @@ set -Ux XDG_DATA_HOME ~/.local/share
 set -Ux XDG_STATE_HOME ~/.local/state
 set -Ux XDG_CACHE_HOME ~/.cache
 
-# Homebrew update time
-set -Ux HOMEBREW_AUTO_UPDATE_SECS 86400
+# Homebrew update time (never auto update)
+set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
 
 # Binds history pager to `C-r` just like the old times
 bind -M insert \cr 'commandline -f history-pager'

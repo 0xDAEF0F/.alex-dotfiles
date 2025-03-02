@@ -22,7 +22,6 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
-  "cursor.composer.shouldAutoScrollToBottom": false,
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
