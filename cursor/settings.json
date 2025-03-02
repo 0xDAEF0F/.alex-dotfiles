@@ -92,14 +92,6 @@
         "editor.cpp.toggle",
         "settings.cycle.multicommand.toggleCopilot"
       ]
-    },
-    {
-      "command": "multiCommand.sortJson",
-      "sequence": [
-        "json.sort",
-        "workbench.action.files.save",
-        "editor.action.formatDocument"
-      ]
     }
   ],
   "neovim-ui-indicator.disableColor": "#71B4DD00",
@@ -173,6 +165,5 @@
   "workbench.editor.openPositioning": "last",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "workbench.sideBar.location": "left"
 }

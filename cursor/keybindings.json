@@ -91,10 +91,9 @@
   },
   {
     "args": "<C-u>",
-    // send our own <C-u> keybinding to neovim directly
-    // this is `cmd+backspace` because i have `cmd+u` overrided via karabiner
+    // send our own <C-d> keybinding to neovim directly
     "command": "vscode-neovim.send",
-    "key": "cmd+backspace",
+    "key": "ctrl+u",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
@@ -154,5 +153,28 @@
     "command": "-editor.action.addSelectionToNextFindMatch",
     "key": "cmd+d",
     "when": "editorFocus"
+  },
+  {
+    "command": "-markdown.extension.editing.toggleMath",
+    "key": "cmd+m",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "command": "-whisperAssistant.toggleRecording",
+    "key": "ctrl+u"
+  },
+  {
+    "command": "workbench.action.openGlobalKeybindings",
+    "key": "cmd+r cmd+t"
+  },
+  {
+    "command": "-markdown.extension.editing.toggleItalic",
+    "key": "cmd+i",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+    "key": "cmd+e",
+    "when": "accessibilityHelpIsShown"
   }
 ]
