@@ -147,7 +147,7 @@
                         ]
                     },
                     {
-                        "description": "ctrl+w => opt+backspace (chrome, cursor, whatsapp, zen)",
+                        "description": "ctrl+w => opt+backspace (chrome + cursor)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -155,8 +155,7 @@
                                         "bundle_identifiers": [
                                             "^com\\.google\\.Chrome$",
                                             "^com\\.todesktop\\.230313mzl4w4u92$",
-                                            "^net\\.whatsapp\\.WhatsApp$",
-                                            "^app\\.zen-browser\\.zen$"
+                                            "^net\\.whatsapp\\.WhatsApp$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

@@ -1,4 +1,3 @@
--- Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -113,8 +112,23 @@ vim.o.scrolloff = 0
 vim.o.timeoutlen = 500
 
 -- Toggle highlight search
--- vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- (interfering with leap)
-vim.keymap.set("n", "<leader>j", ":nohlsearch<CR>", { silent = true })
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
+
+-- Go next problem in file
+vim.keymap.set(
+  "n",
+  "<leader>d",
+  ":lua require('vscode').call('editor.action.marker.next')<CR>",
+  { silent = true }
+)
+
+-- Go previous problem in file
+vim.keymap.set(
+  "n",
+  "<leader>D",
+  ":lua require('vscode').call('editor.action.marker.prev')<CR>",
+  { silent = true }
+)
 
 -- multicursor like in vscode
 vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
@@ -174,7 +188,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>h",
+  "<leader>l",
   ":lua require('vscode').call('bookmarks.listFromAllFiles')<CR>",
   { noremap = true, silent = true }
 )
@@ -187,9 +201,20 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true }
 )
 
+-- `gd` is go to definition
 vim.keymap.set({ "n" }, "gD", function()
   require("vscode").call("editor.action.goToTypeDefinition")
 end)
+
+vim.keymap.set("n", "n", function()
+  vim.cmd("normal! n")
+  require("vscode").action("neovim-ui-indicator.cursorCenter")
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "N", function()
+  vim.cmd("normal! N")
+  require("vscode").action("neovim-ui-indicator.cursorCenter")
+end, { noremap = true, silent = true })
 
 function ToggleInlineSuggestionsAndNotify()
   local vscode = require("vscode")
@@ -251,3 +276,16 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end
   end,
 })
+
+-- Centers the cursor after you search with / or ?
+vim.keymap.set("c", "<CR>", function()
+  local cmdtype = vim.fn.getcmdtype()
+  if cmdtype == "/" or cmdtype == "?" then
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
+    vim.schedule(function()
+      require("vscode").action("neovim-ui-indicator.cursorCenter")
+    end)
+    return ""
+  end
+  return "<CR>"
+end, { expr = true })

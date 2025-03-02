@@ -1,6 +1,5 @@
 ### Todos
 
-- Focus to text efficiently with ai on cursor.
 - Detect when there is more than one tmux pane and if so make font smaller in terminal.
 - Vim highlight selected word in visual but case sensitive.
 - Add `-` to word delimiters on a system wide level.
@@ -13,15 +12,11 @@
 
 ### Links
 
-- Vim registers:
-  [vim-register-tutorial](https://www.barbarianmeetscoding.com/boost-your-coding-fu-with-vscode-and-vim/copy-paste/)
 - Vscode Neovim:
   [vscode-neovim]("https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim")
   [keybindings]("https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim#explorerlist-navigation-bindings")
 - Karabiner Elements:
   [karabiner-elements]("https://karabiner-elements.pqrs.org/docs/")
-- Fish vi mode docs:
-  [fish-vi-mode-docs]("https://fishshell.com/docs/current/interactive.html#command-mode")
 - Better touch tool docs:
   [docs on better touch tool]("https://docs.folivora.ai/")
 - Vscode api docs:

@@ -87,59 +87,72 @@
   },
   {
     "command": "workbench.action.openSettingsJson",
-    "key": "cmd+r cmd+t"
+    "key": "cmd+t cmd+s"
   },
   {
+    "args": "<C-u>",
     // send our own <C-u> keybinding to neovim directly
     // this is `cmd+backspace` because i have `cmd+u` overrided via karabiner
     "command": "vscode-neovim.send",
     "key": "cmd+backspace",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'",
-    "args": "<C-u>"
-  },
-  {
-    // send our own <C-d> keybinding to neovim directly
-    "command": "vscode-neovim.send",
-    "key": "ctrl+d",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'",
-    "args": "<C-d>"
-  },
-  {
-    // send our own <C-f> keybinding to neovim directly
-    "command": "vscode-neovim.send",
-    "key": "ctrl+f",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.f && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'",
-    "args": "<C-f>"
-  },
-  {
-    // send our own <C-b> keybinding to neovim directly
-    "command": "vscode-neovim.send",
-    "key": "ctrl+b",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.b && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'",
-    "args": "<C-b>"
-  },
-  {
-    // disable the default nvim ctrl+d keybinding
-    "key": "ctrl+d",
-    "command": "-vscode-neovim.ctrl-d",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
-  },
-  {
-    // disable the default nvim ctrl+u keybinding
-    "key": "ctrl+u",
-    "command": "-vscode-neovim.ctrl-u",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
-    // disable the default nvim ctrl+b keybinding
+    "args": "<C-d>",
+    // send our own <C-d> keybinding to neovim directly
+    "command": "vscode-neovim.send",
+    "key": "ctrl+d",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "args": "<C-f>",
+    // send our own <C-f> keybinding to neovim directly
+    "command": "vscode-neovim.send",
+    "key": "ctrl+f",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.f && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "args": "<C-b>",
+    // send our own <C-b> keybinding to neovim directly
+    "command": "vscode-neovim.send",
     "key": "ctrl+b",
-    "command": "-vscode-neovim.ctrl-b",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.b && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
+    "command": "-vscode-neovim.ctrl-d",
+    // disable the default nvim ctrl+d keybinding
+    "key": "ctrl+d",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.d && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-vscode-neovim.ctrl-u",
+    // disable the default nvim ctrl+u keybinding
+    "key": "ctrl+u",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-vscode-neovim.ctrl-b",
+    // disable the default nvim ctrl+b keybinding
+    "key": "ctrl+b",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.b && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-vscode-neovim.ctrl-f",
     // disable the default nvim ctrl+f keybinding
     "key": "ctrl+f",
-    "command": "-vscode-neovim.ctrl-f",
     "when": "editorTextFocus && neovim.ctrlKeysNormal.f && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-workbench.action.openGlobalKeybindings",
+    "key": "cmd+r cmd+s"
+  },
+  {
+    "command": "workbench.action.openGlobalKeybindingsFile",
+    "key": "cmd+r cmd+s"
+  },
+  {
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "key": "cmd+d",
+    "when": "editorFocus"
   }
 ]

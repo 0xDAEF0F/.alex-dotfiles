@@ -22,6 +22,7 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
+  "cursor.composer.shouldAutoScrollToBottom": false,
   "cursor.cpp.disabledLanguages": ["plaintext"],
   "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
@@ -38,6 +39,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderIndicators": false,
   "diffEditor.renderSideBySide": false,
+  "editor.accessibilitySupport": "on",
   "editor.cursorSurroundingLines": 0, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
@@ -71,7 +73,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
