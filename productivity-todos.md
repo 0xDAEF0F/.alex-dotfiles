@@ -1,14 +1,18 @@
 ### Todos
 
+- nvim is tripping with the redraws
+- `go hover` is not working properly on vscode. types should go before errors/warnings.
 - Detect when there is more than one tmux pane and if so make font smaller in terminal.
 - Vim highlight selected word in visual but case sensitive.
+- install leap on normal neovim
+- chill with the warning highlights in vscode.
+- Fix `cmd+right` accept next word suggestion vscode.
 - Add `-` to word delimiters on a system wide level.
 - Folds are now working integrate them pls
-- Highlight incrementally on search in TMUX.
 - Modify font size so preview suggestions are not so big.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
 - Add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
-- Check out zen browser.
+- Sketchybar
 
 ### Links
 

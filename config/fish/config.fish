@@ -60,6 +60,7 @@ abbr -a gd "git diff"
 abbr -a grh "git reset --hard"
 abbr -a gaa "git add ."
 abbr -a gca! "git commit --verbose --all --amend"
+abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a grv "git remote -v"
 

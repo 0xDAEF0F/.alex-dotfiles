@@ -22,13 +22,14 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 1001
   },
-  "cursor.cpp.disabledLanguages": ["plaintext"],
+  "cursor.cpp.disabledLanguages": [],
   "cursor.cpp.enablePartialAccepts": true,
-  "custom-ui-style.electron": {
-    // Frameless window (no title bar and macos semaphore)
-    "frame": false,
-    "roundedCorners": false
-  },
+  // TODO: fix the issue where the os no longer thinks it is a window
+  // "custom-ui-style.electron": {
+  //   // Frameless window (no title bar and macos semaphore)
+  //   "frame": false,
+  //   "roundedCorners": false
+  // },
   "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
@@ -71,11 +72,11 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
+    "plaintext": true,
     "markdown": true,
-    "plaintext": false,
     "scminput": false
   },
   "gitlens.codeLens.authors.enabled": false,
@@ -147,6 +148,7 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.customTitleBarVisibility": "never",
+  "window.zoomPerWindow": false,
   "window.newWindowDimensions": "maximized", // although window switching is not working
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
@@ -164,5 +166,5 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "cursor.composer.shouldAutoScrollToBottom": false
+  "codesnap.containerPadding": "0.5em"
 }

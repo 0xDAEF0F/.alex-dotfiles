@@ -24,19 +24,14 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {
       labels = "rtneiohysvafumkljcpgdqxbz",
-      action = function(match, state)
-        require("flash.jump").jump(match, state)
-        require("flash.jump").on_jump(state)
-        -- Centers the screen on the current line
-        require("vscode").eval_async([[
-          const editor = vscode.window.activeTextEditor;
-          if (editor) {
-            const position = editor.selection.active;
-            const range = new vscode.Range(position, position);
-            editor.revealRange(range, vscode.TextEditorRevealType.InCenter);
-          }
-        ]])
-      end,
+      modes = {
+        treesitter = {
+          labels = "rtneiohysvafumkljcpgdqxbz",
+        },
+      },
+      prompt = {
+        enabled = false,
+      },
     },
     keys = {
       {
@@ -44,6 +39,7 @@ require("lazy").setup({
         mode = { "n", "x", "o" },
         function()
           require("flash").jump()
+          require("vscode").action("neovim-ui-indicator.cursorCenter")
         end,
         desc = "Flash",
       },
@@ -133,10 +129,6 @@ vim.keymap.set(
 -- multicursor like in vscode
 vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
 
--- `ci"` can now be done with `ciq`
-vim.keymap.set("x", "iq", [[:<C-u>normal! T"vt"<CR>]], { noremap = true, silent = true })
-vim.keymap.set("o", "iq", ':normal vi"<CR>', { noremap = true, silent = true })
-
 -- Rename symbol
 vim.keymap.set(
   "n",
@@ -144,6 +136,12 @@ vim.keymap.set(
   ":lua require('vscode').call('editor.action.rename')<CR>",
   { silent = true }
 )
+
+-- Go to type definition
+vim.keymap.set({ "n" }, "gD", function()
+  require("vscode").call("editor.action.goToTypeDefinition")
+end)
+
 -- Go to references
 vim.keymap.set(
   "n",
@@ -200,11 +198,6 @@ vim.api.nvim_set_keymap(
   ":lua ToggleInlineSuggestionsAndNotify()<CR>",
   { noremap = true, silent = true }
 )
-
--- `gd` is go to definition
-vim.keymap.set({ "n" }, "gD", function()
-  require("vscode").call("editor.action.goToTypeDefinition")
-end)
 
 vim.keymap.set("n", "n", function()
   pcall(vim.cmd, "normal! n") -- `pcall` prevents an error to throw up if there is no next occurrence.

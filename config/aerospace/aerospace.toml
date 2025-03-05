@@ -163,10 +163,13 @@ if.app-name-regex-substring = 'Finder'
 run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'System Settings'
-run = "move-node-to-workspace 5"
+if.app-id = 'com.apple.systempreferences'
+run = "layout floating"
 
-# Not working
 [[on-window-detected]]
-if.app-name-regex-substring = 'Karabiner-Elements Settings'
-run = "move-node-to-workspace 5"
+if.window-title-regex-substring = 'Karabiner'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.hegenberg.BetterTouchTool'
+run = 'layout floating'
