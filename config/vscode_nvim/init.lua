@@ -282,3 +282,11 @@ vim.keymap.set("c", "<CR>", function()
   end
   return "<CR>"
 end, { expr = true })
+
+-- Redraws the screen after text changes because it is buggy
+vim.api.nvim_create_autocmd("TextChanged", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-l>", true, false, true), "n", false)
+  end,
+})

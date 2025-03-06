@@ -1,10 +1,16 @@
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
 after-login-command = [
     'exec-and-forget open -n /Applications/Ghostty.app/',
-    'exec-and-forget open -n /Applications/Google\ Chrome.app/',
+    'exec-and-forget open -n /Applications/Zen.app/',
     'exec-and-forget open -n /Applications/Cursor.app/',
 ]
 after-startup-command = []
+
+exec-on-workspace-change = [
+    '/bin/bash',
+    '-c',
+    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
+]
 
 start-at-login = true
 
@@ -123,24 +129,31 @@ j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
 
+## Workspace 1
+
 [[on-window-detected]]
 # if.app-name-regex-substring = 'Ghostty'
 if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 1"
 
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = "move-node-to-workspace 2"
+## Workspace 2
 
 # Cursor
 [[on-window-detected]]
 # if.app-name-regex-substring = 'Cursor'
 if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = "move-node-to-workspace 2"
+
+## Workspace 3
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'Notes'
-run = "move-node-to-workspace 5"
+if.app-id = 'app.zen-browser.zen'
+run = "move-node-to-workspace 3"
+
+## Workspace 4
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -154,6 +167,12 @@ run = "move-node-to-workspace 4"
 if.app-name-regex-substring = 'WhatsApp'
 run = "move-node-to-workspace 4"
 
+## Workspace 5
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Notes'
+run = "move-node-to-workspace 5"
+
 [[on-window-detected]]
 if.window-title-regex-substring = 'MMO game'
 run = "move-node-to-workspace 5"
@@ -161,6 +180,8 @@ run = "move-node-to-workspace 5"
 [[on-window-detected]]
 if.app-name-regex-substring = 'Finder'
 run = "move-node-to-workspace 5"
+
+## Floating windows
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'

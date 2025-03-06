@@ -1,6 +1,7 @@
 ### Todos
 
-- nvim is tripping with the redraws
+- make the color on flash when there is a highlight different
+- Sketchybar
 - `go hover` is not working properly on vscode. types should go before errors/warnings.
 - Detect when there is more than one tmux pane and if so make font smaller in terminal.
 - Vim highlight selected word in visual but case sensitive.
@@ -12,7 +13,6 @@
 - Modify font size so preview suggestions are not so big.
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
 - Add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
-- Sketchybar
 
 ### Links
 

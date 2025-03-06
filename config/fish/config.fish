@@ -72,6 +72,7 @@ abbr -a ca "cargo add"
 abbr -a cc "cargo check"
 abbr -a cb "cargo build"
 abbr -a cr "cargo run"
+abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 
 # Code

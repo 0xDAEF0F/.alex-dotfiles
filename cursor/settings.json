@@ -24,12 +24,9 @@
   },
   "cursor.cpp.disabledLanguages": [],
   "cursor.cpp.enablePartialAccepts": true,
-  // TODO: fix the issue where the os no longer thinks it is a window
-  // "custom-ui-style.electron": {
-  //   // Frameless window (no title bar and macos semaphore)
-  //   "frame": false,
-  //   "roundedCorners": false
-  // },
+  "custom-ui-style.electron": {
+    "frame": false // frameless window (no macos semaphore)
+  },
   "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
@@ -148,7 +145,7 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.customTitleBarVisibility": "never",
-  "window.zoomPerWindow": false,
+  "window.zoomPerWindow": false, // zoom is applied uniformly accross all windows
   "window.newWindowDimensions": "maximized", // although window switching is not working
   "window.titleBarStyle": "native",
   "window.zoomLevel": 1,
@@ -166,5 +163,6 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "codesnap.containerPadding": "0.5em"
+  "codesnap.containerPadding": "0.5em",
+  "workbench.statusBar.visible": false
 }
