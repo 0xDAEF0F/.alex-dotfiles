@@ -24,6 +24,9 @@ require("lazy").setup({
     event = "VeryLazy",
     opts = {
       labels = "rtneiohysvafumkljcpgdqxbz",
+      label = {
+        style = "overlay",
+      },
       modes = {
         treesitter = {
           labels = "rtneiohysvafumkljcpgdqxbz",

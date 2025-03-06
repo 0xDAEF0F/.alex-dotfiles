@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export BUN_INSTALL:/Users/ale/\x2ebun
+SETUVAR --export EDITOR:nvim
 SETUVAR --export HOMEBREW_AUTO_UPDATE_SECS:9999999999
 SETUVAR --export XDG_CACHE_HOME:/Users/ale/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/Users/ale/\x2econfig

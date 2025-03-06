@@ -45,7 +45,7 @@
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.inlayHints.fontSize": 9,
-  "editor.inlayHints.maximumLength": 0,
+  "editor.inlayHints.maximumLength": 30,
   "editor.inlayHints.padding": false,
   "editor.lineNumbers": "relative",
   "editor.occurrencesHighlight": "off",
@@ -157,6 +157,8 @@
     // git vertical bar
     "editorOverviewRuler.infoForeground": "#00000000",
     "editorOverviewRuler.warningForeground": "#00000000"
+    // warning background
+    // "editorWarning.background": "#00000000"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",

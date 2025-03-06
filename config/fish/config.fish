@@ -13,19 +13,12 @@ fish_add_path $HOME/.zig/zig-macos # zig
 
 fnm env | source # source fnm
 starship init fish | source # source starship
+zoxide init fish | source # source zoxide
 
 # enable vi cursor in Ghostty
 if status is-interactive
     if string match -q -- '*ghostty*' $TERM
         set -g fish_vi_force_cursor 1
-    end
-end
-
-# source autojump
-begin
-    set --local AUTOJUMP_PATH /opt/homebrew/share/autojump/autojump.fish
-    if test -e $AUTOJUMP_PATH
-        source $AUTOJUMP_PATH
     end
 end
 
@@ -37,6 +30,9 @@ set -U fish_cursor_visual "block"
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
+
+# Editor
+set -Ux EDITOR "nvim"
 
 # XDG Specs
 set -Ux XDG_CONFIG_HOME ~/.config
@@ -104,6 +100,16 @@ abbr -a rmrf "rm -rf" # Delete directory recursively
 # Better `cp` and `mv`
 abbr -a cp "rsync -a --progress --human-readable"
 abbr -a mv "rsync -a --progress --human-readable --remove-source-files"
+
+# yazi shortcut
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
 
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy
