@@ -1,15 +1,11 @@
 #!/bin/sh
 
-#SPACE_ICONS=("1" "2" "3" "4")
-
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)
-
 sketchybar --add event aerospace_workspace_change
-#echo $(aerospace list-workspaces --monitor 1 --visible no --empty no) >> ~/aaaa
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
-  for i in $(aerospace list-workspaces --monitor $m); do
+  for i in $(aerospace list-workspaces --monitor $m | tac); do
     sid=$i
     space=(
       space="$sid"
