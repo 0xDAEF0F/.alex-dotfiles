@@ -121,11 +121,11 @@ vim.keymap.set(
   { silent = true }
 )
 
--- Go previous problem in file
+-- Go to next git change
 vim.keymap.set(
   "n",
-  "<leader>D",
-  ":lua require('vscode').call('editor.action.marker.prev')<CR>",
+  "<leader>n",
+  ":lua require('vscode').call('workbench.action.editor.nextChange')<CR>",
   { silent = true }
 )
 
@@ -171,7 +171,7 @@ vim.api.nvim_set_keymap(
 -- Bookmarks functionality
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>m",
+  "<leader>t",
   ":lua require('vscode').call('bookmarks.toggle')<CR>",
   { noremap = true, silent = true }
 )

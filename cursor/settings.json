@@ -23,7 +23,6 @@
     "files.autoSaveDelay": 1001
   },
   "cursor.cpp.disabledLanguages": [],
-  "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
     "frame": false // frameless window (no macos semaphore)
   },
@@ -50,7 +49,7 @@
   "editor.lineNumbers": "relative",
   "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlight": "gutter",
-  "editor.rulers": [90],
+  "editor.rulers": [100],
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.selectionHighlight": false,
@@ -132,7 +131,7 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontFamily": "OperatorMonoLig Nerd Font Mono",
   "terminal.integrated.fontLigatures": true,
-  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.profiles.osx": {
     "fish": {
       "args": ["-l"],

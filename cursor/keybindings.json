@@ -176,5 +176,15 @@
     "command": "-editor.action.toggleScreenReaderAccessibilityMode",
     "key": "cmd+e",
     "when": "accessibilityHelpIsShown"
+  },
+  {
+    "key": "shift+cmd+right",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-editor.action.inlineSuggest.acceptNextWord",
+    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
   }
 ]

@@ -1,18 +1,20 @@
 ### Todos
 
-- make the color on flash when there is a highlight different
-- implement editor action next changes in vim
-- Detect when there is more than one tmux pane and if so make font smaller in terminal.
-- Vim highlight selected word in visual but case sensitive.
-- install leap on normal neovim
-- chill with the warning highlights in vscode.
-- Fix `cmd+right` accept next word suggestion vscode.
-- Add `-` to word delimiters on a system wide level.
-- Folds are now working integrate them pls
 - Modify font size so preview suggestions are not so big.
+- automatically close panels when there is more than one window in the workspace
+- remove quit warnings from ghostty
+- scroll horizontally in ai panel vscode (BTT)
+- set default column size for folders and ai panel when opening windows
+- Vim highlight selected word in visual but case sensitive.
+- chill with the warning highlights in vscode.
+- Add `-` to word delimiters on a system wide level.
+- Folds are now working integrate them
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
 - Add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
+
 - `go hover` is not working properly on vscode. types should go before errors/warnings.
+- make the color on flash when there is a highlight different (backlog)
+- Detect when there is more than one tmux pane and if so make font smaller in terminal.
 
 ### Links
 

@@ -62,10 +62,10 @@ alt-o = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-n = 'focus down'
-alt-e = 'focus up'
-alt-i = 'focus right'
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+alt-n = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-e = 'focus --boundaries-action wrap-around-the-workspace up'
+alt-i = 'focus --boundaries-action wrap-around-the-workspace right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-ctrl-h = 'move left'
@@ -92,7 +92,7 @@ shift-f4 = 'move-node-to-workspace 4 --focus-follows-window'
 shift-f5 = 'move-node-to-workspace 5 --focus-follows-window'
 
 # See also: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'focus-back-and-forth'
+alt-tab = 'focus --boundaries-action wrap-around-the-workspace right'
 
 # Enable service mode
 alt-x = 'mode service'
