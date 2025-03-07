@@ -25,7 +25,7 @@
       label = "Base";
       bindings = <
         &kp BSPC      &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none   &kp BSPC
-        &kp ESC       &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm RGUI N       &hm RCTRL E   &hm RALT I   &kp O   &none
+        &kp ESC       &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &kp O   &none
         &kp LG(TAB)   &kp Z   &kp X           &kp C         &kp V        &kp B      &kp K         &kp M            &kp COMMA     &kp DOT      &none   &kp LG(TAB)
                               &mt LSHFT TAB   &lt 1 ENTER   &hm LGUI Q   &kp BSPC   &lt 2 SPACE   &mt RSHFT LBRC                                      
       >;
