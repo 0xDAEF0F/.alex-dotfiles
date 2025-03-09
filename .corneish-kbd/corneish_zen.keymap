@@ -17,10 +17,16 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
-    mm: mod_morph {
+    esctil: escape_tilde {
       compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
+      #binding-cells = <0>;
+      bindings = <&kp ESC>, <&kp TILDE>;
+      mods = <(MOD_LGUI)>;
+    };
+    odqt: o_doubleqt {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp O>, <&kp DQT>;
       mods = <(MOD_LGUI)>;
     };
   };
@@ -30,9 +36,9 @@
     default_layer {
       label = "Base";
       bindings = <
-        &kp BSPC      &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none     &kp BSPC
-        &mm ESC TILDE &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &mm O DQT &none
-        &kp LG(TAB)   &kp Z   &kp X           &kp C         &kp V        &kp B      &kp K         &kp M            &kp COMMA     &kp DOT      &none     &kp LG(TAB)
+        &kp BSPC    &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none  &kp BSPC
+        &esctil     &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &odqt  &none
+        &kp LG(TAB) &kp Z   &kp X           &kp C         &kp V        &kp B      &kp K         &kp M            &kp COMMA     &kp DOT      &none  &kp LG(TAB)
                               &mt LSHFT TAB   &lt 1 ENTER   &hm LGUI Q   &kp BSPC   &lt 2 SPACE   &mt RSHFT LBRC                                      
       >;
     };
