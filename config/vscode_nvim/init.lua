@@ -105,10 +105,79 @@ require("lazy").setup({
   },
 }, {})
 
+require("nvim-treesitter.configs").setup({
+  auto_install = true,
+  highlight = { enable = true },
+  indent = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      -- init_selection = "<c-space>",
+      node_incremental = "<c-x>",
+      -- scope_incremental = "<c-x>",
+      -- node_decremental = "<M-space>",
+    },
+  },
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+
+        ["ab"] = "@block.outer",
+        ["ib"] = "@block.inner",
+
+        ["ax"] = "@statement.outer",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        ["))"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      -- goto_next_end = {
+      --   [")m"] = "@function.outer",
+      --   ["]m"] = "@class.outer",
+      -- },
+      goto_previous_start = {
+        ["(("] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      -- goto_previous_end = {
+      --   ["[M"] = "@function.outer",
+      --   ["[]"] = "@class.outer",
+      -- },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
+      },
+    },
+  },
+})
+
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 0
 vim.o.timeoutlen = 500
+
+-- Yank full directory/file path
+vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h')<CR>") -- dir
+vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 
 -- Toggle highlight search
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
@@ -139,6 +208,24 @@ vim.keymap.set(
   ":lua require('vscode').call('editor.action.rename')<CR>",
   { silent = true }
 )
+
+-- Go to hover
+vim.keymap.set({ "n" }, "gh", function()
+  local vscode = require("vscode")
+  vscode.update_config("editor.hover.enabled", true, "global")
+  print("hover enabled set to true")
+  vscode.call("editor.action.showHover")
+  local group_id = vim.api.nvim_create_augroup("HoverKeyListener", { clear = true })
+  vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
+    group = group_id,
+    callback = function()
+      vscode.update_config("editor.hover.enabled", false, "global")
+      print("hover enabled set to false")
+      return true
+    end,
+    once = true,
+  })
+end)
 
 -- Go to type definition
 vim.keymap.set({ "n" }, "gD", function()

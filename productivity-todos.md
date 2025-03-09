@@ -3,14 +3,12 @@
 - Modify font size so preview suggestions are not so big.
 - automatically close panels when there is more than one window in the workspace
 - remove quit warnings from ghostty
-- scroll horizontally in ai panel vscode (BTT)
 - set default column size for folders and ai panel when opening windows
 - Vim highlight selected word in visual but case sensitive.
 - chill with the warning highlights in vscode.
 - Add `-` to word delimiters on a system wide level.
 - Folds are now working integrate them
 - Investigate on: `autoparse-inline-edit-links` and "Character Level Diffs" `cursor.diffs.useCharacterLevelDiffs`
-- Add stylua `/Users/ale/.config/stylua/stylua.toml` to dotfiles
 
 - `go hover` is not working properly on vscode. types should go before errors/warnings.
 - make the color on flash when there is a highlight different (backlog)
@@ -34,7 +32,6 @@
 
 - (cli) Look for all the process under: `pstree -s fish`
 - (cli) Register a default opening of an text file: `duti -s {app.id} {file.extension} {operation}`
-- (nvim) Yank file name "nvim": full path `:let @+ = expand('%:p')` only file `:let @+ = expand('%:t')`
 - (vimium) Copy url of a website to clipboard: `yf` and the current url is `yy`
 - (cli) Get id of app: `osascript -e 'id of application "Google Chrome"'`
 

@@ -16,4 +16,4 @@ fi
 TEMPERATURE=$(echo $WEATHER_JSON | jq '.current_condition[0].temp_C' | tr -d '"')
 
 sketchybar --set $NAME \
-  label="$TEMPERATURE$(echo '°')C • $WEATHER_DESCRIPTION"
+  label="$TEMPERATURE$(echo '°')C • "

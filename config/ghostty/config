@@ -1,10 +1,9 @@
 command = /opt/homebrew/bin/fish --login --interactive
-macos-titlebar-style=
-title="ale"
-font-size=18
+macos-titlebar-style = "hidden"
+font-size=20
 
-window-padding-x=0
-window-padding-y=0
+window-padding-x=0,0
+window-padding-y=0,0
 window-height=3000
 window-width=2000
 
@@ -16,11 +15,5 @@ confirm-close-surface=true
 cursor-style = block
 cursor-style-blink = false
 
-# theme = "catpuccin-mocha"
-# theme = "GruvboxDark"
-# theme = "catpuccin-frappe"
-# shell-integration = fish
-# shell-integration-features = cursor, sudo, title
-# cursor-style="bar"
-# cursor-style-blink=true
-# adjust-cursor-thickness=5
+mouse-hide-while-typing = true
+clipboard-trim-trailing-spaces = true

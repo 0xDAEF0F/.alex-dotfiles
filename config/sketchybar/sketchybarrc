@@ -46,7 +46,7 @@ defaults=(
   icon.color=$ICON_COLOR
   icon.padding_left=$PADDINS
   icon.padding_right=$PADDINGS
-  label.font="$FONT:Semibold:13.0"
+  label.font="$FONT:Regular:14.0"
   label.color=$LABEL_COLOR
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
@@ -78,7 +78,6 @@ source "$ITEM_DIR/front_app.sh"
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/weather.sh"
 

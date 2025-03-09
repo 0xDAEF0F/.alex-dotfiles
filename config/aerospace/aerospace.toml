@@ -4,6 +4,7 @@ after-login-command = [
     'exec-and-forget open -n /Applications/Ghostty.app/',
     'exec-and-forget open -n /Applications/Zen.app/',
     'exec-and-forget open -n /Applications/Cursor.app/',
+    'exec-and-forget sketchybar --reload',
 ]
 after-startup-command = []
 

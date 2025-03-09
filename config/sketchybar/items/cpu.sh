@@ -1,11 +1,11 @@
 #!/bin/bash
 
 cpu_top=(
-  label.font="$FONT:Semibold:7"
+  label.font="$FONT:Regular:7"
   label=CPU
   icon.drawing=off
   width=0
-  padding_right=15
+  padding_right=8
   y_offset=6
 )
 
