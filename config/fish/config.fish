@@ -11,6 +11,9 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 
+# this should work without doing this but it does not
+source ~/.config/fish/completions/tauri.fish
+
 fnm env | source # source fnm
 starship init fish | source # source starship
 zoxide init fish | source # source zoxide

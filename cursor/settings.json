@@ -73,7 +73,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -172,5 +172,9 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "window.zoomLevel": 1,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
 }
