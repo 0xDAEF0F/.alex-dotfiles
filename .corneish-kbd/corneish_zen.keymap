@@ -23,10 +23,10 @@
       bindings = <&kp ESC>, <&kp TILDE>;
       mods = <(MOD_LGUI)>;
     };
-    odqt: o_doubleqt {
+    oqt: o_quote {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp O>, <&kp DQT>;
+      bindings = <&kp O>, <&kp SQT>;
       mods = <(MOD_LGUI)>;
     };
   };
@@ -37,7 +37,7 @@
       label = "Base";
       bindings = <
         &kp BSPC    &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none  &kp BSPC
-        &esctil     &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &odqt  &none
+        &esctil     &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &oqt  &none
         &kp LG(TAB) &kp Z   &kp X           &kp C         &kp V        &kp B      &kp K         &kp M            &kp COMMA     &kp DOT      &none  &kp LG(TAB)
                               &mt LSHFT TAB   &lt 1 ENTER   &hm LGUI Q   &kp BSPC   &lt 2 SPACE   &mt RSHFT LBRC                                      
       >;
@@ -46,9 +46,9 @@
       label = "Num";
       bindings = <
         &none   &none                      &kp N2   &kp N3   &kp N4   &kp N5                      &kp N6                    &kp N7      &kp N8   &kp N9      &kp C_PLAY_PAUSE   &kp BSPC
-        &none   &kp TAB                    &kp F3   &kp F2   &kp F1   &none                       &kp LEFT                  &kp DOWN    &kp UP   &kp RIGHT   &kp COLON          &bt BT_SEL 0
-        &none   &kp LG(LC(LS(NUMBER_4)))   &kp F20  &kp F5   &kp F4   &kp LS(LA(C_VOLUME_DOWN))   &kp LS(LA(C_VOLUME_UP))   &kp N1      &kp N0   &kp DOT     &kp C_NEXT         &bt BT_SEL 1
-                                           &none    &none    &none                                &none  &kp SQT  &none
+        &none   &kp TAB                    &kp F3   &kp F2   &kp F1   &kp F20                     &kp LEFT                  &kp DOWN    &kp UP   &kp RIGHT   &kp COLON          &bt BT_SEL 0
+        &none   &kp LG(LC(LS(NUMBER_4)))   &kp F19  &kp F5   &kp F4   &kp LS(LA(C_VOLUME_DOWN))   &kp LS(LA(C_VOLUME_UP))   &kp N1      &kp N0   &kp DOT     &kp C_NEXT         &bt BT_SEL 1
+                                           &none    &none    &none                                &none  &kp DQT  &none
       >;
     };
     symb_layer {
