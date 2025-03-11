@@ -68,7 +68,7 @@ abbr -a ghb "gh browse"
 
 # Cargo abbreviations
 abbr -a ca "cargo add"
-abbr -a cc "cargo check"
+# abbr -a cc "cargo check"
 abbr -a cb "cargo build"
 abbr -a cr "cargo run"
 abbr -a cf "cargo +nightly fmt"
@@ -78,8 +78,9 @@ abbr -a clippy "cargo clippy"
 abbr -a c "cursor ." 
 
 # tmux
-abbr -a ta "tmux attach" 
-abbr -a tn "tmux new -s alex"
+abbr -a tn "tmux new -s"
+abbr -a ta "tmux attach -t" 
+abbr -a tls "tmux ls" 
 abbr -a tks "tmux kill-server"
 
 # Eza
@@ -103,6 +104,14 @@ abbr -a rmrf "rm -rf" # Delete directory recursively
 # Better `cp` and `mv`
 abbr -a cp "rsync -a --progress --human-readable"
 abbr -a mv "rsync -a --progress --human-readable --remove-source-files"
+
+# Previous directory
+abbr -a -- - "prevd"
+
+# Parent directories
+abbr -a -- .. "cd .."
+abbr -a -- ... "cd ../.."
+abbr -a -- .... "cd ../../.."
 
 # yazi shortcut
 function y

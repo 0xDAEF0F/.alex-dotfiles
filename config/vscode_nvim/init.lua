@@ -71,14 +71,14 @@ require("lazy").setup({
         desc = "Treesitter Search",
       },
       -- This is not working
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
+      -- {
+      --   "<c-s>",
+      --   mode = { "c" },
+      --   function()
+      --     require("flash").toggle()
+      --   end,
+      --   desc = "Toggle Flash Search",
+      -- },
     },
   },
   {
@@ -112,7 +112,7 @@ require("nvim-treesitter.configs").setup({
   incremental_selection = {
     enable = true,
     keymaps = {
-      -- init_selection = "<c-space>",
+      -- init_selection = "<c-q>",
       node_incremental = "<c-x>",
       -- scope_incremental = "<c-x>",
       -- node_decremental = "<M-space>",
@@ -161,11 +161,11 @@ require("nvim-treesitter.configs").setup({
     swap = {
       enable = true,
       swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
         ["<leader>A"] = "@parameter.inner",
       },
+      -- swap_previous = {
+      --   ["<leader>A"] = "@parameter.inner",
+      -- },
     },
   },
 })
@@ -181,6 +181,14 @@ vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 
 -- Toggle highlight search
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
+
+-- Go to previous problem in file
+vim.keymap.set(
+  "n",
+  "<leader>a",
+  ":lua require('vscode').call('editor.action.marker.prev')<CR>",
+  { silent = true }
+)
 
 -- Go next problem in file
 vim.keymap.set(

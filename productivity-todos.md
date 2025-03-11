@@ -1,5 +1,6 @@
 ### Todos
 
+- open in new tab not working in zen browser
 - Modify font size so preview suggestions are not so big.
 - automatically close panels when there is more than one window in the workspace
 - remove quit warnings from ghostty
