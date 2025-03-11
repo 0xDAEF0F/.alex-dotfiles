@@ -1,12 +1,7 @@
 sketchybar --set $NAME \
   label="Loading..." \
 
-LOCATION="Ciudad Juárez"
-REGION="Mexico"
-LANG="en"
-
-LOCATION_ESCAPED="${LOCATION// /+}+${REGION// /+}"
-WEATHER_JSON=$(curl -s "https://wttr.in/$LOCATION_ESCAPED?0pq&format=j1&lang=$LANG")
+WEATHER_JSON=$(curl -s "https://wttr.in?format=j1")
 
 if [ -z $WEATHER_JSON ]; then
   sketchybar --set $NAME label="$LOCATION"
