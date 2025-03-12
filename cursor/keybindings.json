@@ -191,5 +191,10 @@
     "command": "-editor.action.triggerSuggest",
     "key": "cmd+i",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "rust-analyzer.openDocs",
+    "when": "inRustProject"
   }
 ]

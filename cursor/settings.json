@@ -42,6 +42,7 @@
   "editor.cursorSurroundingLines": 0, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
+  "editor.formatOnType": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -115,12 +116,9 @@
     "PATH": "/Users/ale/.cargo/bin:${env:PATH}"
   },
   "rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
-  "rust-analyzer.typing.triggerChars": "=.",
+  "rust-analyzer.typing.triggerChars": "=.>{(",
   "rust-analyzer.workspace.symbol.search.limit": 256, // Default is 128
-  // "scm.diffDecorationsGutterPattern": {
-  //   "added": false,
-  //   "modified": false
-  // },
+  "rust-analyzer.imports.granularity.group": "crate",
   "scm.diffDecorationsGutterWidth": 4,
   "settings.cycle": [
     {
