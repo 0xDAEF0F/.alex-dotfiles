@@ -76,7 +76,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.editor.enableAutoCompletions": false,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
