@@ -5,6 +5,18 @@ vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
 
+-- Just a little helper function to center the cursor on the screen
+local centerScreenOnCursor = function()
+  require("vscode").eval_async([[
+    const editor = vscode.window.activeTextEditor;
+    if (editor) {
+      const cursorPosition = editor.selection.active;
+      const range = new vscode.Range(cursorPosition, cursorPosition);
+      editor.revealRange(range, vscode.TextEditorRevealType.InCenter);
+    }
+  ]])
+end
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -52,7 +64,7 @@ require("lazy").setup({
         mode = { "n", "x", "o" },
         function()
           require("flash").jump()
-          require("vscode").action("neovim-ui-indicator.cursorCenter")
+          centerScreenOnCursor()
         end,
         desc = "Flash",
       },
@@ -80,15 +92,6 @@ require("lazy").setup({
         end,
         desc = "Treesitter Search",
       },
-      -- This is not working
-      -- {
-      --   "<c-s>",
-      --   mode = { "c" },
-      --   function()
-      --     require("flash").toggle()
-      --   end,
-      --   desc = "Toggle Flash Search",
-      -- },
     },
   },
   {
@@ -122,10 +125,7 @@ require("nvim-treesitter.configs").setup({
   incremental_selection = {
     enable = true,
     keymaps = {
-      -- init_selection = "<c-q>",
       node_incremental = "<c-x>",
-      -- scope_incremental = "<c-x>",
-      -- node_decremental = "<M-space>",
     },
   },
   textobjects = {
@@ -155,27 +155,16 @@ require("nvim-treesitter.configs").setup({
         ["))"] = "@function.outer",
         ["]]"] = "@class.outer",
       },
-      -- goto_next_end = {
-      --   [")m"] = "@function.outer",
-      --   ["]m"] = "@class.outer",
-      -- },
       goto_previous_start = {
         ["(("] = "@function.outer",
         ["[["] = "@class.outer",
       },
-      -- goto_previous_end = {
-      --   ["[M"] = "@function.outer",
-      --   ["[]"] = "@class.outer",
-      -- },
     },
     swap = {
       enable = true,
       swap_next = {
         ["<leader>A"] = "@parameter.inner",
       },
-      -- swap_previous = {
-      --   ["<leader>A"] = "@parameter.inner",
-      -- },
     },
   },
 })
@@ -309,12 +298,12 @@ vim.api.nvim_set_keymap(
 
 vim.keymap.set("n", "n", function()
   pcall(vim.cmd, "normal! n") -- `pcall` prevents an error to throw up if there is no next occurrence.
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "N", function()
   pcall(vim.cmd, "normal! N")
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end, { noremap = true, silent = true })
 
 function ToggleInlineSuggestionsAndNotify()
@@ -331,7 +320,7 @@ vim.keymap.set({ "n", "x" }, "<C-u>", function()
   for i = 1, height / 4 do
     vim.api.nvim_feedkeys("k", "n", false)
   end
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-d>", function()
@@ -341,7 +330,7 @@ vim.keymap.set({ "n", "x" }, "<C-d>", function()
   for i = 1, height / 4 do
     vim.api.nvim_feedkeys("j", "n", false)
   end
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
@@ -351,7 +340,7 @@ vim.keymap.set({ "n", "x" }, "<C-f>", function()
   for i = 1, height / 2 do
     vim.api.nvim_feedkeys("j", "n", false)
   end
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-b>", function()
@@ -361,22 +350,8 @@ vim.keymap.set({ "n", "x" }, "<C-b>", function()
   for i = 1, height / 2 do
     vim.api.nvim_feedkeys("k", "n", false)
   end
-  require("vscode").action("neovim-ui-indicator.cursorCenter")
+  centerScreenOnCursor()
 end)
-
-vim.api.nvim_create_autocmd("ModeChanged", {
-  pattern = "*",
-  callback = function()
-    local mode = vim.api.nvim_get_mode().mode
-    if mode == "i" then
-      require("vscode").action("neovim-ui-indicator.insert")
-    elseif mode == "v" then
-      require("vscode").action("neovim-ui-indicator.visual")
-    elseif mode == "n" then
-      require("vscode").action("neovim-ui-indicator.normal")
-    end
-  end,
-})
 
 -- Centers the cursor after you search with / or ?
 vim.keymap.set("c", "<CR>", function()
@@ -384,7 +359,7 @@ vim.keymap.set("c", "<CR>", function()
   if cmdtype == "/" or cmdtype == "?" then
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
     vim.schedule(function()
-      require("vscode").action("neovim-ui-indicator.cursorCenter")
+      centerScreenOnCursor()
     end)
     return ""
   end

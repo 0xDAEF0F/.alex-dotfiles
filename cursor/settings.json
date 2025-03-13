@@ -76,7 +76,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -103,7 +103,7 @@
   "neovim-ui-indicator.visualColor": "#71B4DD00",
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.completion.limit": 200, // Default is null (unlimited)
+  "rust-analyzer.completion.limit": 20, // Default is null (unlimited)
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.debug.openDebugPane": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false
@@ -176,5 +176,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "gitlens.views.fileHistory.avatars": false
 }
