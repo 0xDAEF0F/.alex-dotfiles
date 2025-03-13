@@ -20,6 +20,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
+    -- Highlight other instances of the word under the cursor
+    "RRethy/vim-illuminate",
+    event = "VeryLazy",
+    config = function()
+      require("illuminate").configure({
+        min_count_to_highlight = 2,
+      })
+    end,
+  },
+  {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {

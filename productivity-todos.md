@@ -1,12 +1,13 @@
 ### Todos
 
+- `Cmd - +` and `Cmd - -` to zoom front size in vscode.
 - Modify font size so preview suggestions are not so big.
-- automatically close panels when there is more than one window in the workspace
-- remove quit warnings from ghostty
-- set default column size for folders and ai panel when opening windows
+- Automatically close panels when there is more than one window in the workspace.
+- Remove quit warnings from ghostty.
+- Set default column size for folders and ai panel when opening windows.
 - Vim highlight selected word in visual but case sensitive.
-- chill with the warning highlights in vscode.
-- Folds are now working integrate them
+- Chill with the warning highlights in vscode.
+- Folds are now working integrate them.
 
 - `go hover` is not working properly on vscode. types should go before errors/warnings.
 - make the color on flash when there is a highlight different (backlog)

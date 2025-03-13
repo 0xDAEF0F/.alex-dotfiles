@@ -113,7 +113,9 @@
   "rust-analyzer.lru.capacity": 256, // Default is 128
   "rust-analyzer.restartServerOnConfigChange": true, // Default is false
   "rust-analyzer.runnables.extraEnv": {
-    "PATH": "/Users/ale/.cargo/bin:${env:PATH}"
+    "PATH": "/Users/ale/.cargo/bin:${env:PATH}",
+    "RUST_BACKTRACE": "0",
+    "RUSTFLAGS": "-A warnings"
   },
   "rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
   "rust-analyzer.typing.triggerChars": "=.>{(",
