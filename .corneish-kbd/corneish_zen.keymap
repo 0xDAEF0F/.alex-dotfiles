@@ -32,17 +32,18 @@
     tdpz: tap_dance_punctuation_zed {
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
-      tapping-term-ms = <200>;
+      tapping-term-ms = <220>;
       bindings = <&kp DOT>, <&kp Z>;
     };
   };
   keymap {
     compatible = "zmk,keymap";
 
+    // `P` can make for a good `mod-morph` key
     default_layer {
       label = "Base";
       bindings = <
-        &none    &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none  &none
+        &none    &none   &kp W           &kp F         &kp P        &kp G      &kp J         &kp L            &kp U         &kp Y        &none  &kp Z
         &esctil     &kp A   &hm LALT R      &hm LCTRL S   &hm LGUI T   &kp D      &kp H         &hm LGUI N       &hm RCTRL E   &hm RALT I   &oqt  &none
         &kp LG(TAB) &kp BSPC   &kp X           &kp C         &kp V        &kp B      &kp K         &kp M            &kp COMMA     &tdpz      &none  &kp LG(TAB)
                               &mt LSHFT TAB   &lt 1 ENTER   &hm LGUI Q   &kp BSPC   &lt 2 SPACE   &mt RSHFT LBRC                                      

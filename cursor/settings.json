@@ -49,7 +49,7 @@
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
-  "editor.hover.enabled": false,
+  "editor.hover.enabled": true,
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 30,
   "editor.inlayHints.padding": false,

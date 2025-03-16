@@ -2,7 +2,7 @@
 
 after-login-command = [
     'exec-and-forget open -n /Applications/Ghostty.app/',
-    'exec-and-forget open -n /Applications/Zen.app/',
+    'exec-and-forget open -n /Applications/Google\ Chrome.app/',
     'exec-and-forget open -n /Applications/Cursor.app/',
     'exec-and-forget sketchybar --reload',
 ]
@@ -55,7 +55,7 @@ outer.right = 0
 alt-ctrl-w = 'exec-and-forget open -a WhatsApp'
 alt-ctrl-s = 'exec-and-forget open -a Spotify'
 alt-ctrl-c = 'exec-and-forget open -a Cursor'
-alt-ctrl-b = 'exec-and-forget open -a Zen'
+alt-ctrl-b = 'exec-and-forget open -a Google\ Chrome'
 alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app/'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
