@@ -27,6 +27,7 @@
   },
   "codesnap.containerPadding": "0.5em",
   "cursor.cpp.disabledLanguages": [],
+  "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
     "frame": false // frameless window (no macos semaphore)
   },
@@ -42,12 +43,12 @@
   "editor.cursorSurroundingLines": 0, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
-  "editor.formatOnType": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "editor.hover.enabled": false,
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 30,
@@ -87,7 +88,7 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
-  "highlight-selection.backgroundColor": "#F5F5F580",
+  "gitlens.views.fileHistory.avatars": false,
   "multiCommand.commands": [
     {
       "command": "multiCommand.toggleInlineSuggestions",
@@ -97,10 +98,6 @@
       ]
     }
   ],
-  "neovim-ui-indicator.disableColor": "#71B4DD00",
-  "neovim-ui-indicator.insertColor": "#71B4DD00",
-  "neovim-ui-indicator.normalColor": "#71B4DD15",
-  "neovim-ui-indicator.visualColor": "#71B4DD00",
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.completion.limit": 20, // Default is null (unlimited)
@@ -108,19 +105,19 @@
   "rust-analyzer.debug.openDebugPane": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false
   "rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
+  "rust-analyzer.imports.granularity.group": "crate",
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.lens.references.adt.enable": true, // Default is false
   "rust-analyzer.lru.capacity": 256, // Default is 128
   "rust-analyzer.restartServerOnConfigChange": true, // Default is false
   "rust-analyzer.runnables.extraEnv": {
     "PATH": "/Users/ale/.cargo/bin:${env:PATH}",
-    "RUST_BACKTRACE": "0",
-    "RUSTFLAGS": "-A warnings"
+    "RUSTFLAGS": "-A warnings",
+    "RUST_BACKTRACE": "0"
   },
   "rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
   "rust-analyzer.typing.triggerChars": "=.>{(",
   "rust-analyzer.workspace.symbol.search.limit": 256, // Default is 128
-  "rust-analyzer.imports.granularity.group": "crate",
   "scm.diffDecorationsGutterWidth": 4,
   "settings.cycle": [
     {
@@ -160,10 +157,6 @@
   "window.zoomLevel": 1,
   "window.zoomPerWindow": false, // zoom is applied uniformly accross all windows
   "workbench.colorCustomizations": {
-    // git gutter (addedLine, deletedLine, modifiedLine)
-    // "editorGutter.addedBackground": "#66bb6a",
-    // "editorGutter.deletedBackground": "#ff0000",
-    // "editorGutter.modifiedBackground": "#007ACC",
     // git vertical bar
     "editorOverviewRuler.infoForeground": "#00000000",
     "editorOverviewRuler.warningForeground": "#00000000"
@@ -176,6 +169,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "gitlens.views.fileHistory.avatars": false,
   "workbench.statusBar.visible": false
 }

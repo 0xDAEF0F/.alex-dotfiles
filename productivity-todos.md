@@ -1,16 +1,14 @@
 ### Todos
 
-- `Cmd - +` and `Cmd - -` to zoom front size in vscode.
-- Modify font size so preview suggestions are not so big.
-- Automatically close panels when there is more than one window in the workspace.
-- Remove quit warnings from ghostty.
+- Jumplist vscode/nvim.
+- Need better ways to navigate through big files (treesitter telescope of some kind).
+- `Cmd - +` and `Cmd - -` to zoom font size in vscode (not ui).
+- Modify font size so cursor preview suggestions are not so big.
 - Set default column size for folders and ai panel when opening windows.
-- Vim highlight selected word in visual but case sensitive.
-- Chill with the warning highlights in vscode.
-- Folds are now working integrate them.
+- Remove quit warnings from ghostty.
 
-- `go hover` is not working properly on vscode. types should go before errors/warnings.
-- make the color on flash when there is a highlight different (backlog)
+- Chill with the warning highlights in vscode.
+- Make the color on flash when there is a highlight different (backlog)
 - Detect when there is more than one tmux pane and if so make font smaller in terminal.
 - Add `-` to word delimiters on a system wide level.
 
