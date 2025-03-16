@@ -53,6 +53,16 @@ require("lazy").setup({
         treesitter = {
           labels = "rtneiohysvafumkljcpgdqxbz",
         },
+        char = {
+          char_actions = function(motion)
+            return {
+              [";"] = "next",
+              [","] = "next",
+              [motion:lower()] = "next",
+              [motion:upper()] = "prev",
+            }
+          end,
+        },
       },
       prompt = {
         enabled = false,
@@ -75,22 +85,6 @@ require("lazy").setup({
           require("flash").treesitter()
         end,
         desc = "Flash Treesitter",
-      },
-      {
-        "r",
-        mode = "o",
-        function()
-          require("flash").remote()
-        end,
-        desc = "Remote Flash",
-      },
-      {
-        "R",
-        mode = { "o", "x" },
-        function()
-          require("flash").treesitter_search()
-        end,
-        desc = "Treesitter Search",
       },
     },
   },
@@ -121,10 +115,10 @@ require("lazy").setup({
 require("nvim-treesitter.configs").setup({
   auto_install = true,
   highlight = { enable = true },
-  indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
+      init_selection = "<c-x>",
       node_incremental = "<c-x>",
     },
   },
@@ -145,7 +139,8 @@ require("nvim-treesitter.configs").setup({
         ["ab"] = "@block.outer",
         ["ib"] = "@block.inner",
 
-        ["ax"] = "@statement.outer",
+        ["as"] = "@statement.outer",
+        ["is"] = "@statement.outer",
       },
     },
     move = {
@@ -303,6 +298,16 @@ end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "N", function()
   pcall(vim.cmd, "normal! N")
+  centerScreenOnCursor()
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "*", function()
+  pcall(vim.cmd, "normal! *")
+  centerScreenOnCursor()
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "#", function()
+  pcall(vim.cmd, "normal! #")
   centerScreenOnCursor()
 end, { noremap = true, silent = true })
 

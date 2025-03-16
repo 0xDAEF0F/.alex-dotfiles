@@ -178,16 +178,6 @@
     "when": "accessibilityHelpIsShown"
   },
   {
-    "command": "editor.action.inlineSuggest.acceptNextWord",
-    "key": "shift+cmd+right",
-    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
-  },
-  {
-    "command": "-editor.action.inlineSuggest.acceptNextWord",
-    "key": "cmd+right",
-    "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
-  },
-  {
     "command": "-editor.action.triggerSuggest",
     "key": "cmd+i",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"

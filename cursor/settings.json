@@ -57,7 +57,7 @@
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [100],
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.vertical": "auto",
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
   "editor.smoothScrolling": true,
@@ -176,5 +176,6 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "gitlens.views.fileHistory.avatars": false
+  "gitlens.views.fileHistory.avatars": false,
+  "workbench.statusBar.visible": false
 }
