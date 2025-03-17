@@ -97,6 +97,20 @@
     "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
+    "args": "<C-i>",
+    // send our own <C-i> keybinding to neovim directly
+    "command": "vscode-neovim.send",
+    "key": "ctrl+i",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "args": "<C-o>",
+    // send our own <C-o> keybinding to neovim directly
+    "command": "vscode-neovim.send",
+    "key": "ctrl+o",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.u && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
     "args": "<C-d>",
     // send our own <C-d> keybinding to neovim directly
     "command": "vscode-neovim.send",
@@ -142,14 +156,6 @@
     "when": "editorTextFocus && neovim.ctrlKeysNormal.f && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
-    "command": "-workbench.action.openGlobalKeybindings",
-    "key": "cmd+r cmd+s"
-  },
-  {
-    "command": "workbench.action.openGlobalKeybindingsFile",
-    "key": "cmd+r cmd+s"
-  },
-  {
     "command": "-editor.action.addSelectionToNextFindMatch",
     "key": "cmd+d",
     "when": "editorFocus"
@@ -183,8 +189,18 @@
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
   },
   {
-    "key": "ctrl+alt+d",
     "command": "rust-analyzer.openDocs",
+    "key": "ctrl+alt+d",
     "when": "inRustProject"
+  },
+  {
+    "command": "-vscode-neovim.send",
+    "key": "ctrl+o",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.o && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "command": "-vscode-neovim.send",
+    "key": "ctrl+i",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.i && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   }
 ]

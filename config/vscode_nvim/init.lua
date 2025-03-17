@@ -5,6 +5,40 @@ vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
 
+-- vscode_utils.lua
+function nvim_feedkeys(keys)
+  local feedable_keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+  vim.api.nvim_feedkeys(feedable_keys, "n", false)
+end
+
+function call(arg)
+  nvim_feedkeys(string.format(":call %s<enter>", arg))
+end
+
+function register_jump()
+  require("vscode").call("jumplist.registerJump")
+end
+
+-- register a jump after insert mode is left
+vim.keymap.set({ "i" }, "<escape>", function()
+  nvim_feedkeys("<escape>")
+  register_jump()
+end)
+
+-- register a jump whenever a forward search is started
+vim.keymap.set({ "n" }, "/", function()
+  register_jump()
+  nvim_feedkeys("/")
+end)
+
+vim.keymap.set({ "n" }, "<c-o>", function()
+  require("vscode").call("jumplist.jumpBack")
+end, { noremap = true })
+
+vim.keymap.set({ "n" }, "<c-i>", function()
+  require("vscode").call("jumplist.jumpForward")
+end, { noremap = true })
+
 -- Just a little helper function to center the cursor on the screen
 local centerScreenOnCursor = function()
   require("vscode").eval_async([[
@@ -75,6 +109,7 @@ require("lazy").setup({
         function()
           require("flash").jump()
           centerScreenOnCursor()
+          register_jump()
         end,
         desc = "Flash",
       },
@@ -231,8 +266,27 @@ end)
 
 -- Go to type definition
 vim.keymap.set({ "n" }, "gD", function()
+  register_jump()
   require("vscode").call("editor.action.goToTypeDefinition")
 end)
+
+-- Go to definition
+vim.keymap.set({ "n" }, "gd", function()
+  register_jump()
+  require("vscode").call("editor.action.revealDefinition")
+end)
+
+-- Go to implementation
+vim.keymap.set({ "n" }, "gi", function()
+  register_jump()
+  require("vscode").call("editor.action.goToImplementation")
+end)
+
+-- Go to references (buggy)
+-- vim.keymap.set({ "n" }, "gr", function()
+--   require("vscode").call("editor.action.goToReferences")
+--   register_jump()
+-- end)
 
 -- Go to references
 vim.keymap.set(
@@ -294,21 +348,25 @@ vim.api.nvim_set_keymap(
 vim.keymap.set("n", "n", function()
   pcall(vim.cmd, "normal! n") -- `pcall` prevents an error to throw up if there is no next occurrence.
   centerScreenOnCursor()
+  register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "N", function()
   pcall(vim.cmd, "normal! N")
   centerScreenOnCursor()
+  register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "*", function()
   pcall(vim.cmd, "normal! *")
   centerScreenOnCursor()
+  register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "#", function()
   pcall(vim.cmd, "normal! #")
   centerScreenOnCursor()
+  register_jump()
 end, { noremap = true, silent = true })
 
 function ToggleInlineSuggestionsAndNotify()
@@ -346,6 +404,7 @@ vim.keymap.set({ "n", "x" }, "<C-f>", function()
     vim.api.nvim_feedkeys("j", "n", false)
   end
   centerScreenOnCursor()
+  register_jump()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-b>", function()
@@ -356,6 +415,7 @@ vim.keymap.set({ "n", "x" }, "<C-b>", function()
     vim.api.nvim_feedkeys("k", "n", false)
   end
   centerScreenOnCursor()
+  register_jump()
 end)
 
 -- Centers the cursor after you search with / or ?
