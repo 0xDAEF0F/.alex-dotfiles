@@ -66,6 +66,10 @@ abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a grv "git remote -v"
 
+# Zoxide remappings
+abbr -a j "z"
+abbr -a jj "zi"
+
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
 

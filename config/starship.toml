@@ -1,10 +1,10 @@
 [character]
-vimcmd_symbol = '[\(N\) 🤪](bold cyan) '
-success_symbol = '[\(I\) 🤠](bold green)'
-error_symbol = '[\(I\) 😭](bold red)'
-vimcmd_replace_one_symbol = "[🤩](bold magenta)"
-vimcmd_replace_symbol = "[🤩](bold magenta)"
-vimcmd_visual_symbol = '[\(V\) 🤩](bold yellow) '
+vimcmd_symbol = '[\[N\]](bold cyan) '
+success_symbol = '[\[I\]](bold green)'
+error_symbol = '[\[I\]](bold red)'
+vimcmd_replace_one_symbol = '[\[R\]](bold magenta)'
+vimcmd_replace_symbol = '[\[R\]](bold magenta)'
+vimcmd_visual_symbol = '[\[V\]](bold yellow) '
 
 [directory]
 truncate_to_repo = false
@@ -15,11 +15,11 @@ format = '[ $path]($style)[$read_only]($read_only_style) '
 style = "#d79921"                                          # gruvbox yellow
 
 [git_status]
-modified = " mod!"   # !
-staged = " stag+"    # +
-untracked = " untr?" # ?
-behind = " beh⇣"     # "⇣"
-ahead = " ahead⇡"    # "⇡"
+modified = "!"  # !
+staged = "+"    # +
+untracked = "?" # ?
+behind = "⇣"    # "⇣"
+ahead = "⇡"     # "⇡"
 
 [package]
 format = ''
