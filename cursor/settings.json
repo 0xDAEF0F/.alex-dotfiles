@@ -77,7 +77,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
@@ -100,7 +100,6 @@
   ],
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.completion.limit": 20, // Default is null (unlimited)
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.debug.openDebugPane": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false

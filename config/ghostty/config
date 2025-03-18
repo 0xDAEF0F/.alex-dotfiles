@@ -10,6 +10,10 @@ window-width=2000
 font-family="JetBrainsMono Nerd Font"
 theme = "GruvboxDark"
 
+# I dont understand what this does exactly
+app-notifications = true
+desktop-notifications = true
+
 quit-after-last-window-closed=true
 confirm-close-surface=true
 cursor-style = block
