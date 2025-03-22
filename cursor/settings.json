@@ -53,9 +53,9 @@
   "editor.cursorSurroundingLines": 0, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
-  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontFamily": "Operator Mono Lig",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
