@@ -21,3 +21,6 @@ cursor-style-blink = false
 
 mouse-hide-while-typing = true
 clipboard-trim-trailing-spaces = true
+
+# allows for tmux in ssh to write to clipboard (not needed because its default)
+clipboard-write = allow

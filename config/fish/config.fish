@@ -85,8 +85,7 @@ abbr -a clippy "cargo clippy"
 abbr -a c "cursor ." 
 
 # tmux
-abbr -a tn "tmux new -s"
-abbr -a ta "tmux attach -t" 
+abbr -a ta "tmux attach || tmux new -s alex" 
 abbr -a tls "tmux ls" 
 abbr -a tks "tmux kill-server"
 

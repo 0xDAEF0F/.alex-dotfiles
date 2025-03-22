@@ -175,5 +175,9 @@ if.window-title-regex-substring = 'Karabiner'
 run = "layout floating"
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'next-example-tauri'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'com.hegenberg.BetterTouchTool'
 run = 'layout floating'

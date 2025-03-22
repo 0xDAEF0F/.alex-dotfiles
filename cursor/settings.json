@@ -1,3 +1,13 @@
+// --- Cursor user rules ---
+// • If the message starts with `\c` keep the response concise and direct, covering only essential details.
+// • Assume the user is on macOS Apple silicon unless told otherwise.
+// • The user primarily works with TypeScript, Rust.
+// • The user uses fish as their default shell.
+// • For commit requests, be brief and focus on intent; avoid repeating the obvious.
+// • Each commit message must begin with “(feat|bug|chore|usual):” followed by the AI-generated text.
+// • Whenever outputting terminal commands, prefer long names rather than short names for flags.
+// • If not possible to use long name flags (in terminal commands), explain what the flag stands for.
+// --- End of user rules ---
 {
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
@@ -168,5 +178,8 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "svelte.enable-ts-plugin": true,
+  "cursor-retrieval.canAttemptGithubLogin": false,
+  "workbench.statusBar.visible": false,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
