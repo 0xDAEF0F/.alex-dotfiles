@@ -99,6 +99,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
   "gitlens.views.fileHistory.avatars": false,
+  "jumplist.jumpListCount": 2,
   "multiCommand.commands": [
     {
       "command": "multiCommand.toggleInlineSuggestions",
@@ -109,6 +110,7 @@
     }
   ],
   "prettier.printWidth": 80,
+  "rewrap.wrappingColumn": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.debug.openDebugPane": true, // Default is false
@@ -143,6 +145,7 @@
     }
   ],
   "stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
+  "svelte.enable-ts-plugin": true,
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontFamily": "OperatorMonoLig Nerd Font Mono",
@@ -158,6 +161,7 @@
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "update.mode": "start",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.customTitleBarVisibility": "never",
@@ -178,8 +182,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "svelte.enable-ts-plugin": true,
-  "cursor-retrieval.canAttemptGithubLogin": false,
-  "workbench.statusBar.visible": false,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "workbench.statusBar.visible": false
 }

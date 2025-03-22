@@ -16,7 +16,9 @@ function call(arg)
 end
 
 function register_jump()
-  require("vscode").call("jumplist.registerJump")
+  -- we are using jumplist number 1 instead of the default so that we can
+  -- control all of our jumplist positions.
+  require("vscode").call("jumplist.registerJump", { args = { 1 } })
 end
 
 -- register a jump after insert mode is left
@@ -32,11 +34,11 @@ vim.keymap.set({ "n" }, "/", function()
 end)
 
 vim.keymap.set({ "n" }, "<c-o>", function()
-  require("vscode").call("jumplist.jumpBack")
+  require("vscode").call("jumplist.jumpBack", { args = { 1 } })
 end, { noremap = true })
 
 vim.keymap.set({ "n" }, "<c-i>", function()
-  require("vscode").call("jumplist.jumpForward")
+  require("vscode").call("jumplist.jumpForward", { args = { 1 } })
 end, { noremap = true })
 
 -- Just a little helper function to center the cursor on the screen
@@ -304,12 +306,12 @@ vim.keymap.set(
 )
 
 -- Search with periscope
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>f",
-  ":lua require('vscode').call('periscope.search')<CR>",
-  { noremap = true, silent = true }
-)
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<leader>f",
+--   ":lua require('vscode').call('periscope.search')<CR>",
+--   { noremap = true, silent = true }
+-- )
 
 -- Bookmarks functionality
 vim.api.nvim_set_keymap(
@@ -346,25 +348,45 @@ vim.api.nvim_set_keymap(
 )
 
 vim.keymap.set("n", "n", function()
-  pcall(vim.cmd, "normal! n") -- `pcall` prevents an error to throw up if there is no next occurrence.
+  local success, _ = pcall(vim.cmd, "normal! n")
+
+  if not success then
+    return
+  end
+
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "N", function()
-  pcall(vim.cmd, "normal! N")
+  local success, _ = pcall(vim.cmd, "normal! N")
+
+  if not success then
+    return
+  end
+
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "*", function()
-  pcall(vim.cmd, "normal! *")
+  local success, _ = pcall(vim.cmd, "normal! *")
+
+  if not success then
+    return
+  end
+
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "#", function()
-  pcall(vim.cmd, "normal! #")
+  local success, _ = pcall(vim.cmd, "normal! #")
+
+  if not success then
+    return
+  end
+
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
@@ -423,9 +445,8 @@ vim.keymap.set("c", "<CR>", function()
   local cmdtype = vim.fn.getcmdtype()
   if cmdtype == "/" or cmdtype == "?" then
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
-    vim.schedule(function()
-      centerScreenOnCursor()
-    end)
+    centerScreenOnCursor()
+    register_jump()
     return ""
   end
   return "<CR>"
