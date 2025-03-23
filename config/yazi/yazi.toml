@@ -3,3 +3,19 @@ show_hidden = true
 sort_by = "mtime"
 sort_reverse = true
 linemode = "mtime"
+
+[opener]
+directory = [{ run = 'cursor "$@"', desc = "Open in Cursor", for = "macos" }]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Edit in Nvim", for = "macos" },
+]
+audio = [
+    { run = 'open -a "/System/Applications/QuickTime Player.app" "$@"', orphan = true, desc = "Play in QuickTime", for = "macos" },
+]
+
+[open]
+rules = [
+    { name = "*/", use = "directory" },
+    { name = "*.mp3", use = "audio" },
+    { name = "*", use = "edit" },
+]

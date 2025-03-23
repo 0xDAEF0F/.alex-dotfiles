@@ -249,21 +249,27 @@ vim.keymap.set(
 )
 
 -- Go to hover
+-- vim.keymap.set({ "n" }, "gh", function()
+--   local vscode = require("vscode")
+--   vscode.update_config("editor.hover.enabled", true, "global")
+--   print("hover enabled set to true")
+--   vscode.call("editor.action.showHover")
+--   local group_id = vim.api.nvim_create_augroup("HoverKeyListener", { clear = true })
+--   vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
+--     group = group_id,
+--     callback = function()
+--       vscode.update_config("editor.hover.enabled", false, "global")
+--       print("hover enabled set to false")
+--       return true
+--     end,
+--     once = true,
+--   })
+-- end)
+
+-- Go to hover
 vim.keymap.set({ "n" }, "gh", function()
   local vscode = require("vscode")
-  vscode.update_config("editor.hover.enabled", true, "global")
-  print("hover enabled set to true")
   vscode.call("editor.action.showHover")
-  local group_id = vim.api.nvim_create_augroup("HoverKeyListener", { clear = true })
-  vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
-    group = group_id,
-    callback = function()
-      vscode.update_config("editor.hover.enabled", false, "global")
-      print("hover enabled set to false")
-      return true
-    end,
-    once = true,
-  })
 end)
 
 -- Go to type definition
@@ -285,18 +291,11 @@ vim.keymap.set({ "n" }, "gi", function()
 end)
 
 -- Go to references (buggy)
--- vim.keymap.set({ "n" }, "gr", function()
---   require("vscode").call("editor.action.goToReferences")
---   register_jump()
--- end)
+vim.keymap.set({ "n" }, "gr", function()
+  register_jump()
+  require("vscode").call("editor.action.goToReferences")
+end)
 
--- Go to references
-vim.keymap.set(
-  "n",
-  "gr",
-  ":lua require('vscode').call('editor.action.goToReferences')<CR>",
-  { silent = true }
-)
 -- Comment line
 vim.keymap.set(
   { "n", "v" },
@@ -305,13 +304,10 @@ vim.keymap.set(
   { silent = true }
 )
 
--- Search with periscope
--- vim.api.nvim_set_keymap(
---   "n",
---   "<leader>f",
---   ":lua require('vscode').call('periscope.search')<CR>",
---   { noremap = true, silent = true }
--- )
+vim.keymap.set("n", "<leader>b", function()
+  local vscode = require("vscode")
+  vscode.call("workbench.action.toggleStatusbarVisibility")
+end)
 
 -- Bookmarks functionality
 vim.api.nvim_set_keymap(

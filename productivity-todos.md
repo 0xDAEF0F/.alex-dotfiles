@@ -5,6 +5,7 @@
 - `Cmd - +` and `Cmd - -` to zoom font size in vscode (not ui).
 - Modify font size so cursor preview suggestions are not so big.
 - Set default column size for folders and ai panel when opening windows.
+- Set yazi to open directories in cursor.
 
 - Chill with the warning highlights in vscode (rust).
 - Make the color on flash when there is a highlight different (backlog)
