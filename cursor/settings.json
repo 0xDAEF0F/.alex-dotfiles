@@ -148,9 +148,9 @@
   "svelte.enable-ts-plugin": true,
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.defaultProfile.osx": "fish",
-  "terminal.integrated.fontFamily": "OperatorMonoLig Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 12,
   "terminal.integrated.profiles.osx": {
     "fish": {
       "args": ["-l"],
