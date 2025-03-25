@@ -12,3 +12,8 @@ hash = "1f3dad061209081a6b04dd6ff2cb06c7"
 use = "bennyyip/gruvbox-dark"
 rev = "b4cc9f2"
 hash = "f44c42bcbed3c8564100e45e2fe3649a"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "68326b4"
+hash = "2ac87e1b3a61f5887472899e86535d29"
