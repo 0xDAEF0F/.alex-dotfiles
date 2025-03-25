@@ -11,12 +11,16 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 
+function fish_greeting
+  figlet -f larry3d "alex"
+end
+
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
 
 fnm env | source # source fnm
 starship init fish | source # source starship
-zoxide init fish | source # source zoxide
+zoxide init --cmd j fish | source # source zoxide
 
 # enable vi cursor in Ghostty
 if status is-interactive
@@ -64,10 +68,6 @@ abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a grv "git remote -v"
 
-# Zoxide remappings
-abbr -a j "z"
-abbr -a jj "zi"
-
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
 
@@ -86,6 +86,9 @@ abbr -a c "cursor ."
 abbr -a ta "tmux attach || tmux new -s alex" 
 abbr -a tls "tmux ls" 
 abbr -a tks "tmux kill-server"
+
+# ai term
+abbr -a ai 'llm-term "'
 
 # Eza
 abbr -a ls "eza -w 90 --icons --classify --sort=modified --group-directories-last\
