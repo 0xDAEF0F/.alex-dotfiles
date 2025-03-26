@@ -184,5 +184,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
   "cursor-retrieval.canAttemptGithubLogin": false,
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "update.releaseTrack": "prerelease"
 }

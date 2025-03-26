@@ -87,9 +87,6 @@ abbr -a ta "tmux attach || tmux new -s alex"
 abbr -a tls "tmux ls" 
 abbr -a tks "tmux kill-server"
 
-# ai term
-abbr -a ai 'llm-term "'
-
 # Eza
 abbr -a ls "eza -w 90 --icons --classify --sort=modified --group-directories-last\
   -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
@@ -109,8 +106,8 @@ abbr -a tree "eza -T -a --level 2 --ignore-glob ''"
 abbr -a rmrf "rm -rf" # Delete directory recursively
 
 # Better `cp` and `mv`
-abbr -a cp "rsync -a --progress --human-readable"
-abbr -a mv "rsync -a --progress --human-readable --remove-source-files"
+abbr -a cp "rsync -a"
+abbr -a mv "rsync -a --remove-source-files"
 
 # Previous directory
 abbr -a -- - "prevd"
@@ -128,6 +125,11 @@ function y
 		builtin cd -- "$cwd"
 	end
 	rm -f -- "$tmp"
+end
+
+function ai
+    set --local cursor_output (~/.local/bin/llm-term --disable-cache $argv)
+    commandline -i $cursor_output
 end
 
 # make `y` work like in vim
