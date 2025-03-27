@@ -105,7 +105,7 @@ abbr -a tree "eza -T -a --level 2 --ignore-glob ''"
 # Utility abbreviations
 abbr -a rmrf "rm -rf" # Delete directory recursively
 
-# Better `cp` and `mv`
+# Better `cp`
 abbr -a cp "rsync -a"
 
 # Previous directory
@@ -115,21 +115,6 @@ abbr -a -- - "prevd"
 abbr -a -- .. "cd .."
 abbr -a -- ... "cd ../.."
 abbr -a -- .... "cd ../../.."
-
-# yazi shortcut
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
-function ai
-    set --local cursor_output (llm-term --disable-cache $argv)
-    commandline -i $cursor_output
-end
 
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy
