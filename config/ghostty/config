@@ -7,7 +7,7 @@ window-padding-y=0,0
 window-height=3000
 window-width=2000
 
-font-family="JetBrainsMono Nerd Font"
+font-family="Maple Mono NF"
 theme = "GruvboxDark"
 
 # I dont understand what this does exactly

@@ -6,7 +6,7 @@ source "$CONFIG_DIR/icons.sh" # Loads all defined icons
 ITEM_DIR="$CONFIG_DIR/items" 
 PLUGIN_DIR="$CONFIG_DIR/plugins" 
 
-FONT="JetBrainsMono Nerd Font" 
+FONT="Maple Mono NF" 
 PADDINGS=3 
 
 # aerospace setting

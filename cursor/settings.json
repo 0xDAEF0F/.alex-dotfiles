@@ -1,14 +1,17 @@
 // --- Cursor user rules ---
-// • If the message starts with `\c` keep the response concise and direct, covering only essential details.
 // • Assume the user is on macOS Apple silicon unless told otherwise.
 // • The user primarily works with TypeScript, Rust.
 // • The user uses fish as their default shell.
 // • For commit requests, be brief and focus on intent; avoid repeating the obvious.
 // • Each commit message must begin with “(feat|bug|chore|usual):” followed by the AI-generated text.
+// • Commit messages must never be more than 3 sentences.
 // • Whenever outputting terminal commands, prefer long names rather than short names for flags.
 // • If not possible to use long name flags (in terminal commands), explain what the flag stands for.
 // --- End of user rules ---
 {
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
     "files.autoSave": "afterDelay",
@@ -59,8 +62,8 @@
   "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "editor.hover.delay": 2000,
   "editor.hover.enabled": true,
-  "editor.hover.delay": 5000,
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 30,
   "editor.inlayHints.padding": false,
@@ -100,6 +103,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
   "gitlens.views.fileHistory.avatars": false,
+  "go.toolsManagement.autoUpdate": true,
   "jumplist.jumpListCount": 2,
   "multiCommand.commands": [
     {
@@ -183,7 +187,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "cursor-retrieval.canAttemptGithubLogin": false,
-  "workbench.statusBar.visible": false,
-  "update.releaseTrack": "prerelease"
+  "workbench.statusBar.visible": false
 }

@@ -11,9 +11,9 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 
-function fish_greeting
-  figlet -f larry3d "alex"
-end
+#function fish_greeting
+#  figlet -f larry3d "alex"
+#end
 
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
@@ -107,7 +107,6 @@ abbr -a rmrf "rm -rf" # Delete directory recursively
 
 # Better `cp` and `mv`
 abbr -a cp "rsync -a"
-abbr -a mv "rsync -a --remove-source-files"
 
 # Previous directory
 abbr -a -- - "prevd"
@@ -128,7 +127,7 @@ function y
 end
 
 function ai
-    set --local cursor_output (~/.local/bin/llm-term --disable-cache $argv)
+    set --local cursor_output (llm-term --disable-cache $argv)
     commandline -i $cursor_output
 end
 
