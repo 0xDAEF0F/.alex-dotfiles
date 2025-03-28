@@ -6,4 +6,3 @@ tools/
 .west/
 .DS_Store
 config/yazi/flavors
-man.tmux.txt
