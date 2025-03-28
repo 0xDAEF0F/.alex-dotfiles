@@ -4,30 +4,19 @@
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
 
-fish_add_path $HOME/go/bin # go
-fish_add_path $HOME/.bun/bin # bun
-fish_add_path /opt/homebrew/bin
-fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/go/bin               # go
+fish_add_path $HOME/.bun/bin             # bun
+fish_add_path /opt/homebrew/bin          # homebrew
+fish_add_path $HOME/.cargo/bin           # cargo
 fish_add_path $HOME/.config/.foundry/bin # foundry
-fish_add_path $HOME/.zig/zig-macos # zig
-
-#function fish_greeting
-#  figlet -f larry3d "alex"
-#end
+fish_add_path $HOME/.zig/zig-macos       # zig
 
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
 
-fnm env | source # source fnm
-starship init fish | source # source starship
+fnm env | source                  # source fnm
+starship init fish | source       # source starship
 zoxide init --cmd j fish | source # source zoxide
-
-# enable vi cursor in Ghostty
-if status is-interactive
-    if string match -q -- '*ghostty*' $TERM
-        set -g fish_vi_force_cursor 1
-    end
-end
 
 # Cursor styles
 set -U fish_cursor_default "block"
@@ -68,6 +57,9 @@ abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a grv "git remote -v"
 
+# Zoxide "ji"
+abbr -a jj "ji"
+
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
 
@@ -80,21 +72,21 @@ abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 
 # Code
-abbr -a c "cursor ." 
+abbr -a c "cursor ."
 
 # tmux
-abbr -a ta "tmux attach || tmux new -s alex" 
-abbr -a tls "tmux ls" 
+abbr -a ta "tmux attach || tmux new -s alex"
+abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
 # Eza
-abbr -a ls "eza -w 90 --icons --classify --sort=modified --group-directories-last\
+abbr -a ls "eza --icons --classify --sort=modified --group-directories-last\
   -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
 # shows only `.` files
-abbr -a lx "eza -a -f -w 90 --show-symlinks --icons --classify --sort=modified\
+abbr -a lx "eza -a -f --show-symlinks --icons --classify --sort=modified\
   -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
 # `.` and regular
-abbr -a ll "eza -a --width 90 --icons --classify --sort=modified --group-directories-last\
+abbr -a ll "eza -a --icons --classify --sort=modified --group-directories-last\
   -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
 # long format
 abbr -a la "eza -l -a --no-user --icons --classify --sort=modified --group-directories-last\

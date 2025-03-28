@@ -28,11 +28,9 @@ accordion-padding = 0
 default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
-default-root-container-orientation = 'auto'
+default-root-container-orientation = 'horizontal'
 
-# Mouse follows focus when focused monitor changes
-# See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
 
 automatically-unhide-macos-hidden-apps = true
 
@@ -52,11 +50,12 @@ outer.right = 0
 [mode.main.binding]
 
 # Open apps shortcuts
-alt-ctrl-w = 'exec-and-forget open -a WhatsApp'
-alt-ctrl-s = 'exec-and-forget open -a Spotify'
-alt-ctrl-c = 'exec-and-forget open -a Cursor'
-alt-ctrl-b = 'exec-and-forget open -a Google\ Chrome'
-alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app/'
+alt-ctrl-w = 'exec-and-forget open -a WhatsApp'                   # WhatsApp
+alt-ctrl-s = 'exec-and-forget open -a Spotify'                    # Spotify
+alt-ctrl-c = 'exec-and-forget open -a Cursor'                     # Code
+alt-ctrl-b = 'exec-and-forget open -a Google\ Chrome'             # Browser
+alt-ctrl-g = 'exec-and-forget open -a ChatGPT'                    # GPT
+alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app/' # Terminal
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-o = 'layout tiles horizontal vertical'
@@ -112,13 +111,6 @@ j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
 
-## Workspace 1
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'Ghostty'
-# if.app-id = 'com.mitchellh.ghostty'
-# run = "move-node-to-workspace 1"
-
 ## Workspace 2
 
 # Cursor
@@ -143,14 +135,20 @@ if.app-id = 'com.spotify.client'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
-if.app-id = 'com.openai.chat'
-run = "move-node-to-workspace 4"
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'WhatsApp'
 run = "move-node-to-workspace 4"
 
 ## Workspace 5
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = "move-node-to-workspace 5"
+
+## Floating windows
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Notes'
@@ -163,8 +161,6 @@ run = "move-node-to-workspace 5"
 [[on-window-detected]]
 if.app-name-regex-substring = 'Finder'
 run = "move-node-to-workspace 5"
-
-## Floating windows
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'

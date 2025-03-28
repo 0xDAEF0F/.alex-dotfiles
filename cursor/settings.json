@@ -4,13 +4,15 @@
 // • The user uses fish as their default shell.
 // • For commit requests, be brief and focus on intent; avoid repeating the obvious.
 // • Each commit message must begin with “(feat|bug|chore|usual):” followed by the AI-generated text.
-// • Commit messages must never be more than 3 sentences.
+// • Commit messages must never be more than 2 sentences. Preferably 1 sentence.
 // • Whenever outputting terminal commands, prefer long names rather than short names for flags.
 // • If not possible to use long name flags (in terminal commands), explain what the flag stands for.
 // --- End of user rules ---
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1001
   },
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua",
@@ -39,7 +41,8 @@
     "files.autoSaveDelay": 1001
   },
   "codesnap.containerPadding": "0.5em",
-  "cursor.cpp.disabledLanguages": [],
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.cpp.enablePartialAccepts": true,
   "custom-ui-style.electron": {
     "frame": false // frameless window (no macos semaphore)
@@ -59,7 +62,6 @@
   "editor.fontFamily": "Operator Mono Lig",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
-  "editor.fontWeight": "normal",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -67,12 +69,14 @@
   "editor.inlayHints.fontSize": 9,
   "editor.inlayHints.maximumLength": 30,
   "editor.inlayHints.padding": false,
+  "editor.lineHeight": 0,
   "editor.lineNumbers": "relative",
   "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [100],
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.verticalScrollbarSize": 8,
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
   "editor.smoothScrolling": true,
@@ -88,6 +92,9 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "fontshortcuts.defaultFontSize": 15,
+  "fontshortcuts.defaultTerminalFontSize": 15,
+  "fontshortcuts.step": 1,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -115,7 +122,6 @@
     }
   ],
   "prettier.printWidth": 80,
-  "rewrap.wrappingColumn": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.debug.openDebugPane": true, // Default is false
@@ -178,14 +184,23 @@
     // git vertical bar
     "editorOverviewRuler.infoForeground": "#00000000",
     "editorOverviewRuler.warningForeground": "#00000000"
-    // warning background
-    // "editorWarning.background": "#00000000"
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.editor.tabSizingFixedMaxWidth": 150,
   "workbench.fontAliasing": "antialiased",
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

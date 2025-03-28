@@ -210,5 +210,13 @@
   {
     "key": "cmd+l",
     "command": "composerMode.chat"
+  },
+  {
+    "key": "cmd+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "cmd+-",
+    "command": "-workbench.action.zoomOut"
   }
 ]

@@ -266,6 +266,7 @@ vim.keymap.set(
 --   })
 -- end)
 
+-- LSP FUNCTIONALITY
 -- Go to hover
 vim.keymap.set({ "n" }, "gh", function()
   local vscode = require("vscode")
@@ -295,6 +296,7 @@ vim.keymap.set({ "n" }, "gr", function()
   register_jump()
   require("vscode").call("editor.action.goToReferences")
 end)
+-- END LSP FUNCTIONALITY
 
 -- Comment line
 vim.keymap.set(
@@ -394,11 +396,12 @@ function ToggleInlineSuggestionsAndNotify()
   vscode.notify("Inline suggestions " .. (hadAutocompletion and "disabled!" or "enabled!"))
 end
 
+-- SCROLL UP/DOWN
 vim.keymap.set({ "n", "x" }, "<C-u>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 4 do
+  for i = 1, height / 3 do
     vim.api.nvim_feedkeys("k", "n", false)
   end
   centerScreenOnCursor()
@@ -408,7 +411,7 @@ vim.keymap.set({ "n", "x" }, "<C-d>", function()
   local visibleRanges =
     require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 4 do
+  for i = 1, height / 3 do
     vim.api.nvim_feedkeys("j", "n", false)
   end
   centerScreenOnCursor()
@@ -435,6 +438,7 @@ vim.keymap.set({ "n", "x" }, "<C-b>", function()
   centerScreenOnCursor()
   register_jump()
 end)
+-- END SCROLL UP/DOWN
 
 -- Centers the cursor after you search with / or ?
 vim.keymap.set("c", "<CR>", function()
