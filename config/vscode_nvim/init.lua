@@ -405,6 +405,7 @@ vim.keymap.set({ "n", "x" }, "<C-u>", function()
     vim.api.nvim_feedkeys("k", "n", false)
   end
   centerScreenOnCursor()
+  register_jump()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-d>", function()
@@ -415,6 +416,7 @@ vim.keymap.set({ "n", "x" }, "<C-d>", function()
     vim.api.nvim_feedkeys("j", "n", false)
   end
   centerScreenOnCursor()
+  register_jump()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-f>", function()

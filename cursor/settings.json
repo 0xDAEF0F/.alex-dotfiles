@@ -1,5 +1,6 @@
 // --- Cursor user rules ---
 // • Assume the user is on macOS Apple silicon unless told otherwise.
+// • Do not do more than what you are asked to do. Only focus on what the user requested and nothing else.
 // • The user primarily works with TypeScript, Rust.
 // • The user uses fish as their default shell.
 // • For commit requests, be brief and focus on intent; avoid repeating the obvious.
@@ -10,35 +11,32 @@
 // --- End of user rules ---
 {
   "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1001
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[lua]": {
-    "editor.defaultFormatter": "JohnnyMorganz.stylua",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1001
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
-  "[markdown]": {
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1001
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.tabSize": 4,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1001
+    "editor.tabSize": 4
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.tabSize": 2,
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1001
+    "editor.tabSize": 2
   },
   "codesnap.containerPadding": "0.5em",
   "cursor.composer.shouldChimeAfterChatFinishes": true,
@@ -110,6 +108,12 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.views.commitDetails.files.layout": "tree",
   "gitlens.views.fileHistory.avatars": false,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.survey.prompt": false,
   "go.toolsManagement.autoUpdate": true,
   "jumplist.jumpListCount": 2,
   "multiCommand.commands": [
@@ -193,14 +197,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false,
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  "workbench.statusBar.visible": false
 }

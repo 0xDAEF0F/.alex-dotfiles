@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
- 
-echo AEROSPACE_PREV_WORKSPACE: $AEROSPACE_PREV_WORKSPACE, \
- AEROSPACE_FOCUSED_WORKSPACE: $AEROSPACE_FOCUSED_WORKSPACE \
- SELECTED: $SELECTED \
- BG2: $BG2 \
- INFO: $INFO \
- SENDER: $SENDER \
- NAME: $NAME \
-  >> ~/aaaa
+
+# echo AEROSPACE_PREV_WORKSPACE: $AEROSPACE_PREV_WORKSPACE, \
+#  AEROSPACE_FOCUSED_WORKSPACE: $AEROSPACE_FOCUSED_WORKSPACE \
+#  SELECTED: $SELECTED \
+#  BG2: $BG2 \
+#  INFO: $INFO \
+#  SENDER: $SENDER \
+#  NAME: $NAME \
+#   >> ~/aaaa
 
 source "$CONFIG_DIR/colors.sh"
 
@@ -20,10 +20,9 @@ reload_workspace_icon() {
 
   icon_strip=" "
   if [ "${apps}" != "" ]; then
-    while read -r app
-    do
+    while read -r app; do
       icon_strip+=" $($CONFIG_DIR/plugins/icon_map.sh "$app")"
-    done <<< "${apps}"
+    done <<<"${apps}"
   else
     icon_strip=" —"
   fi
@@ -37,13 +36,13 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
 
   # current workspace space border color
   sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE icon.highlight=true \
-                         label.highlight=true \
-                         background.border_color=$GREY
+    label.highlight=true \
+    background.border_color=$GREY
 
   # prev workspace space border color
   sketchybar --set space.$AEROSPACE_PREV_WORKSPACE icon.highlight=false \
-                         label.highlight=false \
-                         background.border_color=$BACKGROUND_2
+    label.highlight=false \
+    background.border_color=$BACKGROUND_2
 
   for i in $AEROSAPCE_WORKSPACE_FOCUSED_MONITOR; do
     sketchybar --set space.$i display=$AEROSPACE_FOCUSED_MONITOR

@@ -1,5 +1,6 @@
 ### Todos
 
+- Change aerospace windows to mnemonics.
 - How to alternate between fontFamilies in vscode.
 - Need better ways to navigate through big files (treesitter/telescope/heatmaps).
 - Modify font size so cursor preview suggestions are not so big.
