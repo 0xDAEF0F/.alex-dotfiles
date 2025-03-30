@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Get the Bitcoin price
-BTC_PRICE=$(/Users/ale/.bun/bin/bun /Users/ale/.local/bin/btc-price)
+source ~/.bashrc
+
+BTC_PRICE=$(btc-price)
 
 if [ -n "$BTC_PRICE" ]; then
     # Format with % sign and color based on positive/negative
