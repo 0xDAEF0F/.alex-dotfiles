@@ -3,7 +3,7 @@
 # Get the Bitcoin price
 source ~/.bashrc
 
-PRICES=$(btc-price)
+PRICES=$(crypto-prices)
 
 BTC_PRICE=$(echo $PRICES | jq ".btc.priceAbbr" | sed 's/"//g')
 BTC_PRICE_CHANGE=$(echo $PRICES | jq ".btc.priceChangePct")
@@ -18,7 +18,7 @@ if [ -n "$BTC_PRICE" ]; then
         PERCENT_COLOR=0xFFE57373
     else
         # For positive values - green color
-        PERCENT_COLOR=0xFF4BFF4B
+        PERCENT_COLOR=0xffa6da95
     fi
 
     # Set the price with default color

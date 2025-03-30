@@ -103,11 +103,6 @@ abbr -a cp "rsync -a"
 # Previous directory
 abbr -a -- - "prevd"
 
-# Parent directories
-abbr -a -- .. "cd .."
-abbr -a -- ... "cd ../.."
-abbr -a -- .... "cd ../../.."
-
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
