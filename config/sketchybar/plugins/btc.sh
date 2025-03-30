@@ -22,14 +22,11 @@ if [ -n "$BTC_PRICE" ]; then
     fi
 
     # Set the price with default color
-    sketchybar --set btc label="$BTC_PRICE /"
+    sketchybar --set btc label="$BTC_PRICE/"
 
     # Set the percentage with colored text
-    sketchybar --set btc.percent label="$BTC_PRICE_CHANGE%" \
-        label.color=$PERCENT_COLOR \
-        icon.drawing=off \
-        padding_left=0 \
-        label.padding_left=0
+    sketchybar --set btcPct label="$BTC_PRICE_CHANGE%" \
+        label.color=$PERCENT_COLOR
 else
     # For error state
     echo "Error getting BTC price" >>/tmp/sketchybar_btc_debug.log
