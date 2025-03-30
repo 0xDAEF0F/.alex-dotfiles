@@ -14,10 +14,9 @@ sketchybar --add item spotify right \
     icon=󰓃 \
     icon.color=$ICON_COLOR \
     icon.padding_left=10 \
-    label.width=200 \
     label.align=center \
     label.scroll_texts=on \
-    label.max_chars=23 \
+    label.max_chars=25 \
     label.scroll_duration=200 \
     script="$CONFIG_DIR/plugins/spotify.sh" \
     --subscribe spotify spotify_change mouse.clicked

@@ -9,8 +9,8 @@ update() {
       COLOR=$GREY
     fi
     sketchybar --set space.$(aerospace list-workspaces --focused) icon.highlight=true \
-                      label.highlight=true \
-                      background.border_color=$GREY
+      label.highlight=true \
+      background.border_color=$GREY
   fi
 }
 
@@ -20,7 +20,6 @@ set_space_label() {
 
 mouse_clicked() {
   if [ "$BUTTON" = "right" ]; then
-    # yabai -m space --destroy $SID
     echo ''
   else
     if [ "$MODIFIER" = "shift" ]; then
@@ -39,8 +38,10 @@ mouse_clicked() {
 }
 
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+"mouse.clicked")
+  mouse_clicked
   ;;
-  *) update
+*)
+  update
   ;;
 esac

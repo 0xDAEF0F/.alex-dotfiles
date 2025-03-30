@@ -6,7 +6,7 @@ SPOTIFY_INFO=$(osascript -e 'if application "Spotify" is running then
     if player state is playing then
       set currentTrack to name of current track
       set currentArtist to artist of current track
-      return currentTrack & " @ " & currentArtist
+      return currentArtist & " @ " & currentTrack
     else
       return "Paused"
     end if

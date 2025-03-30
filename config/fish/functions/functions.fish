@@ -13,3 +13,9 @@ function ai
     set --local cursor_output (llm-term --disable-cache $argv)
     commandline -i $cursor_output
 end
+
+function take
+    set --local file_name $argv
+    mkdir -p $file_name
+    cd $file_name
+end
