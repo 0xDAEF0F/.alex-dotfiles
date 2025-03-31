@@ -15,6 +15,7 @@ sketchybar --add item spotify right \
     icon.color=$ICON_COLOR \
     icon.padding_left=10 \
     label.align=center \
+    label.padding_right=10 \
     label.scroll_texts=on \
     label.max_chars=22 \
     label.scroll_duration=200 \

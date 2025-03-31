@@ -213,6 +213,20 @@ vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 -- Toggle highlight search
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
 
+-- Toggle highlight search for empty lines
+vim.keymap.set("n", "<leader><leader>", function()
+  require("flash").jump({
+    search = {
+      mode = "search",
+    },
+    pattern = "^$",
+    label = {
+      after = { 0, 0 },
+    },
+  })
+  centerScreenOnCursor()
+end)
+
 -- Go to previous problem in file
 vim.keymap.set(
   "n",

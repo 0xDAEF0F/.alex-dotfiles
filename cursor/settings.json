@@ -10,6 +10,9 @@
 // • If not possible to use long name flags (in terminal commands), explain what the flag stands for.
 // --- End of user rules ---
 {
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },

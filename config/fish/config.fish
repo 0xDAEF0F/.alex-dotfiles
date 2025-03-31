@@ -42,7 +42,6 @@ set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
 # Binds history pager to `C-r` just like the old times
 bind -M insert \cr 'commandline -f history-pager'
 bind -M default \cr 'commandline -f history-pager'
-bind -M insert -k nul 'commandline -f complete-and-search'
 
 # Git abbreviations
 abbr -a gc "git checkout"
@@ -56,6 +55,9 @@ abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a grv "git remote -v"
+
+# Nvim abbreviations
+abbr -a n "nvim"
 
 # Zoxide "ji"
 abbr -a jj "ji"

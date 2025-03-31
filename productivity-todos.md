@@ -1,5 +1,6 @@
 ### Todos
 
+- Make work modules in neovim lua config for vscode
 - Change aerospace windows to mnemonics.
 - How to alternate between fontFamilies in vscode.
 - Need better ways to navigate through big files (treesitter/telescope/heatmaps).
