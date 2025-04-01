@@ -1,7 +1,12 @@
 // docs: "https://zed.dev/docs/configuring-zed"
 // default settings `zed: open default settings`
 {
-  "show_edit_predictions": false,
+  "icon_theme": "Material Icon Theme",
+  "vertical_scroll_margin": 10,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "show_edit_predictions": true,
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
@@ -22,8 +27,8 @@
     "diagnostics": false,
     "metrics": false
   },
-  "ui_font_size": 18,
-  "buffer_font_size": 16,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "terminal": {
     "shell": {

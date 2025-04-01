@@ -1,5 +1,7 @@
 // --- Cursor user rules ---
 // • Assume the user is on macOS Apple silicon unless told otherwise.
+// • Do not install new dependencies. Assume they are already available, even if they are not.
+//   Complete the task as required, and I will handle the installation later.
 // • Do not do more than what you are asked to do. Only focus on what the user requested and nothing else.
 // • The user primarily works with TypeScript, Rust.
 // • The user uses fish as their default shell.
@@ -48,7 +50,7 @@
   "custom-ui-style.electron": {
     "frame": false // frameless window (no macos semaphore)
   },
-  "custom-ui-style.font.sansSerif": "JetBrainsMono Nerd Font",
+  "custom-ui-style.font.sansSerif": "JetbrainsMono Nerd Font",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
     "h1": "font-size: 15px !important",

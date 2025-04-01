@@ -6,3 +6,5 @@ tools/
 .west/
 .DS_Store
 config/yazi/flavors
+config/zed/conversations/
+config/zed/prompts/

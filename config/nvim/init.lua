@@ -42,7 +42,7 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 0
 
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")

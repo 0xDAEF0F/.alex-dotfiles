@@ -18,6 +18,11 @@
 - (cli) Register a default opening of an text file: `duti -s {app.id} {file.extension} {operation}`
 - (vimium) Copy url of a website to clipboard: `yf` and the current url is `yy`
 - (cli) Get id of app: `osascript -e 'id of application "Google Chrome"'`
+- (cli) Macos faster key repeat `defaults write -g KeyRepeat -int 2`
+
+### Links
+
+- [macos defaults](https://notrab.dev/posts/friendly-mac-os-defaults/)
 
 ### Notes
 
