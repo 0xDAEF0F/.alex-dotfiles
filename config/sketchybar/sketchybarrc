@@ -79,7 +79,7 @@ source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/cpu.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/spotify.sh"
-source "$ITEM_DIR/btc.sh"
+source "$ITEM_DIR/crypto.sh"
 
 sketchybar --hotload on
 

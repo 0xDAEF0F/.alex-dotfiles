@@ -90,14 +90,7 @@ require("lazy").setup({
           labels = "rtneiohysvafumkljcpgdqxbz",
         },
         char = {
-          char_actions = function(motion)
-            return {
-              [";"] = "next",
-              [","] = "next",
-              [motion:lower()] = "next",
-              [motion:upper()] = "prev",
-            }
-          end,
+          enabled = false,
         },
       },
       prompt = {
@@ -213,6 +206,14 @@ vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 -- Toggle highlight search
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
 
+-- Highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Toggle highlight search for empty lines
 vim.keymap.set("n", "<leader><leader>", function()
   require("flash").jump({
@@ -261,24 +262,6 @@ vim.keymap.set(
   ":lua require('vscode').call('editor.action.rename')<CR>",
   { silent = true }
 )
-
--- Go to hover
--- vim.keymap.set({ "n" }, "gh", function()
---   local vscode = require("vscode")
---   vscode.update_config("editor.hover.enabled", true, "global")
---   print("hover enabled set to true")
---   vscode.call("editor.action.showHover")
---   local group_id = vim.api.nvim_create_augroup("HoverKeyListener", { clear = true })
---   vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter", "BufLeave" }, {
---     group = group_id,
---     callback = function()
---       vscode.update_config("editor.hover.enabled", false, "global")
---       print("hover enabled set to false")
---       return true
---     end,
---     once = true,
---   })
--- end)
 
 -- LSP FUNCTIONALITY
 -- Go to hover

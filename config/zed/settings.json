@@ -2,6 +2,7 @@
 // default settings `zed: open default settings`
 {
   "icon_theme": "Material Icon Theme",
+  "ui_font_family": "JetBrainsMono Nerd Font",
   "vertical_scroll_margin": 10,
   "features": {
     "edit_prediction_provider": "zed"
@@ -13,7 +14,7 @@
     "show_parameter_hints": true,
     "show_other_hints": true
   },
-  "current_line_highlight": "none",
+  "current_line_highlight": "gutter",
   "git": {
     "inline_blame": {
       "enabled": false
@@ -28,8 +29,8 @@
     "metrics": false
   },
   "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 17,
+  "buffer_font_family": "Operator Mono Lig",
   "terminal": {
     "shell": {
       "program": "fish"
@@ -38,6 +39,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Dark Hard"
+    "dark": "Catppuccin Mocha"
   }
 }

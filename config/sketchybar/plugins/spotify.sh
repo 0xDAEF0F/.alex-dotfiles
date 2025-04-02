@@ -12,11 +12,11 @@ SPOTIFY_INFO=$(osascript -e 'if application "Spotify" is running then
     end if
   end tell
 else
-  return "Not playing"
+  return ""
 end if')
 
 # Update sketchybar
-sketchybar --set $NAME label="$SPOTIFY_INFO"
+sketchybar --set $NAME label="$SPOTIFY_INFO" \
 
 # Handle click to toggle play/pause
 if [ "$BUTTON" = "left" ]; then

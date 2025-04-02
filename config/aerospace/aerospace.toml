@@ -50,7 +50,7 @@ outer.right = 0
 # Open apps shortcuts
 alt-ctrl-w = 'exec-and-forget open -a WhatsApp'                   # WhatsApp
 alt-ctrl-s = 'exec-and-forget open -a Spotify'                    # Spotify
-alt-ctrl-c = 'exec-and-forget open -a Cursor'                     # Code
+alt-ctrl-c = 'workspace 2'                                        # Code Editor
 alt-ctrl-b = 'exec-and-forget open -a Google\ Chrome'             # Browser
 alt-ctrl-g = 'exec-and-forget open -a ChatGPT'                    # GPT
 alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app/' # Terminal
@@ -113,9 +113,14 @@ l = ['join-with right', 'mode main']
 
 # Cursor
 [[on-window-detected]]
-# if.app-name-regex-substring = 'Cursor'
 if.app-id = 'com.todesktop.230313mzl4w4u92'
 run = "move-node-to-workspace 2"
+
+# Zed
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = "move-node-to-workspace 2"
+
 
 ## Workspace 3
 [[on-window-detected]]

@@ -17,7 +17,7 @@ btc=(
     icon.color="$ICON_COLOR"
     label.padding_right=0
     background.padding_right=0
-    update_freq=60
+    update_freq=120
     script="$PLUGIN_DIR/btc.sh"
 )
 
@@ -31,3 +31,19 @@ btc_bracket=(
 
 sketchybar --add bracket btc_bracket btc btcPct \
     --set btc_bracket "${btc_bracket[@]}"
+
+
+# Now for solana
+sketchybar --add item solanaPct right \
+    --set solanaPct "${btcPct[@]}"
+
+sketchybar --add item solana right \
+    --set solana icon="󰰣" \
+        icon.font="$FONT:Bold:14.0" \
+        icon.padding_left=6 \
+        icon.color="$ICON_COLOR" \
+        label.padding_right=0 \
+        background.padding_right=0
+
+sketchybar --add bracket solana_bracket solana solanaPct \
+     --set solana_bracket "${btc_bracket[@]}"

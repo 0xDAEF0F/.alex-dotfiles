@@ -59,7 +59,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderIndicators": false,
   "diffEditor.renderSideBySide": false,
-  "editor.cursorSurroundingLines": 0, // scrolloff
+  "editor.cursorSurroundingLines": 10, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "Operator Mono Lig",
@@ -91,7 +91,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
   "explorer.decorations.badges": false, // remove badges in explorer
-  "explorer.decorations.colors": false, // remove decoration colors in explorer
+  "explorer.decorations.colors": true, // remove decoration colors in explorer
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -133,7 +133,6 @@
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
-  "rust-analyzer.debug.openDebugPane": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false
   "rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
   "rust-analyzer.imports.granularity.group": "crate",
@@ -196,11 +195,12 @@
   },
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.editor.openPositioning": "last",
-  "workbench.editor.tabSizing": "fixed",
-  "workbench.editor.tabSizingFixedMaxWidth": 150,
   "workbench.fontAliasing": "antialiased",
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }
