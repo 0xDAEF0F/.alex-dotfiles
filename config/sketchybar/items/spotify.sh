@@ -17,7 +17,7 @@ sketchybar --add item spotify right \
     label.align=center \
     label.padding_right=10 \
     label.scroll_texts=on \
-    label.max_chars=22 \
+    label.max_chars=11 \
     label.scroll_duration=200 \
     script="$CONFIG_DIR/plugins/spotify.sh" \
     --subscribe spotify spotify_change mouse.clicked

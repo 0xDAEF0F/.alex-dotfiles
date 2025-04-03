@@ -7,7 +7,8 @@ window-padding-y=0,0
 window-height=3000
 window-width=2000
 
-font-family="OperatorMonoLig Nerd Font Mono"
+# font-family="OperatorMonoLig Nerd Font Mono"
+font-family="IosevkaTerm Nerd Font Mono"
 theme = "GruvboxDark"
 
 # I dont understand what this does exactly

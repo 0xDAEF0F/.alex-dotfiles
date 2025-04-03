@@ -14,15 +14,11 @@ fish_add_path $HOME/.zig/zig-macos       # zig
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
 
-fnm env | source                  # source fnm
 starship init fish | source       # source starship
 zoxide init --cmd j fish | source # source zoxide
 
-# Cursor styles
-set -U fish_cursor_default "block"
-set -U fish_cursor_insert "line" "blink"
-set -U fish_cursor_replace_one "underscore"
-set -U fish_cursor_visual "block"
+# Rust logs
+set -Ux RUST_LOG debug
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
@@ -75,6 +71,7 @@ abbr -a clippy "cargo clippy"
 
 # Code
 abbr -a c "cursor ."
+abbr -a z "zed ."
 
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"
@@ -103,7 +100,7 @@ abbr -a rmrf "rm -rf" # Delete directory recursively
 abbr -a cp "rsync -a"
 
 # Previous directory
-abbr -a -- - "prevd"
+abbr -a \- prevd
 
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy

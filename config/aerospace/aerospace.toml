@@ -89,9 +89,6 @@ shift-f3 = 'move-node-to-workspace 3 --focus-follows-window'
 shift-f4 = 'move-node-to-workspace 4 --focus-follows-window'
 shift-f5 = 'move-node-to-workspace 5 --focus-follows-window'
 
-# See also: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-alt-tab = 'focus --boundaries-action wrap-around-the-workspace right'
-
 # Enable service mode
 alt-x = 'mode service'
 

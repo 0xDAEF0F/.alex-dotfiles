@@ -1,9 +1,24 @@
 // docs: "https://zed.dev/docs/configuring-zed"
 // default settings `zed: open default settings`
 {
+  "project_panel": {
+    "auto_fold_dirs": false
+  },
+  "edit_predictions": {
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_assistant": false
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "use_smartcase_search": true,
   "icon_theme": "Material Icon Theme",
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "vertical_scroll_margin": 10,
+  "ui_font_family": "Iosevka Nerd Font Mono",
+  "vertical_scroll_margin": 12,
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -28,9 +43,11 @@
     "diagnostics": false,
     "metrics": false
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 17,
-  "buffer_font_family": "Operator Mono Lig",
+  "ui_font_size": 17,
+  "ui_font_weight": 300,
+  "buffer_font_size": 18,
+  "buffer_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_weight": 300,
   "terminal": {
     "shell": {
       "program": "fish"
@@ -39,6 +56,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Gruvbox Material Dark Colorscheme"
   }
 }

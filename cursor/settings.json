@@ -50,7 +50,7 @@
   "custom-ui-style.electron": {
     "frame": false // frameless window (no macos semaphore)
   },
-  "custom-ui-style.font.sansSerif": "JetbrainsMono Nerd Font",
+  "custom-ui-style.font.sansSerif": "Iosevka Nerd Font Mono",
   "custom-ui-style.stylesheet": {
     ".quick-input-widget": "top: 10vh !important",
     "h1": "font-size: 15px !important",
@@ -62,9 +62,9 @@
   "editor.cursorSurroundingLines": 10, // scrolloff
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.experimental.preferTreeSitter": ["typescript"],
-  "editor.fontFamily": "Operator Mono Lig",
+  "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -82,7 +82,7 @@
   "editor.scrollbar.verticalScrollbarSize": 8,
   "editor.selectionHighlight": false,
   "editor.semanticHighlighting.enabled": true, // it's not needed for some themes
-  "editor.smoothScrolling": true,
+  "editor.smoothScrolling": false,
   "editor.tokenColorCustomizations": {
     "comments": "#b0c4debc" // LightSteelBlue with 50% transparency
   },

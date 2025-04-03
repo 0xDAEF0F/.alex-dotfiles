@@ -3,6 +3,7 @@
 SETUVAR --export BUN_INSTALL:/Users/ale/\x2ebun
 SETUVAR --export EDITOR:nvim
 SETUVAR --export HOMEBREW_AUTO_UPDATE_SECS:9999999999
+SETUVAR --export RUST_LOG:debug
 SETUVAR --export XDG_CACHE_HOME:/Users/ale/\x2ecache
 SETUVAR --export XDG_CONFIG_HOME:/Users/ale/\x2econfig
 SETUVAR --export XDG_DATA_HOME:/Users/ale/\x2elocal/share
@@ -37,10 +38,6 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_cursor_default:block
-SETUVAR fish_cursor_insert:line\x1eblink
-SETUVAR fish_cursor_replace_one:underscore
-SETUVAR fish_cursor_visual:block
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
