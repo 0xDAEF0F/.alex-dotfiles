@@ -8,6 +8,7 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
+      "alt-r": "projects::OpenRecent"
     }
   },
   {

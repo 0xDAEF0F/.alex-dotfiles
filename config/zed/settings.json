@@ -1,6 +1,12 @@
 // docs: "https://zed.dev/docs/configuring-zed"
 // default settings `zed: open default settings`
 {
+  "ssh_connections": [
+    {
+      "host": "ubuntu",
+      "projects": []
+    }
+  ],
   "on_last_window_closed": "quit_app",
   "jupyter": {
     "enabled": true,
