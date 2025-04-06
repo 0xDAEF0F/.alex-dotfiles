@@ -1,6 +1,13 @@
 // docs: "https://zed.dev/docs/configuring-zed"
 // default settings `zed: open default settings`
 {
+  "on_last_window_closed": "quit_app",
+  "jupyter": {
+    "enabled": true,
+    "kernel_selections": {
+      "typescript": "deno"
+    }
+  },
   "project_panel": {
     "auto_fold_dirs": false
   },
@@ -24,10 +31,10 @@
   },
   "show_edit_predictions": true,
   "inlay_hints": {
-    "enabled": true,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true
+    "toggle_on_modifiers_press": {
+      "control": true,
+      "alt": true
+    }
   },
   "current_line_highlight": "gutter",
   "git": {
@@ -47,7 +54,7 @@
   "ui_font_weight": 300,
   "buffer_font_size": 18,
   "buffer_font_family": "Iosevka Nerd Font Mono",
-  "buffer_font_weight": 300,
+  "buffer_font_weight": 400,
   "terminal": {
     "shell": {
       "program": "fish"

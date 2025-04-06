@@ -41,7 +41,8 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.inlayHints.enabled": "off"
   },
   "codesnap.containerPadding": "0.5em",
   "cursor.composer.shouldChimeAfterChatFinishes": true,
@@ -64,7 +65,7 @@
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -202,5 +203,6 @@
   "workbench.statusBar.visible": false,
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
-  }
+  },
+  "errorLens.enabled": true
 }

@@ -17,8 +17,7 @@ source ~/.config/fish/completions/tauri.fish
 starship init fish | source       # source starship
 zoxide init --cmd j fish | source # source zoxide
 
-# Rust logs
-set -Ux RUST_LOG debug
+set -Ux RUST_LOG "zed=info,fnm=warn"
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
