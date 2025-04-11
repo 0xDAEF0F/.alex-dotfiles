@@ -172,7 +172,7 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures": true,
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.profiles.osx": {
     "fish": {
       "args": ["-l"],
@@ -205,7 +205,7 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "workbench.statusBar.visible": false,
   "cursor-retrieval.canAttemptGithubLogin": false,
   "terminal.integrated.enableMultiLinePasteWarning": false
