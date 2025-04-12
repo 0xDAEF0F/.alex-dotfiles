@@ -67,7 +67,7 @@
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 17,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -172,7 +172,7 @@
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures": true,
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 13,
   "terminal.integrated.profiles.osx": {
     "fish": {
       "args": ["-l"],
@@ -208,5 +208,6 @@
   "errorLens.enabled": false,
   "workbench.statusBar.visible": false,
   "cursor-retrieval.canAttemptGithubLogin": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
