@@ -1,8 +1,8 @@
 ### Todos
 
+- How to switch to other directories in neovim and open file explorer.
 - Make work modules in neovim lua config for vscode
 - Change aerospace windows to mnemonics.
-- How to alternate between fontFamilies in vscode.
 - Need better ways to navigate through big files (treesitter/telescope/heatmaps).
 - Modify font size so cursor preview suggestions are not so big.
 - Set default column size for folders and ai panel when opening windows.

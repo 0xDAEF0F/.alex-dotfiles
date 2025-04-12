@@ -42,16 +42,6 @@ require("lazy").setup({
     build = ":TSUpdate",
     main = "nvim-treesitter.configs",
     opts = {
-      ensure_installed = {
-        "bash",
-        "diff",
-        "html",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "query",
-        "rust",
-      },
       auto_install = true,
       highlight = {
         enable = true,
@@ -169,11 +159,11 @@ require("lazy").setup({
           grep_open_files = true,
           prompt_title = "Live Grep in Open Files",
         })
-      end, { desc = "[S]earch [/] in Open Files" })
+      end)
 
       vim.keymap.set("n", "<leader>sn", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
-      end, { desc = "[S]earch [N]eovim files" })
+      end)
     end,
   },
 })
