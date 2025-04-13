@@ -98,6 +98,7 @@ require("lazy").setup({
       require("mini.icons").setup()
       MiniIcons.tweak_lsp_kind()
       require("mini.files").setup()
+      require('mini.comment').setup()
     end,
   },
   {
@@ -132,18 +133,13 @@ require("lazy").setup({
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     config = function()
-      require("telescope").setup({
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown(),
-          },
-        },
-      })
+      require("telescope").setup()
 
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
 
       local builtin = require("telescope.builtin")
+
       -- most used (telescope)
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles)
       vim.keymap.set("n", "<leader><leader>", builtin.buffers)

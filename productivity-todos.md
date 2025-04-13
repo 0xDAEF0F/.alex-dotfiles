@@ -1,5 +1,8 @@
 ### Todos
 
+- Search git with neovim.
+- Move with arrow keys on `mini.files`
+- Save automatically on neovim
 - How to switch to other directories in neovim and open file explorer.
 - Make work modules in neovim lua config for vscode
 - Change aerospace windows to mnemonics.
