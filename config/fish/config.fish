@@ -42,16 +42,16 @@ bind -M default \cr 'commandline -f history-pager'
 abbr -a gc "git checkout"
 abbr -a gs "git status"
 abbr -a gb "git branch"
-abbr -a glog "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a gd "git diff | delta"
 abbr -a grh "git reset --hard"
 abbr -a gca! "git commit --verbose --all --amend"
-abbr -a gcm "git commit -m"
 abbr -a gpf "git push --force"
 abbr -a grv "git remote -v"
 abbr -a gfa "git fetch --all --prune"
 
 abbr -a gaa "git add ."
+abbr -a gcm "git commit -am" # stages all and commits
 abbr -a gp "git push"
 abbr -a gl "git pull --rebase"
 

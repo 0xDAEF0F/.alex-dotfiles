@@ -335,12 +335,9 @@ vim.api.nvim_set_keymap(
 )
 
 -- Toggle ai completions
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>g",
-  ":lua ToggleInlineSuggestionsAndNotify()<CR>",
-  { noremap = true, silent = true }
-)
+vim.keymap.set("n", "<leader>g", function()
+  require("vscode").call("editor.cpp.toggle")
+end)
 
 vim.keymap.set("n", "n", function()
   local success, _ = pcall(vim.cmd, "normal! n")
@@ -385,13 +382,6 @@ vim.keymap.set("n", "#", function()
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
-
-function ToggleInlineSuggestionsAndNotify()
-  local vscode = require("vscode")
-  local hadAutocompletion = vscode.get_config("github.copilot.editor.enableAutoCompletions")
-  vscode.call("multiCommand.toggleInlineSuggestions")
-  vscode.notify("Inline suggestions " .. (hadAutocompletion and "disabled!" or "enabled!"))
-end
 
 -- SCROLL UP/DOWN
 vim.keymap.set({ "n", "x" }, "<C-u>", function()

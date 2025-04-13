@@ -165,5 +165,5 @@ require("lazy").setup({
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
       end)
     end,
-  },
+  }
 })

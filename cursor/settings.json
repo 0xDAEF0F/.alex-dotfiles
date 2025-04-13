@@ -26,6 +26,9 @@
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -43,10 +46,11 @@
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[typescript]": {
-    "editor.tabSize": 2,
-    "editor.inlayHints.enabled": "off"
+    "editor.inlayHints.enabled": "off",
+    "editor.tabSize": 2
   },
   "codesnap.containerPadding": "0.5em",
+  "cursor-retrieval.canAttemptGithubLogin": false,
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.cpp.enablePartialAccepts": true,
@@ -67,7 +71,7 @@
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 17,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -89,6 +93,7 @@
   "editor.tokenColorCustomizations": {
     "comments": "#b0c4debc" // LightSteelBlue with 50% transparency
   },
+  "errorLens.enabled": false,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -104,13 +109,6 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": false,
-    "plaintext": false,
-    "scminput": false
-  },
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
@@ -123,16 +121,9 @@
   "go.inlayHints.rangeVariableTypes": true,
   "go.survey.prompt": false,
   "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "jumplist.jumpListCount": 2,
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.toggleInlineSuggestions",
-      "sequence": [
-        "editor.cpp.toggle",
-        "settings.cycle.multicommand.toggleCopilot"
-      ]
-    }
-  ],
+  "multiCommand.commands": [],
   "prettier.printWidth": 80,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
@@ -152,24 +143,12 @@
   "rust-analyzer.typing.triggerChars": "=.>{(",
   "rust-analyzer.workspace.symbol.search.limit": 256, // Default is 128
   "scm.diffDecorationsGutterWidth": 4,
-  "settings.cycle": [
-    {
-      "id": "multicommand.toggleCopilot",
-      "overrideWorkspaceSettings": false,
-      "values": [
-        {
-          "github.copilot.editor.enableAutoCompletions": false
-        },
-        {
-          "github.copilot.editor.enableAutoCompletions": true
-        }
-      ]
-    }
-  ],
+  "settings.cycle": [],
   "stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
   "svelte.enable-ts-plugin": true,
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.defaultProfile.osx": "fish",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures": true,
   "terminal.integrated.fontSize": 13,
@@ -202,12 +181,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "errorLens.enabled": false,
-  "workbench.statusBar.visible": false,
-  "cursor-retrieval.canAttemptGithubLogin": false,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "workbench.statusBar.visible": false
 }
