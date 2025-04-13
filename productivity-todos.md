@@ -1,17 +1,19 @@
 ### Todos
 
-- Search git with neovim.
+__Neovim__
 - Move with arrow keys on `mini.files`
-- Save automatically on neovim
-- How to switch to other directories in neovim and open file explorer.
+- `@` does not work in `mini.files` for cwd
+- Switch to other directories
+
+__Cursor__
+- Chill with the warning highlights in vscode (rust).
 - Make work modules in neovim lua config for vscode
-- Change aerospace windows to mnemonics.
 - Need better ways to navigate through big files (treesitter/telescope/heatmaps).
 - Modify font size so cursor preview suggestions are not so big.
-- Set default column size for folders and ai panel when opening windows.
-
-- Chill with the warning highlights in vscode (rust).
 - Make the color on flash when there is a highlight different (backlog)
+
+__Ghostty/Others__
+- Change aerospace windows to mnemonics.
 
 ### Commands
 

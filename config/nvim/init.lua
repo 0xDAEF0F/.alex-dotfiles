@@ -16,6 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 require("opts")
 require("keymaps")
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 require("lazy").setup({
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   {
@@ -98,7 +106,7 @@ require("lazy").setup({
       require("mini.icons").setup()
       MiniIcons.tweak_lsp_kind()
       require("mini.files").setup()
-      require('mini.comment').setup()
+      require("mini.comment").setup()
     end,
   },
   {
@@ -133,7 +141,15 @@ require("lazy").setup({
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     },
     config = function()
-      require("telescope").setup()
+      require("telescope").setup({
+        defaults = {
+          mappings = {
+            n = {
+              ["dd"] = require("telescope.actions").delete_buffer,
+            },
+          },
+        },
+      })
 
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
@@ -165,5 +181,20 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
       vim.keymap.set("n", "<leader>sr", builtin.resume)
     end,
-  }
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+  },
 })
