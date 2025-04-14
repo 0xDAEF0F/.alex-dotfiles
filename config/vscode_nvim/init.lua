@@ -204,7 +204,7 @@ vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h')<CR>") -- dir
 vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 
 -- Toggle highlight search
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { silent = true })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
