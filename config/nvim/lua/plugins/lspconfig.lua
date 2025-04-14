@@ -1,0 +1,11 @@
+return {
+  -- Main LSP Configuration
+  "neovim/nvim-lspconfig",
+  config = function()
+    local lsp = require("lspconfig")
+    -- Rust
+    lsp.rust_analyzer.setup({})
+    -- Typescript
+    lsp.ts_ls.setup({})
+  end,
+}

@@ -4,4 +4,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = "yes"
+vim.opt.mouse = "a"
+vim.opt.showmode = false
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.completeopt = "menuone,noinsert"
