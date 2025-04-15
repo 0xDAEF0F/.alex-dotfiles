@@ -10,6 +10,9 @@ return {
       treesitter = {
         labels = "rtneiohysvafumkljcpgdqxbz",
       },
+      char = {
+        enabled = false,
+      },
     },
     prompt = {
       enabled = false,

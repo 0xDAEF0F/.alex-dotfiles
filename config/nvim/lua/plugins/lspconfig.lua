@@ -7,5 +7,7 @@ return {
     lsp.rust_analyzer.setup({})
     -- Typescript
     lsp.ts_ls.setup({})
+    -- Lua
+    lsp.lua_ls.setup({})
   end,
 }

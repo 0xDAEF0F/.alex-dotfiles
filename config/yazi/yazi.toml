@@ -13,10 +13,14 @@ edit = [
 audio = [
     { run = 'open -a "/System/Applications/QuickTime Player.app" "$@"', orphan = true, desc = "Play in QuickTime", for = "macos" },
 ]
+preview = [
+    { run = 'open "$@"', desc = "Open in preview", for = "macos" },
+]
 
 [open]
 rules = [
     { name = "*/", use = "directory" },
     { name = "*.mp3", use = "audio" },
+    { name = "*.pdf", use = "preview" },
     { name = "*", use = "edit" },
 ]
