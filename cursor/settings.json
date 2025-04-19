@@ -71,7 +71,7 @@
   "editor.experimental.preferTreeSitter": ["typescript"],
   "editor.fontFamily": "Iosevka Nerd Font Mono",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.hover.delay": 2000,
@@ -93,7 +93,10 @@
   "editor.tokenColorCustomizations": {
     "comments": "#b0c4debc" // LightSteelBlue with 50% transparency
   },
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.messageEnabled": false,
+  "errorLens.statusBarMessageEnabled": true,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -124,7 +127,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "jumplist.jumpListCount": 2,
   "multiCommand.commands": [],
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 90,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false
@@ -148,7 +151,7 @@
   "svelte.enable-ts-plugin": true,
   "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.defaultProfile.osx": "fish",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.fontLigatures": true,
   "terminal.integrated.fontSize": 13,
@@ -180,6 +183,5 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false
+  "workbench.sideBar.location": "left"
 }

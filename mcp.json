@@ -1,8 +1,7 @@
 {
   "mcpServers": {
     "get-jobs": {
-      "command": "npx",
-      "args": ["-y", "job-searchoor"]
+      "command": "job-searchoor"
     }
   }
 }

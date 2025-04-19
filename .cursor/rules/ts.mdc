@@ -1,0 +1,16 @@
+---
+description: 
+globs: *.ts,package.json
+alwaysApply: false
+---
+# User Preferences
+- All functions must be explicitly typed: return types and arguments
+- All variables must be explicitly typed even if the types can be inferred, unless the types are too complex.
+
+# Runtime
+- Always check for the `package-json` file to retrieve context about the project.
+- Bun is our runtime environment so please use all operations with Bun:
+    - Add packages: `bun add [package]`
+    - Removing packages: `bun remove [package]`
+    - Running test files: `bun test [path-to-file]`
+    - Running scripts: `bun run [path-to-file]`

@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+git rules
+
+- For commit requests, be brief and focus on intent; avoid repeating the obvious.
+- Each commit message must begin with “(feat|bug|chore|usual):” followed by the AI-generated text.
+- Commit messages must never be more than 2 sentences. Preferably 1 sentence.

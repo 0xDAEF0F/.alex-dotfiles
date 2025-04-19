@@ -6,6 +6,7 @@ __Neovim__
 - Switch to other directories
 
 __Cursor__
+- Master the injection of documentation in cursor.
 - Chill with the warning highlights in vscode (rust).
 - Make work modules in neovim lua config for vscode
 - Need better ways to navigate through big files (treesitter/telescope/heatmaps).
