@@ -1,11 +1,11 @@
 ### Todos
 
-__Neovim__
-- Move with arrow keys on `mini.files`
-- `@` does not work in `mini.files` for cwd
+**Neovim**
+
 - Switch to other directories
 
-__Cursor__
+**Cursor**
+
 - Master the injection of documentation in cursor.
 - Chill with the warning highlights in vscode (rust).
 - Make work modules in neovim lua config for vscode
@@ -13,7 +13,8 @@ __Cursor__
 - Modify font size so cursor preview suggestions are not so big.
 - Make the color on flash when there is a highlight different (backlog)
 
-__Ghostty/Others__
+**Ghostty/Others**
+
 - Change aerospace windows to mnemonics.
 
 ### Commands

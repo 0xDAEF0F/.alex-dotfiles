@@ -55,8 +55,10 @@ abbr -a gcm "git commit -am" # stages all and commits
 abbr -a gp "git push"
 abbr -a gl "git pull --rebase"
 
-# Nvim abbreviations
-abbr -a n "nvim"
+# Neovim abbreviations
+abbr -a n "nvim ."
+abbr -a vi "nvim"
+abbr -a vim "nvim"
 
 # Zoxide "ji"
 abbr -a jj "ji"
