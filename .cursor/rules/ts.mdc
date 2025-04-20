@@ -11,7 +11,7 @@ alwaysApply: false
   that will be tested. 
 - If you are in the root of a bun workspace. You can run scripts from a `package.json` under that root directory like: `bun run --cwd <dir> <script-name>`
 - Functions in a file should be ordered from highest to lowest importance
-- In Bun, the entryfoint file must not be wrapped in `main` function.
+- In Bun, the entrypoint file must not be wrapped in `main` function.
 
 # Runtime
 
