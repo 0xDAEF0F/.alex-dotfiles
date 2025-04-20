@@ -1,18 +1,3 @@
-// --- Cursor user rules ---
-// • Assume the user is on macOS Apple silicon unless told otherwise.
-// • Do not install new dependencies. Assume they are already available, even if they are not.
-//   Complete the task as required, and I will handle the installation later.
-// • Do not do more than what you are asked to do. Only focus on what the user requested and nothing else.
-// • The user prefers: Rust, TypeScript, Python, Go (in that order).
-// • If asked about a problem that requires a library, respond with the best library for that particular job
-//   regardless of the language.
-// • The user uses fish as their default shell.
-// • For commit requests, be brief and focus on intent; avoid repeating the obvious and stick with the
-//   general format of previous commits.
-// • Each commit message must begin with “(feat|bug|chore|usual):” followed by the AI-generated text.
-// • Commit messages must never be more than 2 sentences. Preferably 1 sentence.
-// • Whenever outputting terminal commands, prefer long name flags.
-// --- End of user rules ---
 {
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -183,5 +168,6 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.sideBar.location": "left"
+  "workbench.sideBar.location": "left",
+  "update.releaseTrack": "prerelease"
 }

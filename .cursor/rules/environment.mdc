@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+- The user prefers: Rust, TypeScript, Python, Go (in that order).
+- Assume the user is on macOS Apple silicon unless told otherwise.
+- The user uses fish as their default shell.
+- Whenever outputting terminal commands, prefer long name flags.
+- If asked about a problem that requires a library, respond with the best library for that particular job
+  regardless of the language.
+

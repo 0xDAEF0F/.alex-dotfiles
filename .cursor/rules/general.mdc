@@ -1,0 +1,7 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Do not do more than what is being requested.
+- If the user message if prefixed wih `!short`, be terse and to then point.

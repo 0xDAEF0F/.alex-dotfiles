@@ -72,6 +72,12 @@ abbr -a cr "cargo run"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 
+# Bun abbreviations
+abbr -a brs "bun run start"
+abbr -a br "bun run"
+abbr -a ba "bun add"
+abbr -a bt "bun test"
+
 # Code
 abbr -a c "cursor ."
 abbr -a z "zed ."
