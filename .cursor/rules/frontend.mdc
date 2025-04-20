@@ -6,10 +6,10 @@ alwaysApply: false
 
 # Rules
 
-- Use shadcn components as the default, if not possible make them by scratch with tailwindcss: `https://ui.shadcn.com/`
-- Style first with shadcn way of styling and if not enough, make the overrides with tailwindcss
-- Make sure to use "Lucide React" `lucide-react` as the default icon library.
+- Use "shadcn" components as your default component library, if you need something more customized
+  just do it from scratch with "tailwindcss"
+- When styling a library component, use their default classes for that component, if not possible, tailwindcss
+- Make sure to use "lucide react" as the default icon library.
 - Use server components over client components (unless reactivity is necessary)
-- Fetch data within server components and pass the data as props to the client component
-  that needs it (unless not viable)
-- React components' argument should be called `props` and the type defined as `type Props = {}` must be located above the component.
+- As a rule of thumb, fetch data within server components and pass the data as props to the client component that needs it (not set in stone)
+- React components' arguments should be named `props` and it's corresponding type: `type Props = {}`; must be located directly above the component.
