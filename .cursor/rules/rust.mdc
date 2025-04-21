@@ -1,0 +1,8 @@
+---
+description: 
+globs: *.rs
+alwaysApply: false
+---
+- use `anyhow` for error handling
+- prefer to use `tokio` over the std libraries blocking primitives
+- use `log` for logging

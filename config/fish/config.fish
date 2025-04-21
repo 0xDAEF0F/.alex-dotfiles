@@ -71,6 +71,7 @@ abbr -a ca "cargo add"
 abbr -a cc "set -x RUSTFLAGS '-A warnings';cargo check && set -e RUSTFLAGS"
 abbr -a cb "cargo build"
 abbr -a cr "cargo run"
+abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 

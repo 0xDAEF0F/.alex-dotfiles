@@ -5,3 +5,5 @@ alwaysApply: true
 ---
 - Do not do more than what is being requested.
 - If the user message if prefixed wih `!short`, be terse and to then point.
+- If the code is obvious, e.g., `const logger = new Logger().init()` do not
+  comment this line since i can infer that a new logger was instantiated and initialized.
