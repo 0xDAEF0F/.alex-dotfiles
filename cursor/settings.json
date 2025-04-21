@@ -36,6 +36,7 @@
   },
   "codesnap.containerPadding": "0.5em",
   "cursor-retrieval.canAttemptGithubLogin": false,
+  "cursor.composer.shouldAllowCustomModes": true,
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.cpp.disabledLanguages": ["markdown"],
   "cursor.cpp.enablePartialAccepts": true,
@@ -65,7 +66,7 @@
   "editor.inlayHints.maximumLength": 30,
   "editor.inlayHints.padding": false,
   "editor.lineHeight": 0,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "editor.occurrencesHighlight": "off",
   "editor.renderLineHighlight": "gutter",
   "editor.rulers": [100],
@@ -79,14 +80,13 @@
     "comments": "#b0c4debc" // LightSteelBlue with 50% transparency
   },
   "errorLens.enabled": true,
-  "errorLens.gutterIconsEnabled": true,
-  "errorLens.messageEnabled": false,
-  "errorLens.statusBarMessageEnabled": true,
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.messageEnabled": true,
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "explorer.decorations.badges": false, // remove badges in explorer
+  "explorer.decorations.badges": true, // remove badges in explorer
   "explorer.decorations.colors": true, // remove decoration colors in explorer
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
@@ -113,6 +113,7 @@
   "jumplist.jumpListCount": 2,
   "multiCommand.commands": [],
   "prettier.printWidth": 90,
+  "prettier.requireConfig": false,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.debug.buildBeforeRestart": true, // Default is false
   "rust-analyzer.diagnostics.experimental.enable": true, // Default is false
@@ -151,7 +152,7 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "update.mode": "start",
+  "update.releaseTrack": "prerelease",
   "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
   "window.customTitleBarVisibility": "never",
   "window.newWindowDimensions": "maximized", // although window switching is not working
@@ -169,5 +170,5 @@
   "workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "left",
-  "update.releaseTrack": "prerelease"
+  "workbench.statusBar.visible": false
 }

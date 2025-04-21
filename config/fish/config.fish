@@ -76,6 +76,7 @@ abbr -a clippy "cargo clippy"
 
 # Bun abbreviations
 abbr -a brs "bun run start"
+abbr -a brb "bun run build"
 abbr -a br "bun run"
 abbr -a ba "bun add"
 abbr -a bt "bun test"
