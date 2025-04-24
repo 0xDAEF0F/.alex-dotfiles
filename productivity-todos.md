@@ -3,6 +3,7 @@
 **Neovim**
 
 - Switch to other directories
+- `*` and `#` should be case sensitive
 
 **Cursor**
 

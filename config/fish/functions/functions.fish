@@ -19,3 +19,9 @@ function take
     mkdir -p $file_name
     cd $file_name
 end
+
+# use terminal-notifier to notify when a command finishes
+function notify
+    $argv
+    echo 'Finish' | terminal-notifier -sound default
+end
