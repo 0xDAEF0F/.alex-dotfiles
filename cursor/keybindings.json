@@ -218,5 +218,13 @@
   {
     "key": "cmd+-",
     "command": "-workbench.action.zoomOut"
+  },
+  {
+    "key": "ctrl+alt+x",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
   }
 ]

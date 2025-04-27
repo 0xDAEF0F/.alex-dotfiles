@@ -1,6 +1,6 @@
 ---
 description: 
-globs: *.ts,package.json
+globs: 
 alwaysApply: false
 ---
 # User Preferences
@@ -14,12 +14,3 @@ alwaysApply: false
 - Functions in a file should be ordered from highest to lowest importance
 - In Bun, the entrypoint file must not be wrapped in `main` function
 - Import `types` in files should be below the regular imports
-
-# Runtime
-
-- Always check for the `package-json` file to retrieve context about the project.
-- Bun is our runtime environment so please use all operations with Bun:
-    - `bun add [package]`
-    - `bun remove [package]`
-    - `bun test [path-to-file]`
-    - `bun run [path-to-file]`

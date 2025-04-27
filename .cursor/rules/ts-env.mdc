@@ -1,0 +1,11 @@
+---
+description: 
+globs: *.ts,*.tsx,*.js,*.cjs
+alwaysApply: false
+---
+# TS/JS Ecosystem
+
+- Make sure to check `package.json` and lockfiles to know what package manager to use.
+- If you are not familiar with the package managers commands and flags you can just
+  call `--help` on the cli.
+- Make sure of whether it is a monorepository.

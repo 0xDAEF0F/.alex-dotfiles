@@ -206,6 +206,11 @@ vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 -- Toggle highlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Format
+vim.keymap.set("n", "<leader>f", function()
+  require("vscode").call("editor.action.format")
+end)
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),

@@ -1,13 +1,13 @@
 command = /opt/homebrew/bin/fish --login --interactive
 macos-titlebar-style = "hidden"
-font-size=23
+font-size=25
 
 window-padding-x=0,0
 window-padding-y=0,0
 window-height=3000
 window-width=2000
 
-font-family="OperatorMonoLig Nerd Font Mono"
+font-family="Iosevka Nerd Font Mono"
 theme = "GruvboxDark"
 
 # I dont understand what this does exactly

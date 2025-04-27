@@ -3,6 +3,8 @@ description:
 globs: 
 alwaysApply: false
 ---
+# Environment
+
 - The user prefers: Rust, TypeScript, Python, Go (in that order)
 - Assume the user is on macOS Apple silicon unless told otherwise
 - The user uses fish as their default shell

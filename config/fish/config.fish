@@ -119,3 +119,10 @@ abbr -a \- prevd
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
+
+# pnpm
+set -gx PNPM_HOME "/Users/ale/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
