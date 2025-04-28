@@ -1,23 +1,3 @@
-### Todos
-
-**Neovim**
-
-- Switch to other directories
-- `*` and `#` should be case sensitive
-
-**Cursor**
-
-- Master the injection of documentation in cursor.
-- Chill with the warning highlights in vscode (rust).
-- Make work modules in neovim lua config for vscode
-- Need better ways to navigate through big files (treesitter/telescope/heatmaps).
-- Modify font size so cursor preview suggestions are not so big.
-- Make the color on flash when there is a highlight different (backlog)
-
-**Ghostty/Others**
-
-- Change aerospace windows to mnemonics.
-
 ### Commands
 
 - `zm` contract folders in vscode and `R` to "reload"
