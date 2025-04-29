@@ -9,8 +9,7 @@ return {
     require("mini.pairs").setup()
     require("mini.icons").setup()
     MiniIcons.tweak_lsp_kind()
-    -- require("mini.completion").setup()
-    -- require("mini.snippets").setup()
     require("mini.comment").setup()
   end,
+  enabled = not vim.g.vscode,
 }

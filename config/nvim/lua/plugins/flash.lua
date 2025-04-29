@@ -1,14 +1,17 @@
+local labels = "rtneiohysvafumkljcpgdqxbz"
+local utils = require("utils")
+
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
   opts = {
-    labels = "rtneiohysvafumkljcpgdqxbz",
+    labels = labels,
     label = {
       style = "overlay",
     },
     modes = {
       treesitter = {
-        labels = "rtneiohysvafumkljcpgdqxbz",
+        labels = labels,
       },
       char = {
         enabled = false,
@@ -24,6 +27,10 @@ return {
       mode = { "n", "x", "o" },
       function()
         require("flash").jump()
+        if vim.g.vscode then
+          utils.centerScreenOnCursor()
+          utils.registerJump()
+        end
       end,
       desc = "Flash",
     },

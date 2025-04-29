@@ -8,5 +8,6 @@ return {
     },
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     lazy = false,
-  }
+  },
+  enabled = not vim.g.vscode,
 }

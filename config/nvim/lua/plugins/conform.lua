@@ -5,7 +5,8 @@ return {
       rust = { "rustfmt" },
       markdown = { "prettier" },
       typescript = { "prettier" },
-      lua = {"stylua"}
+      lua = { "stylua" },
     },
   },
+  enabled = not vim.g.vscode,
 }

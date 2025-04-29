@@ -9,4 +9,5 @@ return {
       changedelete = { text = "~" },
     },
   },
+  enabled = not vim.g.vscode,
 }

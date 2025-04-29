@@ -10,4 +10,5 @@ return {
     -- Lua
     lsp.lua_ls.setup({})
   end,
+  enabled = not vim.g.vscode,
 }

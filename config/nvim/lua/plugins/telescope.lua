@@ -55,4 +55,5 @@ return {
     vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
     vim.keymap.set("n", "<leader>sr", builtin.resume)
   end,
+  enabled = not vim.g.vscode,
 }

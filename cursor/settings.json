@@ -1,4 +1,7 @@
 {
+	"Lua.diagnostics.globals": [
+		"vim"
+	],
 	"[dotenv]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
@@ -170,7 +173,7 @@
 	"typescript.inlayHints.variableTypes.enabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"update.releaseTrack": "prerelease",
-	"vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
+	// "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
 	"window.customTitleBarVisibility": "never",
 	"window.newWindowDimensions": "maximized", // although window switching is not working
 	"window.titleBarStyle": "native",

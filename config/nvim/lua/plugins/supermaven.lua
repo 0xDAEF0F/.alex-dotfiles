@@ -1,4 +1,5 @@
 return {
   "supermaven-inc/supermaven-nvim",
-  opts = {}
+  opts = {},
+  enabled = not vim.g.vscode,
 }

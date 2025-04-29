@@ -5,4 +5,5 @@ return {
   config = function()
     vim.cmd([[colorscheme tokyonight]])
   end,
+  enabled = not vim.g.vscode,
 }
