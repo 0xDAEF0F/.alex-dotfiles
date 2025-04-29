@@ -41,36 +41,37 @@ vim.api.nvim_set_keymap(
   ":lua require('vscode').call('bookmarks.listFromAllFiles')<CR>",
   { noremap = true, silent = true }
 )
+
 -- LSP FUNCTIONALITY
 
+-- Go to definition
+vim.keymap.set({ "n" }, "<leader>d", function()
+  utils.registerJump()
+  require("vscode").call("editor.action.revealDefinition")
+end)
+
 -- Go to hover
-vim.keymap.set({ "n" }, "gh", function()
+vim.keymap.set({ "n" }, "<leader>n", function()
   local vscode = require("vscode")
   vscode.call("editor.action.showHover")
 end)
 
--- Go to type definition
-vim.keymap.set({ "n" }, "gD", function()
+-- Go to references
+vim.keymap.set({ "n" }, "<leader>r", function()
   utils.registerJump()
-  require("vscode").call("editor.action.goToTypeDefinition")
+  require("vscode").call("editor.action.goToReferences")
 end)
 
--- Go to definition
+-- Go to type definition
 vim.keymap.set({ "n" }, "gd", function()
   utils.registerJump()
-  require("vscode").call("editor.action.revealDefinition")
+  require("vscode").call("editor.action.goToTypeDefinition")
 end)
 
 -- Go to implementation
 vim.keymap.set({ "n" }, "gi", function()
   utils.registerJump()
   require("vscode").call("editor.action.goToImplementation")
-end)
-
--- Go to references (buggy)
-vim.keymap.set({ "n" }, "gr", function()
-  utils.registerJump()
-  require("vscode").call("editor.action.goToReferences")
 end)
 
 -- Comment line
@@ -80,3 +81,57 @@ vim.keymap.set(
   ":lua require('vscode').call('editor.action.commentLine')<CR>",
   { silent = true }
 )
+
+vim.keymap.set({ "n" }, "<c-o>", function()
+  require("vscode").call("jumplist.jumpBack", { args = { 1 } })
+end, { noremap = true })
+
+vim.keymap.set({ "n" }, "<c-i>", function()
+  require("vscode").call("jumplist.jumpForward", { args = { 1 } })
+end, { noremap = true })
+
+-- SCROLL UP/DOWN
+
+vim.keymap.set({ "n", "x" }, "<C-u>", function()
+  local visibleRanges =
+    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
+  for i = 1, height / 3 do
+    vim.api.nvim_feedkeys("k", "n", false)
+  end
+  utils.centerScreenOnCursor()
+  utils.registerJump()
+end)
+
+vim.keymap.set({ "n", "x" }, "<C-d>", function()
+  local visibleRanges =
+    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
+  for i = 1, height / 3 do
+    vim.api.nvim_feedkeys("j", "n", false)
+  end
+  utils.centerScreenOnCursor()
+  utils.registerJump()
+end)
+
+vim.keymap.set({ "n", "x" }, "<C-f>", function()
+  local visibleRanges =
+    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
+  for i = 1, height / 2 do
+    vim.api.nvim_feedkeys("j", "n", false)
+  end
+  utils.centerScreenOnCursor()
+  utils.registerJump()
+end)
+
+vim.keymap.set({ "n", "x" }, "<C-b>", function()
+  local visibleRanges =
+    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
+  for i = 1, height / 2 do
+    vim.api.nvim_feedkeys("k", "n", false)
+  end
+  utils.centerScreenOnCursor()
+  utils.registerJump()
+end)

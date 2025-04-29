@@ -7,16 +7,17 @@
     "command": "breadcrumbs.focusAndSelect",
     "key": "cmd+,"
   },
-  {
-    "command": "workbench.action.navigateBack",
-    "key": "ctrl+o",
-    "when": "canNavigateBack"
-  },
-  {
-    "command": "workbench.action.navigateForward",
-    "key": "ctrl+i",
-    "when": "canNavigateForward"
-  },
+  // Keep this for now
+  // {
+  //   "command": "workbench.action.navigateBack",
+  //   "key": "ctrl+o",
+  //   "when": "canNavigateBack"
+  // },
+  // {
+  //   "command": "workbench.action.navigateForward",
+  //   "key": "ctrl+i",
+  //   "when": "canNavigateForward"
+  // },
   {
     "command": "hideSuggestWidget",
     "key": "ctrl+c",

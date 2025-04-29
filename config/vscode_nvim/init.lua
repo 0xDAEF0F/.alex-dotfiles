@@ -20,14 +20,6 @@ vim.keymap.set({ "n" }, "/", function()
   nvim_feedkeys("/")
 end)
 
-vim.keymap.set({ "n" }, "<c-o>", function()
-  require("vscode").call("jumplist.jumpBack", { args = { 1 } })
-end, { noremap = true })
-
-vim.keymap.set({ "n" }, "<c-i>", function()
-  require("vscode").call("jumplist.jumpForward", { args = { 1 } })
-end, { noremap = true })
-
 -- Toggle highlight search for empty lines
 vim.keymap.set("n", "<leader><leader>", function()
   require("flash").jump({
@@ -77,32 +69,6 @@ vim.keymap.set(
   { silent = true }
 )
 
--- Bookmarks functionality
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>t",
-  ":lua require('vscode').call('bookmarks.toggle')<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>r",
-  ":lua require('vscode').call('bookmarks.jumpToNext')<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>a",
-  ":lua require('vscode').call('bookmarks.jumpToPrevious')<CR>",
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>l",
-  ":lua require('vscode').call('bookmarks.listFromAllFiles')<CR>",
-  { noremap = true, silent = true }
-)
-
 vim.keymap.set("n", "n", function()
   local success, _ = pcall(vim.cmd, "normal! n")
 
@@ -146,52 +112,6 @@ vim.keymap.set("n", "#", function()
   centerScreenOnCursor()
   register_jump()
 end, { noremap = true, silent = true })
-
--- SCROLL UP/DOWN
-vim.keymap.set({ "n", "x" }, "<C-u>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
-  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 3 do
-    vim.api.nvim_feedkeys("k", "n", false)
-  end
-  centerScreenOnCursor()
-  register_jump()
-end)
-
-vim.keymap.set({ "n", "x" }, "<C-d>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
-  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 3 do
-    vim.api.nvim_feedkeys("j", "n", false)
-  end
-  centerScreenOnCursor()
-  register_jump()
-end)
-
-vim.keymap.set({ "n", "x" }, "<C-f>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
-  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 2 do
-    vim.api.nvim_feedkeys("j", "n", false)
-  end
-  centerScreenOnCursor()
-  register_jump()
-end)
-
-vim.keymap.set({ "n", "x" }, "<C-b>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
-  local height = visibleRanges[1][2].line - visibleRanges[1][1].line
-  for i = 1, height / 2 do
-    vim.api.nvim_feedkeys("k", "n", false)
-  end
-  centerScreenOnCursor()
-  register_jump()
-end)
--- END SCROLL UP/DOWN
 
 -- Centers the cursor after you search with / or ?
 vim.keymap.set("c", "<CR>", function()
