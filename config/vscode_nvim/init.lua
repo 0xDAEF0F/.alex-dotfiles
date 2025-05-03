@@ -1,9 +1,4 @@
 -- vscode_utils.lua
-function nvim_feedkeys(keys)
-  local feedable_keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
-  vim.api.nvim_feedkeys(feedable_keys, "n", false)
-end
-
 function call(arg)
   nvim_feedkeys(string.format(":call %s<enter>", arg))
 end
@@ -60,14 +55,6 @@ vim.keymap.set(
 
 -- multicursor like in vscode
 vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
-
--- Rename symbol
-vim.keymap.set(
-  "n",
-  "gR",
-  ":lua require('vscode').call('editor.action.rename')<CR>",
-  { silent = true }
-)
 
 vim.keymap.set("n", "n", function()
   local success, _ = pcall(vim.cmd, "normal! n")

@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>g", function()
 end)
 
 -- Toggle statusbar
-vim.keymap.set("n", "<leader>b", function()
+vim.keymap.set("n", "<leader>p", function()
   local vscode = require("vscode")
   vscode.call("workbench.action.toggleStatusbarVisibility")
 end)
@@ -19,7 +19,7 @@ end)
 -- Bookmarks functionality
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>t",
+  "<leader>b",
   ":lua require('vscode').call('bookmarks.toggle')<CR>",
   { noremap = true, silent = true }
 )
@@ -57,21 +57,29 @@ vim.keymap.set({ "n" }, "<leader>n", function()
 end)
 
 -- Go to references
-vim.keymap.set({ "n" }, "<leader>r", function()
+vim.keymap.set({ "n" }, "<leader>o", function()
   utils.registerJump()
   require("vscode").call("editor.action.goToReferences")
 end)
 
--- Go to type definition
-vim.keymap.set({ "n" }, "gd", function()
-  utils.registerJump()
-  require("vscode").call("editor.action.goToTypeDefinition")
-end)
+-- Rename symbol
+vim.keymap.set(
+  "n",
+  "<leader>r",
+  ":lua require('vscode').call('editor.action.rename')<CR>",
+  { silent = true }
+)
 
 -- Go to implementation
-vim.keymap.set({ "n" }, "gi", function()
+vim.keymap.set({ "n" }, "<leader>i", function()
   utils.registerJump()
   require("vscode").call("editor.action.goToImplementation")
+end)
+
+-- Go to type definition
+vim.keymap.set({ "n" }, "<leader>t", function()
+  utils.registerJump()
+  require("vscode").call("editor.action.goToTypeDefinition")
 end)
 
 -- Comment line

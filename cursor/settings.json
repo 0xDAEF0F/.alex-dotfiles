@@ -11,8 +11,11 @@
 	"[ignore]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[lua]": {
 		"editor.defaultFormatter": "JohnnyMorganz.stylua"
@@ -27,7 +30,9 @@
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"[rust]": {
-		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+		"editor.defaultFormatter": "rust-lang.rust-analyzer",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1001
 	},
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
@@ -36,7 +41,8 @@
 		"editor.defaultFormatter": "tamasfe.even-better-toml"
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.inlayHints.enabled": "off"
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
@@ -74,7 +80,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 15,
+	"editor.fontSize": 14,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -158,7 +164,7 @@
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 13,
+	"terminal.integrated.fontSize": 11,
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"args": [
@@ -173,7 +179,6 @@
 	"typescript.inlayHints.variableTypes.enabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"update.releaseTrack": "prerelease",
-	// "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/vscode_nvim/init.lua",
 	"window.customTitleBarVisibility": "never",
 	"window.newWindowDimensions": "maximized", // although window switching is not working
 	"window.titleBarStyle": "native",
@@ -187,7 +192,7 @@
 	"workbench.colorTheme": "Gruvbox Dark Hard",
 	"workbench.editor.openPositioning": "last",
 	"workbench.fontAliasing": "antialiased",
-	"workbench.hover.delay": null, // triggers a warning but it works as infinity. i guess...
+	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.sideBar.location": "left",
 	"workbench.statusBar.visible": false
