@@ -15,3 +15,10 @@
 - to stow/unstow:
   - to stow: `stow --target=$HOME {stow_package}`.
   - to unstow: `stow --target=$HOME --delete {stow_package}`.
+
+
+### Fonts
+- Iosevka: `brew install --cask font-iosevka-nerd-font`
+- Jetbrains: `brew install --cask font-jetbrains-mono-nerd-font`
+- Maple Mono: `brew install --cask font-maple-mono-nf`
+- Fira Code:  `brew install --cask font-fira-code-nerd-font`
