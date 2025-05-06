@@ -104,77 +104,41 @@ j = ['join-with down', 'mode main']
 k = ['join-with up', 'mode main']
 l = ['join-with right', 'mode main']
 
-## Workspace 2
+# Specific rules for TILING apps and apps MOVED to specific workspaces
+## Workspace Specific (and Tiled) Apps
 
-# Cursor
+# Ghostty (tiled, current workspace)
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ["layout tiling"]
+
+# Cursor (tiled, workspace 2)
 [[on-window-detected]]
 if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = "move-node-to-workspace 2"
+run = ["layout tiling", "move-node-to-workspace 2"]
 
-# Zed
+# Zed (tiled, workspace 2)
 [[on-window-detected]]
 if.app-id = 'dev.zed.Zed'
-run = "move-node-to-workspace 2"
+run = ["layout tiling", "move-node-to-workspace 2"]
 
-## Workspace 3
+# Google Chrome (tiled, workspace 3)
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
-run = "move-node-to-workspace 3"
+run = ["layout tiling", "move-node-to-workspace 3"]
 
-[[on-window-detected]]
-if.app-id = 'app.zen-browser.zen'
-run = "move-node-to-workspace 3"
-
-## Workspace 4
-
+# Spotify (tiled, workspace 4)
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace 4"
+run = ["layout tiling", "move-node-to-workspace 4"]
 
+# WhatsApp (tiled, workspace 4)
 [[on-window-detected]]
 if.app-name-regex-substring = 'WhatsApp'
-run = "move-node-to-workspace 4"
+run = ["layout tiling", "move-node-to-workspace 4"]
 
-## Workspace 5
-
+# Default rule for all other applications:
+# Make them floating in their current workspace.
 [[on-window-detected]]
-if.app-id = 'com.openai.chat'
-run = "move-node-to-workspace 5"
-
-[[on-window-detected]]
-if.app-id = 'com.anthropic.claudefordesktop'
-run = "move-node-to-workspace 5"
-
-## Floating windows
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Notes'
-run = "move-node-to-workspace 5"
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Preview'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-name-regex-substring = '1Password'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'Finder'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = "layout floating"
-
-[[on-window-detected]]
-if.window-title-regex-substring = 'Karabiner'
-run = "layout floating"
-
-[[on-window-detected]]
-if.window-title-regex-substring = 'next-example-tauri'
-run = "layout floating"
-
-[[on-window-detected]]
-if.app-id = 'com.hegenberg.BetterTouchTool'
-run = 'layout floating'
+# No 'if' conditions means it applies to any window not handled by the rules above.
+run = ["layout floating"]
