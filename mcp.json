@@ -1,11 +1,11 @@
 {
-  "mcpServers": {
-    "get-jobs": {
-      "command": "job-searchoor"
-    },
-    "context7": {
-      "command": "bunx",
-      "args": ["-y", "@upstash/context7-mcp@latest"]
-    }
-  }
+	"mcpServers": {
+		"get-jobs": {
+			"command": "job-searchoor"
+		},
+		"context7": {
+			"command": "~/.bun/bin/bunx",
+			"args": ["-y", "@upstash/context7-mcp@latest"]
+		}
+	}
 }

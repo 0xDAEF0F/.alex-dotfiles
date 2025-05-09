@@ -55,7 +55,7 @@
 	"cursor.composer.shouldAllowCustomModes": true,
 	"cursor.composer.shouldChimeAfterChatFinishes": true,
 	"cursor.cpp.disabledLanguages": [
-		"markdown"
+		// "markdown"
 	],
 	"cursor.cpp.enablePartialAccepts": true,
 	"custom-ui-style.electron": {
@@ -80,7 +80,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 15,
+	"editor.fontSize": 16,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -164,7 +164,7 @@
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 11,
+	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"args": [
