@@ -1,0 +1,13 @@
+---
+description: 
+globs: *.ts,*.tsx,*.js,*.cjs
+alwaysApply: false
+---
+# TS/JS Ecosystem
+
+- Make sure to check `package.json` and lockfiles to know what package manager to use.
+- Be cautious of whether you are in a monorepo or not.
+- All functions and variables must be explicitly typed. i.e., args, return types (unless they are too complex)
+- Don't use type assertion `as <type>` in typescript unless it is absolutely necessary.
+- Don't use arrow functions unless they can be quickly inlined and within another function.
+- Tests must end with `.test.ts` and they must be located next to the file that implements the function that will be tested.
