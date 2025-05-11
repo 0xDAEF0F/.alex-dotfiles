@@ -163,7 +163,7 @@
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 14,
+	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"args": [

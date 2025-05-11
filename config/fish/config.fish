@@ -7,7 +7,6 @@
 fish_add_path $HOME/go/bin               # go
 fish_add_path $HOME/.bun/bin             # bun
 fish_add_path /opt/homebrew/bin          # homebrew
-fish_add_path $HOME/.cargo/bin           # cargo
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos       # zig
 
@@ -68,8 +67,10 @@ abbr -a ghb "gh browse"
 
 # Cargo abbreviations
 abbr -a ca "cargo add"
-abbr -a cc "set -x RUSTFLAGS '-A warnings';cargo check && set -e RUSTFLAGS"
+abbr -a cc "cargo check"
 abbr -a cb "cargo build"
+abbr -a cbr "cargo build --release"
+abbr -a cbra "cargo build --release --target x86_64-apple-darwin --target aarch64-apple-darwin"
 abbr -a cr "cargo run"
 abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
@@ -119,10 +120,3 @@ abbr -a \- prevd
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
-
-# pnpm
-set -gx PNPM_HOME "/Users/ale/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
