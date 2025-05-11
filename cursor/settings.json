@@ -51,7 +51,6 @@
 	"biome.rename": true,
 	"biome.requireConfigFile": true, // not working
 	"codesnap.containerPadding": "0.5em",
-	"cursor-retrieval.canAttemptGithubLogin": false,
 	"cursor.composer.shouldAllowCustomModes": true,
 	"cursor.composer.shouldChimeAfterChatFinishes": true,
 	"cursor.cpp.disabledLanguages": [
@@ -80,7 +79,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -138,7 +137,7 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"jumplist.jumpListCount": 2,
 	"multiCommand.commands": [],
-	"rust-analyzer.check.command": "clippy",
+	// "rust-analyzer.check.command": "clippy",
 	"rust-analyzer.debug.buildBeforeRestart": true, // Default is false
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
@@ -164,7 +163,7 @@
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"args": [
@@ -194,6 +193,5 @@
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left",
-	"workbench.statusBar.visible": false
+	"workbench.sideBar.location": "left"
 }
