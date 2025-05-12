@@ -15,7 +15,7 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[lua]": {
 		"editor.defaultFormatter": "JohnnyMorganz.stylua"
@@ -53,6 +53,7 @@
 	"codesnap.containerPadding": "0.5em",
 	"cursor.composer.shouldAllowCustomModes": true,
 	"cursor.composer.shouldChimeAfterChatFinishes": true,
+	"cursor.composer.textSizeScale": 0.85,
 	"cursor.cpp.disabledLanguages": [
 		// "markdown"
 	],
@@ -62,9 +63,7 @@
 	},
 	"custom-ui-style.font.sansSerif": "Iosevka Nerd Font Mono",
 	"custom-ui-style.stylesheet": {
-		".quick-input-widget": "top: 10vh !important",
-		"h1": "font-size: 15px !important",
-		"h2": "font-size: 14px !important"
+		".quick-input-widget": "top: 10vh !important"
 	},
 	"diffEditor.ignoreTrimWhitespace": true,
 	"diffEditor.renderIndicators": false,
@@ -79,7 +78,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 15,
+	"editor.fontSize": 17,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -137,7 +136,7 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"jumplist.jumpListCount": 2,
 	"multiCommand.commands": [],
-	// "rust-analyzer.check.command": "clippy",
+	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.debug.buildBeforeRestart": true, // Default is false
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
@@ -163,7 +162,7 @@
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontSize": 14,
 	"terminal.integrated.profiles.osx": {
 		"fish": {
 			"args": [

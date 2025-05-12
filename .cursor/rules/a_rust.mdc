@@ -5,5 +5,6 @@ alwaysApply: false
 ---
 - use `anyhow` for error handling
 - prefer to use `tokio` over the std libraries blocking primitives
-- use `log` for logging
+- use `log` for logging (except for tests)
 - if you see a `#![allow(unused)]` do not remove it.
+- if you are going to add dependencies, do so by doing: `cargo add <name-of-dep>` instead of editing `Cargo.toml` directly.
