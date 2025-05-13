@@ -4,19 +4,6 @@
 
 1. make sure `brew` is installed on the system.
 
-### Note
-
-    - to stow "config" `stow --target=$XDG_CONFIG_HOME config`
-    - to stow "home" `stow --target=$HOME home`
-    - to stow "cursor" `stow --target=$HOME/Library/Application\ Support/Cursor/User cursor`
-    - ".corneish-kbd" should not be stowed since it is just configuration for the keyboard.
-
-- navigate into the directory.
-- to stow/unstow:
-  - to stow: `stow --target=$HOME {stow_package}`.
-  - to unstow: `stow --target=$HOME --delete {stow_package}`.
-
-
 ### Fonts
 - Iosevka: `brew install --cask font-iosevka-nerd-font`
 - Jetbrains: `brew install --cask font-jetbrains-mono-nerd-font`

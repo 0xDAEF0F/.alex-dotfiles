@@ -1,0 +1,144 @@
+after-login-command = [
+    'exec-and-forget open -n /Applications/Ghostty.app/',
+    'exec-and-forget open -n /Applications/Google\ Chrome.app/',
+    'exec-and-forget open -n /Applications/Cursor.app/',
+    'exec-and-forget sketchybar --reload',
+]
+after-startup-command = []
+
+exec-on-workspace-change = [
+    '/bin/bash',
+    '-c',
+    '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change AEROSPACE_FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE AEROSPACE_PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE',
+]
+
+start-at-login = false
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
+# Horizontal accordion: left/right padding indicates other windows
+# Vertical accordion: top/bottom padding indicates other windows
+accordion-padding = 0
+
+# Possible values: tiles|accordion
+default-root-container-layout = 'tiles'
+
+# Possible values: horizontal|vertical|auto
+default-root-container-orientation = 'horizontal'
+
+automatically-unhide-macos-hidden-apps = true
+
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+preset = 'qwerty'
+
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+[mode.main.binding]
+
+# Open apps shortcuts
+alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app/' # Terminal
+alt-ctrl-c = 'workspace 2'                                        # Code Editor
+alt-ctrl-b = 'workspace 3'                                        # Browser
+# workspace 4
+alt-ctrl-w = 'exec-and-forget open -a WhatsApp' # WhatsApp
+alt-ctrl-s = 'exec-and-forget open -a Spotify'  # Spotify
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+alt-o = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#focus
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+alt-n = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-e = 'focus --boundaries-action wrap-around-the-workspace up'
+alt-i = 'focus --boundaries-action wrap-around-the-workspace right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move
+alt-ctrl-h = 'move left'
+alt-ctrl-n = 'move down'
+alt-ctrl-e = 'move up'
+alt-ctrl-i = 'move right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#resize
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+f1 = 'workspace 1'
+f2 = 'workspace 2'
+f3 = 'workspace 3'
+f4 = 'workspace 4'
+f5 = 'workspace 5'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+shift-f1 = 'move-node-to-workspace 1 --focus-follows-window'
+shift-f2 = 'move-node-to-workspace 2 --focus-follows-window'
+shift-f3 = 'move-node-to-workspace 3 --focus-follows-window'
+shift-f4 = 'move-node-to-workspace 4 --focus-follows-window'
+shift-f5 = 'move-node-to-workspace 5 --focus-follows-window'
+
+# Enable service mode
+alt-x = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+f = [
+    'layout floating tiling',
+    'mode main',
+] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
+
+# Join windows
+h = ['join-with left', 'mode main']
+j = ['join-with down', 'mode main']
+k = ['join-with up', 'mode main']
+l = ['join-with right', 'mode main']
+
+# Specific rules for TILING apps and apps MOVED to specific workspaces
+## Workspace Specific (and Tiled) Apps
+
+# Ghostty (tiled, current workspace)
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ["layout tiling"]
+
+# Cursor (tiled, workspace 2)
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = ["layout tiling", "move-node-to-workspace 2"]
+
+# Zed (tiled, workspace 2)
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = ["layout tiling", "move-node-to-workspace 2"]
+
+# Google Chrome (tiled, workspace 3)
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ["layout tiling", "move-node-to-workspace 3"]
+
+# Spotify (tiled, workspace 4)
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ["layout tiling", "move-node-to-workspace 4"]
+
+# WhatsApp (tiled, workspace 4)
+[[on-window-detected]]
+if.app-name-regex-substring = 'WhatsApp'
+run = ["layout tiling", "move-node-to-workspace 4"]
+
+# Default rule for all other applications:
+# Make them floating in their current workspace.
+[[on-window-detected]]
+# No 'if' conditions means it applies to any window not handled by the rules above.
+run = ["layout floating"]
