@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# toggle-menu-bar-autohide.sh
+# macOS auto-hide menu bar toggle via System Events → Dock Preferences
+
+# Read current setting (1 == true, 0 == false; default to 0 if unset)
+current=$(defaults read NSGlobalDomain _HIHideMenuBar 2>/dev/null || echo 0)
+
+if [ "$current" -eq 1 ]; then
+    # It’s currently true → turn it OFF
+    osascript -e '
+    tell application "System Events"
+      tell dock preferences
+        set autohide menu bar to false
+      end tell
+    end tell
+  '
+    echo "🔽 Auto-hide menu bar: OFF"
+else
+    # It’s currently false (or unset) → turn it ON
+    osascript -e '
+    tell application "System Events"
+      tell dock preferences
+        set autohide menu bar to true
+      end tell
+    end tell
+  '
+    echo "🔼 Auto-hide menu bar: ON"
+fi

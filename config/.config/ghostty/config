@@ -1,6 +1,4 @@
-command = /opt/homebrew/bin/fish --login --interactive
 macos-titlebar-style = "hidden"
-# macos-titlebar-style =
 font-size=24
 
 window-padding-x=0,0
