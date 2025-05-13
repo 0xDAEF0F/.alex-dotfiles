@@ -7,17 +7,6 @@
     "command": "breadcrumbs.focusAndSelect",
     "key": "cmd+,"
   },
-  // Keep this for now
-  // {
-  //   "command": "workbench.action.navigateBack",
-  //   "key": "ctrl+o",
-  //   "when": "canNavigateBack"
-  // },
-  // {
-  //   "command": "workbench.action.navigateForward",
-  //   "key": "ctrl+i",
-  //   "when": "canNavigateForward"
-  // },
   {
     "command": "hideSuggestWidget",
     "key": "ctrl+c",
@@ -200,37 +189,27 @@
     "when": "editorTextFocus && neovim.ctrlKeysNormal.i && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
-    "key": "cmd+i",
-    "command": "composerMode.agent"
+    "command": "composerMode.agent",
+    "key": "cmd+i"
   },
   {
-    "key": "cmd+l",
-    "command": "composerMode.chat"
+    "command": "composerMode.chat",
+    "key": "cmd+l"
   },
   {
-    "key": "cmd+=",
-    "command": "-workbench.action.zoomIn"
+    "command": "-workbench.action.zoomIn",
+    "key": "cmd+="
   },
   {
-    "key": "cmd+-",
-    "command": "-workbench.action.zoomOut"
+    "command": "-workbench.action.zoomOut",
+    "key": "cmd+-"
   },
   {
-    "key": "ctrl+alt+x",
-    "command": "workbench.action.toggleAuxiliaryBar"
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "key": "ctrl+alt+x"
   },
   {
-    "key": "alt+cmd+b",
-    "command": "-workbench.action.toggleAuxiliaryBar"
-  },
-  {
-    "key": "ctrl+space",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
-  },
-  {
-    "key": "alt+escape",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    "command": "-workbench.action.toggleAuxiliaryBar",
+    "key": "alt+cmd+b"
   }
 ]

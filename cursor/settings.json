@@ -158,19 +158,10 @@
 	"stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
 	"svelte.enable-ts-plugin": true,
 	"terminal.external.osxExec": "Ghostty.app",
-	"terminal.integrated.defaultProfile.osx": "fish",
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
 	"terminal.integrated.fontSize": 14,
-	"terminal.integrated.profiles.osx": {
-		"fish": {
-			"args": [
-				"-l"
-			],
-			"path": "/opt/homebrew/bin/fish"
-		}
-	},
 	"terminal.integrated.shellIntegration.enabled": true,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
