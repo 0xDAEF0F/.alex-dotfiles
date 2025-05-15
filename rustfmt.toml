@@ -1,0 +1,9 @@
+# https://rust-lang.github.io/rustfmt/
+
+max_width = 90                  # default: 100
+use_field_init_shorthand = true # default: false
+
+# Unstable features
+format_strings = true         # default: false
+imports_granularity = "Crate"
+wrap_comments = true          # default: false
