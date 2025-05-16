@@ -183,6 +183,5 @@
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left",
-	"workbench.statusBar.visible": false
+	"workbench.sideBar.location": "left"
 }

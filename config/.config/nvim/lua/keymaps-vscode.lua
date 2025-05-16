@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>f", function()
 end)
 
 -- Toggle ai completions
-vim.keymap.set("n", "<leader>g", function()
+vim.keymap.set("n", "<leader>e", function()
   require("vscode").call("editor.cpp.toggle")
 end)
 
@@ -142,4 +142,18 @@ vim.keymap.set({ "n", "x" }, "<C-b>", function()
   end
   utils.centerScreenOnCursor()
   utils.registerJump()
+end)
+
+-- Toggle highlight search for empty lines
+vim.keymap.set("n", "<leader><leader>", function()
+  require("flash").jump({
+    search = {
+      mode = "search",
+    },
+    pattern = "^$",
+    label = {
+      after = { 0, 0 },
+    },
+  })
+  utils.centerScreenOnCursor()
 end)
