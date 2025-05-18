@@ -5,7 +5,7 @@ end)
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.scrolloff = 0
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 400
 
 if vim.g.vscode then
   -- vscode only options

@@ -145,15 +145,15 @@ vim.keymap.set({ "n", "x" }, "<C-b>", function()
 end)
 
 -- Toggle highlight search for empty lines
-vim.keymap.set("n", "<leader><leader>", function()
-  require("flash").jump({
-    search = {
-      mode = "search",
-    },
-    pattern = "^$",
-    label = {
-      after = { 0, 0 },
-    },
-  })
-  utils.centerScreenOnCursor()
-end)
+-- vim.keymap.set("n", "<leader><leader>", function()
+--   require("flash").jump({
+--     search = {
+--       mode = "search",
+--     },
+--     pattern = "^$",
+--     label = {
+--       after = { 0, 0 },
+--     },
+--   })
+--   utils.centerScreenOnCursor()
+-- end)

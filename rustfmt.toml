@@ -4,6 +4,8 @@ max_width = 90                  # default: 100
 use_field_init_shorthand = true # default: false
 
 # Unstable features
-format_strings = true         # default: false
-imports_granularity = "Crate"
-wrap_comments = true          # default: false
+format_strings = true          # default: false
+imports_granularity = "Crate"  # default: "Preserve"
+wrap_comments = true           # default: false
+empty_item_single_line = false # default: true
+fn_single_line = true          # default: false

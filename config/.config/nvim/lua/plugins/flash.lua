@@ -12,6 +12,8 @@ return {
     modes = {
       treesitter = {
         labels = labels,
+        jump = { pos = "range", autojump = false },
+        label = { before = true, after = false, style = "inline" },
       },
       char = {
         enabled = false,
