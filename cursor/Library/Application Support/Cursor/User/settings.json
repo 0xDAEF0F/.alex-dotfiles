@@ -27,7 +27,9 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter"
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1001
 	},
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer",
@@ -78,7 +80,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -106,6 +108,7 @@
 	"errorLens.enabled": true,
 	"errorLens.messageBackgroundMode": "message",
 	"errorLens.messageEnabled": true,
+	"errorLens.scrollbarHackEnabled": true,
 	"explorer.compactFolders": false,
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
