@@ -75,6 +75,7 @@
 		"source.organizeImports.biome": "explicit"
 	},
 	"editor.cursorSurroundingLines": 10, // scrolloff
+	"editor.detectIndentation": true,
 	"editor.experimental.preferTreeSitter": [
 		"typescript"
 	],
@@ -101,6 +102,7 @@
 	"editor.selectionHighlight": false,
 	"editor.semanticHighlighting.enabled": true, // it's not needed for some themes
 	"editor.smoothScrolling": false,
+	"editor.tabSize": 3,
 	"editor.tokenColorCustomizations": {
 		"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
 	},
