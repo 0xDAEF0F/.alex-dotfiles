@@ -25,7 +25,7 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>r",
+  "<leader>v",
   ":lua require('vscode').call('bookmarks.jumpToNext')<CR>",
   { noremap = true, silent = true }
 )
