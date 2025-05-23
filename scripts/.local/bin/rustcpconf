@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+cp ~/.alex-dotfiles/rust-toolchain .
+cp ~/.alex-dotfiles/rustfmt.toml .
+ln -s ~/.alex-dotfiles/.cursor .
+
+# Add .env to .gitignore
+echo ".cursor" >>.gitignore
+echo ".env" >>.gitignore
+echo "RUST_LOG=info" >>.env

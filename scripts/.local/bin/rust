@@ -8,9 +8,8 @@ fi
 cargo new --bin "$1"
 cd "$1"
 
-cp ~/.alex-dotfiles/rust-toolchain .
-cp ~/.alex-dotfiles/rustfmt.toml .
-ln -s ~/.alex-dotfiles/.cursor .
+# copy config files
+rustcpconf
 
 cargo add anyhow                   # error handling
 cargo add dotenvy                  # environment variables
@@ -29,11 +28,6 @@ cargo add bon                            # builder pattern
 cargo add strum strum_macros             # set of macros and traits for working with enums and strings
 cargo add parking_lot --features nightly # mutexes without unwraps
 cargo add nestruct                       # nested structs
-
-# Add .env to .gitignore
-echo ".cursor" >>.gitignore
-echo ".env" >>.gitignore
-echo "RUST_LOG=info" >>.env
 
 echo "
 #![allow(unused)]
