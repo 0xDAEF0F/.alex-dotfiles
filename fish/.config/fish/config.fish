@@ -16,6 +16,10 @@ source ~/.config/fish/completions/tauri.fish
 starship init fish | source       # source starship
 zoxide init --cmd j fish | source # source zoxide
 
+fish_vi_key_bindings
+
+set -U fish_color_command blue
+
 set -Ux RUST_LOG "fnm=warn"
 
 # Bun
