@@ -80,6 +80,17 @@ ram=(
 sketchybar --add item ram left \
   --set ram "${ram[@]}"
 
+cursor_quota=(
+  icon.font="sketchybar-app-font:Regular:17.0"
+  icon=:bilibili:
+  icon.color=0xffffffff
+  update_freq=30
+  script="$PLUGIN_DIR/cursor-quota.sh"
+)
+
+sketchybar --add item cursor_quota left \
+  --set cursor_quota "${cursor_quota[@]}"
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 sketchybar --hotload true
