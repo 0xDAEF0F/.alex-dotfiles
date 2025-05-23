@@ -59,8 +59,10 @@
 	"biome.rename": true,
 	"biome.requireConfigFile": true, // not working
 	"codesnap.containerPadding": "0.5em",
+	"cursor-retrieval.canAttemptGithubLogin": true,
 	"cursor.composer.shouldAllowCustomModes": true,
 	"cursor.composer.shouldChimeAfterChatFinishes": true,
+	"cursor.composer.showSuggestedFiles": true,
 	"cursor.composer.textSizeScale": 1,
 	"cursor.cpp.disabledLanguages": [
 		// "markdown"

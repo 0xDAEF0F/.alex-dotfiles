@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "no project name provided"
+    exit 1
+fi
+
+cargo new --bin "$1"
+cd "$1"
+
+cp ~/.alex-dotfiles/rust-toolchain .
+cp ~/.alex-dotfiles/rustfmt.toml .
+cp -r ~/.alex-dotfiles/.cursor .
+
+cargo add anyhow                             # error handling
+cargo add dotenv                             # environment variables
+cargo add tokio --features full              # async runtime
+cargo add serde_json serde --features derive # serialization
+cargo add itertools chrono reqwest           # utils
+cargo add env-logger-wrapper colored         # logging
+
+# experimental
+cargo add derive_more --features full    # derive macros for more traits
+cargo add variantly                      # introspection for enum variants
+cargo add validator                      # validation library
+cargo add tap                            # tapping into values for debugging
+cargo add bon                            # builder pattern
+cargo add strum strum_macros             # set of macros and traits for working with enums and strings
+cargo add parking_lot --features nightly # mutexes without unwraps
+
+# Add .env to .gitignore
+echo ".cursor" >>.gitignore
+
+echo "
+#![allow(unused)]
+
+use anyhow::Result;
+use env_logger_wrapper::{new_builder, LevelFilter};
+
+#[tokio::main]
+async fn main() -> Result<()> {
+    dotenv::dotenv().ok(); // load .env file
+    new_builder(LevelFilter::Trace).init(); // init logging
+
+    println!(\"Hello, world!\");
+
+    Ok(())  
+}
+" >src/main.rs
+
+cargo fmt
+
+git add .
+
+git commit -m "(feat): initialize project"

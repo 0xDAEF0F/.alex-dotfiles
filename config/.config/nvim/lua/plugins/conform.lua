@@ -4,6 +4,7 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       markdown = { "prettier" },
+      json = { "prettier" },
       typescript = { "prettier" },
       lua = { "stylua" },
     },
