@@ -38,6 +38,16 @@ require("lazy").setup({
   },
 })
 
+-- Stop automatic comment continuation
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  desc = "Stop automatic comment continuation",
+  callback = function()
+    -- remove the 'c', 'r', and 'o' flags from 'formatoptions'
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})
+
 -- OLD CONFIG
 -- -- vscode_utils.lua
 -- function call(arg)

@@ -149,7 +149,7 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"jumplist.jumpListCount": 2,
 	"multiCommand.commands": [],
-	// "rust-analyzer.check.command": "clippy",
+	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.debug.buildBeforeRestart": true, // Default is false
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false

@@ -12,12 +12,13 @@ cp ~/.alex-dotfiles/rust-toolchain .
 cp ~/.alex-dotfiles/rustfmt.toml .
 ln -s ~/.alex-dotfiles/.cursor .
 
-cargo add anyhow                             # error handling
-cargo add dotenv                             # environment variables
-cargo add tokio --features full              # async runtime
-cargo add serde_json serde --features derive # serialization
-cargo add itertools chrono reqwest           # utils
-cargo add env-logger-wrapper colored         # logging
+cargo add anyhow                   # error handling
+cargo add dotenvy                  # environment variables
+cargo add tokio --features full    # async runtime
+cargo add serde_json               # json serialization
+cargo add serde --features derive  # serialization
+cargo add itertools chrono reqwest # utils
+cargo add thin-logger colored      # logging
 
 # experimental
 cargo add derive_more --features full    # derive macros for more traits
@@ -27,22 +28,26 @@ cargo add tap                            # tapping into values for debugging
 cargo add bon                            # builder pattern
 cargo add strum strum_macros             # set of macros and traits for working with enums and strings
 cargo add parking_lot --features nightly # mutexes without unwraps
+cargo add nestruct                       # nested structs
 
 # Add .env to .gitignore
 echo ".cursor" >>.gitignore
+echo ".env" >>.gitignore
+echo "RUST_LOG=info" >>.env
 
 echo "
 #![allow(unused)]
+#![allow(clippy::all)]
 
 use anyhow::Result;
-use env_logger_wrapper::{new_builder, LevelFilter};
+use thin_logger::{log, build};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    dotenv::dotenv().ok(); // load .env file
-    new_builder(LevelFilter::Trace).init(); // init logging
+    dotenvy::dotenv_override().ok(); // load .env file
+    build(None).init(); // init logging
 
-    println!(\"Hello, world!\");
+    log::info!(\"Hello, world!\");
 
     Ok(())  
 }
