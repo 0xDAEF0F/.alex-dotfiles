@@ -6,7 +6,9 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format"
 	},
 	"[go]": {
-		"editor.defaultFormatter": "golang.go"
+		"editor.defaultFormatter": "golang.go",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1001
 	},
 	"[ignore]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
@@ -18,7 +20,9 @@
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[lua]": {
-		"editor.defaultFormatter": "JohnnyMorganz.stylua"
+		"editor.defaultFormatter": "JohnnyMorganz.stylua",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1001
 	},
 	"[prisma]": {
 		"editor.defaultFormatter": "Prisma.prisma"
@@ -44,7 +48,9 @@
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome",
-		"editor.inlayHints.enabled": "off"
+		"editor.inlayHints.enabled": "off",
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 1001
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
@@ -65,7 +71,7 @@
 	},
 	"custom-ui-style.font.sansSerif": "Iosevka Nerd Font Mono",
 	"custom-ui-style.stylesheet": {
-		".quick-input-widget": "top: 10vh !important"
+		".quick-input-widget": "top: 13vh !important"
 	},
 	"diffEditor.ignoreTrimWhitespace": true,
 	"diffEditor.renderIndicators": false,
@@ -81,7 +87,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 15,
+	"editor.fontSize": 16,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
