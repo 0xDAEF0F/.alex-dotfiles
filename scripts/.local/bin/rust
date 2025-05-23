@@ -10,7 +10,7 @@ cd "$1"
 
 cp ~/.alex-dotfiles/rust-toolchain .
 cp ~/.alex-dotfiles/rustfmt.toml .
-cp -r ~/.alex-dotfiles/.cursor .
+ln -s ~/.alex-dotfiles/.cursor .
 
 cargo add anyhow                             # error handling
 cargo add dotenv                             # environment variables
@@ -53,3 +53,5 @@ cargo fmt
 git add .
 
 git commit -m "(feat): initialize project"
+
+cursor .
