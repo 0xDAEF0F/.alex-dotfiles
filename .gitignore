@@ -11,3 +11,4 @@ config/zed/prompts/
 lib-docs/
 .cursor
 .env
+/**/fish_variables
