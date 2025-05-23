@@ -12,3 +12,4 @@ lib-docs/
 .cursor
 .env
 /**/fish_variables
+lazy-lock.json
