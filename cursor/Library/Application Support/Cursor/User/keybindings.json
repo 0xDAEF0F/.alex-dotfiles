@@ -12,11 +12,6 @@
     "key": "ctrl+c",
     "when": "suggestWidgetVisible && textInputFocus"
   },
-  {
-    // this is not necessary right now
-    "command": "workbench.panel.aichat.view.focus",
-    "key": "cmd+2"
-  },
   // git source control toggle
   {
     "command": "workbench.view.scm",
@@ -151,10 +146,6 @@
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   },
   {
-    "command": "-whisperAssistant.toggleRecording",
-    "key": "ctrl+u"
-  },
-  {
     "command": "workbench.action.openGlobalKeybindings",
     "key": "cmd+r cmd+t"
   },
@@ -211,5 +202,9 @@
   {
     "command": "-workbench.action.toggleAuxiliaryBar",
     "key": "alt+cmd+b"
+  },
+  {
+    "command": "multiCommand.gitStageAndCommitAi",
+    "key": "ctrl+cmd+c"
   }
 ]
