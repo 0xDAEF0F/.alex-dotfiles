@@ -2,16 +2,8 @@
 	"Lua.diagnostics.globals": [
 		"vim"
 	],
-	"[dotenv]": {
-		"editor.defaultFormatter": "foxundermoon.shell-format"
-	},
 	"[go]": {
-		"editor.defaultFormatter": "golang.go",
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 1001
-	},
-	"[ignore]": {
-		"editor.defaultFormatter": "foxundermoon.shell-format"
+		"editor.defaultFormatter": "golang.go"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome"
@@ -20,53 +12,36 @@
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[lua]": {
-		"editor.defaultFormatter": "JohnnyMorganz.stylua",
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 1001
+		"editor.defaultFormatter": "JohnnyMorganz.stylua"
 	},
 	"[prisma]": {
 		"editor.defaultFormatter": "Prisma.prisma"
 	},
-	"[properties]": {
-		"editor.defaultFormatter": "foxundermoon.shell-format"
-	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter",
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 1001
+		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"[rust]": {
-		"editor.defaultFormatter": "rust-lang.rust-analyzer",
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 1001
-	},
-	"[shellscript]": {
-		"editor.defaultFormatter": "foxundermoon.shell-format"
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
 	},
 	"[toml]": {
 		"editor.defaultFormatter": "tamasfe.even-better-toml"
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "biomejs.biome",
-		"editor.inlayHints.enabled": "off",
-		"files.autoSave": "afterDelay",
-		"files.autoSaveDelay": 1001
+		"editor.inlayHints.enabled": "off"
 	},
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"biome.enabled": true,
 	"biome.rename": true,
-	"biome.requireConfigFile": true, // not working
 	"codesnap.containerPadding": "0.5em",
 	"cursor-retrieval.canAttemptGithubLogin": true,
 	"cursor.composer.shouldAllowCustomModes": true,
 	"cursor.composer.shouldChimeAfterChatFinishes": true,
 	"cursor.composer.showSuggestedFiles": true,
 	"cursor.composer.textSizeScale": 1,
-	"cursor.cpp.disabledLanguages": [
-		// "markdown"
-	],
+	"cursor.cpp.disabledLanguages": [],
 	"cursor.cpp.enablePartialAccepts": true,
 	"custom-ui-style.electron": {
 		"frame": false // frameless window (no macos semaphore)
@@ -85,7 +60,7 @@
 	"editor.cursorSurroundingLines": 10, // scrolloff
 	"editor.detectIndentation": true,
 	"editor.experimental.preferTreeSitter": [
-		"typescript"
+		"typescript",
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
@@ -93,7 +68,6 @@
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
-	"editor.hover.enabled": true,
 	"editor.inlayHints.fontSize": 9,
 	"editor.inlayHints.maximumLength": 30,
 	"editor.inlayHints.padding": false,
@@ -101,15 +75,11 @@
 	"editor.lineNumbers": "on",
 	"editor.occurrencesHighlight": "off",
 	"editor.renderLineHighlight": "gutter",
-	"editor.rulers": [
-		100
-	],
 	"editor.scrollbar.horizontal": "hidden",
 	"editor.scrollbar.vertical": "auto",
 	"editor.scrollbar.verticalScrollbarSize": 8,
 	"editor.selectionHighlight": false,
 	"editor.semanticHighlighting.enabled": true, // it's not needed for some themes
-	"editor.smoothScrolling": false,
 	"editor.tabSize": 3,
 	"editor.tokenColorCustomizations": {
 		"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
@@ -123,13 +93,12 @@
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
 	"explorer.confirmPasteNative": false,
-	"explorer.decorations.badges": true, // remove badges in explorer
-	"explorer.decorations.colors": true, // remove decoration colors in explorer
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
 	},
-	"fontshortcuts.defaultFontSize": 15,
-	"fontshortcuts.defaultTerminalFontSize": 15,
+	"files.autoSaveDelay": 1001,
+	"fontshortcuts.defaultFontSize": 12, // terminal
+	"fontshortcuts.defaultTerminalFontSize": 16, // editor
 	"fontshortcuts.step": 1,
 	"git.autofetch": true,
 	"git.confirmSync": false,
@@ -150,13 +119,10 @@
 	"jumplist.jumpListCount": 2,
 	"multiCommand.commands": [],
 	"rust-analyzer.check.command": "clippy",
-	"rust-analyzer.debug.buildBeforeRestart": true, // Default is false
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
 	"rust-analyzer.imports.granularity.group": "crate",
 	"rust-analyzer.inlayHints.parameterHints.enable": false,
-	"rust-analyzer.lens.references.adt.enable": true, // Default is false
-	"rust-analyzer.lru.capacity": 256, // Default is 128
 	"rust-analyzer.restartServerOnConfigChange": true, // Default is false
 	"rust-analyzer.runnables.extraEnv": {
 		"PATH": "/Users/ale/.cargo/bin:${env:PATH}",
@@ -165,14 +131,12 @@
 	},
 	"rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
 	"rust-analyzer.typing.triggerChars": "=.>{(",
-	"rust-analyzer.workspace.symbol.search.limit": 256, // Default is 128
 	"scm.diffDecorationsGutterWidth": 4,
 	"settings.cycle": [],
 	"stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
 	"svelte.enable-ts-plugin": true,
 	"terminal.external.osxExec": "Ghostty.app",
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
-	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
 	"terminal.integrated.fontLigatures": true,
 	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.shellIntegration.enabled": true,
@@ -185,7 +149,6 @@
 	"window.newWindowDimensions": "maximized", // although window switching is not working
 	"window.titleBarStyle": "native",
 	"window.zoomLevel": 1,
-	"window.zoomPerWindow": false, // zoom is applied uniformly accross all windows
 	"workbench.colorCustomizations": {
 		// git vertical bar
 		"editorOverviewRuler.infoForeground": "#00000000",
@@ -196,5 +159,6 @@
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left"
+	"workbench.sideBar.location": "left",
+	"files.autoSave": "afterDelay"
 }

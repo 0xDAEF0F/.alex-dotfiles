@@ -4,20 +4,23 @@
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
 
-fish_add_path $HOME/go/bin               # go
-fish_add_path $HOME/.bun/bin             # bun
-fish_add_path /opt/homebrew/bin          # homebrew
+# only enable vi key bindings if connected to a keyboard
+if status is-interactive
+    fish_vi_key_bindings
+end
+
+fish_add_path $HOME/go/bin # go
+fish_add_path $HOME/.bun/bin # bun
+fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
-fish_add_path $HOME/.zig/zig-macos       # zig
-fish_add_path $HOME/.local/bin           # local scripts
+fish_add_path $HOME/.zig/zig-macos # zig
+fish_add_path $HOME/.local/bin # local scripts
 
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
 
-starship init fish | source       # source starship
+starship init fish | source # source starship
 zoxide init --cmd j fish | source # source zoxide
-
-fish_vi_key_bindings
 
 set -U fish_greeting ""
 set -U fish_color_command blue
@@ -31,7 +34,7 @@ set -Ux BUN_INSTALL $HOME/.bun
 set -Ux EZA_CONFIG_DIR "$HOME/.config/eza"
 
 # Editor
-set -Ux EDITOR "nvim"
+set -Ux EDITOR nvim
 
 # XDG Specs
 set -Ux XDG_CONFIG_HOME ~/.config
@@ -65,10 +68,10 @@ abbr -a gl "git pull --rebase"
 
 # Neovim abbreviations
 abbr -a n "nvim ."
-abbr -a vi "nvim"
+abbr -a vi nvim
 
 # Zoxide "ji"
-abbr -a jj "ji"
+abbr -a jj ji
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
@@ -94,18 +97,16 @@ abbr -a bt "bun test"
 # Npm
 abbr -a nls "npm ls -g"
 
-# Code
-abbr -a c "cursor ."
-abbr -a z "zed ."
-
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"
 abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
 # Eza
+# Instead of doing `ls` we can do `eza`. `\e` is option/alt key
+bind -M insert \el 'commandline -r "eza"; commandline -f execute'
+abbr -a ls eza # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
-abbr -a ls "eza" # list dirs and files
 abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format
 
 # Utility abbreviations
