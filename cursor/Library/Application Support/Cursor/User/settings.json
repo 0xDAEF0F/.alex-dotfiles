@@ -117,7 +117,17 @@
 	"go.toolsManagement.autoUpdate": true,
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"jumplist.jumpListCount": 2,
-	"multiCommand.commands": [],
+	"multiCommand.commands": [
+		{
+			"command": "multiCommand.gitStageAndCommitAi",
+			"sequence": [
+				"git.stageAll",
+				"cursor.generateGitCommitMessage",
+				"git.commit",
+				"git.push"
+			]
+		}
+	],
 	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
@@ -159,6 +169,5 @@
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left",
-	"files.autoSave": "afterDelay"
+	"workbench.sideBar.location": "left"
 }
