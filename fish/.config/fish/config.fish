@@ -9,6 +9,7 @@ fish_add_path $HOME/.bun/bin             # bun
 fish_add_path /opt/homebrew/bin          # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos       # zig
+fish_add_path $HOME/.local/bin           # local scripts
 
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
