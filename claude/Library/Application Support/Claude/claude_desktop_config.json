@@ -8,7 +8,7 @@
 		"rust-docs-mcp-server": {
 			"command": "node",
 			"args": [
-				"/Users/ale/Documents/external-libraries/rust-docs-mcp-server/build/index.js"
+				"/Users/ale/external-libraries/rust-docs-mcp-server/build/index.js"
 			]
 		}
 	}

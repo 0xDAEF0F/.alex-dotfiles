@@ -63,7 +63,6 @@ abbr -a gl "git pull --rebase"
 # Neovim abbreviations
 abbr -a n "nvim ."
 abbr -a vi "nvim"
-abbr -a vim "nvim"
 
 # Zoxide "ji"
 abbr -a jj "ji"
@@ -88,6 +87,9 @@ abbr -a brb "bun run build"
 abbr -a br "bun run"
 abbr -a ba "bun add"
 abbr -a bt "bun test"
+
+# Npm
+abbr -a nls "npm ls -g"
 
 # Code
 abbr -a c "cursor ."
