@@ -6,10 +6,10 @@
 		"editor.defaultFormatter": "golang.go"
 	},
 	"[json]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "biomejs.biome",
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features"
+		"editor.defaultFormatter": "vscode.json-language-features",
 	},
 	"[lua]": {
 		"editor.defaultFormatter": "JohnnyMorganz.stylua"
@@ -96,7 +96,6 @@
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
 	},
-	"files.autoSaveDelay": 1001,
 	"fontshortcuts.defaultFontSize": 12, // terminal
 	"fontshortcuts.defaultTerminalFontSize": 16, // editor
 	"fontshortcuts.step": 1,
@@ -150,6 +149,16 @@
 	"terminal.integrated.fontLigatures": true,
 	"terminal.integrated.fontSize": 12,
 	"terminal.integrated.shellIntegration.enabled": true,
+	"todohighlight.keywords": [
+		{
+			"backgroundColor": "#32302f",
+			"border": "1px solid #1d2021",
+			"borderRadius": "3px",
+			"color": "#fb4934",
+			"text": "todo:",
+			"overviewRulerColor": "red"
+		}
+	],
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
 	"typescript.inlayHints.variableTypes.enabled": true,

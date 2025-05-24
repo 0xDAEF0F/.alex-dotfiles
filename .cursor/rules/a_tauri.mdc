@@ -1,0 +1,6 @@
+---
+description: 
+globs: src-tauri/**/*
+alwaysApply: false
+---
+- if capabilities array is empty on: [tauri.conf.json](mdc:src-tauri/tauri.conf.json) —  it means all capabilities are enabled

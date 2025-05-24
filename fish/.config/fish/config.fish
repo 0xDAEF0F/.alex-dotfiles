@@ -87,6 +87,12 @@ abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 
+# Tauri
+abbr -a cta "cargo tauri"
+abbr -a ctd "cargo tauri dev"
+abbr -a ctr "cargo run --manifest-path src-tauri/Cargo.toml"
+abbr -a ctb "cargo build --manifest-path src-tauri/Cargo.toml"
+
 # Bun abbreviations
 abbr -a brs "bun run start"
 abbr -a brb "bun run build"

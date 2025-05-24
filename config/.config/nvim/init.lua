@@ -24,13 +24,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-if vim.g.vscode then
-  vim.api.nvim_create_autocmd("InsertLeave", {
-    callback = function()
-      require("vscode").call("workbench.action.files.saveWithoutFormatting")
-    end,
-  })
-end
+-- if vim.g.vscode then
+--   vim.api.nvim_create_autocmd("InsertLeave", {
+--     callback = function()
+--       require("vscode").call("workbench.action.files.saveWithoutFormatting")
+--     end,
+--   })
+-- end
 
 require("lazy").setup({
   spec = {

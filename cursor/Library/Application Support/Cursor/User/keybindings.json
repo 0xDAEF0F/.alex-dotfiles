@@ -67,7 +67,7 @@
   },
   {
     "command": "workbench.action.openSettingsJson",
-    "key": "cmd+t cmd+s"
+    "key": "cmd+r cmd+t"
   },
   {
     "args": "<C-u>",
@@ -144,10 +144,6 @@
     "command": "-markdown.extension.editing.toggleMath",
     "key": "cmd+m",
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-  },
-  {
-    "command": "workbench.action.openGlobalKeybindings",
-    "key": "cmd+r cmd+t"
   },
   {
     "command": "-markdown.extension.editing.toggleItalic",
