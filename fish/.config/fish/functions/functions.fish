@@ -54,3 +54,8 @@ function add_abbr
         echo "Usage: add_abbr <abbr> <command>"
     end
 end
+
+function llr
+    commandline "ll | rg \"\""
+    commandline --cursor (math (commandline --cursor) - 1)
+end

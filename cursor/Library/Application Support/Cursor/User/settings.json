@@ -147,7 +147,7 @@
 	"terminal.external.osxExec": "Ghostty.app",
 	"terminal.integrated.enableMultiLinePasteWarning": "never",
 	"terminal.integrated.fontLigatures": true,
-	"terminal.integrated.fontSize": 12,
+	"terminal.integrated.fontSize": 13,
 	"terminal.integrated.shellIntegration.enabled": true,
 	"todohighlight.keywords": [
 		{
