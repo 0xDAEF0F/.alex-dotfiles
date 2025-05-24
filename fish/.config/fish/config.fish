@@ -27,6 +27,9 @@ set -Ux RUST_LOG "fnm=warn,cursor_quota=debug"
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
 
+# Eza
+set -Ux EZA_CONFIG_DIR "$HOME/.config/eza"
+
 # Editor
 set -Ux EDITOR "nvim"
 
@@ -101,19 +104,9 @@ abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
 # Eza
-abbr -a ls "eza --icons --classify --sort=modified --group-directories-last\
-  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-# shows only `.` files
-abbr -a lx "eza -a -f --show-symlinks --icons --classify --sort=modified\
-  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-# `.` and regular
-abbr -a ll "eza -a --icons --classify --sort=modified --group-directories-last\
-  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-# long format
-abbr -a la "eza -l -a --no-user --icons --classify --sort=modified --group-directories-last\
-  -I "\"$(grep -v '^#\|^$' ~/.gitignore_global | tr '\n' '|' | sed 's/|$//')"\""
-# tree list
-abbr -a tree "eza -T -a --level 2 --ignore-glob ''"
+abbr -a ll "eza -a" # list dirs and files (hidden included)
+abbr -a ls "eza" # list dirs and files
+abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format
 
 # Utility abbreviations
 abbr -a rmrf "rm -rf" # Delete directory recursively
