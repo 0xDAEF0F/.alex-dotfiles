@@ -22,7 +22,7 @@ fish_vi_key_bindings
 set -U fish_greeting ""
 set -U fish_color_command blue
 
-set -Ux RUST_LOG "fnm=warn"
+set -Ux RUST_LOG "fnm=warn,cursor_quota=debug"
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
