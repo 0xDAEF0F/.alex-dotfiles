@@ -10,3 +10,4 @@ alwaysApply: false
 - if you are going to add dependencies, do so by doing: `cargo add <name-of-dep>` instead of editing `Cargo.toml` directly.
 - never use `cargo doc` to view documentation. use the mcp tools, instead
 - opt for `anyhow::bail!("<msg>")` instead of `Err(anyhow::anyhow!("<msg>"))` (they are semantically equivalent)
+- before finalizing your request —  always make sure that the project compiles and there are no linting errors

@@ -4,7 +4,7 @@ globs:
 alwaysApply: true
 ---
 - Always take your time to reason through the problem
-- If unsure about a proposed change, don't just guess/infer but use the tools at your disposal
-  to improve your accuracy
-- If the code very descriptive through it's method/variable name, do not make comments on it
-- Do not do more than what is being requested
+- Always try to use the mcp server tools at your disposal to further improve your accuracy
+- If the code very descriptive through it's method/variable names, do not make comments on it
+- Do not do more than what is being requested. focus on the job
+- before finalizing your request —  make sure there are no linting errors
