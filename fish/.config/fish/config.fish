@@ -25,7 +25,7 @@ zoxide init --cmd j fish | source # source zoxide
 set -U fish_greeting ""
 set -U fish_color_command blue
 
-set -Ux RUST_LOG "fnm=warn,cursor_quota=debug"
+# set -Ux RUST_LOG "lala_lib=trace,fnm=warn,cursor_quota=debug"
 
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun

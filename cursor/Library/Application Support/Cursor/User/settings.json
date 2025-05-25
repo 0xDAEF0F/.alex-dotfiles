@@ -7,9 +7,11 @@
 	},
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome",
+		"files.autoSave": "off"
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features",
+		"files.autoSave": "off"
 	},
 	"[lua]": {
 		"editor.defaultFormatter": "JohnnyMorganz.stylua"
@@ -58,6 +60,7 @@
 		"source.organizeImports.biome": "explicit"
 	},
 	"editor.cursorSurroundingLines": 10, // scrolloff
+	"editor.wordBasedSuggestions": "off",
 	"editor.detectIndentation": true,
 	"editor.experimental.preferTreeSitter": [
 		"typescript",
@@ -96,6 +99,8 @@
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
 	},
+	"files.autoSave": "afterDelay",
+	"files.autoSaveDelay": 0,
 	"fontshortcuts.defaultFontSize": 12, // terminal
 	"fontshortcuts.defaultTerminalFontSize": 16, // editor
 	"fontshortcuts.step": 1,
@@ -155,8 +160,8 @@
 			"border": "1px solid #1d2021",
 			"borderRadius": "3px",
 			"color": "#fb4934",
-			"text": "todo:",
-			"overviewRulerColor": "red"
+			"overviewRulerColor": "red",
+			"text": "todo:"
 		}
 	],
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": true,
