@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# this script is idempotent in a practical sense because it will result in the
+# "same" state of the system if run multiple times
+
 # essentials
 brew install --cask google-chrome
 brew install --cask ghostty
