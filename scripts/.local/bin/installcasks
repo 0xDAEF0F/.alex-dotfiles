@@ -26,8 +26,4 @@ brew install --cask screen-studio
 brew install --cask obs
 brew install --cask keycastr
 brew install --cask descript
-
-# install yt-dlp
-url="https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos"
-target_path="$HOME/.local/bin/yt-dlp"
-curl "$url" -L -o "$target_path" && chmod +x "$target_path"
+brew install yt-dlp

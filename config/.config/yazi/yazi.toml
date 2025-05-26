@@ -6,24 +6,34 @@ sort_reverse = true
 linemode = "mtime"
 
 [opener]
-directory = [{ run = 'cursor "$@"', desc = "Open in Cursor", for = "macos" }]
+directory = [
+    { run = 'genv --ignore-environment /usr/local/bin/cursor "$@"', desc = "Open in Cursor", for = "macos" },
+]
 edit = [
     { run = 'nvim "$@"', block = true, desc = "Edit in Nvim", for = "macos" },
 ]
-audio = [
-    { run = 'open -a "/System/Applications/QuickTime Player.app" "$@"', orphan = true, desc = "Play in QuickTime", for = "macos" },
-]
-video = [
-    { run = 'open -a "/System/Applications/QuickTime Player.app" "$@"', orphan = true, desc = "Play in QuickTime", for = "macos" },
+media = [
+    { run = 'open -a "VLC" "$@"', orphan = true, desc = "Play in VLC", for = "macos" },
 ]
 preview = [{ run = 'open "$@"', desc = "Open in preview", for = "macos" }]
+image = [{ run = 'open "$@"', desc = "Open in default viewer", for = "macos" }]
+archive = [{ run = 'open "$@"', desc = "Extract/Open archive", for = "macos" }]
 
 [open]
 rules = [
     { name = "*/", use = "directory" },
-    { name = "*.mp3", use = "audio" },
-    { name = "*.mp4", use = "video" },
-    { name = "*.mov", use = "video" },
+    # Video formats
+    { name = "*.{mp4,mkv,avi,mov,wmv,flv,webm,mpeg,mpg,m4v,3gp}", use = "media" },
+    # Audio formats  
+    { name = "*.{mp3,aac,flac,wav,ogg,wma,alac,m4a,opus}", use = "media" },
+    # Subtitle formats (also open with VLC for convenience)
+    { name = "*.{srt,sub,ass,ssa,vtt}", use = "media" },
+    # Image formats
+    { name = "*.{jpg,jpeg,png,gif,bmp,tiff,webp,svg,ico,heic,avif}", use = "image" },
+    # Archive formats
+    { name = "*.{zip,tar,gz,bz2,xz,7z,rar}", use = "archive" },
+    # PDF and documents
     { name = "*.pdf", use = "preview" },
+    # Everything else opens in editor
     { name = "*", use = "edit" },
 ]

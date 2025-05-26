@@ -20,10 +20,10 @@
 - if asked to create a prompt, return it in a single code block for easy copy/paste
 
 # posts
-- lowercase, informal, conversational
-- use -- with spaces for emdashes
+- casual, informative
+- use ",,," instead of emdashes "—"
 - max 280 characters
-- break into short lines
 - include up to 2 emojis in optimal places
 - no hashtags
-- no markdown formatting
+- use bolds strategically
+- all lowercase
