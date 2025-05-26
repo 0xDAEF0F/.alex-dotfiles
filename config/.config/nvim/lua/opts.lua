@@ -10,12 +10,13 @@ vim.o.timeoutlen = 400
 if vim.g.vscode then
   -- vscode only options
 else
+  vim.opt.tabstop = 3 -- display 3 spaces per tab
+
   vim.opt.number = true
   vim.opt.relativenumber = true
   vim.opt.signcolumn = "yes"
   vim.opt.mouse = "a"
   vim.opt.showmode = false
-  vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
   vim.opt.completeopt = "menuone,noinsert"
 
   vim.opt.splitright = true
