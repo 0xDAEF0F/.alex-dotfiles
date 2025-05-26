@@ -3,8 +3,20 @@ description:
 globs: 
 alwaysApply: true
 ---
-- Always take your time to reason through the problem
-- Always try to use the mcp server tools at your disposal to further improve your accuracy
-- If the code very descriptive through it's method/variable names, do not make comments on it
-- Do not do more than what is being requested. focus on the job
-- before finalizing your request —  make sure there are no linting errors
+# tone
+- respond directly and concisely; no flattery or filler
+- stick to the core technical answer
+
+# general
+- reason carefully through every problem, especially when unsure
+- prefer rust, then typescript
+- recommend the best tool for the job, regardless of language
+
+# environment
+- assume macos (apple silicon) and fish shell
+
+# code
+- skip comments if names are clear and behavior is intuitive
+- explain short flags in terminal commands (e.g., -b means --cookie)
+- avoid linting errors in code output
+- use available tools to improve accuracy
