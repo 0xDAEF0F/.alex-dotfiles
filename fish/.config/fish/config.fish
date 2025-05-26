@@ -1,12 +1,9 @@
-# `set -U`: universal variable shared across fish sessions.
-# they are not exported to the environment.
-
-# `set -Ux`: universal exportable variable. and is available
-# to child processes.
-
 # only enable vi key bindings if connected to a keyboard
 if status is-interactive
+    set fish_greeting
     fish_vi_key_bindings
+    starship init fish | source # source starship
+    zoxide init --cmd j fish | source # source zoxide
 end
 
 fish_add_path $HOME/go/bin # go
@@ -19,12 +16,11 @@ fish_add_path $HOME/.local/bin # local scripts
 # this should work without doing this but it does not
 source ~/.config/fish/completions/tauri.fish
 
-starship init fish | source # source starship
-zoxide init --cmd j fish | source # source zoxide
-
-set -U fish_greeting ""
+# `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
 
+# `set -Ux`: universal exportable variable. and is available
+# to child processes.
 set -Ux RUST_LOG "lala_lib=debug,fnm=warn,cursor_quota=debug"
 set -Ux RUST_BACKTRACE 0
 
@@ -73,6 +69,9 @@ abbr -a vi nvim
 
 # Zoxide "ji"
 abbr -a jj ji
+
+# open file explorer
+abbr -a o "open ."
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"

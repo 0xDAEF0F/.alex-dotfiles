@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# essentials
+brew install --cask google-chrome
+brew install --cask ghostty
+brew install --cask raycast
+brew install --cask 1password
+brew install --cask cursor visual-studio-code
+brew install --cask openinterminal # auto opens things in terminal
+
+# communications
+brew install --cask whatsapp
+brew install --cask spotify
+brew install --cask telegram
+
+# productivity
+brew install --cask proton-mail-bridge
+brew install --cask bruno
+
+# content creation
+brew install --cask screen-studio
+brew install --cask obs
+brew install --cask keycastr
+brew install --cask descript

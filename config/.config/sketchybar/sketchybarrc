@@ -84,7 +84,7 @@ cursor_quota=(
   icon.font="sketchybar-app-font:Regular:17.0"
   icon=:bilibili:
   icon.color=0xffffffff
-  update_freq=1200 # 20 minutes
+  update_freq=120 # 2 minutes
   script="$PLUGIN_DIR/cursor-quota.sh"
 )
 
