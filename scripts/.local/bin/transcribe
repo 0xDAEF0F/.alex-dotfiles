@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # repo of the cli tool:
-# https://github.com/ggml-org/whisper.cpp/tree/master/examples/cli
+# https://github.com/ggml-org/whisper.cpp
 
 # cli help:
 <<COMMENT
