@@ -84,12 +84,13 @@ cursor_quota=(
   icon.font="sketchybar-app-font:Regular:17.0"
   icon=:bilibili:
   icon.color=0xffffffff
-  update_freq=1800
+  update_freq=1200 # 20 minutes
   script="$PLUGIN_DIR/cursor-quota.sh"
 )
 
 sketchybar --add item cursor_quota left \
   --subscribe cursor_quota system_woke \
+  --subscribe cursor_quota mouse.clicked \
   --set cursor_quota "${cursor_quota[@]}"
 
 # supposed to mirror the default icon of the app
