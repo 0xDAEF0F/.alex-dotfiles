@@ -18,27 +18,33 @@ function rusty
     echo ".env" >>.gitignore
     echo "RUST_LOG=info" >>.env
 
+    # essentials
+    cargo add tokio --features full # async runtime
     cargo add anyhow # error handling
     cargo add dotenvy # environment variables
-    cargo add tokio --features full # async runtime
-    cargo add serde_json # json serialization
     cargo add serde --features derive # serialization
-    cargo add itertools chrono reqwest # utils
-    cargo add thin-logger colored # logging
+    cargo add serde_json # json serialization
+    cargo add chrono # time utils
+    cargo add thin-logger # logging (re-exports log, env_logger, and colored)
+    cargo add tap # tapping into values (useful for debugging)
 
     # experimental
+
+    echo "
+#![allow(unused, clippy::all)]
+#![feature(let_chains, try_blocks)]
+
+/*
+    other useful crates:
     cargo add derive_more --features full # derive macros for more traits
     cargo add variantly # introspection for enum variants
     cargo add validator # validation library
-    cargo add tap # tapping into values for debugging
     cargo add bon # builder pattern
     cargo add strum strum_macros # set of macros and traits for working with enums and strings
-    cargo add parking_lot --features nightly # mutexes without unwraps
     cargo add nestruct # nested structs
-
-    echo "
-#![allow(unused)]
-#![allow(clippy::all)]
+    cargo add reqwest # http client
+    cargo add itertools # iterators
+*/
 
 use anyhow::Result;
 use thin_logger::log;

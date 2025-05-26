@@ -5,11 +5,9 @@
 			"command": "bunx",
 			"args": ["-y", "@upstash/context7-mcp@latest"]
 		},
-		"rust-docs-mcp-server": {
-			"command": "node",
-			"args": [
-				"/Users/ale/external-libraries/rust-docs-mcp-server/build/index.js"
-			]
+		"mcp-rustdoc": {
+			"command": "/Users/ale/external-libraries/mcp_rustdoc/target/release/rdoc-mcp",
+			"args": ["--server-type", "stdio"]
 		}
 	}
 }

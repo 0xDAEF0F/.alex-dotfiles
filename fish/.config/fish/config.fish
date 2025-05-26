@@ -101,8 +101,9 @@ abbr -a br "bun run"
 abbr -a ba "bun add"
 abbr -a bt "bun test"
 
-# Npm
+# npm
 abbr -a nls "npm ls -g"
+abbr -a nig npm i -g
 
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"

@@ -4,6 +4,10 @@
 			"command": "bunx",
 			"args": ["-y", "@upstash/context7-mcp@latest"]
 		},
+		"mcp-rustdoc": {
+			"command": "/Users/ale/external-libraries/mcp_rustdoc/target/release/rdoc-mcp",
+			"args": ["--server-type", "stdio"]
+		},
 		"rust-docs-mcp-server": {
 			"command": "node",
 			"args": [
