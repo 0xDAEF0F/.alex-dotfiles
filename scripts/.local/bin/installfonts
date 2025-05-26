@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# programming
+brew install --cask font-iosevka-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
+
+# design
+brew install --cask font-space-grotesk
+
+# sketchybar
+brew install --cask font-sketchybar-app-font

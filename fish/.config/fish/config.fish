@@ -130,3 +130,4 @@ abbr -a \- prevd
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
+abbr -a chx chmod +x

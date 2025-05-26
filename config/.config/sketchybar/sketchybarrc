@@ -89,8 +89,14 @@ cursor_quota=(
 )
 
 sketchybar --add item cursor_quota left \
+  --subscribe cursor_quota system_woke \
   --set cursor_quota "${cursor_quota[@]}"
+
+# supposed to mirror the default icon of the app
+sketchybar --add alias lala left
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
-sketchybar --hotload true
+
+# hotloading (disabled for now)
+# sketchybar --hotload true
