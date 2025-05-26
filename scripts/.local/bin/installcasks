@@ -16,6 +16,7 @@ brew install --cask telegram
 # productivity
 brew install --cask proton-mail-bridge
 brew install --cask bruno
+brew install --cask vlc
 
 # content creation
 brew install --cask screen-studio

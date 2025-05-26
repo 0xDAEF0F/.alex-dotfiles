@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+current_dir=$(pwd)
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <audio_file>"
+    exit 1
+fi
+
+file_name_without_extension="$(realpath "$1")"
+file_name_without_extension="${file_name_without_extension%.*}"
+
+audio_file="$current_dir/$1"
+
+cd ~/external-libraries/whisper.cpp
+
+./build/bin/whisper-cli -m models/ggml-medium.en.bin --output-json --no-prints --output-file "$file_name_without_extension" "$audio_file"
+
