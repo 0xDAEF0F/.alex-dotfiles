@@ -21,7 +21,7 @@ set -U fish_color_command blue
 
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
-set -Ux RUST_LOG "lala_lib=debug,fnm=warn,cursor_quota=debug"
+set -Ux RUST_LOG info
 set -Ux RUST_BACKTRACE 0
 
 # Bun
@@ -130,3 +130,4 @@ bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
 abbr -a chx chmod +x
+abbr -a my-public-ip curl https://ipinfo.io
