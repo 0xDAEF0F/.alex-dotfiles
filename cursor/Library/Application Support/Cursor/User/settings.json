@@ -54,7 +54,6 @@
 	},
 	"diffEditor.ignoreTrimWhitespace": true,
 	"diffEditor.renderIndicators": false,
-	"diffEditor.renderSideBySide": false,
 	"editor.codeActionsOnSave": {
 		"quickfix.biome": "explicit",
 		"source.organizeImports.biome": "explicit"
@@ -176,7 +175,11 @@
 	"workbench.colorCustomizations": {
 		// git vertical bar
 		"editorOverviewRuler.infoForeground": "#00000000",
-		"editorOverviewRuler.warningForeground": "#00000000"
+		"editorOverviewRuler.warningForeground": "#00000000",
+		// squiggly lines
+		"editorError.foreground": "#00000000",
+		"editorWarning.foreground": "#00000000",
+		"editorInfo.foreground": "#00000000"
 	},
 	"workbench.colorTheme": "Gruvbox Dark Hard",
 	"workbench.editor.openPositioning": "last",

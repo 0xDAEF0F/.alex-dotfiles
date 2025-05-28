@@ -16,7 +16,15 @@ return {
         label = { before = true, after = false, style = "inline" },
       },
       char = {
-        enabled = false,
+        enabled = true,
+        jump_labels = true,
+        -- This enables labels during operator-pending mode (c, d, y, etc.)
+        config = function(opts)
+          -- Don't autohide in operator-pending mode so labels stay visible
+          opts.autohide = false
+          -- Always show jump labels regardless of mode
+          opts.jump_labels = true
+        end,
       },
     },
     prompt = {
