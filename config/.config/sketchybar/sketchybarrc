@@ -93,11 +93,11 @@ sketchybar --add item cursor_quota left \
   --subscribe cursor_quota mouse.clicked \
   --set cursor_quota "${cursor_quota[@]}"
 
-# supposed to mirror the default icon of the app
+# mirror the default icon of the app
 sketchybar --add alias lala left
+sketchybar --add alias WireGuard right
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
 
-# hotloading (disabled for now)
 # sketchybar --hotload true

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ip_info=$(curl --silent https://ipinfo.io | jq '{ip, timezone, org}')
+
+private_ip=$(ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n 1 | awk '{print $2}')
+
+# join with jq
+echo "$ip_info" | jq --arg private_ip "$private_ip" '. + {private_ip: $private_ip}'

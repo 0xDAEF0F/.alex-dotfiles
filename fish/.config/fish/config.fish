@@ -70,8 +70,9 @@ abbr -a vi nvim
 # Zoxide "ji"
 abbr -a jj ji
 
-# open file explorer
-abbr -a o "open ."
+# utils
+abbr -a o "open ." # open file explorer
+abbr -a chx chmod +x # change file to executable
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
@@ -129,5 +130,3 @@ abbr -a \- prevd
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
-abbr -a chx chmod +x
-abbr -a my-public-ip curl https://ipinfo.io
