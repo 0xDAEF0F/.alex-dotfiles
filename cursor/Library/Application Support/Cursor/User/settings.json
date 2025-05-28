@@ -158,8 +158,8 @@
 			"backgroundColor": "#32302f",
 			"border": "1px solid #1d2021",
 			"borderRadius": "3px",
-			"color": "#fb4934",
-			"overviewRulerColor": "red",
+			"color": "#FF6467",
+			"overviewRulerColor": "#8EC5FF",
 			"text": "todo:"
 		}
 	],
