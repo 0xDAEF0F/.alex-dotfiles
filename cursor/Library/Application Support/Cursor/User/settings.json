@@ -59,7 +59,6 @@
 		"source.organizeImports.biome": "explicit"
 	},
 	"editor.cursorSurroundingLines": 10, // scrolloff
-	"editor.wordBasedSuggestions": "off",
 	"editor.detectIndentation": true,
 	"editor.experimental.preferTreeSitter": [
 		"typescript",
@@ -86,6 +85,7 @@
 	"editor.tokenColorCustomizations": {
 		"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
 	},
+	"editor.wordBasedSuggestions": "off",
 	"editor.wordWrap": "on",
 	"errorLens.enabled": true,
 	"errorLens.messageBackgroundMode": "message",
@@ -131,6 +131,15 @@
 			]
 		}
 	],
+	"periscope.rgOptions": [
+		"--smart-case",
+		"--sortr path"
+	],
+	// excludes everything in the gitignore file by default
+	"periscope.rgGlobExcludes": [
+		"**/{build,dist}/**",
+		"*lock"
+	],
 	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
@@ -173,18 +182,19 @@
 	"window.titleBarStyle": "native",
 	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {
+		// squiggly lines
+		"editorError.foreground": "#00000000",
+		"editorInfo.foreground": "#00000000",
 		// git vertical bar
 		"editorOverviewRuler.infoForeground": "#00000000",
 		"editorOverviewRuler.warningForeground": "#00000000",
-		// squiggly lines
-		"editorError.foreground": "#00000000",
-		"editorWarning.foreground": "#00000000",
-		"editorInfo.foreground": "#00000000"
+		"editorWarning.foreground": "#00000000"
 	},
 	"workbench.colorTheme": "Gruvbox Dark Hard",
 	"workbench.editor.openPositioning": "last",
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left"
+	"workbench.sideBar.location": "left",
+	"workbench.statusBar.visible": false
 }

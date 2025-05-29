@@ -16,6 +16,11 @@ vim.keymap.set("n", "<leader>p", function()
   vscode.call("workbench.action.toggleStatusbarVisibility")
 end)
 
+-- navigation
+vim.keymap.set("n", "<leader>f", function()
+  require("vscode").call("periscope.search")
+end)
+
 -- Bookmarks functionality
 vim.api.nvim_set_keymap(
   "n",
@@ -52,7 +57,6 @@ end)
 vim.keymap.set("n", "<leader>u", function()
   require("vscode").call("editor.action.marker.next")
 end)
-
 
 -- Go to definition
 vim.keymap.set({ "n" }, "<leader>d", function()
