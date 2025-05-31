@@ -208,5 +208,6 @@
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.sideBar.location": "left",
+	"extensions.ignoreRecommendations": true,
 	"workbench.statusBar.visible": false
 }

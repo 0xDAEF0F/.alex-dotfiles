@@ -72,8 +72,8 @@ abbr -a jj ji
 
 # utils
 abbr -a o "open ." # open file explorer
-abbr -a chx chmod +x # change file to executable
-abbr -a src "source ~/.config/fish/config.fish"
+abbr -a chx "chmod +x" # change file to executable
+abbr -a src "source ~/.config/fish/config.fish" # source config
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
@@ -89,6 +89,13 @@ abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty"
+abbr -a crw "cargo watch -x run"
+
+# Homebrew abbreviations
+abbr -a bi "brew install"
+abbr -a bu "brew uninstall"
+abbr -a bic "brew install --cask"
+abbr -a buc "brew uninstall --cask --zap"
 
 # Tauri
 abbr -a cta "cargo tauri"
