@@ -14,8 +14,10 @@ function rusty
     ln -s ~/.alex-dotfiles/.cursor .
 
     # Add .env to .gitignore
+    echo "" >>.gitignore
     echo ".cursor" >>.gitignore
     echo ".env" >>.gitignore
+    echo "" >>.env
     echo "RUST_LOG=info" >>.env
 
     # essentials

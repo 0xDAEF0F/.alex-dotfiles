@@ -21,7 +21,7 @@ set -U fish_color_command blue
 
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
-set -Ux RUST_LOG info
+set -Ux RUST_LOG debug
 set -Ux RUST_BACKTRACE 0
 
 # Bun
@@ -73,6 +73,7 @@ abbr -a jj ji
 # utils
 abbr -a o "open ." # open file explorer
 abbr -a chx chmod +x # change file to executable
+abbr -a src "source ~/.config/fish/config.fish"
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
@@ -87,6 +88,7 @@ abbr -a cr "cargo run"
 abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
+abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty"
 
 # Tauri
 abbr -a cta "cargo tauri"

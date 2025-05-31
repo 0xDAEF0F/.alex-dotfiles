@@ -4,9 +4,9 @@
 			"command": "bunx",
 			"args": ["-y", "@upstash/context7-mcp@latest"]
 		},
-		"mcp-rustdoc": {
-			"command": "/Users/ale/external-libraries/mcp_rustdoc/target/release/rdoc-mcp",
-			"args": ["--server-type", "stdio"]
+		"teloxide-docs": {
+			"command": "/Users/ale/.local/bin/rustdocs_mcp_server",
+			"args": ["teloxide"]
 		}
 	}
 }

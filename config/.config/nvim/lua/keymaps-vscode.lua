@@ -30,14 +30,14 @@ vim.api.nvim_set_keymap(
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>v",
-  ":lua require('vscode').call('bookmarks.jumpToNext')<CR>",
+  "<leader>u",
+  ":lua require('vscode').call('bookmarks.jumpToPrevious')<CR>",
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>a",
-  ":lua require('vscode').call('bookmarks.jumpToPrevious')<CR>",
+  "<leader>l",
+  ":lua require('vscode').call('bookmarks.jumpToNext')<CR>",
   { noremap = true, silent = true }
 )
 vim.api.nvim_set_keymap(
@@ -49,12 +49,12 @@ vim.api.nvim_set_keymap(
 
 -- LSP FUNCTIONALITY
 -- go to previous problem
-vim.keymap.set("n", "<leader>l", function()
+vim.keymap.set("n", "<leader>A", function()
   require("vscode").call("editor.action.marker.prev")
 end)
 
 -- go to next problem
-vim.keymap.set("n", "<leader>u", function()
+vim.keymap.set("n", "<leader>a", function()
   require("vscode").call("editor.action.marker.next")
 end)
 

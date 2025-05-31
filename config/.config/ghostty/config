@@ -18,3 +18,5 @@ cursor-style-blink = false
 
 mouse-hide-while-typing = true
 clipboard-trim-trailing-spaces = true
+
+link-url = true

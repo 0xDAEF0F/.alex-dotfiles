@@ -37,6 +37,7 @@
 	},
 	"biome.enabled": true,
 	"biome.rename": true,
+	"biome.suggestInstallingGlobally": false,
 	"codesnap.containerPadding": "0.5em",
 	"cursor-retrieval.canAttemptGithubLogin": true,
 	"cursor.composer.shouldAllowCustomModes": true,
@@ -65,7 +66,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 16,
+	"editor.fontSize": 15,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,
@@ -131,14 +132,14 @@
 			]
 		}
 	],
-	"periscope.rgOptions": [
-		"--smart-case",
-		"--sortr path"
-	],
 	// excludes everything in the gitignore file by default
 	"periscope.rgGlobExcludes": [
 		"**/{build,dist}/**",
 		"*lock"
+	],
+	"periscope.rgOptions": [
+		"--smart-case",
+		"--sortr path"
 	],
 	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
@@ -183,12 +184,23 @@
 	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {
 		// squiggly lines
-		"editorError.foreground": "#00000000",
-		"editorInfo.foreground": "#00000000",
+		// Diagnostic highlight opacity guide (last 2 digits control transparency):
+		// Format: #RRGGBBAA
+		// AA (alpha) values:
+		//   FF - 100% opaque
+		//   CC - 80%
+		//   99 - 60%
+		//   80 - 50%
+		//   66 - 40%
+		//   40 - 25%
+		//   1A - 10%
+		//   00 - fully transparent
+		// Example: "#FF6F6F80" = soft red at 50% opacity
+		"editorError.foreground": "#FF6F6F66",
+		"editorWarning.foreground": "#FFD58066",
 		// git vertical bar
 		"editorOverviewRuler.infoForeground": "#00000000",
 		"editorOverviewRuler.warningForeground": "#00000000",
-		"editorWarning.foreground": "#00000000"
 	},
 	"workbench.colorTheme": "Gruvbox Dark Hard",
 	"workbench.editor.openPositioning": "last",

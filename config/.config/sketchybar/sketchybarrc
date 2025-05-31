@@ -94,8 +94,8 @@ sketchybar --add item cursor_quota left \
   --set cursor_quota "${cursor_quota[@]}"
 
 # mirror the default icon of the app
-sketchybar --add alias lala left
-sketchybar --add alias WireGuard right
+# sketchybar --add alias lala left
+# sketchybar --add alias WireGuard right
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
