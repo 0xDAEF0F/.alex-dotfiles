@@ -47,20 +47,24 @@ bind -M insert \cr 'commandline -f history-pager'
 bind -M default \cr 'commandline -f history-pager'
 
 # Git abbreviations
-abbr -a gc "git checkout"
 abbr -a gs "git status"
-abbr -a gb "git branch"
-abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a gd "git diff | delta"
-abbr -a grh "git reset --hard"
-abbr -a gca! "git commit --verbose --all --amend"
-abbr -a gpf "git push --force"
+abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
-abbr -a gfa "git fetch --all --prune"
+
+abbr -a grh "git reset --hard"
+abbr -a grs "git reset --soft"
 
 abbr -a gaa "git add ."
-abbr -a gcm "git commit -am" # stages all and commits
+abbr -a gc "git commit -am" # stages all and commits
+abbr -a gca! "git commit --verbose --all --amend"
+abbr -a gpf "git push --force"
 abbr -a gp "git push"
+
+abbr -a gb "git branch"
+abbr -a gco "git checkout -b"
+
+abbr -a gfa "git fetch --all --prune"
 abbr -a gl "git pull --rebase"
 
 # Neovim abbreviations
@@ -90,6 +94,7 @@ abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty"
 abbr -a crw "cargo watch -x run"
+abbr -a grbi "git rebase --interactive"
 
 # Homebrew abbreviations
 abbr -a bi "brew install"

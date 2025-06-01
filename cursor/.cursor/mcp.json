@@ -1,12 +1,12 @@
 {
 	"mcpServers": {
 		"context7": {
-			"command": "bunx",
+			"command": "/opt/homebrew/bin/bunx",
 			"args": ["-y", "@upstash/context7-mcp@latest"]
 		},
-		"teloxide-docs": {
-			"command": "/Users/ale/.local/bin/rustdocs_mcp_server",
-			"args": ["teloxide"]
+		"mcp-rustdoc": {
+			"command": "/Users/ale/.local/bin/rdoc-mcp",
+			"args": ["--server-type", "stdio"]
 		}
 	}
 }
