@@ -180,6 +180,7 @@
 	"update.releaseTrack": "prerelease",
 	"window.customTitleBarVisibility": "never",
 	"window.newWindowDimensions": "maximized", // although window switching is not working
+	"workbench.editor.showTabs": "none",
 	"window.titleBarStyle": "native",
 	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {

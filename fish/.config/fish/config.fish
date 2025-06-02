@@ -92,7 +92,7 @@ abbr -a cr "cargo run"
 abbr -a ct "cargo test"
 abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
-abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty"
+abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo +nightly fmt"
 abbr -a crw "cargo watch -x run"
 abbr -a grbi "git rebase --interactive"
 
