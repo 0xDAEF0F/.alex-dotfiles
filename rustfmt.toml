@@ -9,6 +9,6 @@ format_strings = true          # default: false
 imports_granularity = "Crate"  # default: "Preserve"
 wrap_comments = true           # default: false
 empty_item_single_line = false # default: true
-fn_single_line = true          # default: false
+fn_single_line = false         # default: false
 group_imports = "One"          # default: "Preserve"
 comment_width = 90             # default: 80

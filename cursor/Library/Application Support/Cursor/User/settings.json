@@ -5,6 +5,9 @@
 	"[go]": {
 		"editor.defaultFormatter": "golang.go"
 	},
+	"[html]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome",
 		"files.autoSave": "off"
@@ -20,7 +23,7 @@
 		"editor.defaultFormatter": "Prisma.prisma"
 	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.black-formatter"
+		"editor.defaultFormatter": "charliermarsh.ruff"
 	},
 	"[rust]": {
 		"editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -83,9 +86,9 @@
 	"editor.selectionHighlight": false,
 	"editor.semanticHighlighting.enabled": true, // it's not needed for some themes
 	"editor.tabSize": 3,
-	"editor.tokenColorCustomizations": {
-		"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
-	},
+	// "editor.tokenColorCustomizations": {
+	// 	"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
+	// },
 	"editor.wordBasedSuggestions": "off",
 	"editor.wordWrap": "on",
 	"errorLens.enabled": true,
@@ -99,6 +102,7 @@
 	"extensions.experimental.affinity": {
 		"asvetliakov.vscode-neovim": 1
 	},
+	"extensions.ignoreRecommendations": true,
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 0,
 	"fontshortcuts.defaultFontSize": 12, // terminal
@@ -156,6 +160,9 @@
 	"rust-analyzer.typing.triggerChars": "=.>{(",
 	"scm.diffDecorationsGutterWidth": 4,
 	"settings.cycle": [],
+	"smart-tabs.activeFirst": true,
+	"smart-tabs.fixedTabs": 1,
+	"smart-tabs.reactionEvent": "onedit",
 	"stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
 	"svelte.enable-ts-plugin": true,
 	"terminal.external.osxExec": "Ghostty.app",
@@ -180,7 +187,6 @@
 	"update.releaseTrack": "prerelease",
 	"window.customTitleBarVisibility": "never",
 	"window.newWindowDimensions": "maximized", // although window switching is not working
-	"workbench.editor.showTabs": "none",
 	"window.titleBarStyle": "native",
 	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {
@@ -198,17 +204,17 @@
 		//   00 - fully transparent
 		// Example: "#FF6F6F80" = soft red at 50% opacity
 		"editorError.foreground": "#FF6F6F66",
-		"editorWarning.foreground": "#FFD58066",
 		// git vertical bar
 		"editorOverviewRuler.infoForeground": "#00000000",
 		"editorOverviewRuler.warningForeground": "#00000000",
+		"editorWarning.foreground": "#FFD58066"
 	},
 	"workbench.colorTheme": "Gruvbox Dark Hard",
 	"workbench.editor.openPositioning": "last",
+	"workbench.editor.showTabs": "multiple",
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.sideBar.location": "left",
-	"extensions.ignoreRecommendations": true,
 	"workbench.statusBar.visible": false
 }
