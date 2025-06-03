@@ -3,7 +3,7 @@
 
 BTC_INFO=$($HOME/.local/bin/prices info btc)
 
-BTC_PRICE=$(echo "$BTC_INFO" | jq -r '.[0].price | tonumber | floor')
+BTC_PRICE=$(echo "$BTC_INFO" | jq -r '.[0].price | tonumber | floor | tostring | gsub("(?<=\\d)(?=(\\d{3})+$)"; ",")')
 BTC_CHANGE=$(echo "$BTC_INFO" | jq -r '.[0].one_day_change_pct')
 
 LABEL="${BTC_PRICE} ${BTC_CHANGE}%"
