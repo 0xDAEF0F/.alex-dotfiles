@@ -76,6 +76,17 @@ sketchybar --add item hype q \
            --subscribe hype mouse.clicked \
            --set hype "${hype[@]}" \
            
+fartcoin=(
+  icon=󱎶
+  icon.color=0xffffffff
+  update_freq=60
+  script="$PLUGIN_DIR/coins/fartcoin.sh"
+)
+sketchybar --add item fartcoin q \
+           --subscribe fartcoin mouse.clicked \
+           --set fartcoin "${fartcoin[@]}" \
+
+           
 ##### Right of the notch #####
 btc=(
   icon=
