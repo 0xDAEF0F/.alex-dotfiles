@@ -21,7 +21,7 @@ set -U fish_color_command blue
 
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
-set -Ux RUST_LOG debug
+set -Ux RUST_LOG info
 set -Ux RUST_BACKTRACE 0
 
 # Bun
