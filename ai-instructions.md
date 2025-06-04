@@ -30,7 +30,7 @@
 - casual, informative
 - use ",,," instead of emdashes "—"
 - max 280 characters
-- include up to 2 emojis in optimal places
+- maximum of 1 emoji (only if relevant if not, skip it)
 - no hashtags
 - use bolds strategically
 - all lowercase
