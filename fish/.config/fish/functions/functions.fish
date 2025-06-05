@@ -3,7 +3,7 @@ function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
     if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        cd -- "$cwd"
+        builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
 end
@@ -87,19 +87,13 @@ function rr
     end
     
     # get last 10 unique directories that exist
-    set --local selected_dir (tail -50 $recent_dirs_file | awk '!seen[$0]++' | tail -10 | while read -l dir
+    set --local selected_dir (tail -50 $recent_dirs_file | awk '!seen[$0]++' | tail -r -n 10 | while read -l dir
         if test -d "$dir"
             echo $dir
         end
-    end | fzf --height=40% --reverse --prompt="Recent dirs: " --preview 'fd . {} --type f --max-depth 1 --color=always' --preview-window 'right:50%')
+    end | fzf --height=40% --reverse --prompt="Recent dirs: " --preview 'fd . {} --max-depth 1 --color=always' --preview-window 'right:50%')
     
     if test -n "$selected_dir"
         cd "$selected_dir"
     end
-end
-
-# override cd to track directory changes
-function cd
-    builtin cd $argv
-    _track_recent_dir
 end
