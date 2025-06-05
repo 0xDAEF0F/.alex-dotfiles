@@ -91,7 +91,7 @@ function rr
         if test -d "$dir"
             echo $dir
         end
-    end | fzf --height=40% --reverse --prompt="Recent dirs: ")
+    end | fzf --height=40% --reverse --prompt="Recent dirs: " --preview 'fd . {} --type f --max-depth 1 --color=always' --preview-window 'right:50%')
     
     if test -n "$selected_dir"
         cd "$selected_dir"
