@@ -60,23 +60,41 @@ function llr
     commandline --cursor (math (commandline --cursor) - 1)
 end
 
+# clears a file of duplicate entries (rows)
+function _dedup_file
+    if not set -q argv[1]
+        echo "Usage: dedup_file <file>"
+        return 1
+    end
+
+    set file $argv[1]
+
+    if not test -f $file
+        echo "File not found: $file"
+        return 1
+    end
+
+    awk '!seen[$0]++' $file > $file.tmp && mv $file.tmp $file
+end
+
 # track recent directories
 function _track_recent_dir --on-variable PWD --description 'Tracks the current directory'
     set --local recent_dirs_file ~/.local/share/fish/recent_dirs
     set --local current_dir (pwd)
     
-    echo "Current directory: $current_dir"
+    # echo "Debug: $current_dir"
     
     # create directory if it doesn't exist
     mkdir -p (dirname $recent_dirs_file)
     
-    # don't track home directory
-    if test "$current_dir" = "$HOME" || test "$current_dir" = "$HOME/.ssh" || test "$current_dir" = "$HOME/google-cloud-sdk"
+    # don't track some directories
+    if test "$current_dir" = "$HOME" || test "$current_dir" = "/" || test "$current_dir" = "$HOME/google-cloud-sdk"
         return
     end
     
     # just append current directory
     echo $current_dir >> $recent_dirs_file
+    _dedup_file $recent_dirs_file
 end
 
 # fzf picker for recent directories
@@ -89,13 +107,18 @@ function rr
     end
     
     # get last 10 unique directories that exist
-    set --local selected_dir (tail -50 $recent_dirs_file | awk '!seen[$0]++' | tail -r -n 10 | while read -l dir
+    set --local selected_dir (tail -r -n 10 $recent_dirs_file | while read -l dir
         if test -d "$dir"
             echo $dir
         end
-    end | fzf --height=40% --reverse --prompt="Recent dirs: " --preview 'fd . {} --max-depth 1 --color=always' --preview-window 'right:50%')
+    end | fzf --height=40% --reverse --prompt="Recent dirs: " --preview 'fd . --base-directory {} --max-depth 1 --color always --strip-cwd-prefix' --preview-window 'right:50%')
     
     if test -n "$selected_dir"
         cd "$selected_dir"
     end
+end
+
+# git clone and cd into it
+function clone
+    git clone $argv[1] && cd (basename $argv[1])
 end
