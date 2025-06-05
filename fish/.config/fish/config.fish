@@ -5,6 +5,9 @@ if status is-interactive
     starship init fish | source # source starship
     zoxide init --cmd j fish | source # source zoxide
 
+    # better history search
+    atuin init fish | source
+
     # source the completions for tauri
     source ~/.config/fish/completions/tauri.fish
 end
