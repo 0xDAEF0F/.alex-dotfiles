@@ -73,26 +73,12 @@ function _track_recent_dir --on-variable PWD --description 'Tracks the current d
         return
     end
     
-    # remove current directory from file if it exists, then add it to the top
-    if test -f $recent_dirs_file
-        grep -v "^$current_dir\$" $recent_dirs_file > $recent_dirs_file.tmp
-        mv $recent_dirs_file.tmp $recent_dirs_file
-    end
-    
-    # add current directory to top of file
-    echo $current_dir >> $recent_dirs_file.new
-    if test -f $recent_dirs_file
-        cat $recent_dirs_file >> $recent_dirs_file.new
-    end
-    mv $recent_dirs_file.new $recent_dirs_file
-    
-    # keep only the last 50 directories
-    tail -50 $recent_dirs_file > $recent_dirs_file.tmp
-    mv $recent_dirs_file.tmp $recent_dirs_file
+    # just append current directory
+    echo $current_dir >> $recent_dirs_file
 end
 
 # fzf picker for recent directories
-function rd
+function rr
     set --local recent_dirs_file ~/.local/share/fish/recent_dirs
     
     if not test -f $recent_dirs_file
@@ -100,8 +86,8 @@ function rd
         return 1
     end
     
-    # get last 10 directories that still exist
-    set --local selected_dir (head -10 $recent_dirs_file | while read -l dir
+    # get last 10 unique directories that exist
+    set --local selected_dir (tail -50 $recent_dirs_file | awk '!seen[$0]++' | tail -10 | while read -l dir
         if test -d "$dir"
             echo $dir
         end
