@@ -65,6 +65,8 @@ function _track_recent_dir --on-variable PWD --description 'Tracks the current d
     set --local recent_dirs_file ~/.local/share/fish/recent_dirs
     set --local current_dir (pwd)
     
+    echo "Current directory: $current_dir"
+    
     # create directory if it doesn't exist
     mkdir -p (dirname $recent_dirs_file)
     
