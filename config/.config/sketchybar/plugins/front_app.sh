@@ -6,5 +6,6 @@
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
 if [ "$SENDER" = "front_app_switched" ]; then
-  sketchybar --set "$NAME" label="$INFO"
+  FIRST_WORD=$(echo "$INFO" | cut -d' ' -f1)
+  sketchybar --set "$NAME" label="$FIRST_WORD"
 fi

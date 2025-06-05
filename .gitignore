@@ -12,3 +12,19 @@ lib-docs/
 .env
 /**/fish_variables
 lazy-lock.json
+
+# ignore functions files except a few that i personally added
+fish/**/functions/*
+!fish/**/functions/rusty.fish
+!fish/**/functions/testy.fish
+!fish/**/functions/rustyconf.fish
+!fish/**/functions/functions.fish
+
+# ignore conf.d files except a few that i personally added
+fish/**/conf.d/*
+!fish/**/conf.d/fnm.fish
+!fish/**/conf.d/gcloud.fish
+!fish/**/conf.d/rustup.fish
+
+# ignore all completions since they are all auto generated
+fish/**/completions/*
