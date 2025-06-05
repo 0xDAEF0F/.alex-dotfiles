@@ -3,7 +3,7 @@ function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
     if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-        builtin cd -- "$cwd"
+        cd -- "$cwd"
     end
     rm -f -- "$tmp"
 end
@@ -46,7 +46,7 @@ function rm
     end
 end
 
-function add_abbr
+function set_abbr
     if test (count $argv) -eq 2
         echo "abbr -a $argv[1] $argv[2]" >>~/.config/fish/config.fish
         echo "Added abbr $argv[1] -> $argv[2]"
@@ -58,4 +58,62 @@ end
 function llr
     commandline "ll | rg \"\""
     commandline --cursor (math (commandline --cursor) - 1)
+end
+
+# track recent directories
+function _track_recent_dir --on-variable PWD --description 'Tracks the current directory'
+    set --local recent_dirs_file ~/.local/share/fish/recent_dirs
+    set --local current_dir (pwd)
+    
+    # create directory if it doesn't exist
+    mkdir -p (dirname $recent_dirs_file)
+    
+    # don't track home directory
+    if test "$current_dir" = "$HOME" || test "$current_dir" = "$HOME/.ssh" || test "$current_dir" = "$HOME/google-cloud-sdk"
+        return
+    end
+    
+    # remove current directory from file if it exists, then add it to the top
+    if test -f $recent_dirs_file
+        grep -v "^$current_dir\$" $recent_dirs_file > $recent_dirs_file.tmp
+        mv $recent_dirs_file.tmp $recent_dirs_file
+    end
+    
+    # add current directory to top of file
+    echo $current_dir >> $recent_dirs_file.new
+    if test -f $recent_dirs_file
+        cat $recent_dirs_file >> $recent_dirs_file.new
+    end
+    mv $recent_dirs_file.new $recent_dirs_file
+    
+    # keep only the last 50 directories
+    tail -50 $recent_dirs_file > $recent_dirs_file.tmp
+    mv $recent_dirs_file.tmp $recent_dirs_file
+end
+
+# fzf picker for recent directories
+function rd
+    set --local recent_dirs_file ~/.local/share/fish/recent_dirs
+    
+    if not test -f $recent_dirs_file
+        echo "No recent directories found"
+        return 1
+    end
+    
+    # get last 10 directories that still exist
+    set --local selected_dir (head -10 $recent_dirs_file | while read -l dir
+        if test -d "$dir"
+            echo $dir
+        end
+    end | fzf --height=40% --reverse --prompt="Recent dirs: ")
+    
+    if test -n "$selected_dir"
+        cd "$selected_dir"
+    end
+end
+
+# override cd to track directory changes
+function cd
+    builtin cd $argv
+    _track_recent_dir
 end
