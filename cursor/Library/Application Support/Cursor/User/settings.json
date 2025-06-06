@@ -69,7 +69,7 @@
 	],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 15,
+	"editor.fontSize": 16,
 	"editor.formatOnSave": true,
 	"editor.formatOnType": true,
 	"editor.hover.delay": 2000,

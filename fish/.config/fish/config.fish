@@ -6,7 +6,7 @@ if status is-interactive
     zoxide init --cmd j fish | source # source zoxide
 
     # better history search
-    atuin init fish | source
+    atuin init fish --disable-up-arrow | source
 
     # source the completions for tauri
     source ~/.config/fish/completions/tauri.fish
@@ -46,8 +46,8 @@ set -Ux XDG_CACHE_HOME ~/.cache
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
 
 # Binds history pager to `C-r` just like the old times
-bind -M insert \cr 'commandline -f history-pager'
-bind -M default \cr 'commandline -f history-pager'
+bind -M insert \cr '_atuin_search'
+bind -M default \cr '_atuin_search'
 
 # Git abbreviations
 abbr -a gs "git status"
