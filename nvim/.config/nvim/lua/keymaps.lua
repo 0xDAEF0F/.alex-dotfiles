@@ -14,6 +14,9 @@ vim.keymap.set("n", "#", function()
   vim.cmd("normal! N")
 end, { desc = "Case-sensitive backward word search" })
 
+-- Yank without newline
+vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line without newline" })
+
 -- Yank full directory/file path
 vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h')<CR>") -- dir
 vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file

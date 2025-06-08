@@ -1,4 +1,13 @@
 {
 	"globalShortcut": "",
-	"mcpServers": {}
+	"mcpServers": {
+		"context7": {
+			"command": "/opt/homebrew/bin/bunx",
+			"args": ["-y", "@upstash/context7-mcp@latest"]
+		},
+		"mcp-rustdoc": {
+			"command": "/Users/ale/.local/bin/rdoc-mcp",
+			"args": ["--server-type", "stdio"]
+		}
+	}
 }
