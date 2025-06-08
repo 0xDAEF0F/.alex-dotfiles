@@ -18,6 +18,7 @@ fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 fish_add_path $HOME/.local/bin # local scripts
+fish_add_path $HOME/.claude/local
 
 # `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
