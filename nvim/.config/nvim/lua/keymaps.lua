@@ -1,6 +1,19 @@
 -- Disable search highlighting
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Case-sensitive * and # search
+vim.keymap.set("n", "*", function()
+  local word = vim.fn.expand("<cword>")
+  vim.fn.setreg("/", "\\C\\<" .. word .. "\\>")
+  vim.cmd("normal! n")
+end, { desc = "Case-sensitive forward word search" })
+
+vim.keymap.set("n", "#", function()
+  local word = vim.fn.expand("<cword>")
+  vim.fn.setreg("/", "\\C\\<" .. word .. "\\>")
+  vim.cmd("normal! N")
+end, { desc = "Case-sensitive backward word search" })
+
 -- Yank full directory/file path
 vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h')<CR>") -- dir
 vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
