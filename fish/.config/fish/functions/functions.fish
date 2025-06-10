@@ -120,5 +120,10 @@ end
 
 # git clone and cd into it
 function clone
-    git clone $argv[1] && cd (basename $argv[1])
+    if test (count $argv) -eq 2
+        git clone $argv[1] $argv[2] && cd $argv[2]
+    else
+        set repo_name (basename $argv[1] .git)
+        git clone $argv[1] && cd $repo_name
+    end
 end

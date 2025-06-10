@@ -16,11 +16,10 @@
 
 ## Development Practices
 
-- use available tools to improve accuracy
-- leverage code analysis tools for verification
-- test code changes before committing
+- use available tools and mcp servers to improve accuracy
 - use type checking where applicable
 - validate assumptions with appropriate tools
+- use anyhow in rust whenever possible
 
 ## Naming Conventions
 

@@ -7,9 +7,10 @@ return {
     "folke/tokyonight.nvim",
     "rebelot/kanagawa.nvim",
     "EdenEast/nightfox.nvim",
-    "sainnhe/everforest",
+    "neanias/everforest-nvim",
+    "morhetz/gruvbox",
   },
   config = function()
-    vim.cmd([[colorscheme tokyonight]])
+    vim.cmd([[colorscheme everforest]])
   end,
 }
