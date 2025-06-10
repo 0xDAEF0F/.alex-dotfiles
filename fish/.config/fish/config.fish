@@ -66,13 +66,13 @@ abbr -a grh "git reset --hard"
 abbr -a grs "git reset --soft"
 
 abbr -a gaa "git add ."
-abbr -a gc "git commit -am" # stages all and commits
+abbr -a gcm "git commit -m" 
 abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gpf "git push --force"
 abbr -a gp "git push"
 
 abbr -a gb "git branch"
-abbr -a gco "git checkout -b"
+abbr -a gc "git checkout" 
 
 abbr -a gfa "git fetch --all --prune"
 abbr -a gl "git pull --rebase"

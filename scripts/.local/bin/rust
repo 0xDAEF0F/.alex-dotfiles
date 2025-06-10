@@ -52,5 +52,3 @@ cargo fmt
 git add .
 
 git commit -m "(feat): initialize project"
-
-cursor .
