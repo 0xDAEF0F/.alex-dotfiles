@@ -6,12 +6,6 @@
 - prefer self-documenting code over excessive comments
 - when comments are necessary, keep them concise and focused on "why" not "what"
 
-## Command Line Interface
-- explain short flags in terminal commands (e.g., -b means --cookie)
-- always provide long-form alternatives for short flags
-- document flag purposes in help text
-- use descriptive flag names that match their function
-
 ## Code Quality
 - avoid linting errors in code output
 - run linting tools before finalizing code
@@ -41,4 +35,3 @@
 - keep functions focused and single-purpose
 - minimize cognitive complexity
 - group related functionality together
-- maintain consistent indentation and formatting

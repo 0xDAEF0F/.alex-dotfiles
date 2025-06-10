@@ -10,7 +10,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     error("Error cloning lazy.nvim:\n" .. out)
   end
-end ---@diagnostic disable-next-line: undefined-field
+end
+
+---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("opts")
@@ -39,96 +41,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
 })
-
--- OLD CONFIG
--- -- vscode_utils.lua
--- function call(arg)
---   nvim_feedkeys(string.format(":call %s<enter>", arg))
--- end
-
--- -- register a jump after insert mode is left
--- vim.keymap.set({ "i" }, "<escape>", function()
---   nvim_feedkeys("<escape>")
---   register_jump()
--- end)
-
--- -- register a jump whenever a forward search is started
--- vim.keymap.set({ "n" }, "/", function()
---   register_jump()
---   nvim_feedkeys("/")
--- end)
-
--- -- Go to next git change
--- vim.keymap.set(
---   "n",
---   "<leader>n",
---   ":lua require('vscode').call('workbench.action.editor.nextChange')<CR>",
---   { silent = true }
--- )
-
--- -- multicursor like in vscode
--- vim.keymap.set("n", "<C-z>", "mciw*<Cmd>nohl<CR>", { remap = true })
-
--- vim.keymap.set("n", "n", function()
---   local success, _ = pcall(vim.cmd, "normal! n")
-
---   if not success then
---     return
---   end
-
---   centerScreenOnCursor()
---   register_jump()
--- end, { noremap = true, silent = true })
-
--- vim.keymap.set("n", "N", function()
---   local success, _ = pcall(vim.cmd, "normal! N")
-
---   if not success then
---     return
---   end
-
---   centerScreenOnCursor()
---   register_jump()
--- end, { noremap = true, silent = true })
-
--- vim.keymap.set("n", "*", function()
---   local success, _ = pcall(vim.cmd, "normal! *")
-
---   if not success then
---     return
---   end
-
---   centerScreenOnCursor()
---   register_jump()
--- end, { noremap = true, silent = true })
-
--- vim.keymap.set("n", "#", function()
---   local success, _ = pcall(vim.cmd, "normal! #")
-
---   if not success then
---     return
---   end
-
---   centerScreenOnCursor()
---   register_jump()
--- end, { noremap = true, silent = true })
-
--- -- Centers the cursor after you search with / or ?
--- vim.keymap.set("c", "<CR>", function()
---   local cmdtype = vim.fn.getcmdtype()
---   if cmdtype == "/" or cmdtype == "?" then
---     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
---     centerScreenOnCursor()
---     register_jump()
---     return ""
---   end
---   return "<CR>"
--- end, { expr = true })
-
--- -- Redraws the screen after text changes because it is buggy
--- vim.api.nvim_create_autocmd("TextChanged", {
---   pattern = "*",
---   callback = function()
---     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-l>", true, false, true), "n", false)
---   end,
--- })

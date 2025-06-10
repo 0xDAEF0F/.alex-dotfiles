@@ -9,7 +9,10 @@
       "Bash(cargo test:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "Bash(cargo clippy:*)"
+      "Bash(cargo clippy:*)",
+      "Bash(mkdir:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(cargo doc:*)"
     ]
   },
   "enableAllProjectMcpServers": false

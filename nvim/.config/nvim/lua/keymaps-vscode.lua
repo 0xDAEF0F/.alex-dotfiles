@@ -1,10 +1,5 @@
 local utils = require("utils")
 
--- format
-vim.keymap.set("n", "<leader>f", function()
-  require("vscode").call("editor.action.format")
-end)
-
 -- Toggle ai completions
 vim.keymap.set("n", "<leader>e", function()
   require("vscode").call("editor.cpp.toggle")

@@ -22,6 +22,11 @@ return {
             ["dd"] = require("telescope.actions").delete_buffer,
           },
         },
+        layout_config = {
+          horizontal = {
+            preview_width = 0.55, -- in percentage
+          },
+        },
       },
     })
 
@@ -34,15 +39,16 @@ return {
     vim.keymap.set("n", "<leader>s.", builtin.oldfiles)
     vim.keymap.set("n", "<leader><leader>", builtin.buffers)
     vim.keymap.set("n", "<leader>sf", builtin.find_files)
-    vim.keymap.set("n", "<leader>sw", builtin.grep_string)
-    -- dont know the difference between these two
+
     vim.keymap.set("n", "<leader>sg", builtin.live_grep)
-    vim.keymap.set("n", "<leader>s/", function()
+
+    vim.keymap.set("n", "<leader>sgg", function()
       builtin.live_grep({
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
       })
     end)
+
     -- searches in neovim config
     vim.keymap.set("n", "<leader>sn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
@@ -55,5 +61,6 @@ return {
     vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
     vim.keymap.set("n", "<leader>sr", builtin.resume)
   end,
+
   enabled = not vim.g.vscode,
 }

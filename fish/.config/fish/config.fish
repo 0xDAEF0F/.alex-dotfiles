@@ -28,6 +28,8 @@ set -U fish_color_command blue
 set -Ux RUST_LOG info
 set -Ux RUST_BACKTRACE 0
 
+set -Ux MYVIMRC $HOME/.config/nvim/init.lua
+
 # Bun
 set -Ux BUN_INSTALL $HOME/.bun
 
