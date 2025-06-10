@@ -14,6 +14,5 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(cargo doc:*)"
     ]
-  },
-  "enableAllProjectMcpServers": false
+  }
 }
