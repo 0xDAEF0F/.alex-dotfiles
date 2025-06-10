@@ -1,7 +1,5 @@
 {
-	"Lua.diagnostics.globals": [
-		"vim"
-	],
+	"Lua.diagnostics.globals": ["vim"],
 	"[go]": {
 		"editor.defaultFormatter": "golang.go"
 	},
@@ -13,7 +11,7 @@
 		"files.autoSave": "off"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "vscode.json-language-features",
+		"editor.defaultFormatter": "biomejs.biome",
 		"files.autoSave": "off"
 	},
 	"[lua]": {
@@ -39,7 +37,6 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"biome.enabled": true,
-	"biome.rename": true,
 	"biome.suggestInstallingGlobally": false,
 	"codesnap.containerPadding": "0.5em",
 	"cursor-retrieval.canAttemptGithubLogin": true,
@@ -49,13 +46,6 @@
 	"cursor.composer.textSizeScale": 1,
 	"cursor.cpp.disabledLanguages": [],
 	"cursor.cpp.enablePartialAccepts": true,
-	"custom-ui-style.electron": {
-		"frame": false // frameless window (no macos semaphore)
-	},
-	"custom-ui-style.font.sansSerif": "Iosevka Nerd Font Mono",
-	"custom-ui-style.stylesheet": {
-		".quick-input-widget": "top: 13vh !important"
-	},
 	"diffEditor.ignoreTrimWhitespace": true,
 	"diffEditor.renderIndicators": false,
 	"editor.codeActionsOnSave": {
@@ -64,9 +54,7 @@
 	},
 	"editor.cursorSurroundingLines": 10, // scrolloff
 	"editor.detectIndentation": true,
-	"editor.experimental.preferTreeSitter": [
-		"typescript",
-	],
+	"editor.experimental.preferTreeSitter": ["typescript"],
 	"editor.fontFamily": "Iosevka Nerd Font Mono",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 15,
@@ -86,9 +74,6 @@
 	"editor.selectionHighlight": false,
 	"editor.semanticHighlighting.enabled": true, // it's not needed for some themes
 	"editor.tabSize": 3,
-	// "editor.tokenColorCustomizations": {
-	// 	"comments": "#b0c4debc" // LightSteelBlue with 50% transparency
-	// },
 	"editor.wordBasedSuggestions": "off",
 	"editor.wordWrap": "on",
 	"errorLens.enabled": true,
@@ -106,7 +91,7 @@
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 0,
 	"fontshortcuts.defaultFontSize": 12, // terminal
-	"fontshortcuts.defaultTerminalFontSize": 16, // editor
+	"fontshortcuts.defaultTerminalFontSize": 15, // editor
 	"fontshortcuts.step": 1,
 	"git.autofetch": true,
 	"git.confirmSync": false,
@@ -137,14 +122,8 @@
 		}
 	],
 	// excludes everything in the gitignore file by default
-	"periscope.rgGlobExcludes": [
-		"**/{build,dist}/**",
-		"*lock"
-	],
-	"periscope.rgOptions": [
-		"--smart-case",
-		"--sortr path"
-	],
+	"periscope.rgGlobExcludes": ["**/{build,dist}/**", "*lock"],
+	"periscope.rgOptions": ["--smart-case", "--sortr path"],
 	"rust-analyzer.check.command": "clippy",
 	"rust-analyzer.diagnostics.experimental.enable": true, // Default is false
 	"rust-analyzer.diagnostics.styleLints.enable": true, // Default is false
@@ -159,10 +138,6 @@
 	"rust-analyzer.semanticHighlighting.punctuation.enable": true, // Default is false
 	"rust-analyzer.typing.triggerChars": "=.>{(",
 	"scm.diffDecorationsGutterWidth": 4,
-	"settings.cycle": [],
-	"smart-tabs.activeFirst": true,
-	"smart-tabs.fixedTabs": 1,
-	"smart-tabs.reactionEvent": "onedit",
 	"stylua.configPath": "/Users/ale/.config/stylua/stylua.toml",
 	"svelte.enable-ts-plugin": true,
 	"terminal.external.osxExec": "Ghostty.app",
@@ -187,7 +162,6 @@
 	"update.releaseTrack": "prerelease",
 	"window.customTitleBarVisibility": "never",
 	"window.newWindowDimensions": "maximized", // although window switching is not working
-	"window.titleBarStyle": "native",
 	"window.zoomLevel": 1,
 	"workbench.colorCustomizations": {
 		// squiggly lines
@@ -214,7 +188,5 @@
 	"workbench.editor.showTabs": "multiple",
 	"workbench.fontAliasing": "antialiased",
 	"workbench.hover.delay": null,
-	"workbench.iconTheme": "material-icon-theme",
-	"workbench.sideBar.location": "left",
-	"workbench.statusBar.visible": false
+	"workbench.sideBar.location": "left"
 }

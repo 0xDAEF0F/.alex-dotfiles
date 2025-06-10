@@ -38,15 +38,39 @@ return {
     -- most used (telescope)
     vim.keymap.set("n", "<leader>s.", builtin.oldfiles)
     vim.keymap.set("n", "<leader><leader>", builtin.buffers)
-    vim.keymap.set("n", "<leader>sf", builtin.find_files)
-
-    vim.keymap.set("n", "<leader>sg", builtin.live_grep)
+    vim.keymap.set("n", "<leader>sf", function()
+      local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
+      if vim.fn.getcwd() == dotfiles_path then
+        builtin.find_files({
+          hidden = true,
+          no_ignore = true,
+          find_command = { "rg", "--files", "--hidden", "--no-ignore", "--glob", "!.git/**" },
+          prompt_title = "Find Files (All Files)",
+        })
+      else
+        builtin.find_files()
+      end
+    end)
 
     vim.keymap.set("n", "<leader>sgg", function()
       builtin.live_grep({
         grep_open_files = true,
         prompt_title = "Live Grep in Open Files",
       })
+    end)
+
+    -- search including hidden files and .gitignore (excluding .git) in ~/.alex-dotfiles
+    -- vim.keymap.set("n", "<leader>sg", builtin.live_grep)
+    vim.keymap.set("n", "<leader>sg", function()
+      local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
+      if vim.fn.getcwd() == dotfiles_path then
+        builtin.live_grep({
+          additional_args = { "--hidden", "--no-ignore", "--glob", "!.git/**" },
+          prompt_title = "Live Grep (All Files)",
+        })
+      else
+        builtin.live_grep()
+      end
     end)
 
     -- searches in neovim config

@@ -1,8 +1,11 @@
 # only enable vi key bindings if connected to a keyboard
 if status is-interactive
-    set fish_greeting
-    fish_vi_key_bindings
-    starship init fish | source # source starship
+    set fish_greeting # no greeting
+
+    fish_vi_key_bindings # vim mode
+
+    starship init fish | source # starship prompt
+
     zoxide init --cmd j fish | source # source zoxide
 
     # better history search
@@ -18,7 +21,7 @@ fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 fish_add_path $HOME/.local/bin # local scripts
-fish_add_path $HOME/.claude/local
+fish_add_path $HOME/.claude/local # claude code
 
 # `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
@@ -28,6 +31,7 @@ set -U fish_color_command blue
 set -Ux RUST_LOG info
 set -Ux RUST_BACKTRACE 0
 
+# this is not working
 set -Ux MYVIMRC $HOME/.config/nvim/init.lua
 
 # Bun
@@ -75,10 +79,10 @@ abbr -a gl "git pull --rebase"
 
 # Neovim abbreviations
 abbr -a n "nvim ."
-abbr -a vi nvim
+abbr -a vi "nvim"
 
 # Zoxide "ji"
-abbr -a jj ji
+abbr -a jj "ji"
 
 # utils
 abbr -a o "open ." # open file explorer
@@ -121,9 +125,10 @@ abbr -a br "bun run"
 abbr -a ba "bun add"
 abbr -a bt "bun test"
 
-# npm
-abbr -a nls "npm ls -g"
-abbr -a nig npm i -g
+# npm abbr with bun xd
+abbr -a nls "bun pm ls -g"
+abbr -a nig "bun install -g"
+abbr -a npx "bunx"
 
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"
@@ -133,18 +138,15 @@ abbr -a tks "tmux kill-server"
 # Eza
 # Instead of doing `ls` we can do `eza`. `\e` is option/alt key
 bind -M insert \el 'commandline -r "eza"; commandline -f execute'
-abbr -a ls eza # list dirs and files
+abbr -a ls "eza" # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
 abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format
-
-# Utility abbreviations
-abbr -a rmrf "rm -rf" # Delete directory recursively
 
 # Better `cp`
 abbr -a cp "rsync -a"
 
 # Previous directory
-abbr -a \- prevd
+abbr -a \- "prevd"
 
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy
