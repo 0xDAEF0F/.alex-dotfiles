@@ -21,7 +21,6 @@ fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 fish_add_path $HOME/.local/bin # local scripts
-fish_add_path $HOME/.claude/local # claude code
 
 # `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
@@ -52,13 +51,17 @@ set -Ux XDG_CACHE_HOME ~/.cache
 # Homebrew update time (never auto update)
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
 
+abbr -a cl "bunx @anthropic-ai/claude-code"
+
+abbr -a pp pbpaste
+
 # Binds history pager to `C-r` just like the old times
 bind -M insert \cr '_atuin_search'
 bind -M default \cr '_atuin_search'
 
 # Git abbreviations
 abbr -a gs "git status"
-abbr -a gd "git diff | delta"
+abbr -a gd "git diff | delta --side-by-side"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
 
@@ -135,9 +138,12 @@ abbr -a ta "tmux attach || tmux new -s alex"
 abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
+# Clear screen with Option+L
+bind -M insert \el 'clear; commandline -f repaint'
+
 # Eza
 # Instead of doing `ls` we can do `eza`. `\e` is option/alt key
-bind -M insert \el 'commandline -r "eza"; commandline -f execute'
+bind -M insert \es 'commandline -r "eza"; commandline -f execute'
 abbr -a ls "eza" # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
 abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format
@@ -152,4 +158,3 @@ abbr -a \- "prevd"
 bind -M visual y fish_clipboard_copy
 bind -M normal yy fish_clipboard_copy
 bind p fish_clipboard_paste
-abbr -a pp pbpaste

@@ -4,9 +4,18 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       markdown = { "prettier" },
-      json = { "prettier" },
-      typescript = { "prettier" },
+      json = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
       lua = { "stylua" },
+      python = { "ruff_format" },
+    },
+    formatters = {
+      ruff_format = {
+        command = "ruff",
+        args = { "format", "--stdin-filename", "$FILENAME", "-" },
+        stdin = true,
+      },
     },
   },
   enabled = not vim.g.vscode,
