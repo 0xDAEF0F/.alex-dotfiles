@@ -12,6 +12,19 @@ return {
       },
     })
 
+    vim.lsp.config("rust_analyzer", {
+      settings = {
+        ["rust-analyzer"] = {
+          checkOnSave = {
+            command = "clippy",
+          },
+          check = {
+            command = "clippy",
+          },
+        },
+      },
+    })
+
     -- Enable configured servers
     vim.lsp.enable("rust_analyzer")
     vim.lsp.enable("ts_ls")

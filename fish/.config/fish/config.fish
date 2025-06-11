@@ -51,7 +51,7 @@ set -Ux XDG_CACHE_HOME ~/.cache
 # Homebrew update time (never auto update)
 set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
 
-abbr -a cl "bunx @anthropic-ai/claude-code"
+abbr -a cl "claude"
 
 abbr -a pp pbpaste
 
@@ -129,9 +129,9 @@ abbr -a ba "bun add"
 abbr -a bt "bun test"
 
 # npm abbr with bun xd
-abbr -a nls "bun pm ls -g"
-abbr -a nig "bun install -g"
-abbr -a npx "bunx"
+abbr -a blsg "bun pm ls -g"
+abbr -a big "bun install -g"
+abbr -a bx "bunx"
 
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"

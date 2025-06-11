@@ -11,14 +11,18 @@ function rusty
 
     cp ~/.alex-dotfiles/rust-toolchain .
     cp ~/.alex-dotfiles/rustfmt.toml .
+
+    # symlink agent stuff
     ln -s ~/.alex-dotfiles/.cursor .
     ln -s ~/.alex-dotfiles/.claude .
 
-    # Add .env to .gitignore
+    # add ignore files
     echo "" >>.gitignore
     echo ".cursor" >>.gitignore
     echo ".claude" >>.gitignore
     echo ".env" >>.gitignore
+
+    # add env variables
     echo "" >>.env
     echo "RUST_LOG=info" >>.env
 
@@ -69,8 +73,5 @@ async fn main() -> Result<()> {
 
     git add .
     git commit -m "(feat): initialize project"
-
-    # open in cursor
-    c
 
 end
