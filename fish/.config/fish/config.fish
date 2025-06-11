@@ -49,7 +49,10 @@ set -Ux XDG_STATE_HOME ~/.local/state
 set -Ux XDG_CACHE_HOME ~/.cache
 
 # Homebrew update time (never auto update)
-set -Ux HOMEBREW_AUTO_UPDATE_SECS 9999999999
+set -Ux HOMEBREW_NO_ENV_HINTS
+set -Ux HOMEBREW_BAT
+set -Ux HOMEBREW_NO_AUTO_UPDATE
+set -Ux HOMEBREW_NO_ANALYTICS
 
 abbr -a cl "claude"
 
@@ -61,7 +64,8 @@ bind -M default \cr '_atuin_search'
 
 # Git abbreviations
 abbr -a gs "git status"
-abbr -a gd "git diff | delta --side-by-side"
+abbr -a gd "git diff"
+abbr -a delta "git diff --no-ext-diff | delta --side-by-side"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
 
