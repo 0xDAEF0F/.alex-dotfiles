@@ -14,6 +14,9 @@ return {
         "ruff_format",
         "ruff_organize_imports",
       },
+      fish = {
+        "fish_indent",
+      },
     },
   },
   enabled = not vim.g.vscode,

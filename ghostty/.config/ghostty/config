@@ -1,13 +1,10 @@
 macos-titlebar-style = "hidden"
-font-size=21
-
-# window-position-x=360
-# window-position-y=120
+font-size=22
 
 window-width=4000
 window-height=4000
 
-font-family="JetBrainsMono Nerd Font Mono"
+font-family="Iosevka Nerd Font Mono"
 theme = "GruvboxDark"
 
 quit-after-last-window-closed=true

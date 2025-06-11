@@ -7,6 +7,17 @@ if status is-interactive
     starship init fish | source # starship prompt
 
     zoxide init --cmd j fish | source # source zoxide
+    
+    # Override zoxide functions to add directory tracking
+    function j
+        __zoxide_z $argv
+        track_current_dir
+    end
+    
+    function ji
+        __zoxide_zi $argv
+        track_current_dir
+    end
 
     # better history search
     atuin init fish --disable-up-arrow | source
