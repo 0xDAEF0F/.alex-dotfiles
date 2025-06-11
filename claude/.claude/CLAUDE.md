@@ -20,6 +20,8 @@
 - use type checking where applicable
 - validate assumptions with appropriate tools
 - use anyhow in rust whenever possible
+- alternate between your native web search and my exa's web search (mcp)
+- if inside ts/js projects make sure to check which is the existing package manager and runtime
 
 ## Naming Conventions
 
@@ -30,13 +32,10 @@
 
 ## Error Handling
 
-- provide clear error messages
+- provide clear and ergonomic error messages
 - handle edge cases explicitly
-- use appropriate error types
-- include context in error messages
 
 ## Code Structure
 
 - keep functions focused and single-purpose
-- minimize cognitive complexity
 - group related functionality together
