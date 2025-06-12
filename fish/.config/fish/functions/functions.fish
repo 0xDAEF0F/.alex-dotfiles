@@ -4,6 +4,7 @@ function y
     yazi $argv --cwd-file="$tmp"
     if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
         builtin cd -- "$cwd"
+        track_current_dir
     end
     rm -f -- "$tmp"
 end

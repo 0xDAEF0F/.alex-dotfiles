@@ -4,8 +4,8 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       markdown = { "prettier" },
-      json = { "biome" },
-      jsonc = { "biome" },
+      json = { "json_sort", "biome" },
+      jsonc = { "json_sort", "biome" },
       typescript = { "biome" },
       typescriptreact = { "biome" },
       lua = { "stylua" },
@@ -16,6 +16,13 @@ return {
       },
       fish = {
         "fish_indent",
+      },
+    },
+    formatters = {
+      json_sort = {
+        command = "jq",
+        args = { "--sort-keys", "walk(if type == \"array\" then sort else . end)" },
+        stdin = true,
       },
     },
   },

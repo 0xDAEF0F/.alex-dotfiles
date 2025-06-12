@@ -36,7 +36,9 @@ return {
     local builtin = require("telescope.builtin")
 
     -- most used (telescope)
-    vim.keymap.set("n", "<leader>s.", builtin.oldfiles)
+    vim.keymap.set("n", "<leader>s.", function()
+      builtin.oldfiles({ cwd_only = true })
+    end)
     vim.keymap.set("n", "<leader><leader>", builtin.buffers)
     vim.keymap.set("n", "<leader>sf", function()
       local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
