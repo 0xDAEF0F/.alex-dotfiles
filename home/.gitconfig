@@ -1,6 +1,6 @@
 [user]
-    name = Alex T
-    email = aletapia@proton.me
+	name = Alex T
+	email = aletapia@proton.me
 [pull]
     rebase = false
 [core]
