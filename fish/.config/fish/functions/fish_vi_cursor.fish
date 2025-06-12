@@ -17,3 +17,14 @@ end
 
 # Set initial cursor
 fish_vi_cursor
+
+# Reset cursor after commands that might change it
+function __fish_vi_cursor_postexec --on-event fish_postexec
+    # Force cursor update based on current mode
+    fish_vi_cursor
+end
+
+# Also reset on prompt display for extra safety
+function __fish_vi_cursor_preprompt --on-event fish_prompt
+    fish_vi_cursor
+end
