@@ -21,5 +21,5 @@ clipboard-trim-trailing-spaces = true
 
 link-url = true
 
-# unbind cmd keys to pass through to neovim
-keybind = cmd+backslash=unbind
+# send cmd keys as escape sequences for neovim (works through tmux)
+keybind = cmd+s=text:\x1bs

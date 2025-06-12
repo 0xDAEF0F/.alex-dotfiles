@@ -39,12 +39,8 @@ else
 
   vim.keymap.set("n", "<leader>x", "<cmd>ToggleTerm<CR>")
 
-  -- save and format
-  vim.keymap.set("n", "<leader>s", function()
-    require("conform").format()
-    vim.cmd("w")
-  end)
-  vim.keymap.set("n", "<D-s>", function()
+  -- Map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
+  vim.keymap.set("n", "<M-s>", function()
     require("conform").format()
     vim.cmd("w")
   end, { desc = "Save and format with Cmd+S" })
@@ -53,7 +49,7 @@ else
   vim.keymap.set("n", "-", "<cmd>Oil --float<CR>")
   vim.keymap.set("n", "<leader>f", "<cmd>lua require('conform').format()<CR>")
 
-  -- ???
+  -- change the directory in nvim
   vim.keymap.set("n", "<leader>cd", "<cmd>cd%:h<CR>")
 
   -- Telescope LSP document symbols
