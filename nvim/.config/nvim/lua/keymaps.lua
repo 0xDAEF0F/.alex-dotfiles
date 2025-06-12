@@ -44,6 +44,10 @@ else
     require("conform").format()
     vim.cmd("w")
   end)
+  vim.keymap.set("n", "<D-s>", function()
+    require("conform").format()
+    vim.cmd("w")
+  end, { desc = "Save and format with Cmd+S" })
 
   vim.keymap.set("n", "<leader>q", "<cmd>q!<CR>")
   vim.keymap.set("n", "-", "<cmd>Oil --float<CR>")

@@ -20,3 +20,6 @@ mouse-hide-while-typing = true
 clipboard-trim-trailing-spaces = true
 
 link-url = true
+
+# unbind cmd keys to pass through to neovim
+keybind = cmd+backslash=unbind

@@ -19,6 +19,7 @@
 			"Bash(rg:*)",
 			"Bash(touch:*)",
 			"WebFetch(domain:api.github.com)",
+			"WebFetch(domain:ghostty.org)",
 			"WebFetch(domain:github.com)",
 			"mcp__context7",
 			"mcp__exa",
