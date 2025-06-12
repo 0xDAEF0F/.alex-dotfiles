@@ -78,6 +78,7 @@ return {
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
         -- Toggle inlay hints keybind
         vim.keymap.set("n", "<leader>h", function()

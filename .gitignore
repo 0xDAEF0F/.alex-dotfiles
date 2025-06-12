@@ -19,6 +19,8 @@ fish/**/functions/*
 !fish/**/functions/testy.fish
 !fish/**/functions/rustyconf.fish
 !fish/**/functions/functions.fish
+!fish/**/functions/fish_vi_cursor.fish
+!fish/**/functions/track_current_dir.fish
 
 # ignore conf.d files except a few that i personally added
 fish/**/conf.d/*
