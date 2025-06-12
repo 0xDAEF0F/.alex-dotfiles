@@ -2,6 +2,9 @@ return {
   -- Main LSP Configuration
   "neovim/nvim-lspconfig",
   config = function()
+    -- Configure inlay hint appearance
+    vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#888888", italic = true })
+
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
@@ -21,6 +24,31 @@ return {
           check = {
             command = "clippy",
           },
+          inlayHints = {
+            bindingModeHints = {
+              enable = true,
+            },
+            chainingHints = {
+              enable = true,
+            },
+            closingBraceHints = {
+              enable = true,
+              minLines = 42,
+            },
+            closureReturnTypeHints = {
+              enable = "always",
+            },
+            maxLength = 20,
+            parameterHints = {
+              enable = true,
+            },
+            renderColons = true,
+            typeHints = {
+              enable = true,
+              hideClosureInitialization = false,
+              hideNamedConstructor = false,
+            },
+          },
         },
       },
     })
@@ -38,6 +66,9 @@ return {
       callback = function(event)
         local opts = { buffer = event.buf }
 
+        -- Enable inlay hints for this buffer
+        vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+
         -- Additional keymaps beyond defaults
         vim.keymap.set("n", "<leader>A", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "<leader>a", vim.diagnostic.goto_next, opts)
@@ -47,6 +78,14 @@ return {
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
+
+        -- Toggle inlay hints keybind
+        vim.keymap.set("n", "<leader>h", function()
+          vim.lsp.inlay_hint.enable(
+            not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }),
+            { bufnr = event.buf }
+          )
+        end, { buffer = event.buf, desc = "Toggle inlay hints" })
       end,
     })
   end,
