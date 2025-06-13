@@ -9,8 +9,10 @@ return {
     "EdenEast/nightfox.nvim",
     "neanias/everforest-nvim",
     "morhetz/gruvbox",
+    "vague2k/vague.nvim",
+    "rose-pine/neovim",
   },
   config = function()
-    vim.cmd([[colorscheme everforest]])
+    vim.cmd([[colorscheme vague]])
   end,
 }

@@ -47,6 +47,7 @@
 	"cursor.cpp.disabledLanguages": [],
 	"cursor.cpp.enablePartialAccepts": true,
 	"diffEditor.ignoreTrimWhitespace": true,
+	"diffEditor.renderSideBySide": false,
 	"diffEditor.renderIndicators": false,
 	"editor.codeActionsOnSave": {
 		"quickfix.biome": "explicit",
