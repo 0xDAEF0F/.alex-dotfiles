@@ -20,7 +20,7 @@
 - use type checking where applicable
 - validate assumptions with appropriate tools
 - use anyhow in rust whenever possible
-- alternate between your native web search and my exa's web search (mcp)
+- prefer exa mcp over you native web search
 - if inside ts/js projects make sure to check which is the existing package manager and runtime
 
 ## Naming Conventions
@@ -39,3 +39,4 @@
 
 - keep functions focused and single-purpose
 - group related functionality together
+

@@ -10,6 +10,10 @@ return {
       rename = {
         auto_save = true,
       },
+      outline = {
+        auto_preview = false,
+        detail = true,
+      },
     })
     vim.keymap.set("n", "<leader>n", "<cmd>Lspsaga hover_doc<CR>")
     vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga outline<CR>")
