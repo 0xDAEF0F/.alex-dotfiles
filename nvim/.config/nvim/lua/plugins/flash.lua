@@ -1,3 +1,5 @@
+-- https://github.com/folke/flash.nvim
+
 local labels = "rtneiohysvafumkljcpgdqxbz"
 local utils = require("utils")
 
@@ -51,6 +53,18 @@ return {
         require("flash").treesitter()
       end,
       desc = "Flash Treesitter",
+    },
+    {
+      "<leader>s",
+      mode = { "n", "x", "o" },
+      function()
+        require("flash").jump({
+          search = { mode = "search", max_length = 0 },
+          label = { after = { 0, 0 } },
+          pattern = "^"
+        })
+      end,
+      desc = "Flash to line start",
     },
   },
 }
