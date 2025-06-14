@@ -42,10 +42,9 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Auto-reload files when changed externally
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
-  pattern = "*",
-  desc = "Check for file changes when refocusing or navigating",
-  command = "if mode() !~ '\\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif",
-})
-
+-- Auto-reload files when changed externally (this is not working correctly)
+-- vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+--   pattern = "*",
+--   desc = "Check for file changes when refocusing or navigating",
+--   command = "if mode() !~ '\\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif",
+-- })
