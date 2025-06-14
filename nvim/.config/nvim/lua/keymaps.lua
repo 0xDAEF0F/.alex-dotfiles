@@ -35,10 +35,6 @@ vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
 if vim.g.vscode then
   require("keymaps-vscode")
 else
-  vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
-
-  vim.keymap.set("n", "<leader>x", "<cmd>ToggleTerm<CR>")
-
   -- Map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
   vim.keymap.set("n", "<M-s>", function()
     require("conform").format()

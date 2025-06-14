@@ -1,3 +1,4 @@
+-- https://github.com/refractalize/oil-git-status.nvim
 return {
   {
     "stevearc/oil.nvim",
