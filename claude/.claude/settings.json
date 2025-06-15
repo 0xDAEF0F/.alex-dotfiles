@@ -30,7 +30,9 @@
 			"WebFetch(domain:qdrant.tech)",
 			"mcp__context7",
 			"mcp__exa",
-			"mcp__github-mcp"
+			"mcp__github-mcp",
+			"mcp__mcp-rust-docs-embed__embed_docs",
+			"mcp__mcp-rust-docs-embed__query_docs"
 		]
 	}
 }

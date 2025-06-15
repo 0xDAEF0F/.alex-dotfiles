@@ -14,12 +14,10 @@ function rusty
 
     # symlink agent stuff
     ln -s ~/.alex-dotfiles/.cursor .
-    ln -s ~/.alex-dotfiles/.claude .
 
     # add ignore files
     echo "" >>.gitignore
     echo ".cursor" >>.gitignore
-    echo ".claude" >>.gitignore
     echo ".env" >>.gitignore
 
     # add env variables

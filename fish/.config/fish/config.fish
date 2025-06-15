@@ -7,13 +7,13 @@ if status is-interactive
     starship init fish | source # starship prompt
 
     zoxide init --cmd j fish | source # source zoxide
-    
+
     # Override zoxide functions to add directory tracking
     function j
         __zoxide_z $argv
         track_current_dir
     end
-    
+
     function ji
         __zoxide_zi $argv
         track_current_dir
@@ -65,13 +65,13 @@ set -Ux HOMEBREW_BAT
 set -Ux HOMEBREW_NO_AUTO_UPDATE
 set -Ux HOMEBREW_NO_ANALYTICS
 
-abbr -a cl "claude"
+abbr -a cl claude
 
 abbr -a pp pbpaste
 
 # Binds history pager to `C-r` just like the old times
-bind -M insert \cr '_atuin_search'
-bind -M default \cr '_atuin_search'
+bind -M insert \cr _atuin_search
+bind -M default \cr _atuin_search
 
 # Git abbreviations
 abbr -a gs "git status"
@@ -84,23 +84,23 @@ abbr -a grh "git reset --hard"
 abbr -a grs "git reset --soft"
 
 abbr -a gaa "git add ."
-abbr -a gcm "git commit -m" 
+abbr -a gcm "git commit -m"
 abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gpf "git push --force"
 abbr -a gp "git push"
 
 abbr -a gb "git branch"
-abbr -a gc "git checkout" 
+abbr -a gc "git checkout"
 
 abbr -a gfa "git fetch --all --prune"
 abbr -a gl "git pull --rebase"
 
 # Neovim abbreviations
 abbr -a n "nvim ."
-abbr -a vi "nvim"
+abbr -a vi nvim
 
 # Zoxide "ji"
-abbr -a jj "ji"
+abbr -a jj ji
 
 # utils
 abbr -a o "open ." # open file explorer
@@ -124,6 +124,8 @@ abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && carg
 abbr -a crw "cargo watch -x run"
 abbr -a grbi "git rebase --interactive"
 
+abbr -a testy "cargo nextest run"
+
 # Homebrew abbreviations
 abbr -a bi "brew install"
 abbr -a bu "brew uninstall"
@@ -146,7 +148,7 @@ abbr -a bt "bun test"
 # npm abbr with bun xd
 abbr -a blsg "bun pm ls -g"
 abbr -a big "bun install -g"
-abbr -a bx "bunx"
+abbr -a bx bunx
 
 # tmux
 abbr -a ta "tmux attach || tmux new -s alex"
@@ -159,7 +161,7 @@ bind -M insert \el 'clear; commandline -f repaint'
 # Eza
 # Instead of doing `ls` we can do `eza`. `\e` is option/alt key
 bind -M insert \es 'commandline -r "eza"; commandline -f execute'
-abbr -a ls "eza" # list dirs and files
+abbr -a ls eza # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
 abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format
 
@@ -167,7 +169,7 @@ abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long f
 abbr -a cp "rsync -a"
 
 # Previous directory
-abbr -a \- "prevd"
+abbr -a \- prevd
 
 # make `y` work like in vim
 bind -M visual y fish_clipboard_copy

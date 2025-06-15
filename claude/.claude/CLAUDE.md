@@ -22,6 +22,7 @@
 - use anyhow in rust whenever possible
 - prefer exa mcp over you native web search
 - if inside ts/js projects make sure to check which is the existing package manager and runtime
+- do not use `cargo build --release`. doing `cargo check` is fine.
 
 ## Naming Conventions
 
@@ -39,4 +40,3 @@
 
 - keep functions focused and single-purpose
 - group related functionality together
-
