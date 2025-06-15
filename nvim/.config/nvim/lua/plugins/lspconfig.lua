@@ -66,9 +66,6 @@ return {
       callback = function(event)
         local opts = { buffer = event.buf }
 
-        -- Disable inlay hints by default
-        vim.lsp.inlay_hint.enable(false, { bufnr = event.buf })
-
         -- Additional keymaps beyond defaults
         vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "<leader>o", vim.lsp.buf.references, opts)

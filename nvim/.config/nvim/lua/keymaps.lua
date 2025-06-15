@@ -54,4 +54,9 @@ else
   -- Quickfix navigation
   vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
   vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
+
+  vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI" }, {
+    pattern = "*",
+    command = "checktime",
+  })
 end

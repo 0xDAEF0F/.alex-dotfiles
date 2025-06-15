@@ -11,7 +11,9 @@ if vim.g.vscode then
   -- vscode only options
 else
   vim.opt.tabstop = 3 -- display 3 spaces per tab
-  vim.o.scrolloff = 14
+  vim.opt.scrolloff = 14
+
+  vim.opt.updatetime = 500
 
   vim.opt.number = true
   vim.opt.signcolumn = "yes"
