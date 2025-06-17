@@ -24,6 +24,9 @@ return {
         args = { "--sort-keys" },
         stdin = true,
       },
+      stylua = {
+        prepend_args = { "--column-width", "80" },
+      },
     },
   },
   enabled = not vim.g.vscode,

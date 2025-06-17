@@ -52,6 +52,32 @@ else
   vim.keymap.set("n", "<leader>.", "<cmd>Telescope lsp_document_symbols<CR>")
 
   -- Quickfix navigation
-  vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
-  vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
+  vim.keymap.set(
+    "n",
+    "<C-n>",
+    "<cmd>cnext<CR>",
+    { desc = "Next quickfix item" }
+  )
+  vim.keymap.set(
+    "n",
+    "<C-p>",
+    "<cmd>cprev<CR>",
+    { desc = "Previous quickfix item" }
+  )
+
+  -- Toggle quickfix
+  vim.keymap.set("n", "<C-Space>", function()
+    local qf_exists = false
+    for _, win in pairs(vim.fn.getwininfo()) do
+      if win["quickfix"] == 1 then
+        qf_exists = true
+        break
+      end
+    end
+    if qf_exists then
+      vim.cmd("cclose")
+    else
+      vim.cmd("copen")
+    end
+  end, { desc = "Toggle quickfix window" })
 end
