@@ -1,6 +1,6 @@
-# macos-titlebar-style = "hidden"
-title = " "
-font-size=22
+macos-titlebar-style = "hidden"
+# title = " "
+font-size=21
 
 window-width=4000
 window-height=4000

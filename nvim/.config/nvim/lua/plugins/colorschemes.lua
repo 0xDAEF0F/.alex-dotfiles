@@ -4,15 +4,15 @@ return {
   priority = 1000,
   enabled = not vim.g.vscode,
   dependencies = {
-    "folke/tokyonight.nvim",
+    "vague2k/vague.nvim",
     "rebelot/kanagawa.nvim",
+    "folke/tokyonight.nvim",
     "EdenEast/nightfox.nvim",
     "neanias/everforest-nvim",
-    "morhetz/gruvbox",
-    "vague2k/vague.nvim",
+    "sainnhe/gruvbox-material",
     "rose-pine/neovim",
   },
   config = function()
-    vim.cmd([[colorscheme vague]])
+    vim.cmd.colorscheme("nordfox")
   end,
 }

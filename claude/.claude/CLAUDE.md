@@ -25,8 +25,8 @@
 
 ## Rust
 
-- use the `rust-docs` mcp to embed/query rust crates documentation
-- use the `rust-lsp` to access language server protocol tools from the project
+- use the `rust-docs` mcp to embed and query rust crates documentation
+- try to use the `rust-lsp` to access language server protocol tools and symbol information from the project
 - prefer to use `anyhow` for error handling
 - do not run `cargo build --release`. doing `cargo check` is fine.
 - running `cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo fmt` at the end of the turn is ideal
@@ -36,3 +36,4 @@
 ## Code Structure
 
 - keep functions focused and single-purpose
+

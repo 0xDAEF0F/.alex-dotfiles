@@ -1,17 +1,11 @@
 -- https://github.com/stevearc/oil.nvim
 -- https://github.com/refractalize/oil-git-status.nvim
 return {
-  {
-    "stevearc/oil.nvim",
-    dependencies = {
-      { "echasnovski/mini.icons", opts = {} },
-    },
-    enabled = not vim.g.vscode,
-    lazy = false,
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    config = function()
-      require("oil").setup({
+  "refractalize/oil-git-status.nvim",
+  dependencies = {
+    {
+      "stevearc/oil.nvim",
+      opts = {
         default_file_explorer = true,
         keymaps = {
           ["q"] = { "actions.close", mode = "n" },
@@ -30,15 +24,10 @@ return {
         win_options = {
           signcolumn = "yes:2",
         },
-      })
-    end,
-  },
-  {
-    "refractalize/oil-git-status.nvim",
-    dependencies = {
-      "stevearc/oil.nvim",
+      },
     },
-    config = true,
-    enabled = not vim.g.vscode,
   },
+  lazy = false,
+  opts = {},
+  enabled = not vim.g.vscode,
 }
