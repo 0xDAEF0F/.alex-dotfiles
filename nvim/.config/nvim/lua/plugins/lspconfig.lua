@@ -1,5 +1,4 @@
 return {
-  -- Main LSP Configuration
   "neovim/nvim-lspconfig",
   config = function()
     -- Configure inlay hint appearance
@@ -15,48 +14,7 @@ return {
       },
     })
 
-    vim.lsp.config("rust_analyzer", {
-      settings = {
-        ["rust-analyzer"] = {
-          checkOnSave = {
-            command = "clippy",
-            extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
-          },
-          check = {
-            command = "clippy",
-            extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
-          },
-          inlayHints = {
-            bindingModeHints = {
-              enable = true,
-            },
-            chainingHints = {
-              enable = true,
-            },
-            closingBraceHints = {
-              enable = true,
-              minLines = 42,
-            },
-            closureReturnTypeHints = {
-              enable = "always",
-            },
-            maxLength = 20,
-            parameterHints = {
-              enable = true,
-            },
-            renderColons = true,
-            typeHints = {
-              enable = true,
-              hideClosureInitialization = false,
-              hideNamedConstructor = false,
-            },
-          },
-        },
-      },
-    })
-
     -- Enable configured servers
-    vim.lsp.enable("rust_analyzer")
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("biome")
@@ -73,13 +31,6 @@ return {
         vim.keymap.set("n", "<leader>o", vim.lsp.buf.references, opts)
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
-
-        -- they are being overriden by `./lspsaga.lua`
-        -- vim.keymap.set("n", "<leader>A", vim.diagnostic.goto_prev, opts)
-        -- vim.keymap.set("n", "<leader>a", vim.diagnostic.goto_next, opts)
-        -- vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-        -- vim.keymap.set("n", "<leader>n", vim.lsp.buf.hover, opts)
-        -- vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
         -- Toggle inlay hints keybind
         vim.keymap.set("n", "<leader>h", function()

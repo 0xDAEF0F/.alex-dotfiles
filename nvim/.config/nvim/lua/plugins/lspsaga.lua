@@ -20,10 +20,10 @@ return {
     vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
     vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
     vim.keymap.set("n", "(a", function()
-      require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+      require("lspsaga.diagnostic"):goto_prev({ severity = { min = vim.diagnostic.severity.WARN } })
     end)
     vim.keymap.set("n", ")a", function()
-      require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+      require("lspsaga.diagnostic"):goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
     end)
   end,
   dependencies = {
