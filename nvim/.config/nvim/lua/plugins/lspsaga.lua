@@ -30,4 +30,5 @@ return {
     "nvim-treesitter/nvim-treesitter", -- optional
     "nvim-tree/nvim-web-devicons", -- optional
   },
+  enabled = not vim.g.vscode,
 }

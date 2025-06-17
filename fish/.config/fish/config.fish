@@ -124,7 +124,7 @@ abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && carg
 abbr -a crw "cargo watch -x run"
 abbr -a grbi "git rebase --interactive"
 
-abbr -a testy "cargo nextest run"
+abbr -a testy "cargo nextest run --success-output immediate"
 
 # Homebrew abbreviations
 abbr -a bi "brew install"

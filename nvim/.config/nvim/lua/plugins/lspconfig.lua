@@ -20,9 +20,11 @@ return {
         ["rust-analyzer"] = {
           checkOnSave = {
             command = "clippy",
+            extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
           },
           check = {
             command = "clippy",
+            extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
           },
           inlayHints = {
             bindingModeHints = {

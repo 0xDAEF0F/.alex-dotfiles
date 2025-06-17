@@ -21,7 +21,7 @@ return {
     formatters = {
       json_sort = {
         command = "jq",
-        args = { "--sort-keys", "walk(if type == \"array\" then sort else . end)" },
+        args = { "--sort-keys" },
         stdin = true,
       },
     },

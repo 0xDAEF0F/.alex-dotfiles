@@ -3,6 +3,7 @@
 ## Comments
 
 - skip comments if names are clear and behavior is intuitive
+- do not output md docs unless i ask explicitly for them
 - comments should be in lowercase
 - prefer self-documenting code over excessive comments
 - when comments are necessary, keep them concise and focused on "why" not "what"
@@ -10,7 +11,7 @@
 ## Code Quality
 
 - avoid linting errors in code output
-- run linting tools before finalizing code
+- make sure the project compiles/builds before passing the turn to the user
 - follow project-specific lint configurations
 - fix warnings, not just errors
 
@@ -19,24 +20,19 @@
 - use available tools and mcp servers to improve accuracy
 - use type checking where applicable
 - validate assumptions with appropriate tools
-- use anyhow in rust whenever possible
-- prefer exa mcp over you native web search
+- prefer exa mcp over your native web search
 - if inside ts/js projects make sure to check which is the existing package manager and runtime
-- do not use `cargo build --release`. doing `cargo check` is fine.
 
-## Naming Conventions
+## Rust
 
-- use descriptive, self-explanatory names
-- avoid abbreviations unless widely understood
-- be consistent with existing codebase patterns
-- prefer clarity over brevity
-
-## Error Handling
-
-- provide clear and ergonomic error messages
-- handle edge cases explicitly
+- use the `rust-docs` mcp to embed/query rust crates documentation
+- use the `rust-lsp` to access language server protocol tools from the project
+- prefer to use `anyhow` for error handling
+- do not run `cargo build --release`. doing `cargo check` is fine.
+- running `cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo fmt` at the end of the turn is ideal
+- use cargo add instead of directly editing the toml file when adding dependencies in rust
+- when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
 
 ## Code Structure
 
 - keep functions focused and single-purpose
-- group related functionality together
