@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope.nvim
 return {
   "nvim-telescope/telescope.nvim",
   event = "VimEnter",
@@ -25,6 +26,7 @@ return {
         layout_config = {
           horizontal = {
             preview_width = 0.55, -- in percentage
+            vertical = { width = 0.5 },
           },
         },
       },
@@ -37,7 +39,10 @@ return {
 
     -- most used (telescope)
     vim.keymap.set("n", "<leader>s.", function()
-      builtin.oldfiles({ cwd_only = true })
+      builtin.oldfiles({
+        cwd_only = true,
+        layout_strategy = "vertical",
+      })
     end)
     vim.keymap.set("n", "<leader><leader>", builtin.buffers)
     vim.keymap.set("n", "<leader>sf", function()
@@ -45,20 +50,21 @@ return {
       if vim.fn.getcwd() == dotfiles_path then
         builtin.find_files({
           hidden = true,
+          layout_strategy = "vertical",
           no_ignore = true,
-          find_command = { "rg", "--files", "--hidden", "--no-ignore", "--glob", "!.git/**" },
+          find_command = {
+            "rg",
+            "--files",
+            "--hidden",
+            "--no-ignore",
+            "--glob",
+            "!.git/**",
+          },
           prompt_title = "Find Files (All Files)",
         })
       else
-        builtin.find_files()
+        builtin.find_files({ layout_strategy = "vertical" })
       end
-    end)
-
-    vim.keymap.set("n", "<leader>sgg", function()
-      builtin.live_grep({
-        grep_open_files = true,
-        prompt_title = "Live Grep in Open Files",
-      })
     end)
 
     -- search including hidden files and .gitignore (excluding .git) in ~/.alex-dotfiles
@@ -68,10 +74,12 @@ return {
       if vim.fn.getcwd() == dotfiles_path then
         builtin.live_grep({
           additional_args = { "--hidden", "--no-ignore", "--glob", "!.git/**" },
+          layout_strategy = "vertical",
+
           prompt_title = "Live Grep (All Files)",
         })
       else
-        builtin.live_grep()
+        builtin.live_grep({ layout_strategy = "vertical" })
       end
     end)
 
@@ -80,7 +88,6 @@ return {
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
     end)
 
-    -- less used (telescope)
     vim.keymap.set("n", "<leader>sh", builtin.help_tags)
     vim.keymap.set("n", "<leader>sk", builtin.keymaps)
     vim.keymap.set("n", "<leader>ss", builtin.builtin)

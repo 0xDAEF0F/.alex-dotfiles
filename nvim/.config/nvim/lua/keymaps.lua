@@ -48,25 +48,22 @@ else
   -- change the directory in nvim
   vim.keymap.set("n", "<leader>cd", "<cmd>cd%:h<CR>")
 
-  -- Telescope LSP document symbols
-  vim.keymap.set("n", "<leader>.", "<cmd>Telescope lsp_document_symbols<CR>")
-
   -- Quickfix navigation
   vim.keymap.set(
     "n",
-    "<C-n>",
+    "<M-n>",
     "<cmd>cnext<CR>",
     { desc = "Next quickfix item" }
   )
   vim.keymap.set(
     "n",
-    "<C-p>",
+    "<M-p>",
     "<cmd>cprev<CR>",
     { desc = "Previous quickfix item" }
   )
 
   -- Toggle quickfix
-  vim.keymap.set("n", "<C-Space>", function()
+  vim.keymap.set("n", "<M-Space>", function()
     local qf_exists = false
     for _, win in pairs(vim.fn.getwininfo()) do
       if win["quickfix"] == 1 then
