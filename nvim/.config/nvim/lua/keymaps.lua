@@ -63,7 +63,7 @@ else
   )
 
   -- Toggle quickfix
-  vim.keymap.set("n", "<M-Space>", function()
+  vim.keymap.set("n", "<leader>cc", function()
     local qf_exists = false
     for _, win in pairs(vim.fn.getwininfo()) do
       if win["quickfix"] == 1 then

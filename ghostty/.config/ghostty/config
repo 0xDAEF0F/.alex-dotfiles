@@ -1,5 +1,5 @@
 macos-titlebar-style = "hidden"
-# title = " "
+# title = " " # in case its not hidden
 font-size=21
 
 window-width=4000
@@ -20,7 +20,7 @@ shell-integration-features = cursor
 mouse-hide-while-typing = true
 clipboard-trim-trailing-spaces = true
 
-link-url = true
+link-url = true # doesn't work with tmux while holding cmd
 
 # send cmd keys as escape sequences for neovim (works through tmux)
 keybind = cmd+s=text:\x1bs
