@@ -1,10 +1,9 @@
 [mgr]
 prepend_keymap = [
-    { on = "<Enter>", run = "plugin enter-nvim", desc = "Enter directory and quit to open nvim" },
     { on = "d", run = "remove --force", desc = "Remove files without confirmation" },
     { on = "<C-y>", run = [
         "plugin system-clipboard",
     ] },
     { on = "q", run = "quit --no-cwd-file", desc = "Quit without changing directory" },
-    { on = "Q", run = "quit", desc = "Quit and change to current directory" },
+    { on = "<Enter>", run = "quit", desc = "Exit and cd to current directory" },
 ]
