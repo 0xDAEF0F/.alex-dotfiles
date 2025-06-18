@@ -1,6 +1,19 @@
 return {
   "saghen/blink.cmp",
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = {
+    { "rafamadriz/friendly-snippets" },
+    { "hrsh7th/nvim-cmp" },
+    {
+      "supermaven-inc/supermaven-nvim",
+      opts = {
+        disable_inline_completion = true, -- disables inline completion for use with cmp
+        disable_keymaps = true, -- disables built in keymaps for more manual control
+      },
+    },
+    {
+      "huijiro/blink-cmp-supermaven",
+    },
+  },
   version = "1.*",
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -15,18 +28,21 @@ return {
     keymap = { preset = "enter" },
 
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = "mono",
     },
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = true } },
 
-    -- Default list of enabled providers defined so that you can extend it
-    -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { "lsp", "path", "snippets" },
+      default = { "lsp", "path", "supermaven", "snippets" },
+      providers = {
+        supermaven = {
+          name = "supermaven",
+          module = "blink-cmp-supermaven",
+          async = true,
+        },
+      },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

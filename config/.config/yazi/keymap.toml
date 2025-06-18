@@ -1,6 +1,6 @@
 [mgr]
 prepend_keymap = [
-    { on = "<Enter>", run = "open", desc = "Open the selected files (or directories with Cursor)" },
+    { on = "<Enter>", run = "plugin enter-nvim", desc = "Enter directory and quit to open nvim" },
     { on = "d", run = "remove --force", desc = "Remove files without confirmation" },
     { on = "<C-y>", run = [
         "plugin system-clipboard",

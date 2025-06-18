@@ -7,7 +7,7 @@ linemode = "mtime"
 
 [opener]
 directory = [
-    { run = 'genv --ignore-environment /usr/local/bin/cursor "$@"', desc = "Open in Cursor", for = "macos" },
+    { run = 'open "$@"', desc = "Open directory", for = "macos" },
 ]
 edit = [
     { run = 'nvim "$@"', block = true, desc = "Edit in Nvim", for = "macos" },
