@@ -41,18 +41,6 @@ ram=(
 sketchybar --add item ram left \
   --set ram "${ram[@]}"
 
-cursor_quota=(
-  icon.font="sketchybar-app-font:Regular:17.0"
-  icon=:bilibili:
-  icon.color=0xffffffff
-  update_freq=120 # 2 minutes
-  script="$PLUGIN_DIR/cursor-quota.sh"
-)
-sketchybar --add item cursor_quota left \
-  --subscribe cursor_quota system_woke \
-  --subscribe cursor_quota mouse.clicked \
-  --set cursor_quota "${cursor_quota[@]}"
-
 ##### Adding Right Items #####
 sketchybar --add item clock right \
   --set clock update_freq=10 icon= script="$PLUGIN_DIR/clock.sh" \
