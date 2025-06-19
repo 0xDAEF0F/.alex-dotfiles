@@ -113,3 +113,8 @@ function clone
         git clone $argv[1] && cd $repo_name
     end
 end
+
+# redirect npx to bunx
+function npx
+    bunx $argv
+end

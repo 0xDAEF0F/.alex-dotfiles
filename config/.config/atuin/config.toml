@@ -1,0 +1,8 @@
+dialect = "us"
+timezone = "local"
+inline_height = 15
+invert = true
+enter_accept = true
+
+[sync]
+records = true

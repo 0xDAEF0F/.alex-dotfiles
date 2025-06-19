@@ -122,6 +122,7 @@ abbr -a cf "cargo +nightly fmt"
 abbr -a clippy "cargo clippy"
 abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo +nightly fmt"
 abbr -a crw "cargo watch -x run"
+abbr -a rebuild "cargo clean && cargo build"
 abbr -a grbi "git rebase --interactive"
 
 abbr -a testy "cargo nextest run --success-output immediate --no-capture"

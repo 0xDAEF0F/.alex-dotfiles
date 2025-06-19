@@ -5,5 +5,6 @@ prepend_keymap = [
         "plugin system-clipboard",
     ] },
     { on = "q", run = "quit --no-cwd-file", desc = "Quit without changing directory" },
-    { on = "<Enter>", run = "quit", desc = "Exit and cd to current directory" },
+    { on = "Q", run = "quit", desc = "Exit and cd to current directory" },
+    { on = "<Enter>", run = "open", desc = "Open with the opener" },
 ]
