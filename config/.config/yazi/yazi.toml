@@ -9,6 +9,9 @@ linemode = "mtime"
 edit = [
     { run = 'nvim "$@"', block = true, desc = "Edit in Nvim", for = "macos" },
 ]
+cd_edit = [
+    { run = 'cd "$@" && nvim .', block = true, desc = "Cd and edit with nvim", for = "macos" },
+]
 media = [
     { run = 'open -a "VLC" "$@"', orphan = true, desc = "Play in VLC", for = "macos" },
 ]
@@ -18,7 +21,7 @@ archive = [{ run = 'open "$@"', desc = "Extract/Open archive", for = "macos" }]
 
 [open]
 rules = [
-    { name = "*/", use = "edit" },
+    { name = "*/", use = "cd_edit" },
     # Video formats
     { name = "*.{mp4,mkv,avi,mov,wmv,flv,webm,mpeg,mpg,m4v,3gp}", use = "media" },
     # Audio formats  

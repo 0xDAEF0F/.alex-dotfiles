@@ -11,11 +11,27 @@ return {
           ["rust-analyzer"] = {
             checkOnSave = {
               command = "clippy",
-              extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
+              extraArgs = {
+                "--",
+                "-W",
+                "clippy::all",
+                "-A",
+                "clippy::uninlined_format_args",
+                "-A",
+                "clippy::new-without-default",
+              },
             },
             check = {
               command = "clippy",
-              extraArgs = { "--", "-W", "clippy::all", "-A", "clippy::uninlined_format_args" },
+              extraArgs = {
+                "--",
+                "-W",
+                "clippy::all",
+                "-A",
+                "clippy::uninlined_format_args",
+                "-A",
+                "clippy::new-without-default",
+              },
             },
           },
         },

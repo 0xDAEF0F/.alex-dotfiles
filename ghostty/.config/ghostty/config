@@ -22,3 +22,7 @@ clipboard-trim-trailing-spaces = true
 
 # send cmd keys as escape sequences for neovim (works through tmux)
 keybind = cmd+s=text:\x1bs
+
+# fix ctrl+tab for terminal applications
+keybind = ctrl+tab=text:\x1b[9;5u
+keybind = ctrl+shift+tab=text:\x1b[1;5Z

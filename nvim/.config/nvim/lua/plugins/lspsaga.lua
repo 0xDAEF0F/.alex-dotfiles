@@ -7,6 +7,9 @@ return {
       lightbulb = {
         virtual_text = false,
       },
+      symbol_in_winbar = {
+        enable = false,
+      },
       rename = {
         auto_save = true,
       },
@@ -20,10 +23,14 @@ return {
     vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
     vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
     vim.keymap.set("n", "(a", function()
-      require("lspsaga.diagnostic"):goto_prev({ severity = { min = vim.diagnostic.severity.WARN } })
+      require("lspsaga.diagnostic"):goto_prev({
+        severity = { min = vim.diagnostic.severity.WARN },
+      })
     end)
     vim.keymap.set("n", ")a", function()
-      require("lspsaga.diagnostic"):goto_next({ severity = { min = vim.diagnostic.severity.WARN } })
+      require("lspsaga.diagnostic"):goto_next({
+        severity = { min = vim.diagnostic.severity.WARN },
+      })
     end)
   end,
   dependencies = {

@@ -65,7 +65,9 @@ set -Ux HOMEBREW_BAT
 set -Ux HOMEBREW_NO_AUTO_UPDATE
 set -Ux HOMEBREW_NO_ANALYTICS
 
+# Claude
 abbr -a cl claude
+abbr -a yolo "claude --dangerously-skip-permissions"
 
 abbr -a pp pbpaste
 

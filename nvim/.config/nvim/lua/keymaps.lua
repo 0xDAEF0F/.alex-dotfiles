@@ -77,4 +77,15 @@ else
       vim.cmd("copen")
     end
   end, { desc = "Toggle quickfix window" })
+
+  -- Buffer cycling with C-Tab
+  vim.keymap.set(
+    "n",
+    "<C-Tab>",
+    "<cmd>bnext<CR>",
+    { desc = "Next buffer (cycle)" }
+  )
+
+  -- Close buffer with leader+x
+  vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
 end
