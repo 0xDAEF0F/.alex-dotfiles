@@ -4,8 +4,8 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       markdown = { "prettier" },
-      json = { "json_sort", "biome" },
-      jsonc = { "json_sort", "biome" },
+      json = { "biome" },
+      jsonc = { "biome" },
       typescript = { "biome" },
       typescriptreact = { "biome" },
       lua = { "stylua" },

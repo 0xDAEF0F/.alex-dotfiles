@@ -19,7 +19,7 @@ return {
       },
     })
     vim.keymap.set("n", "<leader>n", "<cmd>Lspsaga hover_doc<CR>")
-    vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga outline<CR>")
+    -- vim.keymap.set("n", "<leader>e", "<cmd>Lspsaga outline<CR>")
     vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
     vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
     vim.keymap.set("n", "(a", function()

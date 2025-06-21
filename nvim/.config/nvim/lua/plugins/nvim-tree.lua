@@ -1,15 +1,26 @@
+-- https://github.com/nvim-tree/nvim-tree.lua
 return {
   "nvim-tree/nvim-tree.lua",
   config = function()
+    -- disable netrw
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
-    vim.opt.termguicolors = true
 
-    -- empty setup using defaults
     require("nvim-tree").setup({
+      on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+
+        -- default mappings
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- remove 's' mapping
+        vim.keymap.del("n", "s", { buffer = bufnr })
+      end,
+
       view = {
-        width = 22,
+        width = 25,
       },
+
       actions = {
         open_file = {
           quit_on_open = false,
@@ -18,22 +29,22 @@ return {
           },
         },
       },
+
+      -- show hidden and ignored files by default
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
+
       tab = {
         sync = {
           open = false,
           close = false,
         },
       },
-      on_attach = function(bufnr)
-        local api = require("nvim-tree.api")
-
-        -- Default mappings
-        api.config.mappings.default_on_attach(bufnr)
-
-        -- Disable the 's' key
-        vim.keymap.del("n", "s", { buffer = bufnr })
-      end,
     })
+
+    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>")
 
     vim.api.nvim_create_autocmd({ "QuitPre" }, {
       callback = function()
@@ -41,5 +52,6 @@ return {
       end,
     })
   end,
-  enabled = false,
+
+  enabled = not vim.g.vscode,
 }

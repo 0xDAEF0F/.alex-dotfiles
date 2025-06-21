@@ -1,9 +1,6 @@
 {
-	"model": "opus",
 	"permissions": {
 		"allow": [
-			"Bash(jq:*)",
-			"Bash(sed:*)",
 			"Bash(bun build:*)",
 			"Bash(bun run:*)",
 			"Bash(bun test:*)",
@@ -16,6 +13,8 @@
 			"Bash(cargo run:*)",
 			"Bash(cargo test:*)",
 			"Bash(cargo tree:*)",
+			"Bash(jq:*)",
+			"Bash(sed:*)",
 			"Bash(chmod:*)",
 			"Bash(eza:*)",
 			"Bash(find:*)",
@@ -24,29 +23,8 @@
 			"Bash(mkdir:*)",
 			"Bash(rg:*)",
 			"Bash(touch:*)",
-			"WebFetch(domain:api.github.com)",
-			"WebFetch(domain:docs.rs)",
-			"WebFetch(domain:docs.rust-lang.org)",
-			"WebFetch(domain:embed-anything.com)",
-			"WebFetch(domain:ghostty.org)",
-			"WebFetch(domain:github.com)",
-			"WebFetch(domain:qdrant.tech)",
-			"WebFetch(domain:hyperliquid.gitbook.io)",
 			"mcp__context7",
-			"mcp__exa",
-			"mcp__github-mcp",
-			"mcp__rust-docs__query_embeddings",
-			"mcp__mcp-rust-docs-embed__embed_docs",
-			"mcp__mcp-rust-docs-embed__query_docs",
-			"mcp__rust-docs__list_embedded_crates",
-			"mcp__rust-docs__query_docs",
-			"mcp__rust-lsp__rename_symbol",
-			"mcp__rust-lsp__hover",
-			"mcp__rust-lsp__diagnostics",
-			"mcp__rust-lsp__definition",
-			"mcp__rust-lsp__references",
-			"mcp__rust-docs__embed_docs",
-			"mcp__rust-docs__check_embed_status"
+			"mcp__exa"
 		]
 	}
 }

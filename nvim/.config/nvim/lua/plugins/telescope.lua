@@ -1,4 +1,5 @@
 -- https://github.com/nvim-telescope/telescope.nvim
+-- TEMPORARILY DISABLED in favor of fzf-lua
 return {
   "nvim-telescope/telescope.nvim",
   event = "VimEnter",
@@ -95,5 +96,6 @@ return {
     vim.keymap.set("n", "<leader>sr", builtin.resume)
   end,
 
-  enabled = not vim.g.vscode,
+  -- enabled = not vim.g.vscode,
+  enabled = false,
 }

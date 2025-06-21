@@ -85,7 +85,46 @@ else
     "<cmd>bnext<CR>",
     { desc = "Next buffer (cycle)" }
   )
+  vim.keymap.set(
+    "n",
+    "<C-S-Tab>",
+    "<cmd>bprevious<CR>",
+    { desc = "Previous buffer (cycle)" }
+  )
 
   -- Close buffer with leader+x
   vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
+
+  -- Close all buffers except current and NvimTree with leader+X
+  vim.keymap.set("n", "<leader>X", function()
+    local current = vim.api.nvim_get_current_buf()
+    local nvim_tree_bufs = {}
+
+    -- Find NvimTree buffers
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) then
+        local ft = vim.api.nvim_buf_get_option(buf, "filetype")
+        if ft == "NvimTree" then
+          table.insert(nvim_tree_bufs, buf)
+        end
+      end
+    end
+
+    -- Close all buffers except current and NvimTree
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) then
+        local is_nvim_tree = false
+        for _, tree_buf in ipairs(nvim_tree_bufs) do
+          if buf == tree_buf then
+            is_nvim_tree = true
+            break
+          end
+        end
+
+        if buf ~= current and not is_nvim_tree then
+          vim.api.nvim_buf_delete(buf, { force = false })
+        end
+      end
+    end
+  end, { desc = "Close all buffers except current and NvimTree" })
 end
