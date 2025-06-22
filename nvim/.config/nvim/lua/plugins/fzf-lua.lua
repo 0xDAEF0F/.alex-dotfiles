@@ -19,11 +19,9 @@ return {
         },
       },
       files = {
-        -- Enable file icons
         file_icons = true,
-        -- Use git icons
         git_icons = true,
-        -- Include hidden files by default
+        -- Include hidden files and ignored files
         fd_opts = "--color=never --type f --hidden --follow --exclude .git",
       },
       grep = {
@@ -41,7 +39,7 @@ return {
     })
 
     -- Most used mappings
-    vim.keymap.set("n", "<leader>s.", function()
+    vim.keymap.set("n", "<C-.>", function()
       fzf.oldfiles()
     end, { desc = "Search recent files in CWD" })
 
@@ -52,35 +50,7 @@ return {
       })
     end, { desc = "Search buffers" })
 
-    vim.keymap.set("n", "<leader>sf", function()
-      local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
-      if vim.fn.getcwd() == dotfiles_path then
-        fzf.files({
-          fd_opts = "--color=never --type f --hidden --no-ignore --follow --exclude .git",
-          prompt = "Find Files (All Files)> ",
-          previewer = "builtin",
-          -- fzf-lua supports frecency through oldfiles
-          -- For true frecency, you can use the oldfiles picker with include_current_session
-          actions = {
-            ["default"] = function(selected)
-              vim.cmd("edit " .. selected[1])
-              -- Update oldfiles to boost frecency
-              vim.fn.execute("silent! wviminfo")
-            end,
-          },
-        })
-      else
-        fzf.files({
-          previewer = "builtin",
-          -- For frecency support, we can use a combination approach
-          -- First show oldfiles, then all files
-          fn_transform = function(x)
-            -- This helps boost recently accessed files
-            return x
-          end,
-        })
-      end
-    end, { desc = "Find files" })
+    vim.keymap.set("n", "<C-f>", fzf.files, { desc = "Find files" })
 
     vim.keymap.set("n", "<leader>sg", function()
       local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
@@ -132,5 +102,6 @@ return {
       { desc = "Resume last search" }
     )
   end,
+
   enabled = not vim.g.vscode,
 }

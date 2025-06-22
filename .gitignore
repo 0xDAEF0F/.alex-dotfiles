@@ -13,6 +13,8 @@ lib-docs/
 /**/fish_variables
 lazy-lock.json
 
+/**/tmux/plugins/
+
 # ignore functions files except a few that i personally added
 fish/**/functions/*
 !fish/**/functions/rusty.fish

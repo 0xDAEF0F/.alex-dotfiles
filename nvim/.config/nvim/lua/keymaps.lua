@@ -27,9 +27,16 @@ end)
 -- Yank without newline
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line without newline" })
 
+-- Yank relative filepath
+vim.keymap.set(
+  "n",
+  "<leader>y",
+  "<cmd>let @+ = expand('%')<CR>",
+  { desc = "Yank relative filepath" }
+)
 -- Yank full directory/file path
-vim.keymap.set("n", "<leader>yd", ":let @+ = expand('%:p:h')<CR>") -- dir
-vim.keymap.set("n", "<leader>yf", ":let @+ = expand('%:p')<CR>") -- file
+vim.keymap.set("n", "<leader>yd", "<cmd>let @+ = expand('%:p:h')<CR>") -- dir
+vim.keymap.set("n", "<leader>yf", "<cmd>let @+ = expand('%:p')<CR>") -- file
 
 -- vscode only keymaps
 if vim.g.vscode then
@@ -42,11 +49,11 @@ else
   end, { desc = "Save and format with Cmd+S" })
 
   vim.keymap.set("n", "<C-q>", "<cmd>q!<CR>")
-  vim.keymap.set("n", "-", "<cmd>Oil --float<CR>")
+  -- vim.keymap.set("n", "-", "<cmd>Oil --float<CR>")
   vim.keymap.set("n", "<leader>f", "<cmd>lua require('conform').format()<CR>")
 
   -- change the directory in nvim
-  vim.keymap.set("n", "<leader>cd", "<cmd>cd%:h<CR>")
+  vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>")
 
   -- Quickfix navigation
   vim.keymap.set(
@@ -92,8 +99,8 @@ else
     { desc = "Previous buffer (cycle)" }
   )
 
-  -- Close buffer with leader+x
-  vim.keymap.set("n", "<leader>x", "<cmd>bd<CR>", { desc = "Close buffer" })
+  -- Close buffer with C-backspace
+  vim.keymap.set("n", "<C-x>", "<cmd>bd<CR>", { desc = "Close buffer" })
 
   -- Close all buffers except current and NvimTree with leader+X
   vim.keymap.set("n", "<leader>X", function()
@@ -127,15 +134,4 @@ else
       end
     end
   end, { desc = "Close all buffers except current and NvimTree" })
-
-  -- Custom scroll mappings
-  vim.keymap.set({ "n", "v" }, "<C-d>", function()
-    local lines = math.floor(vim.api.nvim_win_get_height(0) * 0.35)
-    vim.cmd("normal! " .. lines .. "jzz")
-  end, { desc = "Scroll down 40%" })
-
-  vim.keymap.set({ "n", "v" }, "<C-u>", function()
-    local lines = math.floor(vim.api.nvim_win_get_height(0) * 0.35)
-    vim.cmd("normal! " .. lines .. "kzz")
-  end, { desc = "Scroll up 40%" })
 end
