@@ -25,6 +25,7 @@ return {
       desc = "LSP actions",
       callback = function(event)
         local opts = { buffer = event.buf }
+        vim.lsp.inlay_hint.enable(true)
 
         -- Additional keymaps beyond defaults
         vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts)
@@ -34,11 +35,8 @@ return {
 
         -- Toggle inlay hints keybind
         vim.keymap.set("n", "<leader>h", function()
-          vim.lsp.inlay_hint.enable(
-            not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }),
-            { bufnr = event.buf }
-          )
-        end, { buffer = event.buf, desc = "Toggle inlay hints" })
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end)
       end,
     })
   end,

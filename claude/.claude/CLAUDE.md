@@ -26,10 +26,10 @@
 ## Rust
 
 - use the `rust-docs` mcp to embed and query rust crates documentation
-- try to use the `rust-lsp` to access language server protocol tools and symbol information from the project
+- use the `rust-lsp` to access language server protocol tools and symbol information from the project
 - use `anyhow` for error handling
-- do not run `cargo build --release`. doing `cargo check` is fine.
-- running `cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo fmt` at the end of the turn is ideal
+- do not run `cargo build --release`. doing `cargo check` is fine
+- run `cargo fmt` after completing the user request
 - use cargo add instead of directly editing the toml file when adding dependencies in rust
 - when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
 

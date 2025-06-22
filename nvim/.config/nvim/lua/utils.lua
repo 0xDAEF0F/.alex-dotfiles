@@ -16,7 +16,8 @@ return {
   end,
   -- Feedkeys for vscode
   nvimFeedkeys = function(keys)
-    local feedable_keys = vim.api.nvim_replace_termcodes(keys, true, false, true)
+    local feedable_keys =
+      vim.api.nvim_replace_termcodes(keys, true, false, true)
     vim.api.nvim_feedkeys(feedable_keys, "n", false)
   end,
 }

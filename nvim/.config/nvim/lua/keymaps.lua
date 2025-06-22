@@ -127,4 +127,15 @@ else
       end
     end
   end, { desc = "Close all buffers except current and NvimTree" })
+
+  -- Custom scroll mappings
+  vim.keymap.set({ "n", "v" }, "<C-d>", function()
+    local lines = math.floor(vim.api.nvim_win_get_height(0) * 0.35)
+    vim.cmd("normal! " .. lines .. "jzz")
+  end, { desc = "Scroll down 40%" })
+
+  vim.keymap.set({ "n", "v" }, "<C-u>", function()
+    local lines = math.floor(vim.api.nvim_win_get_height(0) * 0.35)
+    vim.cmd("normal! " .. lines .. "kzz")
+  end, { desc = "Scroll up 40%" })
 end
