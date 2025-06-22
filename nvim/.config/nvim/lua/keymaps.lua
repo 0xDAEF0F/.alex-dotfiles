@@ -100,7 +100,7 @@ else
   )
 
   -- Close buffer with C-backspace
-  vim.keymap.set("n", "<C-x>", "<cmd>bd<CR>", { desc = "Close buffer" })
+  vim.keymap.set("n", "<C-BS>", "<cmd>bd<CR>", { desc = "Close buffer" })
 
   -- Close all buffers except current and NvimTree with leader+X
   vim.keymap.set("n", "<leader>X", function()
