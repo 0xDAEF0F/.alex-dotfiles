@@ -1,6 +1,6 @@
 macos-titlebar-style = "hidden"
 # title = " " # in case its not hidden
-font-size=21
+font-size=19
 
 window-width=4000
 window-height=4000

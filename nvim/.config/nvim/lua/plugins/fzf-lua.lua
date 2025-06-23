@@ -19,17 +19,14 @@ return {
         },
       },
       files = {
-        file_icons = true,
-        git_icons = true,
         -- Include hidden files and ignored files
-        fd_opts = "--color=never --type f --hidden --follow --exclude .git",
+        fd_opts = "--color=never --type f --hidden --follow --exclude .git --exclude target --exclude bin --exclude dist",
       },
       grep = {
         -- Grep options similar to telescope
-        rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --glob '!.git/*'",
+        rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --no-ignore --glob '!.git/*' --glob '!target/*' --glob '!bin/*' --glob '!dist/*' --glob '!*.lock' --glob '!package-lock.json' --glob '!**/node_modules/*'",
       },
       oldfiles = {
-        cwd_only = false,
         include_current_session = true,
       },
       buffers = {
@@ -41,31 +38,18 @@ return {
     -- Most used mappings
     vim.keymap.set("n", "<C-.>", function()
       fzf.oldfiles()
-    end, { desc = "Search recent files in CWD" })
+    end, { desc = "Search recent files" })
 
-    vim.keymap.set("n", "<leader><leader>", function()
-      fzf.buffers({
-        sort_lastused = true,
-        previewer = "builtin",
-      })
-    end, { desc = "Search buffers" })
+    vim.keymap.set(
+      "n",
+      "<leader><leader>",
+      fzf.buffers,
+      { desc = "Search buffers" }
+    )
 
     vim.keymap.set("n", "<C-f>", fzf.files, { desc = "Find files" })
 
-    vim.keymap.set("n", "<leader>sg", function()
-      local dotfiles_path = vim.fn.expand("~/.alex-dotfiles")
-      if vim.fn.getcwd() == dotfiles_path then
-        fzf.live_grep({
-          rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --no-ignore --glob '!.git/*'",
-          prompt = "Live Grep (All Files)> ",
-          previewer = "builtin",
-        })
-      else
-        fzf.live_grep({
-          previewer = "builtin",
-        })
-      end
-    end, { desc = "Live grep" })
+    vim.keymap.set("n", "<C-g>", fzf.live_grep, { desc = "Live grep" })
 
     -- Search in neovim config
     vim.keymap.set("n", "<leader>sn", function()

@@ -102,36 +102,39 @@ else
   -- Close buffer with C-backspace
   vim.keymap.set("n", "<C-BS>", "<cmd>bd<CR>", { desc = "Close buffer" })
 
-  -- Close all buffers except current and NvimTree with leader+X
-  vim.keymap.set("n", "<leader>X", function()
+  -- Close all buffers except current, NvimTree, and ToggleTerm
+  vim.keymap.set("n", "<C-S-BS>", function()
     local current = vim.api.nvim_get_current_buf()
-    local nvim_tree_bufs = {}
+    local protected_bufs = {}
 
-    -- Find NvimTree buffers
+    -- Find NvimTree and ToggleTerm buffers
     for _, buf in ipairs(vim.api.nvim_list_bufs()) do
       if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) then
         local ft = vim.api.nvim_buf_get_option(buf, "filetype")
-        if ft == "NvimTree" then
-          table.insert(nvim_tree_bufs, buf)
+        local name = vim.api.nvim_buf_get_name(buf)
+        
+        -- Check if it's NvimTree or ToggleTerm
+        if ft == "NvimTree" or string.match(name, "term://.*toggleterm") then
+          table.insert(protected_bufs, buf)
         end
       end
     end
 
-    -- Close all buffers except current and NvimTree
+    -- Close all buffers except current and protected buffers
     for _, buf in ipairs(vim.api.nvim_list_bufs()) do
       if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) then
-        local is_nvim_tree = false
-        for _, tree_buf in ipairs(nvim_tree_bufs) do
-          if buf == tree_buf then
-            is_nvim_tree = true
+        local is_protected = false
+        for _, protected_buf in ipairs(protected_bufs) do
+          if buf == protected_buf then
+            is_protected = true
             break
           end
         end
 
-        if buf ~= current and not is_nvim_tree then
+        if buf ~= current and not is_protected then
           vim.api.nvim_buf_delete(buf, { force = false })
         end
       end
     end
-  end, { desc = "Close all buffers except current and NvimTree" })
+  end, { desc = "Close all buffers except current, NvimTree, and ToggleTerm" })
 end

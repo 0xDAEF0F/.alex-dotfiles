@@ -1,7 +1,10 @@
+-- https://github.com/kylechui/nvim-surround
 return {
   "kylechui/nvim-surround",
   version = "*",
   event = "VeryLazy",
-  opts = {},
-  enabled = not not vim.g.vscode,
+  config = function()
+    require("nvim-surround").setup()
+  end,
+  enabled = not vim.g.vscode,
 }

@@ -12,6 +12,11 @@ return {
   },
   config = function()
     require("neogit")
-    vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>Neogit<CR>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap(
+      "n",
+      "<C-S>",
+      "<cmd>Neogit<CR>",
+      { noremap = true, silent = true }
+    )
   end,
 }

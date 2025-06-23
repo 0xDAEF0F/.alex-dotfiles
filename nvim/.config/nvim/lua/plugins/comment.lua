@@ -10,5 +10,5 @@ return {
       extra = false,
     },
   },
-  enabled = false,
+  enabled = not vim.g.vscode,
 }
