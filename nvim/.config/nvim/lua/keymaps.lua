@@ -162,7 +162,11 @@ else
 				local name = vim.api.nvim_buf_get_name(buf)
 
 				-- Check if it's NvimTree or ToggleTerm
-				if ft == "NvimTree" or string.match(name, "term://.*toggleterm") then
+				if
+					ft == "neo-tree"
+					or ft == "NvimTree"
+					or string.match(name, "term://.*toggleterm")
+				then
 					table.insert(protected_bufs, buf)
 				end
 			end

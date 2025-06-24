@@ -10,6 +10,7 @@ if vim.g.vscode then
   vim.o.scrolloff = 0
   -- vscode only options
 else
+  vim.opt.termguicolors = true
   vim.opt.tabstop = 3 -- display 3 spaces per tab
   vim.opt.scrolloff = 14
 
