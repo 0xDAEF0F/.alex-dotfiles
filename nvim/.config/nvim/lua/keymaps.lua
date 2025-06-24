@@ -44,13 +44,13 @@ if vim.g.vscode then
 else
   -- Map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
   vim.keymap.set("n", "<M-s>", function()
-    require("conform").format()
+    -- require("conform").format()
     vim.cmd("w")
   end, { desc = "Save and format with Cmd+S" })
 
   vim.keymap.set("n", "<C-q>", "<cmd>q!<CR>")
   -- vim.keymap.set("n", "-", "<cmd>Oil --float<CR>")
-  vim.keymap.set("n", "<leader>f", "<cmd>lua require('conform').format()<CR>")
+  -- vim.keymap.set("n", "<leader>f", "<cmd>lua require('conform').format()<CR>")
 
   -- change the directory in nvim
   vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>")
@@ -100,7 +100,55 @@ else
   )
 
   -- Close buffer with C-backspace
-  vim.keymap.set("n", "<C-BS>", "<cmd>bd<CR>", { desc = "Close buffer" })
+  vim.keymap.set("n", "<C-BS>", function()
+    local current = vim.api.nvim_get_current_buf()
+
+    -- Get list of normal buffers (excluding nvim-tree and other special buffers)
+    local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+    local normal_bufs = {}
+
+    for _, buf in ipairs(bufs) do
+      local ft = vim.bo[buf.bufnr].filetype
+      if ft ~= "NvimTree" and ft ~= "toggleterm" then
+        table.insert(normal_bufs, buf.bufnr)
+      end
+    end
+
+    -- If we have more than one normal buffer, handle switching
+    if #normal_bufs > 1 then
+      local current_win = vim.api.nvim_get_current_win()
+
+      -- Find current buffer index
+      local current_idx = nil
+
+      for i, bufnr in ipairs(normal_bufs) do
+        if bufnr == current then
+          current_idx = i
+          break
+        end
+      end
+
+      if current_idx then
+        -- Get next buffer (wrap around if at the end)
+        local next_idx = current_idx < #normal_bufs and current_idx + 1 or 1
+        local next_buf = normal_bufs[next_idx]
+
+        -- If next buffer is different from current, switch to it first
+        if next_buf ~= current then
+          vim.api.nvim_set_current_buf(next_buf)
+        end
+      end
+
+      -- Delete the original buffer
+      vim.cmd("bd " .. current)
+
+      -- Ensure we stay in the current window (not nvim-tree)
+      vim.api.nvim_set_current_win(current_win)
+    else
+      -- Only one buffer, just close it
+      vim.cmd("bd")
+    end
+  end, { desc = "Close buffer" })
 
   -- Close all buffers except current, NvimTree, and ToggleTerm
   vim.keymap.set("n", "<C-S-BS>", function()
@@ -112,7 +160,7 @@ else
       if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_is_loaded(buf) then
         local ft = vim.api.nvim_buf_get_option(buf, "filetype")
         local name = vim.api.nvim_buf_get_name(buf)
-        
+
         -- Check if it's NvimTree or ToggleTerm
         if ft == "NvimTree" or string.match(name, "term://.*toggleterm") then
           table.insert(protected_bufs, buf)

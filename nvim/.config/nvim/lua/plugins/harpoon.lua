@@ -1,3 +1,4 @@
+-- https://github.com/otavioschwanck/arrow.nvim
 return {
   "otavioschwanck/arrow.nvim",
   dependencies = {

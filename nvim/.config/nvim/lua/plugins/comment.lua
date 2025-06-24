@@ -1,13 +1,12 @@
+-- https://github.com/numToStr/Comment.nvim
 return {
   "numToStr/Comment.nvim",
   opts = {
     toggler = {
-      ---Line-comment toggle keymap
-      line = "<leader>c",
+      line = "<C-c>",
     },
-    mappings = {
-      basic = false,
-      extra = false,
+    opleader = {
+      line = "<C-c>",
     },
   },
   enabled = not vim.g.vscode,

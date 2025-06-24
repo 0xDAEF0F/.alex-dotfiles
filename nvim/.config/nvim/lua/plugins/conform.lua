@@ -19,6 +19,7 @@ return {
       },
     },
     formatters = {
+      -- unused
       json_sort = {
         command = "jq",
         args = { "--sort-keys" },
