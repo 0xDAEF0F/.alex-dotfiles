@@ -4,71 +4,71 @@ local labels = "rtneiohysvafumkljcpgdqxbz"
 local utils = require("utils")
 
 return {
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  opts = {
-    labels = labels,
-    highlight = {
-      -- extmark priority
-      priority = 5000,
-    },
-    label = {
-      style = "overlay",
-    },
-    modes = {
-      treesitter = {
-        labels = labels,
-        jump = { pos = "range", autojump = false },
-        label = { before = true, after = false, style = "inline" },
-      },
-      char = {
-        enabled = true,
-        jump_labels = true,
-        -- This enables labels during operator-pending mode (c, d, y, etc.)
-        config = function(opts)
-          -- Don't autohide in operator-pending mode so labels stay visible
-          opts.autohide = false
-          -- Always show jump labels regardless of mode
-          opts.jump_labels = true
-        end,
-      },
-    },
-    prompt = {
-      enabled = false,
-    },
-  },
-  keys = {
-    {
-      "s",
-      mode = { "n", "x", "o" },
-      function()
-        require("flash").jump()
-        if vim.g.vscode then
-          utils.centerScreenOnCursor()
-          utils.registerJump()
-        end
-      end,
-      desc = "Flash",
-    },
-    {
-      "S",
-      mode = { "n", "x", "o" },
-      function()
-        require("flash").treesitter()
-      end,
-      desc = "Flash Treesitter",
-    },
-    {
-      "<leader>s",
-      mode = { "n", "x", "o" },
-      function()
-        require("flash").jump({
-          search = { mode = "search", max_length = 0 },
-          label = { after = { 0, 0 } },
-          pattern = "^",
-        })
-      end,
-      desc = "Flash to line start",
-    },
-  },
+	"folke/flash.nvim",
+	event = "VeryLazy",
+	opts = {
+		labels = labels,
+		highlight = {
+			-- extmark priority
+			priority = 5000,
+		},
+		label = {
+			style = "overlay",
+		},
+		modes = {
+			treesitter = {
+				labels = labels,
+				jump = { pos = "range", autojump = false },
+				label = { before = true, after = false, style = "inline" },
+			},
+			char = {
+				enabled = true,
+				jump_labels = true,
+				-- This enables labels during operator-pending mode (c, d, y, etc.)
+				config = function(opts)
+					-- Don't autohide in operator-pending mode so labels stay visible
+					opts.autohide = false
+					-- Always show jump labels regardless of mode
+					opts.jump_labels = true
+				end,
+			},
+		},
+		prompt = {
+			enabled = false,
+		},
+	},
+	keys = {
+		{
+			"s",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").jump()
+				if vim.g.vscode then
+					utils.centerScreenOnCursor()
+					utils.registerJump()
+				end
+			end,
+			desc = "Flash",
+		},
+		{
+			"S",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").treesitter()
+			end,
+			desc = "Flash Treesitter",
+		},
+		{
+			"<c-m>",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").jump({
+					search = { mode = "search", max_length = 0 },
+					label = { after = { 0, 0 } },
+					pattern = "^",
+				})
+			end,
+			desc = "Flash to line start",
+		},
+	},
 }
