@@ -60,13 +60,14 @@ set -Ux XDG_STATE_HOME ~/.local/state
 set -Ux XDG_CACHE_HOME ~/.cache
 
 # Homebrew update time (never auto update)
-set -Ux HOMEBREW_NO_ENV_HINTS
-set -Ux HOMEBREW_BAT
-set -Ux HOMEBREW_NO_AUTO_UPDATE
-set -Ux HOMEBREW_NO_ANALYTICS
+set -Ux HOMEBREW_NO_ENV_HINTS true
+set -Ux HOMEBREW_BAT true
+set -Ux HOMEBREW_NO_AUTO_UPDATE true
+set -Ux HOMEBREW_NO_ANALYTICS true
 
 # Claude
 abbr -a cl claude
+abbr -a clr "claude -r"
 abbr -a yolo "claude --dangerously-skip-permissions"
 
 abbr -a pp pbpaste
@@ -88,7 +89,7 @@ abbr -a grs "git reset --soft"
 abbr -a gaa "git add ."
 abbr -a gcm "git commit -m"
 abbr -a gca! "git commit --verbose --all --amend"
-abbr -a gpf "git push --force"
+abbr -a gpf "git push --force-with-lease"
 abbr -a gp "git push"
 
 abbr -a gb "git branch"
