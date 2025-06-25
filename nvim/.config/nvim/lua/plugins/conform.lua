@@ -6,8 +6,8 @@ return {
 			markdown = { "prettier" },
 			json = { "biome" },
 			jsonc = { "biome" },
-			typescript = { "biome" },
-			typescriptreact = { "biome" },
+			typescript = { "biome-check" },
+			typescriptreact = { "biome-check" },
 			lua = { "stylua" },
 			python = {
 				"ruff_fix",
@@ -27,6 +27,16 @@ return {
 			},
 			stylua = {
 				prepend_args = { "--column-width", "80", "--indent-type", "Tabs" },
+			},
+			["biome-check"] = {
+				command = "biome",
+				args = {
+					"check",
+					"--write",
+					"--stdin-file-path",
+					"$FILENAME",
+				},
+				stdin = true,
 			},
 		},
 	},

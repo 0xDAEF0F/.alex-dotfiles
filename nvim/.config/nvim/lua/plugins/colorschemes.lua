@@ -3,7 +3,7 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
-		enabled = not vim.g.vscode,
+		enabled = false,
 		dependencies = {
 			"rebelot/kanagawa.nvim",
 			"folke/tokyonight.nvim",
@@ -49,6 +49,15 @@ return {
 				palette_overrides = {},
 			})
 			vim.cmd.colorscheme("vesper")
+		end,
+	},
+	{
+		"webhooked/kanso.nvim",
+		lazy = false,
+		priority = 1000,
+		enabled = not vim.g.vscode,
+		config = function()
+			vim.cmd.colorscheme("kanso")
 		end,
 	},
 }
