@@ -20,6 +20,17 @@ return {
 		require("neo-tree").setup({
 			close_if_last_window = true,
 			use_libuv_file_watcher = true,
+			enable_diagnostics = true,
+			default_component_configs = {
+				diagnostics = {
+					symbols = {
+						hint = "",
+						info = "",
+						warn = "",
+						error = "",
+					},
+				},
+			},
 			window = {
 				width = 30,
 				mappings = {
