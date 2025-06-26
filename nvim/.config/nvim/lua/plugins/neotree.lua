@@ -1,3 +1,4 @@
+-- https://github.com/nvim-neo-tree/neo-tree.nvim
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
@@ -35,7 +36,7 @@ return {
 					enabled = true,
 				},
 				filtered_items = {
-					hide_hidden = false,
+					hide_dotfiles = false,
 					hide_gitignored = false,
 				},
 			},

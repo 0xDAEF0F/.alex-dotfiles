@@ -6,7 +6,7 @@ window-width=4000
 window-height=4000
 
 font-family="Iosevka Nerd Font Mono"
-theme = "GruvboxDark"
+theme = "kanso-ink"
 
 quit-after-last-window-closed=true
 confirm-close-surface = false
