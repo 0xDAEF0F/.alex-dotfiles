@@ -38,7 +38,7 @@ return {
 						require("flash").jump()
 					end,
 					["<C-f>"] = function()
-						require("fzf-lua").files()
+						require("fzf-lua").oldfiles()
 					end,
 				},
 			},
