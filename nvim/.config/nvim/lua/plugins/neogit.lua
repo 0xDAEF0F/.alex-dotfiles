@@ -1,22 +1,22 @@
+-- https://github.com/NeogitOrg/neogit
 return {
 	"NeogitOrg/neogit",
 	dependencies = {
-		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
-
-		-- Only one of these is needed.
-		"nvim-telescope/telescope.nvim", -- optional
-		-- "ibhagwan/fzf-lua", -- optional
-		-- "echasnovski/mini.pick", -- optional
-		-- "folke/snacks.nvim", -- optional
+		"nvim-lua/plenary.nvim",
+		"sindrets/diffview.nvim",
+		"ibhagwan/fzf-lua",
 	},
-	config = function()
-		require("neogit")
-		vim.api.nvim_set_keymap(
-			"n",
-			"<C-S>",
-			"<cmd>Neogit<CR>",
-			{ noremap = true, silent = true }
-		)
+	opts = {
+		mappings = {
+			status = {
+				["s"] = false, -- disable it
+				["S"] = "Stage",
+			},
+		},
+	},
+	init = function()
+		vim.keymap.set("n", "<C-S>", function()
+			require("neogit").open({ kind = "floating" })
+		end)
 	end,
 }
