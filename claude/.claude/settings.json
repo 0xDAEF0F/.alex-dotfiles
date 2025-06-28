@@ -25,6 +25,7 @@
 			"Bash(mkdir:*)",
 			"Bash(rg:*)",
 			"Bash(touch:*)",
+			"WebFetch(domain:github.com)",
 			"mcp__context7",
 			"mcp__exa"
 		]
