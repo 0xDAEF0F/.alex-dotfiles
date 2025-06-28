@@ -14,6 +14,14 @@ return {
 			},
 		})
 
+		vim.lsp.config("ts_ls", {
+			settings = {
+				diagnostics = {
+					ignoredCodes = { 6133 }, -- unused variables (biome already warns)
+				},
+			},
+		})
+
 		-- Enable configured servers
 		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("lua_ls")

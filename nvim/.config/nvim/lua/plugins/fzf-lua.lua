@@ -21,7 +21,7 @@ return {
 				fd_opts = "--color never --type f --type l --hidden --exclude .git",
 			},
 			grep = {
-				rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --no-ignore --glob '!.git/*' --glob '!target/*' --glob '!bin/*' --glob '!dist/*' --glob '!*.lock' --glob '!package-lock.json' --glob '!**/node_modules/*'",
+				rg_opts = "--column --line-number --no-heading --color=always --smart-case --hidden --no-ignore --glob '!.git/*' --glob '!**/target/*' --glob '!bin/*' --glob '!dist/*' --glob '!*.lock' --glob '!package-lock.json' --glob '!**/node_modules/*'",
 			},
 			oldfiles = {
 				prompt = "History❯ ",

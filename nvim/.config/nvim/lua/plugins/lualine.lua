@@ -1,8 +1,17 @@
+-- https://github.com/nvim-lualine/lualine.nvim
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
+		options = {
+			disabled_filetypes = {
+				statusline = { "neo-tree" },
+				winbar = { "neo-tree" },
+			},
+		},
 		sections = {
+			lualine_a = { "mode" },
+			lualine_b = {},
 			lualine_c = {
 				{ "filename", path = 1 },
 			},
@@ -28,13 +37,9 @@ return {
 					},
 					ignore_lsp = { "biome", "tailwindcss" },
 				},
-				{
-					"filetype",
-					colored = true,
-					icon_only = true,
-					icon = { align = "right" },
-				},
 			},
+			lualine_y = {},
+			lualine_z = { "branch" },
 		},
 	},
 	enabled = not vim.g.vscode,
