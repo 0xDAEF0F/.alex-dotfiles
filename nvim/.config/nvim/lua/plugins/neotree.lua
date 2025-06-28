@@ -22,6 +22,10 @@ return {
 			use_libuv_file_watcher = true,
 			enable_diagnostics = true,
 			default_component_configs = {
+				indent = {
+					indent_size = 1,
+					padding = 1,
+				},
 				diagnostics = {
 					symbols = {
 						hint = "",
@@ -40,7 +44,7 @@ return {
 				},
 			},
 			window = {
-				width = 30,
+				width = 25,
 				mappings = {
 					["s"] = function()
 						require("flash").jump()
