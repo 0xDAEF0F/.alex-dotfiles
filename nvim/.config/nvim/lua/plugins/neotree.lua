@@ -30,6 +30,14 @@ return {
 						error = "",
 					},
 				},
+				name = {
+					use_git_status_colors = false, -- disable yellow text for modified files
+				},
+				git_status = {
+					symbols = {
+						unstaged = "", -- remove unstaged icon to avoid duplication with modified
+					},
+				},
 			},
 			window = {
 				width = 30,
