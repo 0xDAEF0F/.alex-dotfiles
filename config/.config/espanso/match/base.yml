@@ -1,0 +1,36 @@
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  - trigger: ":exa"
+    replace: "- use exa mcp server for web search and github search"
+
+  - trigger: ":context7"
+    replace: "- use context7 mcp server to search for the library/tool documentation"
+
+  - trigger: ":rust-docs"
+    replace: "- use rust-docs mcp server to search for the library/tool documentation (check if its embedded, if not, embed it first and then you can check its status and query for semantic search)"
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
