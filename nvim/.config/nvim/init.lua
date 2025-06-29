@@ -68,6 +68,9 @@ require("lazy").setup({
 	},
 })
 
+-- enable scope highlighting
+require("config.scope-highlight").setup()
+
 -- Stop automatic comment continuation
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",

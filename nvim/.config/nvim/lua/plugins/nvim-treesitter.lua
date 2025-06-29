@@ -13,9 +13,8 @@ return {
 			incremental_selection = {
 				enable = true,
 				keymaps = {
-					-- todo: think of a good keymap
-					-- init_selection = "<c-x>",
-					-- node_incremental = "<c-x>",
+					init_selection = "<CR>",
+					node_incremental = "<CR>",
 				},
 			},
 			textobjects = {
