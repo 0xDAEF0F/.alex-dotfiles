@@ -2,6 +2,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
+-- disable netrw
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+
 vim.diagnostic.config({
 	signs = {
 		text = {
@@ -46,6 +50,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	),
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+
+-- open fzf-lua oldfiles when starting nvim without arguments
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		if vim.fn.argc() == 0 and vim.fn.line2byte("$") == -1 then
+			vim.cmd("echo hiho")
+		end
 	end,
 })
 

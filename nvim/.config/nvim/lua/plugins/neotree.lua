@@ -12,9 +12,6 @@ return {
 	lazy = false, -- neo-tree will lazily load itself
 
 	config = function()
-		vim.g.loaded_netrw = 1
-		vim.g.loaded_netrwPlugin = 1
-
 		vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle<CR>")
 
 		require("neo-tree").setup({
@@ -55,6 +52,7 @@ return {
 				},
 			},
 			filesystem = {
+				hijack_netrw_behavior = "disabled",
 				follow_current_file = {
 					enabled = true,
 				},

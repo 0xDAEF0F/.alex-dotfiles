@@ -16,6 +16,7 @@
 			"Bash(cargo tree:*)",
 			"Bash(jq:*)",
 			"Bash(cat:*)",
+			"Bash(cp:*)",
 			"Bash(sed:*)",
 			"Bash(chmod:*)",
 			"Bash(eza:*)",

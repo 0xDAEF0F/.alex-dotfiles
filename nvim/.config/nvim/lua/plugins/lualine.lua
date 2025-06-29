@@ -5,8 +5,8 @@ return {
 	opts = {
 		options = {
 			disabled_filetypes = {
-				statusline = { "neo-tree" },
-				winbar = { "neo-tree" },
+				statusline = { "neo-tree", "Outline" },
+				winbar = { "neo-tree", "Outline" },
 			},
 		},
 		sections = {
