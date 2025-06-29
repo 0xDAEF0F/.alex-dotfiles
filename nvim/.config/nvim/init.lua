@@ -3,8 +3,8 @@ vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 -- disable netrw
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.diagnostic.config({
 	signs = {
@@ -57,7 +57,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		if vim.fn.argc() == 0 and vim.fn.line2byte("$") == -1 then
-			vim.cmd("echo hiho")
+			require("fzf-lua").oldfiles()
 		end
 	end,
 })

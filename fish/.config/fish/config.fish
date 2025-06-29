@@ -99,8 +99,7 @@ abbr -a gfa "git fetch --all --prune"
 abbr -a gl "git pull --rebase"
 
 # Neovim abbreviations
-abbr -a n "nvim ."
-abbr -a vi nvim
+abbr -a n nvim
 
 # Zoxide "ji"
 abbr -a jj ji

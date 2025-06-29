@@ -15,6 +15,13 @@ return {
 				preview = {
 					layout = "vertical",
 					vertical = "down:55%",
+					scrollbar = "float",
+				},
+			},
+			keymap = {
+				builtin = {
+					["<C-d>"] = "preview-page-down",
+					["<C-u>"] = "preview-page-up",
 				},
 			},
 			files = {
