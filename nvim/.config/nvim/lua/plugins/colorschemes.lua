@@ -10,7 +10,7 @@ return {
 			-- vim.cmd.colorscheme("kanso-mist") -- a bit lighter
 		end,
 	},
-	"EdenEast/nightfox.nvim",
-	"sainnhe/gruvbox-material",
-	"rose-pine/neovim",
+	-- "EdenEast/nightfox.nvim",
+	-- "sainnhe/gruvbox-material",
+	-- "rose-pine/neovim",
 }

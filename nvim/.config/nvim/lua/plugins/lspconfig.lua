@@ -28,6 +28,8 @@ return {
 		vim.lsp.enable("biome")
 		vim.lsp.enable("ruff")
 		vim.lsp.enable("tailwindcss")
+		vim.lsp.enable("gopls")
+		vim.lsp.enable("prismals")
 
 		-- Custom keymaps on LspAttach
 		vim.api.nvim_create_autocmd("LspAttach", {
