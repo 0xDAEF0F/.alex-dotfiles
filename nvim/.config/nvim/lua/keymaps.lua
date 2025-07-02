@@ -1,3 +1,11 @@
+-- leader v
+-- leader p
+-- leader ,
+-- leader .
+-- leader u
+-- leader l
+-- leader k
+
 -- Disable search highlighting and close floating windows
 vim.keymap.set("n", "<Esc>", function()
 	vim.cmd("nohlsearch")

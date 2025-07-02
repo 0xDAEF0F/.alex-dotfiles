@@ -24,7 +24,7 @@ return {
 			},
 		})
 		vim.keymap.set("n", "<leader>n", "<cmd>Lspsaga hover_doc<CR>")
-		vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+		vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<CR>")
 		vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
 		vim.keymap.set("n", "(a", function()
 			require("lspsaga.diagnostic"):goto_prev({

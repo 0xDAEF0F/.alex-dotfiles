@@ -50,12 +50,6 @@ return {
 						["[["] = "@class.outer",
 					},
 				},
-				swap = {
-					enable = true,
-					swap_next = {
-						["<leader>A"] = "@parameter.inner",
-					},
-				},
 			},
 		})
 	end,
