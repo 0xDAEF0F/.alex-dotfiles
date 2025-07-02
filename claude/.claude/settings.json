@@ -28,6 +28,7 @@
 			"Bash(touch:*)",
 			"WebFetch(domain:github.com)",
 			"WebFetch(domain:raw.githubusercontent.com)",
+			"WebFetch(domain:docs.anthropic.com)",
 			"mcp__context7",
 			"mcp__exa",
 			"mcp__rust-docs"
