@@ -1,6 +1,6 @@
-# espanso configuration file
-
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+search_shortcut: off
 
 # You can use this file to define the global configuration options for espanso.
 # These are the parameters that will be used by default on every application,

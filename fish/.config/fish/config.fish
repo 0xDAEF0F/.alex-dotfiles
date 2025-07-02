@@ -66,8 +66,9 @@ set -Ux HOMEBREW_NO_AUTO_UPDATE true
 set -Ux HOMEBREW_NO_ANALYTICS true
 
 # Claude
-abbr -a cl claude
-abbr -a clr "claude -r"
+abbr -a cl "claude  --permission-mode acceptEdits"
+abbr -a clc "claude --continue --permission-mode acceptEdits"
+abbr -a clr "claude --resume --permission-mode acceptEdits"
 abbr -a yolo "claude --dangerously-skip-permissions"
 
 abbr -a pp pbpaste

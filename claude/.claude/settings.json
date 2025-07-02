@@ -2,6 +2,7 @@
 	"permissions": {
 		"allow": [
 			"Bash(npm run typecheck)",
+			"Bash(npm search)",
 			"Bash(bun build:*)",
 			"Bash(bun run:*)",
 			"Bash(bun test:*)",
@@ -34,5 +35,29 @@
 			"mcp__rust-docs"
 		]
 	},
-	"model": "opus"
+	"model": "opus",
+	"hooks": {
+		"Stop": [
+			{
+				"matcher": "",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "terminal-notifier -title 'Claude Code' -message 'stop' -sound default"
+					}
+				]
+			}
+		],
+		"Notification": [
+			{
+				"matcher": "",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "terminal-notifier -title 'Claude Code' -message 'notification' -sound default"
+					}
+				]
+			}
+		]
+	}
 }
