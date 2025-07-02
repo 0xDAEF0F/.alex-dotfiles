@@ -18,6 +18,7 @@ media = [
 preview = [{ run = 'open "$@"', desc = "Open in preview", for = "macos" }]
 image = [{ run = 'open "$@"', desc = "Open in default viewer", for = "macos" }]
 archive = [{ run = 'open "$@"', desc = "Extract/Open archive", for = "macos" }]
+bambu = [{ run = 'open -a "BambuStudio" "$@"', orphan = true, desc = "Open in Bambu Studio", for = "macos" }]
 
 [open]
 rules = [
@@ -34,6 +35,8 @@ rules = [
     { name = "*.{zip,tar,gz,bz2,xz,7z,rar}", use = "archive" },
     # PDF and documents
     { name = "*.pdf", use = "preview" },
+    # 3D model formats
+    { name = "*.stl", use = "bambu" },
     # Everything else opens in editor
     { name = "*", use = "edit" },
 ]

@@ -2,5 +2,22 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	opts = {},
+	init = function()
+		vim.keymap.set(
+			"n",
+			"<leader>f",
+			"<cmd>lua require('gitsigns').stage_hunk()<CR>"
+		)
+		vim.keymap.set(
+			"n",
+			"}}",
+			"<cmd>lua require('gitsigns').nav_hunk('next')<CR>"
+		)
+		vim.keymap.set(
+			"n",
+			"{{",
+			"<cmd>lua require('gitsigns').nav_hunk('prev')<CR>"
+		)
+	end,
 	enabled = not vim.g.vscode,
 }

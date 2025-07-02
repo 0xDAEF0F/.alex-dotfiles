@@ -27,8 +27,10 @@
 			"Bash(rg:*)",
 			"Bash(touch:*)",
 			"WebFetch(domain:github.com)",
+			"WebFetch(domain:raw.githubusercontent.com)",
 			"mcp__context7",
-			"mcp__exa"
+			"mcp__exa",
+			"mcp__rust-docs"
 		]
 	},
 	"model": "opus"

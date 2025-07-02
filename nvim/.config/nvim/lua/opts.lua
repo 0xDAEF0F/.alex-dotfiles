@@ -12,7 +12,7 @@ if vim.g.vscode then
 else
 	vim.opt.termguicolors = true
 	vim.opt.tabstop = 3 -- display 3 spaces per tab
-	vim.opt.scrolloff = 14
+	vim.opt.scrolloff = 10
 
 	vim.opt.updatetime = 500
 

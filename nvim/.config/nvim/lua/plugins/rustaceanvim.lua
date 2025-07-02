@@ -1,4 +1,5 @@
 -- https://rust-analyzer.github.io/book/configuration.html
+-- https://github.com/mrcjkb/rustaceanvim
 return {
 	"mrcjkb/rustaceanvim",
 	enabled = not vim.g.vscode,
