@@ -4,6 +4,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		lsp = {
+			-- we already have fidget.nvim
 			progress = { enabled = false },
 		},
 	},

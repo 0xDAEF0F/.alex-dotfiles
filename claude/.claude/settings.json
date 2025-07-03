@@ -58,6 +58,21 @@
 					}
 				]
 			}
+		],
+		"PostToolUse": [
+			{
+				"matcher": "Write|Edit|MultiEdit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "/Users/ale/.claude/scripts/format-rust-files.sh"
+					},
+					{
+						"type": "command",
+						"command": "/Users/ale/.claude/scripts/format-typescript-files.sh"
+					}
+				]
+			}
 		]
 	}
 }

@@ -25,8 +25,8 @@
 ## Rust
 
 - use the `rust-docs` mcp to embed and query rust crates documentation
+- use `bail!()` instead of `Err(anyhow!())`
 - use `anyhow` for error handling
-- do not run `cargo build --release` or `cargo build`. doing `cargo clippy` is fine
-- run `cargo fmt` after completing the user request
-- use cargo add instead of directly editing the toml file when adding dependencies in rust
+- instead of `cargo build` use `cargo clippy`
+- use `cargo add` instead of directly editing Cargo.toml
 - when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
