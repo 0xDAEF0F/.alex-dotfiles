@@ -6,6 +6,7 @@ return {
 	config = function()
 		-- docs.rs
 		vim.keymap.set("n", ")d", "<cmd>RustLsp openDocs<CR>")
+		vim.keymap.set("n", "<leader>rs", "<cmd>RustLsp flyCheck run<CR>")
 		vim.g.rustaceanvim = {
 			server = {
 				default_settings = {
