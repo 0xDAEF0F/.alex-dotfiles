@@ -17,6 +17,7 @@
 			"Bash(cargo tree:*)",
 			"Bash(jq:*)",
 			"Bash(cat:*)",
+			"Bash(fd:*)",
 			"Bash(cp:*)",
 			"Bash(sed:*)",
 			"Bash(chmod:*)",
@@ -55,6 +56,17 @@
 					{
 						"type": "command",
 						"command": "terminal-notifier -title '🔔' -message 'cc needs attention' -sound Pop"
+					}
+				]
+			}
+		],
+		"PreToolUse": [
+			{
+				"matcher": "Write|Edit|MultiEdit",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "/Users/ale/.claude/scripts/check-cargo-toml-edit.sh"
 					}
 				]
 			}

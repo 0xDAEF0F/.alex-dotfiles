@@ -53,15 +53,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- open fzf-lua oldfiles when starting nvim without arguments
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		if vim.fn.argc() == 0 and vim.fn.line2byte("$") == -1 then
-			require("fzf-lua").oldfiles()
-		end
-	end,
-})
-
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
