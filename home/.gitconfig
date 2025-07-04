@@ -1,11 +1,12 @@
 [user]
 	name = Alex T
 	email = aletapia@proton.me
-[pull]
-    rebase = false
 [core]
     ignorecase = false
     excludesfile = /Users/ale/.gitignore_global
+[include]
+    path = ~/.alex-dotfiles/delta/delta.gitconfig
+    path = ~/.alex-dotfiles/delta/themes.gitconfig
 [init]
     defaultBranch = master
 [push]
@@ -16,8 +17,6 @@
     prune = true
 [pull]
     ff = only
-[diff]
-    external = difft
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential

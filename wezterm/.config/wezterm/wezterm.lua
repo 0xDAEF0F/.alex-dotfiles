@@ -225,6 +225,18 @@ config.keys = {
 			tab:activate()
 		end),
 	},
+
+	-- Move tabs with leader+n (right) and leader+p (left)
+	{
+		key = "n",
+		mods = "LEADER",
+		action = act.MoveTabRelative(1),
+	},
+	{
+		key = "p",
+		mods = "LEADER",
+		action = act.MoveTabRelative(-1),
+	},
 }
 
 -- Copy mode key table (vi-like)

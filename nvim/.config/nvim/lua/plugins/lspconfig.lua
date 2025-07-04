@@ -39,7 +39,9 @@ return {
 
 				-- Additional keymaps beyond defaults
 				vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts)
-				vim.keymap.set("n", "<leader>o", vim.lsp.buf.references, opts)
+				vim.keymap.set("n", "<leader>o", function()
+					require("fzf-lua").lsp_references()
+				end, opts)
 				vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
 				vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
 

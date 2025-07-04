@@ -38,7 +38,7 @@ set -U fish_color_command blue
 
 # `set -Ux`: universal exportable variable. and is available
 # to child processes.
-set -Ux RUST_LOG info
+# set -Ux RUST_LOG info
 set -Ux RUST_BACKTRACE 0
 
 # this is not working
@@ -80,7 +80,6 @@ bind -M default \cr _atuin_search
 # Git abbreviations
 abbr -a gs "git status"
 abbr -a gd "git diff"
-abbr -a delta "git diff --no-ext-diff | delta --side-by-side"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
 
