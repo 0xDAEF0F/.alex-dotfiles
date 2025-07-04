@@ -11,9 +11,26 @@ return {
 		},
 		sections = {
 			lualine_a = { "mode" },
-			lualine_b = {},
+			lualine_b = {
+				{
+					function()
+						local cwd = vim.fn.getcwd()
+						-- Check if we're in a git repo
+						local git_dir = vim.fn.finddir(".git", cwd .. ";")
+						if git_dir ~= "" then
+							-- We're in a git repo, show just the project name
+							return "󰊢 " .. vim.fn.fnamemodify(cwd, ":t")
+						else
+							-- Not in a git repo, show the full path with ~ for home
+							local home = vim.fn.expand("~")
+							local shortened = cwd:gsub("^" .. vim.fn.escape(home, "\\"), "~")
+							return "󰉋 " .. shortened
+						end
+					end,
+				},
+			},
 			lualine_c = {
-				{ "filename", path = 1 },
+				{ "filename" },
 			},
 			lualine_x = {
 				{

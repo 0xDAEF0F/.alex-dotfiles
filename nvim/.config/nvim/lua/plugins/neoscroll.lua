@@ -20,5 +20,6 @@ return {
 			performance_mode = false,
 		})
 	end,
-	enable = not vim.g.vscode,
+	enabled = not vim.g.vscode,
+	-- enabled = false,
 }

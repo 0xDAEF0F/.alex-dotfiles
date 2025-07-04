@@ -104,14 +104,11 @@ config.font_size = 22
 -- Cursor settings
 config.default_cursor_style = "BlinkingBlock"
 
--- Scrollback
 config.scrollback_lines = 1000000
 
 -- Tab bar - defaults
--- config.enable_tab_bar = true
--- config.tab_bar_at_bottom = false
--- config.hide_tab_bar_if_only_one_tab = true
--- config.use_fancy_tab_bar = true
+-- config.enable_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 
 -- Leader key (like tmux prefix)
 config.leader = { key = "a", mods = "CTRL" }
@@ -218,6 +215,16 @@ config.keys = {
 		mods = "LEADER",
 		action = act.Search("CurrentSelectionOrEmptyString"),
 	},
+
+	-- Break pane into new tab and switch to it
+	{
+		key = "!",
+		mods = "LEADER",
+		action = wezterm.action_callback(function(win, pane)
+			local tab, window = pane:move_to_new_tab()
+			tab:activate()
+		end),
+	},
 }
 
 -- Copy mode key table (vi-like)
@@ -294,5 +301,10 @@ config.window_close_confirmation = "NeverPrompt"
 
 -- Use resize increments to snap to cell boundaries
 config.use_resize_increments = true
+
+-- Performance settings for smoother scrolling
+config.front_end = "WebGpu" -- Use GPU acceleration if available
+config.animation_fps = 120 -- Increase animation FPS for smoother scrolling
+config.max_fps = 120 -- Allow higher frame rates if your display supports it
 
 return config
