@@ -2,6 +2,35 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+-- Hook to add visual indicator when in copy mode
+wezterm.on("update-right-status", function(window, pane)
+	local name = window:active_key_table()
+	local overrides = window:get_config_overrides() or {}
+
+	if name then
+		-- Show mode indicator in status area
+		window:set_right_status(wezterm.format({
+			{ Background = { Color = "#8A9A7B" } },
+			{ Foreground = { Color = "#14171d" } },
+			{ Attribute = { Intensity = "Bold" } },
+			{ Text = " " .. string.upper(name:gsub("_", " ")) .. " " },
+		}))
+
+		-- Force tab bar to show when in copy mode or search mode
+		if name == "copy_mode" or name == "search_mode" then
+			overrides.enable_tab_bar = true
+			overrides.hide_tab_bar_if_only_one_tab = false
+		end
+	else
+		window:set_right_status("")
+		-- Restore normal settings
+		overrides.enable_tab_bar = nil
+		overrides.hide_tab_bar_if_only_one_tab = nil
+	end
+
+	window:set_config_overrides(overrides)
+end)
+
 local function isViProcess(pane)
 	-- get_foreground_process_name On Linux, macOS and Windows,
 	-- the process can be queried to determine this path. Other operating systems
@@ -107,8 +136,9 @@ config.default_cursor_style = "BlinkingBlock"
 config.scrollback_lines = 1000000
 
 -- Tab bar - defaults
--- config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
+config.show_tab_index_in_tab_bar = false
 
 -- Leader key (like tmux prefix)
 config.leader = { key = "a", mods = "CTRL" }
@@ -302,26 +332,45 @@ config.key_tables = {
 			mods = "NONE",
 			action = act.CopyMode("MoveToEndOfLineContent"),
 		},
+		-- Document navigation
+		{ key = "g", mods = "NONE", action = act.CopyMode("MoveToScrollbackTop") },
+		{
+			key = "G",
+			mods = "SHIFT",
+			action = act.CopyMode("MoveToScrollbackBottom"),
+		},
 		-- Search mode
 		{
 			key = "/",
 			mods = "NONE",
-			action = act.Search("CurrentSelectionOrEmptyString"),
+			action = act.Search({ CaseInSensitiveString = "" }),
+		},
+		-- Search backwards
+		{
+			key = "?",
+			mods = "NONE",
+			action = act.Search({ CaseInSensitiveString = "" }),
+		},
+		-- Clear search pattern
+		{
+			key = "c",
+			mods = "CTRL",
+			action = act.CopyMode("ClearPattern"),
 		},
 	},
 
 	search_mode = {
 		{ key = "Enter", mods = "NONE", action = act.CopyMode("NextMatch") },
+		{ key = "Enter", mods = "SHIFT", action = act.CopyMode("PriorMatch") },
 		{
 			key = "Escape",
 			mods = "NONE",
 			action = act.Multiple({
 				act.ScrollToBottom,
+				act.CopyMode("ClearPattern"),
 				{ CopyMode = "Close" },
 			}),
 		},
-		{ key = "n", mods = "CTRL", action = act.CopyMode("NextMatch") },
-		{ key = "p", mods = "CTRL", action = act.CopyMode("PriorMatch") },
 	},
 }
 
@@ -339,5 +388,11 @@ config.use_resize_increments = true
 config.front_end = "WebGpu" -- Use GPU acceleration if available
 config.animation_fps = 120 -- Increase animation FPS for smoother scrolling
 config.max_fps = 120 -- Allow higher frame rates if your display supports it
+
+-- Make inactive panes more noticeably dimmed
+config.inactive_pane_hsb = {
+	saturation = 0.7,
+	brightness = 0.7,
+}
 
 return config
