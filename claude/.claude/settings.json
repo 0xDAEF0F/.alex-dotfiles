@@ -43,7 +43,7 @@
 				"hooks": [
 					{
 						"type": "command",
-						"command": "terminal-notifier -title 'Claude Code' -message 'stop' -sound default"
+						"command": "terminal-notifier -title '🛑' -message 'cc stopped' -sound Pop"
 					}
 				]
 			}
@@ -54,7 +54,7 @@
 				"hooks": [
 					{
 						"type": "command",
-						"command": "terminal-notifier -title 'Claude Code' -message 'notification' -sound default"
+						"command": "terminal-notifier -title '🔔' -message 'cc needs attention' -sound Pop"
 					}
 				]
 			}

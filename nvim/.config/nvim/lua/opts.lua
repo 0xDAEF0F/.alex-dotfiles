@@ -14,6 +14,10 @@ else
 	vim.opt.tabstop = 3 -- display 3 spaces per tab
 	vim.opt.scrolloff = 0
 
+	-- highlight the cursor line (only the number not the entire line)
+	vim.opt.cursorline = true
+	vim.opt.cursorlineopt = "number"
+
 	vim.opt.updatetime = 500
 
 	vim.opt.number = true

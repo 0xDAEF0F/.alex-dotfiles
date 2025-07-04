@@ -170,22 +170,22 @@ config.keys = {
 	{
 		key = "LeftArrow",
 		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Left", 5 }),
+		action = act.AdjustPaneSize({ "Left", 10 }),
 	},
 	{
 		key = "RightArrow",
 		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Right", 5 }),
+		action = act.AdjustPaneSize({ "Right", 10 }),
 	},
 	{
 		key = "UpArrow",
 		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Up", 5 }),
+		action = act.AdjustPaneSize({ "Up", 10 }),
 	},
 	{
 		key = "DownArrow",
 		mods = "LEADER",
-		action = act.AdjustPaneSize({ "Down", 5 }),
+		action = act.AdjustPaneSize({ "Down", 10 }),
 	},
 
 	{
@@ -249,8 +249,22 @@ config.key_tables = {
 			}),
 		},
 
-		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
-		{ key = "q", mods = "NONE", action = act.CopyMode("Close") },
+		{
+			key = "Escape",
+			mods = "NONE",
+			action = act.Multiple({
+				act.ScrollToBottom,
+				{ CopyMode = "Close" },
+			}),
+		},
+		{
+			key = "q",
+			mods = "NONE",
+			action = act.Multiple({
+				act.ScrollToBottom,
+				{ CopyMode = "Close" },
+			}),
+		},
 
 		-- Vi navigation
 		{ key = "h", mods = "NONE", action = act.CopyMode("MoveLeft") },
@@ -286,7 +300,14 @@ config.key_tables = {
 
 	search_mode = {
 		{ key = "Enter", mods = "NONE", action = act.CopyMode("NextMatch") },
-		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
+		{
+			key = "Escape",
+			mods = "NONE",
+			action = act.Multiple({
+				act.ScrollToBottom,
+				{ CopyMode = "Close" },
+			}),
+		},
 		{ key = "n", mods = "CTRL", action = act.CopyMode("NextMatch") },
 		{ key = "p", mods = "CTRL", action = act.CopyMode("PriorMatch") },
 	},

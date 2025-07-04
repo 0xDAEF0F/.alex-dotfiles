@@ -18,8 +18,12 @@ return {
 						-- Check if we're in a git repo
 						local git_dir = vim.fn.finddir(".git", cwd .. ";")
 						if git_dir ~= "" then
-							-- We're in a git repo, show just the project name
-							return "󰊢 " .. vim.fn.fnamemodify(cwd, ":t")
+							-- Get the full path to the .git directory
+							local git_path = vim.fn.fnamemodify(git_dir, ":p")
+							-- Get the parent directory (the actual git repo root)
+							local git_root = vim.fn.fnamemodify(git_path, ":h:h")
+							-- Show the name of the git repo directory
+							return "󰊢 " .. vim.fn.fnamemodify(git_root, ":t")
 						else
 							-- Not in a git repo, show the full path with ~ for home
 							local home = vim.fn.expand("~")

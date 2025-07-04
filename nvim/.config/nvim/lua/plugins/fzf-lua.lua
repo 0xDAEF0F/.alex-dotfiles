@@ -1,6 +1,8 @@
 -- https://github.com/ibhagwan/fzf-lua
 return {
 	"ibhagwan/fzf-lua",
+	-- dir = "/Users/ale/mimi/erepos/fzf-lua",
+	-- name = "fzf-lua",
 	event = "VimEnter",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
