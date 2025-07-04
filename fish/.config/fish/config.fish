@@ -159,12 +159,10 @@ abbr -a ta "tmux attach || tmux new -s alex"
 abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
-# Clear screen with Option+L
-bind -M insert \el 'clear; commandline -f repaint'
-
 # Eza
 # Instead of doing `ls` we can do `eza`. `\e` is option/alt key
-bind -M insert \es 'commandline -r "eza"; commandline -f execute'
+bind -M insert \el 'commandline -r "eza"; commandline -f execute'
+
 abbr -a ls eza # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
 abbr -a la "eza -la --no-user" # list dirs and files (hidden included) in long format

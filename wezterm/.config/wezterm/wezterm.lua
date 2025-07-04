@@ -2,6 +2,44 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
 
+local function isViProcess(pane)
+	-- get_foreground_process_name On Linux, macOS and Windows,
+	-- the process can be queried to determine this path. Other operating systems
+	-- (notably, FreeBSD and other unix systems) are not currently supported
+	return pane:get_foreground_process_name():find("n?vim") ~= nil
+		or pane:get_title():find("n?vim") ~= nil
+end
+
+local function conditionalActivatePane(
+	window,
+	pane,
+	pane_direction,
+	vim_direction
+)
+	if isViProcess(pane) then
+		window:perform_action(
+			-- This should match the keybinds you set in Neovim.
+			act.SendKey({ key = vim_direction, mods = "ALT" }),
+			pane
+		)
+	else
+		window:perform_action(act.ActivatePaneDirection(pane_direction), pane)
+	end
+end
+
+wezterm.on("ActivatePaneDirection-right", function(window, pane)
+	conditionalActivatePane(window, pane, "Right", "i")
+end)
+wezterm.on("ActivatePaneDirection-left", function(window, pane)
+	conditionalActivatePane(window, pane, "Left", "h")
+end)
+wezterm.on("ActivatePaneDirection-up", function(window, pane)
+	conditionalActivatePane(window, pane, "Up", "e")
+end)
+wezterm.on("ActivatePaneDirection-down", function(window, pane)
+	conditionalActivatePane(window, pane, "Down", "n")
+end)
+
 -- Window settings
 config.initial_cols = 200
 config.initial_rows = 60
@@ -32,13 +70,13 @@ config.color_scheme = "Kanagawa (Gogh)"
 config.default_cursor_style = "BlinkingBlock"
 
 -- Scrollback
-config.scrollback_lines = 100000
+config.scrollback_lines = 1000000
 
--- Tab bar - minimal at bottom, hidden with single tab
-config.enable_tab_bar = true
-config.tab_bar_at_bottom = false
-config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = true
+-- Tab bar - defaults
+-- config.enable_tab_bar = true
+-- config.tab_bar_at_bottom = false
+-- config.hide_tab_bar_if_only_one_tab = true
+-- config.use_fancy_tab_bar = true
 
 -- Leader key (like tmux prefix)
 config.leader = { key = "a", mods = "CTRL" }
@@ -48,18 +86,21 @@ config.keys = {
 	-- Pass through cmd+s for neovim
 	{ key = "s", mods = "CMD", action = act.SendString("\x1bs") },
 
-	-- Fix ctrl+tab for terminal applications
-	{ key = "Tab", mods = "CTRL", action = act.SendString("\x1b[9;5u") },
-	{ key = "Tab", mods = "CTRL|SHIFT", action = act.SendString("\x1b[1;5Z") },
-
 	-- Pass ctrl+backspace through to applications
 	{ key = "Backspace", mods = "CTRL", action = act.SendString("\x1b[127;5u") },
 
-	-- Kill pane (like tmux C-x)
+	-- Kill pane
 	{
 		key = "x",
 		mods = "CTRL",
 		action = act.CloseCurrentPane({ confirm = false }),
+	},
+
+	-- kill tab
+	{
+		key = "w",
+		mods = "CMD",
+		action = wezterm.action.CloseCurrentTab({ confirm = false }),
 	},
 
 	-- Split panes (like tmux)
@@ -84,19 +125,14 @@ config.keys = {
 	-- Copy mode (like tmux C-M-p)
 	{ key = "p", mods = "CTRL|ALT", action = act.ActivateCopyMode },
 
-	-- Reload config (like tmux r)
-	{ key = "r", mods = "LEADER", action = act.ReloadConfiguration },
-
-	-- Tab navigation (like tmux C-Space)
+	-- Tab navigation
+	{ key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
+	{ key = "Tab", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
 	{ key = "Space", mods = "CTRL", action = act.ActivateTabRelative(1) },
-	{ key = "p", mods = "CTRL", action = act.ActivateTabRelative(-1) },
+	{ key = "Space", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
 
 	-- Zoom pane (like tmux C-z)
 	{ key = "z", mods = "CTRL", action = act.TogglePaneZoomState },
-
-	-- Move tabs (like tmux n/p for swap)
-	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
-	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
 
 	-- Resize panes (like tmux)
 	{
@@ -120,11 +156,26 @@ config.keys = {
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 
-	-- Navigate panes (vim-like, similar to vim-tmux-navigator)
-	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
-	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
+	{
+		key = "h",
+		mods = "ALT",
+		action = act.EmitEvent("ActivatePaneDirection-left"),
+	},
+	{
+		key = "n",
+		mods = "ALT",
+		action = act.EmitEvent("ActivatePaneDirection-down"),
+	},
+	{
+		key = "e",
+		mods = "ALT",
+		action = act.EmitEvent("ActivatePaneDirection-up"),
+	},
+	{
+		key = "i",
+		mods = "ALT",
+		action = act.EmitEvent("ActivatePaneDirection-right"),
+	},
 
 	-- Search (like tmux incremental search)
 	{
@@ -132,14 +183,6 @@ config.keys = {
 		mods = "LEADER",
 		action = act.Search("CurrentSelectionOrEmptyString"),
 	},
-
-	-- Show tab navigator overlay (to see tab list when needed)
-	{ key = "w", mods = "LEADER", action = act.ShowTabNavigator },
-
-	-- Font size adjustments
-	{ key = "=", mods = "CTRL", action = act.IncreaseFontSize },
-	{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
-	{ key = "0", mods = "CTRL", action = act.ResetFontSize },
 }
 
 -- Copy mode key table (vi-like)
@@ -151,6 +194,11 @@ config.key_tables = {
 			action = act.CopyMode({ SetSelectionMode = "Cell" }),
 		},
 		{
+			key = "V",
+			mods = "SHIFT",
+			action = act.CopyMode({ SetSelectionMode = "Line" }),
+		},
+		{
 			key = "y",
 			mods = "NONE",
 			action = act.Multiple({
@@ -158,13 +206,20 @@ config.key_tables = {
 				{ CopyMode = "Close" },
 			}),
 		},
+
 		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
 		{ key = "q", mods = "NONE", action = act.CopyMode("Close") },
+
 		-- Vi navigation
 		{ key = "h", mods = "NONE", action = act.CopyMode("MoveLeft") },
 		{ key = "j", mods = "NONE", action = act.CopyMode("MoveDown") },
 		{ key = "k", mods = "NONE", action = act.CopyMode("MoveUp") },
 		{ key = "l", mods = "NONE", action = act.CopyMode("MoveRight") },
+		-- Arrow key navigation
+		{ key = "LeftArrow", mods = "NONE", action = act.CopyMode("MoveLeft") },
+		{ key = "DownArrow", mods = "NONE", action = act.CopyMode("MoveDown") },
+		{ key = "UpArrow", mods = "NONE", action = act.CopyMode("MoveUp") },
+		{ key = "RightArrow", mods = "NONE", action = act.CopyMode("MoveRight") },
 		-- Word navigation
 		{ key = "w", mods = "NONE", action = act.CopyMode("MoveForwardWord") },
 		{ key = "b", mods = "NONE", action = act.CopyMode("MoveBackwardWord") },
@@ -172,7 +227,8 @@ config.key_tables = {
 		{ key = "u", mods = "CTRL", action = act.CopyMode({ MoveByPage = -0.5 }) },
 		{ key = "d", mods = "CTRL", action = act.CopyMode({ MoveByPage = 0.5 }) },
 		-- Line navigation
-		{ key = "0", mods = "NONE", action = act.CopyMode("MoveToStartOfLine") },
+
+		{ key = "^", mods = "NONE", action = act.CopyMode("MoveToStartOfLine") },
 		{
 			key = "$",
 			mods = "NONE",
@@ -200,13 +256,6 @@ config.enable_csi_u_key_encoding = true
 -- Quit when last window closed
 config.quit_when_all_windows_are_closed = true
 config.window_close_confirmation = "NeverPrompt"
-
--- Enable multiplexer features
-config.unix_domains = {
-	{
-		name = "unix",
-	},
-}
 
 -- Use resize increments to snap to cell boundaries
 config.use_resize_increments = true
