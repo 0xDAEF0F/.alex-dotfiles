@@ -280,6 +280,20 @@ config.keys = {
 		mods = "LEADER",
 		action = act.MoveTabRelative(-1),
 	},
+
+	-- Rename current tab (like tmux prefix+,)
+	{
+		key = ",",
+		mods = "LEADER",
+		action = act.PromptInputLine({
+			description = "Enter new name for tab",
+			action = wezterm.action_callback(function(window, pane, line)
+				if line then
+					window:active_tab():set_title(line)
+				end
+			end),
+		}),
+	},
 }
 
 -- Copy mode key table (vi-like)

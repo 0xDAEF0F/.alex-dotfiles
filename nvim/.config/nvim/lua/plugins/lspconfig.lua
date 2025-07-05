@@ -46,7 +46,7 @@ return {
 				vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
 
 				-- Toggle inlay hints keybind
-				vim.keymap.set("n", "<leader>h", function()
+				vim.keymap.set("n", "<C-.>", function()
 					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(), nil)
 				end)
 			end,

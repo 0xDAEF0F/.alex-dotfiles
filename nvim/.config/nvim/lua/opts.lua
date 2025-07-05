@@ -12,7 +12,7 @@ if vim.g.vscode then
 else
 	vim.opt.termguicolors = true
 	vim.opt.tabstop = 3 -- display 3 spaces per tab
-	vim.opt.scrolloff = 0
+	vim.opt.scrolloff = 3
 
 	-- highlight the cursor line (only the number not the entire line)
 	vim.opt.cursorline = true
