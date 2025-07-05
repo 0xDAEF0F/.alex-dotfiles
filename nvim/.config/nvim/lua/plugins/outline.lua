@@ -15,6 +15,7 @@ return {
 			show_numbers = false,
 			show_relative_numbers = false,
 			show_cursorline = true,
+			focus_on_open = false,
 		},
 		outline_items = {
 			show_symbol_details = false,
