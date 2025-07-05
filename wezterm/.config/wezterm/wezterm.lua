@@ -143,6 +143,19 @@ config.show_tab_index_in_tab_bar = false
 -- Leader key (like tmux prefix)
 config.leader = { key = "a", mods = "CTRL" }
 
+-- Mouse bindings
+config.mouse_bindings = {
+	-- Automatically enter copy mode when scrolling up
+	{
+		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+		mods = "NONE",
+		action = act.Multiple({
+			act.ActivateCopyMode,
+			act.ScrollByCurrentEventWheelDelta,
+		}),
+	},
+}
+
 -- Key bindings
 config.keys = {
 	-- Pass through cmd+s for neovim
