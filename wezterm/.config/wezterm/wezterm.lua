@@ -200,6 +200,41 @@ config.keys = {
 	-- Copy mode (like tmux C-M-p)
 	{ key = "p", mods = "CTRL|ALT", action = act.ActivateCopyMode },
 
+	-- Custom new tab that opens to the right of current tab
+	{
+		key = "t",
+		mods = "CMD",
+		action = wezterm.action_callback(function(window, pane)
+			local mux_window = window:mux_window()
+			local active_tab = window:active_tab()
+			local active_idx = 0
+
+			-- Find the index of the current tab
+			for idx, tab in ipairs(mux_window:tabs()) do
+				if tab:tab_id() == active_tab:tab_id() then
+					active_idx = idx
+					break
+				end
+			end
+
+			-- Spawn new tab (goes to the end)
+			local new_tab = mux_window:spawn_tab({})
+
+			-- Move it to position right after current tab
+			local total_tabs = #mux_window:tabs()
+			if active_idx < total_tabs - 1 then
+				-- Calculate how many positions to move left
+				local moves_needed = total_tabs - active_idx - 1
+				for i = 1, moves_needed do
+					window:perform_action(act.MoveTab(active_idx), pane)
+				end
+			end
+
+			-- Activate the new tab
+			new_tab:activate()
+		end),
+	},
+
 	-- Tab navigation
 	{ key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
 	{ key = "Tab", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
