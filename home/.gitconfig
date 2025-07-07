@@ -29,3 +29,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[diff]
+	excludesfile = /Users/ale/.gitignore_global
+[alias]
+	diff-no-lock = diff -- . \":(exclude)*.lock\"

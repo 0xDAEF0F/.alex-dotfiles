@@ -25,6 +25,7 @@ else
 	vim.opt.mouse = "a"
 	vim.opt.showmode = false
 	vim.opt.completeopt = "menuone,noinsert"
+	vim.opt.laststatus = 0
 
 	vim.opt.splitright = true
 	vim.opt.splitbelow = true

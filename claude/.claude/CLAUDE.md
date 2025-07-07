@@ -16,6 +16,7 @@
 
 - use available tools and mcp servers to improve accuracy
 - prefer exa mcp over your native web search
+- NEVER add to commits/prs the claude code co authorship
 
 ## Javascript/Typescript/React
 
@@ -30,3 +31,4 @@
 - instead of `cargo build` use `cargo check`
 - use `cargo add` instead of directly editing Cargo.toml
 - when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
+

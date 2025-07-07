@@ -1,3 +1,4 @@
+-- https://github.com/webhooked/kanso.nvim
 return {
 	{
 		"webhooked/kanso.nvim",

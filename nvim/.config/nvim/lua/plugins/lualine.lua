@@ -46,5 +46,6 @@ return {
 			lualine_z = { "branch" },
 		},
 	},
-	enabled = not vim.g.vscode,
+	-- enabled = not vim.g.vscode,
+	enabled = false,
 }

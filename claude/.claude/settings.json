@@ -28,6 +28,7 @@
 			"Bash(mkdir:*)",
 			"Bash(rg:*)",
 			"Bash(touch:*)",
+			"Bash(gh pr view:*)",
 			"WebFetch(domain:github.com)",
 			"WebFetch(domain:raw.githubusercontent.com)",
 			"WebFetch(domain:docs.anthropic.com)",
