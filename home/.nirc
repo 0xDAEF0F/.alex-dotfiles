@@ -1,7 +1,0 @@
-; ~/.nirc
-
-; fallback when no lock found
-defaultAgent=bun # default "prompt"
-
-; for global installs
-globalAgent=npm
