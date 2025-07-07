@@ -31,10 +31,14 @@
 			"WebFetch(domain:github.com)",
 			"WebFetch(domain:raw.githubusercontent.com)",
 			"WebFetch(domain:docs.anthropic.com)",
+			"WebFetch",
 			"mcp__context7",
 			"mcp__exa",
 			"mcp__rust-docs",
 			"mcp__rust-lsp"
+		],
+		"deny": [
+			"Bash(rustc:*)"
 		]
 	},
 	"model": "opus",

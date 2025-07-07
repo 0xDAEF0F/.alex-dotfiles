@@ -276,6 +276,7 @@ return {
 		-- vim.keymap.set("n", "<C-.>", fzf.files)
 
 		vim.keymap.set("n", "<C-g>", fzf.live_grep)
+		vim.keymap.set("n", "<leader>g", fzf.grep_cword)
 
 		vim.keymap.set("n", "<leader>ss", fzf.builtin)
 
@@ -293,7 +294,6 @@ return {
 		vim.keymap.set("n", "<leader>sn", function()
 			fzf.files({
 				cwd = vim.fn.stdpath("config"),
-				previewer = "builtin",
 			})
 		end, { desc = "Search Neovim config files" })
 

@@ -27,6 +27,6 @@
 - use the `rust-docs` mcp to embed and query rust crates documentation
 - use `bail!()` instead of `Err(anyhow!())`
 - use `anyhow` for error handling
-- instead of `cargo build` use `cargo clippy`
+- instead of `cargo build` use `cargo check`
 - use `cargo add` instead of directly editing Cargo.toml
 - when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)

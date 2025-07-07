@@ -12,44 +12,12 @@ return {
 	lazy = false, -- neo-tree will lazily load itself
 
 	config = function()
-		-- solves issue with not refreshing git changes in neogit
-
-		-- Update status on a *Neogit* file update event
-		local is_git_file_event = false
-		local prev_filetype = ""
-
-		vim.api.nvim_create_autocmd("User", {
-			pattern = {
-				"NeogitCommitComplete",
-				"NeogitPullComplete",
-				"NeogitBranchCheckout",
-				"NeogitBranchReset",
-				"NeogitRebase",
-				"NeogitReset",
-				"NeogitCherryPick",
-				"NeogitMerge",
-			},
-			callback = function()
-				is_git_file_event = true
-			end,
-		})
-
-		vim.api.nvim_create_autocmd("TabLeave", {
-			callback = function()
-				prev_filetype = vim.api.nvim_get_option_value("filetype", {})
-			end,
-		})
-
-		vim.api.nvim_create_autocmd("TabEnter", {
-			callback = function()
-				if vim.startswith(prev_filetype, "Neogit") and is_git_file_event then
-					require("neo-tree.events").fire_event("git_event")
-					is_git_file_event = false
-				end
-			end,
-		})
-
-		vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle<CR>")
+		vim.keymap.set(
+			"n",
+			"<C-e>",
+			"<cmd>Neotree show toggle<CR>",
+			{ desc = "toggle neotree and dont lose focus" }
+		)
 
 		require("neo-tree").setup({
 			close_if_last_window = true,
