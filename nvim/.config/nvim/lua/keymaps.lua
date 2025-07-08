@@ -93,18 +93,12 @@ else
 		end
 	end, { desc = "Toggle quickfix window" })
 
-	-- Buffer cycling with C-Tab
+	-- Buffer cycling with C-Space
 	vim.keymap.set(
 		"n",
-		"<C-Tab>",
+		"<C-Space>",
 		"<cmd>bnext<CR>",
 		{ desc = "Next buffer (cycle)" }
-	)
-	vim.keymap.set(
-		"n",
-		"<C-S-Tab>",
-		"<cmd>bprevious<CR>",
-		{ desc = "Previous buffer (cycle)" }
 	)
 
 	-- Close buffer with C-backspace

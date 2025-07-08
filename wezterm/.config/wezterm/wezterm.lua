@@ -238,8 +238,6 @@ config.keys = {
 	-- Tab navigation
 	{ key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
 	{ key = "Tab", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
-	{ key = "Space", mods = "CTRL", action = act.ActivateTabRelative(1) },
-	{ key = "Space", mods = "CTRL|SHIFT", action = act.ActivateTabRelative(-1) },
 
 	-- Zoom pane (like tmux C-z)
 	{ key = "z", mods = "CTRL", action = act.TogglePaneZoomState },
