@@ -164,6 +164,13 @@ config.keys = {
 	-- Pass ctrl+backspace through to applications
 	{ key = "Backspace", mods = "CTRL", action = act.SendString("\x1b[127;5u") },
 
+	-- Pass ctrl+shift+backspace through to applications
+	{
+		key = "Backspace",
+		mods = "CTRL|SHIFT",
+		action = act.SendString("\x1b[127;6u"),
+	},
+
 	-- Kill pane
 	{
 		key = "x",

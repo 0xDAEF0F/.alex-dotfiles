@@ -169,9 +169,10 @@ else
 				local ft = vim.api.nvim_buf_get_option(buf, "filetype")
 				local name = vim.api.nvim_buf_get_name(buf)
 
-				-- Check if it's NvimTree or ToggleTerm
 				if
 					ft == "neo-tree"
+					or ft == "Outline"
+					or ft == "outline"
 					or ft == "NvimTree"
 					or string.match(name, "term://.*toggleterm")
 				then
@@ -196,5 +197,5 @@ else
 				end
 			end
 		end
-	end, { desc = "Close all buffers except current, NvimTree, and ToggleTerm" })
+	end, { desc = "Close all buffers except current" })
 end
