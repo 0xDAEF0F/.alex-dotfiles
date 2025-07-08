@@ -217,6 +217,68 @@ return {
 				return
 			end
 
+			-- Check if this is a regular buffer window
+			local win_buf = vim.api.nvim_win_get_buf(win)
+			local buftype = vim.bo[win_buf].buftype
+			local filetype = vim.bo[win_buf].filetype
+
+			-- Skip special buffer types and common plugin filetypes
+			if buftype ~= "" then
+				return -- Skip if buftype is set (terminal, quickfix, help, etc.)
+			end
+
+			-- Skip common plugin windows (check both exact match and pattern match)
+			local skip_filetypes = {
+				"NvimTree",
+				"neo-tree",
+				"nerdtree",
+				"tagbar",
+				"vista",
+				"Outline",
+				"outline",
+				"aerial",
+				"packer",
+				"lazy",
+				"mason",
+				"TelescopePrompt",
+				"dashboard",
+				"alpha",
+				"starter",
+				"fugitive",
+				"git",
+				"gitcommit",
+				"DiffviewFiles",
+				"Trouble",
+				"qf",
+				"help",
+				"man",
+				"lspinfo",
+				"oil",
+				"minifiles",
+				"neo-tree-popup",
+				"noice",
+				"notify",
+				"sagaoutline",
+				"sagafinder",
+				"sagarename",
+				"floaterm",
+			}
+
+			for _, ft in ipairs(skip_filetypes) do
+				if filetype == ft or filetype:lower() == ft:lower() then
+					return
+				end
+			end
+
+			-- Also check for patterns in filetype
+			if
+				filetype:match("neo%-tree")
+				or filetype:match("Outline")
+				or filetype:match("outline")
+			then
+				return
+			end
+
 			local buf = vim.api.nvim_create_buf(false, true)
 			vim.bo[buf].bufhidden = "wipe"
 
@@ -276,19 +338,113 @@ return {
 			})
 		end
 
-		-- Create bottom bars for existing windows and new ones
-		vim.api.nvim_create_autocmd({ "WinNew", "WinEnter", "VimEnter" }, {
-			callback = function()
-				local win = vim.api.nvim_get_current_win()
-				if vim.api.nvim_win_get_config(win).relative == "" then
-					create_bottom_bar(win)
+		-- Function to check if a window should have a bottom bar
+		local function should_have_bottom_bar(win)
+			if not vim.api.nvim_win_is_valid(win) then
+				return false
+			end
+
+			-- Check if it's a floating window
+			if vim.api.nvim_win_get_config(win).relative ~= "" then
+				return false
+			end
+
+			local win_buf = vim.api.nvim_win_get_buf(win)
+			local buftype = vim.bo[win_buf].buftype
+			local filetype = vim.bo[win_buf].filetype
+
+			-- Skip special buffer types
+			if buftype ~= "" then
+				return false
+			end
+
+			-- Skip common plugin windows
+			local skip_filetypes = {
+				"NvimTree",
+				"neo-tree",
+				"nerdtree",
+				"tagbar",
+				"vista",
+				"Outline",
+				"outline",
+				"aerial",
+				"packer",
+				"lazy",
+				"mason",
+				"TelescopePrompt",
+				"dashboard",
+				"alpha",
+				"starter",
+				"fugitive",
+				"git",
+				"gitcommit",
+				"DiffviewFiles",
+				"Trouble",
+				"qf",
+				"help",
+				"man",
+				"lspinfo",
+				"oil",
+				"minifiles",
+				"neo-tree-popup",
+				"noice",
+				"notify",
+				"sagaoutline",
+				"sagafinder",
+				"sagarename",
+				"floaterm",
+			}
+
+			for _, ft in ipairs(skip_filetypes) do
+				if filetype == ft or filetype:lower() == ft:lower() then
+					return false
 				end
-			end,
-		})
+			end
+
+			-- Also check for patterns in filetype
+			if
+				filetype:match("neo%-tree")
+				or filetype:match("Outline")
+				or filetype:match("outline")
+			then
+				return false
+			end
+
+			return true
+		end
+
+		-- Function to remove bottom bar if it shouldn't exist
+		local function cleanup_bottom_bar(win)
+			if bottom_bars[win] and not should_have_bottom_bar(win) then
+				if vim.api.nvim_win_is_valid(bottom_bars[win]) then
+					vim.api.nvim_win_close(bottom_bars[win], true)
+				end
+				bottom_bars[win] = nil
+			end
+		end
+
+		-- Create bottom bars for existing windows and new ones
+		vim.api.nvim_create_autocmd(
+			{ "WinNew", "WinEnter", "VimEnter", "FileType", "BufWinEnter" },
+			{
+				callback = function()
+					-- Check all windows
+					for win, _ in pairs(bottom_bars) do
+						cleanup_bottom_bar(win)
+					end
+
+					-- Create for current window if needed
+					local win = vim.api.nvim_get_current_win()
+					if should_have_bottom_bar(win) then
+						create_bottom_bar(win)
+					end
+				end,
+			}
+		)
 
 		-- Initial creation for all windows
 		for _, win in ipairs(vim.api.nvim_list_wins()) do
-			if vim.api.nvim_win_get_config(win).relative == "" then
+			if should_have_bottom_bar(win) then
 				create_bottom_bar(win)
 			end
 		end
