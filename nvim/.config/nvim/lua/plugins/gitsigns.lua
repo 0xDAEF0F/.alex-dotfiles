@@ -10,6 +10,11 @@ return {
 		)
 		vim.keymap.set(
 			"n",
+			"<leader><leader>",
+			"<cmd>lua require('gitsigns').preview_hunk()<CR>"
+		)
+		vim.keymap.set(
+			"n",
 			"}}",
 			"<cmd>lua require('gitsigns').nav_hunk('next')<CR>"
 		)
