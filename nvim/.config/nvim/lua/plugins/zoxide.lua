@@ -1,5 +1,4 @@
 return {
-	"nanotee/zoxide.vim",
-	lazy = false,
+  "nanotee/zoxide.vim",
+  lazy = false,
 }
-
