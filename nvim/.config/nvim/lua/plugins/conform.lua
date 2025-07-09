@@ -6,10 +6,10 @@ return {
 			markdown = { "prettier" },
 			json = { "biome" },
 			jsonc = { "biome" },
-			-- typescript = { "biome-check" },
-			-- typescriptreact = { "biome-check" },
-			typescript = { "prettier" },
-			typescriptreact = { "prettier" },
+			typescript = { "biome-check" },
+			typescriptreact = { "biome-check" },
+			-- typescript = { "prettier" },
+			-- typescriptreact = { "prettier" },
 			lua = { "stylua" },
 			python = {
 				"ruff_fix",
@@ -35,6 +35,7 @@ return {
 				args = {
 					"check",
 					"--write",
+					"--unsafe",
 					"--stdin-file-path",
 					"$FILENAME",
 				},
