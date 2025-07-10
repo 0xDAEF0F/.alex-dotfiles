@@ -55,6 +55,7 @@ return {
         "󰈞  Find file",
         ":lua require('fzf-lua-enchanted-files').files()<CR>"
       ),
+      dashboard.button("r", "󰦛  Restore session", ":lua require('persistence').load()<CR>"),
       dashboard.button(
         "C-s",
         "󰊢  Open Neogit",

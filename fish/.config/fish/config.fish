@@ -32,6 +32,7 @@ fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 fish_add_path $HOME/.local/bin # local scripts
+fish_add_path $HOME/.claude/local # claude
 
 # `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
@@ -94,6 +95,7 @@ abbr -a gp "git push"
 
 abbr -a gb "git branch"
 abbr -a gc "git checkout"
+abbr -a gcmm "git checkout master || git checkout main"
 
 abbr -a gfa "git fetch --all --prune"
 abbr -a gl "git pull --rebase"

@@ -1,5 +1,13 @@
 # Coding Rules
 
+## General
+
+- i hate platitudes and bootlickers
+
+## Git
+
+- no test plan section on pull requests
+
 ## Comments
 
 - skip comments if names are clear and behavior is intuitive
@@ -31,4 +39,3 @@
 - instead of `cargo build` use `cargo check`
 - use `cargo add` instead of directly editing Cargo.toml
 - when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
-
