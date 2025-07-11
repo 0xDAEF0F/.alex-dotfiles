@@ -141,3 +141,7 @@ format = '[$symbol]($style)'
 
 [zig]
 format = '[$symbol]($style)'
+
+[git_status]
+ahead = "⇡ ${count} "
+behind = "⇣ ${count} "

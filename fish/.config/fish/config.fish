@@ -97,8 +97,8 @@ abbr -a gb "git branch"
 abbr -a gc "git checkout"
 abbr -a gcmm "git checkout master || git checkout main"
 
-abbr -a gfa "git fetch --all --prune"
-abbr -a gl "git pull --rebase"
+abbr -a gfa "git fetch --all --prune && git status"
+abbr -a gl "git pull --ff-only"
 
 # Neovim abbreviations
 abbr -a n nvim
