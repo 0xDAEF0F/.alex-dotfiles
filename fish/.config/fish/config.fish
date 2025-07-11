@@ -113,6 +113,7 @@ abbr -a src "source ~/.config/fish/config.fish" # source config
 
 # GitHub CLI abbreviation
 abbr -a ghb "gh browse"
+abbr -a ghbb "gh browse -b (git branch --show-current)" # open current git branch in github
 
 # Cargo abbreviations
 abbr -a ca "cargo add"

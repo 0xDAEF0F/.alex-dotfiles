@@ -11,7 +11,7 @@ edit = [
     { run = 'nvim "$@"', block = true, desc = "Edit in Nvim", for = "macos" },
 ]
 cd_edit = [
-    { run = 'cd "$@" && nvim .', block = true, desc = "Cd and edit with nvim", for = "macos" },
+    { run = 'cd "$@" && nvim', block = true, desc = "Cd and edit with nvim", for = "macos" },
 ]
 media = [
     { run = 'open -a "VLC" "$@"', orphan = true, desc = "Play in VLC", for = "macos" },
