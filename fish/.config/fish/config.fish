@@ -21,9 +21,6 @@ if status is-interactive
 
     # better history search
     atuin init fish --disable-up-arrow | source
-
-    # source the completions for tauri
-    source ~/.config/fish/completions/tauri.fish
 end
 
 fish_add_path $HOME/go/bin # go
@@ -67,9 +64,9 @@ set -Ux HOMEBREW_NO_AUTO_UPDATE true
 set -Ux HOMEBREW_NO_ANALYTICS true
 
 # Claude
-abbr -a cl "claude  --permission-mode acceptEdits"
-abbr -a clc "claude --continue --permission-mode acceptEdits"
-abbr -a clr "claude --resume --permission-mode acceptEdits"
+abbr -a cl "claude  --permission-mode"
+abbr -a clc "claude --continue --permission-mode"
+abbr -a clr "claude --resume --permission-mode"
 abbr -a yolo "claude --dangerously-skip-permissions"
 
 abbr -a pp pbpaste

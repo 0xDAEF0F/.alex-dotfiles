@@ -39,8 +39,24 @@ return {
         },
         oldfiles = {
           prompt = "History❯ ",
-          cwd_only = true,
+          cwd_only = false,
           include_current_session = true,
+          actions = {
+            ["ctrl-t"] = function()
+              -- Toggle back to enchanted-files with the toggle action
+              require("fzf-lua-enchanted-files").files({
+                query = require("fzf-lua").get_last_query(),
+                actions = {
+                  ["ctrl-t"] = function()
+                    -- Toggle back to oldfiles
+                    require("fzf-lua").oldfiles({
+                      query = require("fzf-lua").get_last_query(),
+                    })
+                  end,
+                },
+              })
+            end,
+          },
         },
         buffers = {
           sort_lastused = true,
@@ -55,10 +71,20 @@ return {
       vim.keymap.set("n", "<leader>sr", fzf.resume)
 
       vim.keymap.set("n", "<C-b>", fzf.buffers)
-      -- Hybrid picker with markers
+
+      -- Enhanced files with toggle capability
       vim.keymap.set("n", "<C-f>", function()
-        require("fzf-lua-enchanted-files").files()
-      end, { desc = "Search files (hybrid)" })
+        require("fzf-lua-enchanted-files").files({
+          actions = {
+            ["ctrl-t"] = function()
+              require("fzf-lua").oldfiles({
+                query = require("fzf-lua").get_last_query(),
+              })
+            end,
+          },
+          prompt = "Files (cwd)❯ ",
+        })
+      end, { desc = "Search files (ctrl-t to toggle to oldfiles)" })
 
       -- Search in neovim config
       vim.keymap.set("n", "<leader>sn", function()
