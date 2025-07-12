@@ -14,6 +14,9 @@ return {
       end,
     },
   },
+  init = function()
+    vim.keymap.set("v", "<leader>c", ":CodeCompanion ", { desc = "code companion" })
+  end,
   opts = {
     display = {
       inline = { layout = "vertical" },
