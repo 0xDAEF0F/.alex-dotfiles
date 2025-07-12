@@ -75,8 +75,7 @@ local function should_skip_filetype(filetype)
 end
 
 local function get_git_branch(path)
-  local handle =
-    io.popen("git -C " .. vim.fn.shellescape(path) .. " branch --show-current 2>/dev/null")
+  local handle = io.popen("git -C " .. vim.fn.shellescape(path) .. " branch --show-current 2>/dev/null")
   if not handle then
     return ""
   end
@@ -89,8 +88,7 @@ local function get_location_info()
   local cwd = vim.fn.getcwd()
 
   -- Check if we're in a git repo and get the root
-  local handle =
-    io.popen("git -C " .. vim.fn.shellescape(cwd) .. " rev-parse --show-toplevel 2>/dev/null")
+  local handle = io.popen("git -C " .. vim.fn.shellescape(cwd) .. " rev-parse --show-toplevel 2>/dev/null")
   if handle then
     local git_root = handle:read("*a"):gsub("\n", "")
     handle:close()

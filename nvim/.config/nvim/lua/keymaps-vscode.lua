@@ -72,12 +72,7 @@ vim.keymap.set({ "n" }, "<leader>o", function()
 end)
 
 -- Rename symbol
-vim.keymap.set(
-  "n",
-  "<leader>r",
-  ":lua require('vscode').call('editor.action.rename')<CR>",
-  { silent = true }
-)
+vim.keymap.set("n", "<leader>r", ":lua require('vscode').call('editor.action.rename')<CR>", { silent = true })
 
 -- Go to implementation
 vim.keymap.set({ "n" }, "<leader>i", function()
@@ -110,8 +105,7 @@ end, { noremap = true })
 -- SCROLL UP/DOWN
 
 vim.keymap.set({ "n", "x" }, "<C-u>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local visibleRanges = require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
   for i = 1, height / 3 do
     vim.api.nvim_feedkeys("k", "n", false)
@@ -121,8 +115,7 @@ vim.keymap.set({ "n", "x" }, "<C-u>", function()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-d>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local visibleRanges = require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
   for i = 1, height / 3 do
     vim.api.nvim_feedkeys("j", "n", false)
@@ -132,8 +125,7 @@ vim.keymap.set({ "n", "x" }, "<C-d>", function()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local visibleRanges = require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
   for i = 1, height / 2 do
     vim.api.nvim_feedkeys("j", "n", false)
@@ -143,8 +135,7 @@ vim.keymap.set({ "n", "x" }, "<C-f>", function()
 end)
 
 vim.keymap.set({ "n", "x" }, "<C-b>", function()
-  local visibleRanges =
-    require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
+  local visibleRanges = require("vscode").eval("return vscode.window.activeTextEditor.visibleRanges")
   local height = visibleRanges[1][2].line - visibleRanges[1][1].line
   for i = 1, height / 2 do
     vim.api.nvim_feedkeys("k", "n", false)

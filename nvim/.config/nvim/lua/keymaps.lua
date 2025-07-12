@@ -42,12 +42,7 @@ end)
 vim.keymap.set("n", "Y", "y$", { desc = "Yank to end of line without newline" })
 
 -- Yank relative filepath
-vim.keymap.set(
-  "n",
-  "<leader>y",
-  "<cmd>let @+ = expand('%')<CR>",
-  { desc = "Yank relative filepath" }
-)
+vim.keymap.set("n", "<leader>y", "<cmd>let @+ = expand('%')<CR>", { desc = "Yank relative filepath" })
 -- Yank full directory/file path
 vim.keymap.set("n", "<leader>yd", "<cmd>let @+ = expand('%:p:h')<CR>") -- dir
 vim.keymap.set("n", "<leader>yf", "<cmd>let @+ = expand('%:p')<CR>") -- file
@@ -64,7 +59,10 @@ else
   -- save without formatting
   vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
 
-  vim.keymap.set("n", "<C-q>", "<cmd>q!<CR>")
+  vim.keymap.set("n", "<C-q>", function()
+    vim.cmd("Neotree close")
+    vim.cmd("q!")
+  end)
 
   -- change the directory in nvim
   vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>")

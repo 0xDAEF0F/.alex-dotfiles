@@ -5,10 +5,9 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-    -- {"3rd/image.nvim", opts = {}}, -- for image rendering
   },
 
-  lazy = false, -- neo-tree will lazily load itself
+  lazy = false,
 
   config = function()
     -- Helper function to refresh Neo-tree
@@ -34,6 +33,7 @@ return {
         refresh_timer = nil
       end)
     end
+
     vim.keymap.set(
       "n",
       "<C-e>",
@@ -55,7 +55,7 @@ return {
             hint = "",
             info = "",
             warn = "",
-            error = "",
+            error = "",
           },
         },
         name = {
@@ -88,113 +88,21 @@ return {
         },
         -- Enable async directory scan
         async_directory_scan = "auto",
-        -- Watch external changes
-        watch = {
-          enabled = true,
-          debounce_delay = 50,
-        },
       },
-      event_handlers = {
-        {
-          event = "file_added",
-          handler = function()
-            debounced_refresh()
-          end,
-        },
-        {
-          event = "file_deleted",
-          handler = function()
-            debounced_refresh()
-          end,
-        },
-        {
-          event = "file_renamed",
-          handler = function()
-            debounced_refresh(50)
-          end,
-        },
-      },
+      event_handlers = {},
     })
-
-    -- Set up autocmds
-    local group = vim.api.nvim_create_augroup("NeoTreeAutoRefresh", { clear = true })
 
     -- Neogit events
     vim.api.nvim_create_autocmd("User", {
-      group = group,
+      group = vim.api.nvim_create_augroup("NeoTreeAutoRefresh", { clear = true }),
       pattern = {
-        "NeogitStatusRefreshed",
         "NeogitCommitComplete",
         "NeogitPushComplete",
         "NeogitPullComplete",
       },
       callback = function()
-        debounced_refresh(500)
-      end,
-    })
-
-    -- When leaving Neogit buffers
-    vim.api.nvim_create_autocmd("BufLeave", {
-      group = group,
-      pattern = "Neogit*",
-      callback = function()
         debounced_refresh(300)
       end,
-    })
-
-    -- External file changes - when Neovim regains focus or entering buffers
-    vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-      group = group,
-      callback = function()
-        -- Check if we're in a git repo and neo-tree is visible
-        if
-          vim.fn.isdirectory(".git") == 1 or vim.fn.isdirectory(vim.fn.getcwd() .. "/.git") == 1
-        then
-          for _, win in ipairs(vim.api.nvim_list_wins()) do
-            local buf = vim.api.nvim_win_get_buf(win)
-            local ft = vim.api.nvim_buf_get_option(buf, "filetype")
-            if ft == "neo-tree" then
-              debounced_refresh(100)
-              break
-            end
-          end
-        end
-      end,
-    })
-
-    -- After shell commands
-    vim.api.nvim_create_autocmd({ "ShellCmdPost", "TermClose" }, {
-      group = group,
-      callback = function()
-        debounced_refresh(500)
-      end,
-    })
-
-    -- Git operations detection
-    vim.api.nvim_create_autocmd({ "BufWritePost", "FileChangedShell", "FileChangedShellPost" }, {
-      group = group,
-      pattern = { "*/.git/index", "*/.git/HEAD", "*/.git/COMMIT_EDITMSG", "*" },
-      callback = function(args)
-        -- Special handling for git files
-        if args.match:match("%.git/") then
-          debounced_refresh(100)
-        else
-          -- For regular files, check if in git repo
-          local handle = io.popen("git rev-parse --git-dir 2>/dev/null")
-          if handle then
-            local result = handle:read("*a")
-            handle:close()
-            if result and result ~= "" then
-              debounced_refresh(200)
-            end
-          end
-        end
-      end,
-    })
-
-    -- Manual refresh command
-    vim.api.nvim_create_user_command("NeoTreeRefresh", refresh_neo_tree, {
-      desc = "Manually refresh Neo-tree",
     })
   end,
 

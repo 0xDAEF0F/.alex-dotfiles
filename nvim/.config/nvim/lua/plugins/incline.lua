@@ -90,11 +90,8 @@ return {
           local is_current = buf == current_buf
 
           -- Get file icon
-          local icon, icon_color = devicons.get_icon_color(
-            filename,
-            vim.fn.fnamemodify(filename, ":e"),
-            { default = true }
-          )
+          local icon, icon_color =
+            devicons.get_icon_color(filename, vim.fn.fnamemodify(filename, ":e"), { default = true })
 
           -- Buffer separator
           if i > 1 then
