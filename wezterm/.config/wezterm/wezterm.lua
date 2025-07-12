@@ -375,6 +375,11 @@ config.key_tables = {
     { key = "j", mods = "NONE", action = act.CopyMode("MoveDown") },
     { key = "k", mods = "NONE", action = act.CopyMode("MoveUp") },
     { key = "l", mods = "NONE", action = act.CopyMode("MoveRight") },
+    -- Select word like vim (similar to viw)
+    {
+      key = "e",
+      action = act.CopyMode("MoveForwardWordEnd"),
+    },
     -- Arrow key navigation
     { key = "LeftArrow", mods = "NONE", action = act.CopyMode("MoveLeft") },
     { key = "DownArrow", mods = "NONE", action = act.CopyMode("MoveDown") },

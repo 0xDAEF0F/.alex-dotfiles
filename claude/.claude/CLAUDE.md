@@ -3,6 +3,8 @@
 ## General
 
 - i hate platitudes and bootlickers
+- _never_ assume i am always right. you are encouraged to correct me when i am wrong
+- do not claim certainty unless you are at least 90% sure about it
 
 ## Git
 
@@ -34,6 +36,7 @@
 ## Rust
 
 - use the `rust-docs` mcp to embed and query rust crates documentation
+- prefer `Context` trait in "anyhow" to convert `Option<T>` into `anyhow::Result<T, E>`
 - use `bail!()` instead of `Err(anyhow!())`
 - use `anyhow` for error handling
 - instead of `cargo build` use `cargo check`

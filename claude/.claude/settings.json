@@ -3,6 +3,7 @@
     "allow": [
       "Bash(git rebase --continue)",
       "Bash(git status)",
+      "Bash(git add:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
       "Bash(git show:*)",
