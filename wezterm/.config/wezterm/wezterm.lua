@@ -10,8 +10,10 @@ local function is_vim_process(pane)
   -- get_foreground_process_name On Linux, macOS and Windows,
   -- the process can be queried to determine this path. Other operating systems
   -- (notably, FreeBSD and other unix systems) are not currently supported
-  return pane:get_foreground_process_name():find("n?vim") ~= nil
-    or pane:get_title():find("n?vim") ~= nil
+  local process_name = pane:get_foreground_process_name()
+  -- Only check the actual process name, not the full path
+  local base_name = process_name:match("([^/\\]+)$") or process_name
+  return base_name:find("^n?vim") ~= nil
 end
 
 local function conditional_activate_pane(window, pane, pane_direction, vim_direction)
@@ -119,11 +121,14 @@ config.colors = {
 
 -- Font configuration
 config.font = wezterm.font("Iosevka Nerd Font Mono")
-config.font_size = 21
+config.font_size = 19 -- font size that takes advantage of v screen
 
 -- Cursor
 config.force_reverse_video_cursor = true
 config.default_cursor_style = "BlinkingBlock"
+
+-- status (default 1s and its too much)
+config.status_update_interval = 100
 
 -- Window appearance
 config.window_decorations = "RESIZE"
@@ -139,12 +144,11 @@ config.window_content_alignment = {
 }
 config.initial_cols = 200
 config.initial_rows = 60
-config.use_resize_increments = true
 
 -- Tab bar
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
-config.show_tab_index_in_tab_bar = false
+config.show_tab_index_in_tab_bar = true
 
 -- Inactive pane dimming
 config.inactive_pane_hsb = {
@@ -316,6 +320,14 @@ config.key_tables = {
         { CopyMode = "Close" },
       }),
     },
+    {
+      key = "q",
+      mods = "NONE",
+      action = act.Multiple({
+        act.ScrollToBottom,
+        { CopyMode = "Close" },
+      }),
+    },
 
     -- Vi navigation
     { key = "h", mods = "NONE", action = act.CopyMode("MoveLeft") },
@@ -349,19 +361,21 @@ config.key_tables = {
     -- Search
     { key = "/", mods = "NONE", action = act.Search({ CaseInSensitiveString = "" }) },
     { key = "?", mods = "NONE", action = act.Search({ CaseInSensitiveString = "" }) },
+    { key = "N", mods = "NONE", action = act.CopyMode("NextMatch") },
+    { key = "n", mods = "SHIFT", action = act.CopyMode("PriorMatch") },
     { key = "c", mods = "CTRL", action = act.CopyMode("ClearPattern") },
   },
 
   search_mode = {
-    { key = "Enter", mods = "NONE", action = act.CopyMode("NextMatch") },
-    { key = "Enter", mods = "SHIFT", action = act.CopyMode("PriorMatch") },
+    { key = "Enter", mods = "NONE", action = act.CopyMode("PriorMatch") },
+    { key = "Enter", mods = "SHIFT", action = act.CopyMode("NextMatch") },
+    -- Exit search mode but stay in copy mode with the search pattern active
     {
       key = "Escape",
       mods = "NONE",
       action = act.Multiple({
-        act.ScrollToBottom,
+        act.CopyMode("AcceptPattern"),
         act.CopyMode("ClearPattern"),
-        { CopyMode = "Close" },
       }),
     },
   },
@@ -376,4 +390,3 @@ config.quit_when_all_windows_are_closed = true
 config.window_close_confirmation = "NeverPrompt"
 
 return config
-
