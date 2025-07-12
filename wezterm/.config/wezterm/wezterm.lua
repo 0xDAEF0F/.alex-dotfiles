@@ -32,30 +32,67 @@ end
 -- Event Handlers
 -- ====================
 
--- Visual indicator for copy/search modes
+-- Visual indicator for copy/search modes and zoomed panes
 wezterm.on("update-right-status", function(window)
   local name = window:active_key_table()
   local overrides = window:get_config_overrides() or {}
 
+  -- Get zoom state by checking panes_with_info
+  local is_zoomed = false
+  local active_tab = window:active_tab()
+  if active_tab then
+    for _, pane_info in ipairs(active_tab:panes_with_info()) do
+      if pane_info.is_active and pane_info.is_zoomed then
+        is_zoomed = true
+        break
+      end
+    end
+  end
+
+  -- Build status elements
+  local status_elements = {}
+
+  -- Add zoom indicator if pane is zoomed
+  if is_zoomed then
+    table.insert(status_elements, { Background = { Color = "#C4746E" } })
+    table.insert(status_elements, { Foreground = { Color = "#14171d" } })
+    table.insert(status_elements, { Attribute = { Intensity = "Bold" } })
+    table.insert(status_elements, { Text = " ZOOMED " })
+  end
+
+  -- Add mode indicator if in a special key table mode
   if name then
-    -- Show mode indicator in status area
-    window:set_right_status(wezterm.format({
-      { Background = { Color = "#8A9A7B" } },
-      { Foreground = { Color = "#14171d" } },
-      { Attribute = { Intensity = "Bold" } },
-      { Text = " " .. string.upper(name:gsub("_", " ")) .. " " },
-    }))
+    -- Add separator if we already have zoom indicator
+    if is_zoomed then
+      table.insert(status_elements, { Background = { Color = "#14171d" } })
+      table.insert(status_elements, { Text = " " })
+    end
+
+    table.insert(status_elements, { Background = { Color = "#8A9A7B" } })
+    table.insert(status_elements, { Foreground = { Color = "#14171d" } })
+    table.insert(status_elements, { Attribute = { Intensity = "Bold" } })
+    table.insert(status_elements, { Text = " " .. string.upper(name:gsub("_", " ")) .. " " })
 
     -- Force tab bar to show when in copy mode or search mode
     if name == "copy_mode" or name == "search_mode" then
       overrides.enable_tab_bar = true
       overrides.hide_tab_bar_if_only_one_tab = false
     end
+  elseif is_zoomed then
+    -- Force tab bar to show when zoomed
+    overrides.enable_tab_bar = true
+    overrides.hide_tab_bar_if_only_one_tab = false
   else
-    window:set_right_status("")
     -- Restore normal settings
     overrides.enable_tab_bar = nil
     overrides.hide_tab_bar_if_only_one_tab = nil
+  end
+
+  -- Set the status
+  if #status_elements > 0 then
+    window:set_right_status(wezterm.format(status_elements))
+  else
+    window:set_right_status("")
   end
 
   window:set_config_overrides(overrides)

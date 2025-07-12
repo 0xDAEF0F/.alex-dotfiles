@@ -8,13 +8,13 @@ return {
     local colors = {
       bg = {
         main = "#1F1F28",
-        active_buffer = "#7FB4CA",
+        active_buffer = "#8EA4A2",
       },
       fg = {
         active = "#16161D",
         inactive = "#9CA0B0",
         separator = "#565656",
-        modified = "#C4746E",
+        modified = "#111111",
       },
     }
 
@@ -115,6 +115,7 @@ return {
               table.insert(elements, {
                 "[+]",
                 guifg = colors.fg.modified,
+                guibg = colors.bg.active_buffer,
                 gui = "bold",
               })
             end
