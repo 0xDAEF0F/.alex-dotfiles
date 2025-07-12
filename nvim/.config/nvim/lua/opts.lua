@@ -20,6 +20,9 @@ else
 
   vim.opt.updatetime = 500
 
+  -- Enable auto-reading of files when changed externally (default)
+  vim.opt.autoread = true
+
   vim.opt.number = true
   vim.opt.signcolumn = "yes"
   vim.opt.mouse = "a"
