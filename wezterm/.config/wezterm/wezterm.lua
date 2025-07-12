@@ -309,6 +309,9 @@ config.keys = {
     end),
   },
 
+  -- Swap panes (rotate clockwise)
+  { key = "o", mods = "LEADER", action = act.RotatePanes("Clockwise") },
+
   -- Copy mode
   { key = "p", mods = "CTRL|ALT", action = act.ActivateCopyMode },
 
