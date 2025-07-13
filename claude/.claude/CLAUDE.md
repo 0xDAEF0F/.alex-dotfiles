@@ -25,7 +25,6 @@
 ## Development Practices
 
 - use available tools and mcp servers to improve accuracy
-- prefer exa mcp over your native web search
 - NEVER add to commits/prs the claude code co authorship
 
 ## Javascript/Typescript/React

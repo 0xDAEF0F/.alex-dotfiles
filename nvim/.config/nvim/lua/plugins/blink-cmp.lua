@@ -36,6 +36,13 @@ return {
       ["<Esc>"] = { "hide", "fallback" },
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     },
+    
+    cmdline = {
+      keymap = {
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<Up>"] = { "select_prev", "fallback" },
+      },
+    },
 
     appearance = {
       nerd_font_variant = "mono",
