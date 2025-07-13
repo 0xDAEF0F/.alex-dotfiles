@@ -67,21 +67,6 @@ return {
       },
       event_handlers = {},
     })
-
-    -- Neogit events
-    vim.api.nvim_create_autocmd("User", {
-      group = vim.api.nvim_create_augroup("NeoTreeAutoRefresh", { clear = true }),
-      pattern = {
-        "NeogitCommitComplete",
-        "NeogitPushComplete",
-        "NeogitPullComplete",
-      },
-      callback = function()
-        require("neo-tree.sources.filesystem.commands").refresh(
-          require("neo-tree.sources.manager").get_state("filesystem")
-        )
-      end,
-    })
   end,
 
   enabled = not vim.g.vscode,
