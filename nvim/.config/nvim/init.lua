@@ -21,8 +21,9 @@ vim.diagnostic.config({
   } or {},
 })
 
+-- Folding configuration is loaded after plugins
 vim.wo.foldmethod = "expr"
--- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
