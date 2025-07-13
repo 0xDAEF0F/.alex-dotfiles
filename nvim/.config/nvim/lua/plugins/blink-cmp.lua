@@ -15,6 +15,9 @@ return {
     {
       "huijiro/blink-cmp-supermaven",
     },
+    {
+      "mikavilpas/blink-ripgrep.nvim",
+    },
   },
   version = "1.*",
   opts = {
@@ -39,12 +42,21 @@ return {
     completion = { documentation = { auto_show = true } },
 
     sources = {
-      default = { "lsp", "path", "supermaven", "snippets" },
+      default = { "lsp", "path", "supermaven", "buffer", "ripgrep", "snippets" },
       providers = {
         supermaven = {
           name = "supermaven",
           module = "blink-cmp-supermaven",
           async = true,
+        },
+        ripgrep = {
+          name = "Ripgrep",
+          module = "blink-ripgrep",
+          opts = {
+            prefix_min_len = 3,
+            context_size = 5,
+            max_filesize = "1M",
+          },
         },
       },
     },
