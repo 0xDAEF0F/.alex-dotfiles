@@ -10,30 +10,6 @@ return {
   lazy = false,
 
   config = function()
-    -- Helper function to refresh Neo-tree
-    local function refresh_neo_tree()
-      local ok, manager = pcall(require, "neo-tree.sources.manager")
-      if ok then
-        local state = manager.get_state("filesystem")
-        if state then
-          require("neo-tree.sources.filesystem.commands").refresh(state)
-        end
-      end
-    end
-
-    -- Debounced refresh to avoid excessive calls
-    local refresh_timer = nil
-    local function debounced_refresh(delay)
-      delay = delay or 100
-      if refresh_timer then
-        vim.fn.timer_stop(refresh_timer)
-      end
-      refresh_timer = vim.fn.timer_start(delay, function()
-        vim.schedule(refresh_neo_tree)
-        refresh_timer = nil
-      end)
-    end
-
     vim.keymap.set(
       "n",
       "<C-e>",
@@ -101,7 +77,9 @@ return {
         "NeogitPullComplete",
       },
       callback = function()
-        debounced_refresh(300)
+        require("neo-tree.sources.filesystem.commands").refresh(
+          require("neo-tree.sources.manager").get_state("filesystem")
+        )
       end,
     })
   end,
