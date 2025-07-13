@@ -3,13 +3,12 @@ return {
   opts = {
     formatters_by_ft = {
       rust = { "rustfmt" },
+      toml = { "taplo" },
       markdown = { "prettier" },
       json = { "biome" },
       jsonc = { "biome" },
-      typescript = { "biome-check" },
-      typescriptreact = { "biome-check" },
-      -- typescript = { "prettier" },
-      -- typescriptreact = { "prettier" },
+      typescript = { "biome-check", "prettier", stop_after_first = true },
+      typescriptreact = { "biome-check", "prettier", stop_after_first = true },
       lua = { "stylua" },
       python = {
         "ruff_fix",

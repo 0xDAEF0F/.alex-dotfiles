@@ -136,10 +136,7 @@ abbr -a bic "brew install --cask"
 abbr -a buc "brew uninstall --cask --zap"
 
 # Tauri
-abbr -a cta "cargo tauri"
-abbr -a ctd "cargo tauri dev"
-abbr -a ctr "cargo run --manifest-path src-tauri/Cargo.toml"
-abbr -a ctb "cargo build --manifest-path src-tauri/Cargo.toml"
+abbr -a td "bunx tauri dev --no-watch"
 
 # Bun abbreviations
 abbr -a brs "bun run start"

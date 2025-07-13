@@ -8,9 +8,16 @@ return {
     {
       "supermaven-inc/supermaven-nvim",
       opts = {
-        disable_inline_completion = true, -- disables inline completion for use with cmp
-        disable_keymaps = true, -- disables built in keymaps for more manual control
+        keymaps = {
+          accept_suggestion = "<Tab>",
+          clear_suggestion = "<C-e>",
+          accept_word = "<C-n>",
+        },
+        ignore_filetypes = { cpp = true },
+        disable_inline_completion = false,
+        disable_keymaps = false,
       },
+      enabled = not vim.g.vscode,
     },
     {
       "huijiro/blink-cmp-supermaven",
@@ -21,17 +28,13 @@ return {
   },
   version = "1.*",
   opts = {
-    -- All presets have the following mappings:
-    -- C-space: Open menu or open docs if already open
-    -- C-n/C-p or Up/Down: Select next/previous item
-    -- C-e: Hide menu
-    -- C-k: Toggle signature help (if signature.enabled = true)
-    -- See :h blink-cmp-config-keymap for defining your own keymap
     keymap = {
-      preset = "super-tab",
       ["<CR>"] = { "accept", "fallback" },
-      ["<M-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<Down>"] = { "select_next", "fallback" },
+      ["<Up>"] = { "select_prev", "fallback" },
       ["<C-c>"] = { "hide", "fallback" },
+      ["<Esc>"] = { "hide", "fallback" },
+      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
     },
 
     appearance = {
@@ -39,10 +42,18 @@ return {
     },
 
     -- documentation popup
-    completion = { documentation = { auto_show = true } },
+    completion = {
+      documentation = { auto_show = true },
+      list = {
+        selection = {
+          auto_insert = false,
+        },
+      },
+    },
 
     sources = {
-      default = { "lsp", "path", "supermaven", "buffer", "ripgrep", "snippets" },
+      -- default = { "lsp", "path", "supermaven", "buffer", "ripgrep", "snippets" },
+      default = { "lsp", "path", "buffer", "ripgrep", "snippets" },
       providers = {
         supermaven = {
           name = "supermaven",

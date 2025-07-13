@@ -53,7 +53,10 @@ if vim.g.vscode then
 else
   -- map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
   vim.keymap.set("n", "<M-s>", function()
-    require("conform").format()
+    require("conform").format({
+      lsp_format = "fallback",
+      timeout_ms = 500,
+    })
     vim.cmd("w")
   end, { desc = "Save and format with Cmd+S" })
   -- save without formatting
