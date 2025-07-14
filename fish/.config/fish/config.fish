@@ -90,6 +90,8 @@ abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gpf "git push --force-with-lease"
 abbr -a gp "git push"
 
+abbr -a gsc "git stash clear"
+
 abbr -a gb "git branch"
 abbr -a gc "git checkout"
 abbr -a gcmm "git checkout master || git checkout main"

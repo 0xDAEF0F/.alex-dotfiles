@@ -18,6 +18,18 @@ return {
     vim.keymap.set("v", "<leader>c", ":CodeCompanion ", { desc = "code companion" })
   end,
   opts = {
+    adapters = {
+      openai = function()
+        return require("codecompanion.adapters").extend("openai", {
+          name = "openai",
+          schema = {
+            model = {
+              default = "gpt-4o",
+            },
+          },
+        })
+      end,
+    },
     display = {
       inline = { layout = "vertical" },
     },

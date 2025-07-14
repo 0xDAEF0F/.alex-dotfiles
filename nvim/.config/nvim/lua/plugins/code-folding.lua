@@ -71,4 +71,5 @@ return {
       end, { remap = true, silent = true, desc = "Fold-cycle: close all folds" })
     end,
   },
+  enabled = not vim.g.vscode,
 }

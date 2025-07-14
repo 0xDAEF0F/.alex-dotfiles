@@ -157,8 +157,8 @@ config.colors = {
 }
 
 -- Font configuration
-config.font = wezterm.font("Iosevka Nerd Font Mono")
-config.font_size = 19 -- font size that takes advantage of v screen
+config.font = wezterm.font("GeistMono Nerd Font")
+config.font_size = 17 -- font size that takes advantage of v screen
 
 -- Cursor
 config.force_reverse_video_cursor = true
@@ -391,8 +391,8 @@ config.key_tables = {
     { key = "$", mods = "NONE", action = act.CopyMode("MoveToEndOfLineContent") },
 
     -- Page navigation
-    { key = "u", mods = "CTRL", action = act.CopyMode({ MoveByPage = -0.5 }) },
-    { key = "d", mods = "CTRL", action = act.CopyMode({ MoveByPage = 0.5 }) },
+    { key = "u", mods = "NONE", action = act.CopyMode({ MoveByPage = -0.5 }) },
+    { key = "d", mods = "NONE", action = act.CopyMode({ MoveByPage = 0.5 }) },
 
     -- Document navigation
     { key = "g", mods = "NONE", action = act.CopyMode("MoveToScrollbackTop") },

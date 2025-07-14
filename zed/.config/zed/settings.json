@@ -23,13 +23,13 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": false
+    "enabled_in_text_threads": false
   },
   "tab_bar": {
     "show": false
   },
   "use_smartcase_search": true,
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Zed",
   "ui_font_family": "Iosevka Nerd Font Mono",
   "vertical_scroll_margin": 12,
   "features": {
@@ -58,7 +58,7 @@
   },
   "ui_font_size": 17,
   "ui_font_weight": 300,
-  "buffer_font_size": 18,
+  "buffer_font_size": 17,
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_weight": 400,
   "terminal": {
@@ -69,6 +69,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Gruvbox Material Dark Colorscheme"
+    "dark": "Nordfox"
   }
 }

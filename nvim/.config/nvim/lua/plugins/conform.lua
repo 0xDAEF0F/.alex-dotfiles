@@ -4,7 +4,7 @@ return {
     formatters_by_ft = {
       rust = { "rustfmt" },
       toml = { "taplo" },
-      markdown = { "prettier" },
+      markdown = { "mdslw", "prettier" },
       json = { "biome" },
       jsonc = { "biome" },
       typescript = { "biome-check", "prettier", stop_after_first = true },
@@ -26,6 +26,7 @@ return {
         args = { "--sort-keys" },
         stdin = true,
       },
+      mdslw = { prepend_args = { "--stdin-filepath", "$FILENAME", "--max-width", "90" } },
       ["biome-check"] = {
         command = "biome",
         args = {
