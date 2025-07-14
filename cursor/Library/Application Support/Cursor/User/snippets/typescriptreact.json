@@ -1,9 +1,0 @@
-{
-   "log, sir": {
-      "prefix": "clg",
-      "body": [
-         "console.log(\"$1\",$2);"
-      ],
-      "description": "log, sir"
-   }
-}

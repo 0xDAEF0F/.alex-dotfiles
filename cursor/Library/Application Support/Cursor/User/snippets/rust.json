@@ -1,9 +1,0 @@
-{
-	"log, sir": {
-		"prefix": "clg",
-		"body": [
-			"log::$1(\"$2\", $3);"
-		],
-		"description": "log, sir"
-	}
-}
