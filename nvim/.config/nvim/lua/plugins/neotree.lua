@@ -62,10 +62,7 @@ return {
           hide_dotfiles = false,
           hide_gitignored = false,
         },
-        -- Enable async directory scan
-        async_directory_scan = "auto",
       },
-      event_handlers = {},
     })
   end,
 
