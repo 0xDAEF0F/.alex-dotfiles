@@ -36,6 +36,24 @@ return {
       desc = "LSP actions",
       callback = function(event)
         local opts = { buffer = event.buf }
+        
+        -- Enable file operations capabilities
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client then
+          -- Ensure the client supports workspace/willRenameFiles
+          client.server_capabilities = vim.tbl_deep_extend("force", client.server_capabilities or {}, {
+            workspace = {
+              fileOperations = {
+                willRename = true,
+                didRename = true,
+                willCreate = true,
+                didCreate = true,
+                willDelete = true,
+                didDelete = true,
+              }
+            }
+          })
+        end
 
         -- Additional keymaps beyond defaults
         vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts)

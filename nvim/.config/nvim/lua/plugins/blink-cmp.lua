@@ -13,11 +13,9 @@ return {
           clear_suggestion = "<C-e>",
           accept_word = "<C-n>",
         },
-        ignore_filetypes = { cpp = true },
-        disable_inline_completion = false,
-        disable_keymaps = false,
+        disable_inline_completion = true,
+        disable_keymaps = true,
       },
-      enabled = not vim.g.vscode,
     },
     {
       "huijiro/blink-cmp-supermaven",
@@ -58,8 +56,7 @@ return {
     },
 
     sources = {
-      -- default = { "lsp", "path", "supermaven", "buffer", "ripgrep", "snippets" },
-      default = { "lsp", "path", "buffer", "ripgrep", "snippets" },
+      default = { "lsp", "path", "buffer", "ripgrep", "supermaven", "snippets" },
       providers = {
         supermaven = {
           name = "supermaven",

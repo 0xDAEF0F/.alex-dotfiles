@@ -57,6 +57,7 @@
       "Bash(ps:*)",
       "Bash(top:*)",
       "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
       "Bash(gh repo view:*)",
       "Bash(gh status)",
       "WebFetch",
