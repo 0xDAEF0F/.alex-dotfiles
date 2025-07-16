@@ -16,6 +16,7 @@ return {
         disable_inline_completion = true,
         disable_keymaps = true,
       },
+      enabled = false,
     },
     {
       "huijiro/blink-cmp-supermaven",
@@ -56,8 +57,9 @@ return {
     },
 
     sources = {
-      default = { "lsp", "path", "buffer", "ripgrep", "supermaven", "snippets" },
+      default = { "lsp", "path", "buffer", "ripgrep", "snippets" },
       providers = {
+        -- unused
         supermaven = {
           name = "supermaven",
           module = "blink-cmp-supermaven",
