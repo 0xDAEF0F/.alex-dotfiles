@@ -19,18 +19,16 @@ return {
       require("neogit").open({ kind = "floating" })
     end)
 
-    -- for some reason, we lose the focus. commenting it out
-    -- vim.api.nvim_create_autocmd("User", {
-    --   pattern = {
-    --     "NeogitCommitComplete",
-    --     "NeogitPushComplete",
-    --     "NeogitPullComplete",
-    --   },
-    --   callback = function()
-    --     require("neo-tree.sources.filesystem.commands").refresh(
-    --       require("neo-tree.sources.manager").get_state("filesystem")
-    --     )
-    --   end,
-    -- })
+    vim.api.nvim_create_autocmd("User", {
+      pattern = {
+        "NeogitCommitComplete",
+        "NeogitPushComplete",
+        "NeogitPullComplete",
+      },
+      callback = function()
+        local events = require("neo-tree.events")
+        events.fire_event(events.GIT_EVENT)
+      end,
+    })
   end,
 }
