@@ -21,7 +21,7 @@ return {
           col = 0.50,
           preview = {
             layout = "vertical",
-            vertical = "down:75%",
+            vertical = "down:70%",
             scrollbar = "float",
           },
         },

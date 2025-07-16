@@ -60,7 +60,16 @@ return {
             require("flash").jump()
           end,
           ["<C-f>"] = function()
-            require("fzf-lua-enchanted-files").oldfiles()
+            require("fzf-lua-enchanted-files").files({
+              actions = {
+                ["ctrl-t"] = function()
+                  require("fzf-lua").oldfiles({
+                    query = require("fzf-lua").get_last_query(),
+                  })
+                end,
+              },
+              prompt = "Files (cwd)❯ ",
+            })
           end,
         },
       },
