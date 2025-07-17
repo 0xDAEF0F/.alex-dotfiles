@@ -65,6 +65,7 @@ return {
 
       vim.keymap.set("n", "<C-g>", fzf.live_grep)
       vim.keymap.set("n", "<leader>g", fzf.grep_cword)
+      vim.keymap.set("n", "<leader>j", fzf.jumps, { desc = "open jumplist" })
 
       vim.keymap.set("n", "<leader>ss", fzf.builtin)
 

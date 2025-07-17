@@ -1,19 +1,13 @@
 # https://espanso.org/docs/
 matches:
   - trigger: ":exa"
-    replace: "- use exa mcp server for web search and github search"
+    replace: "Note: you can use exa mcp server for semantic web search as well as github search if your `WebFetch` tool results need more refinement."
 
   - trigger: ":c7"
-    replace: "- use context7 mcp server to search for the library/tool documentation"
+    replace: "Note: you can use context7 mcp server to search through documentation in libraries. it almost always has the popular libraries."
 
   - trigger: ":rsd"
-    replace: "- use rust-docs mcp server to search for the library/tool documentation (check if its embedded, if not, embed it first and then you can check its status and query for semantic search)"
+    replace: "Note: you can use rust-docs mcp server to search for documentation about rust crates. it is powerful and uses vector embeddings."
 
-  # Print the current date
-  - trigger: ":date"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%d/%m/%Y"
+  - trigger: ":lspp"
+    replace: "Note: you can use lsp mcp server to use lsp stuff like references, renames, definitions, etc."
