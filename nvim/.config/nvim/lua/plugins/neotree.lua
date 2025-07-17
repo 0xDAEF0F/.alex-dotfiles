@@ -27,10 +27,30 @@ return {
       { desc = "toggle neotree and dont lose focus" }
     )
 
+    -- add the refresh neo-tree here
+    vim.api.nvim_create_autocmd("CursorHold", {
+      -- runs:
+      -- * save file
+      -- * enter nvim
+      -- * do `:e`
+      callback = function()
+        -- print("hello world!")
+      end,
+    })
+
     require("neo-tree").setup({
       close_if_last_window = true,
       use_libuv_file_watcher = true,
       enable_diagnostics = true,
+      sources = {
+        "filesystem",
+        "buffers",
+        "git_status",
+        "document_symbols",
+      },
+      document_symbols = {
+        follow_cursor = true,
+      },
       default_component_configs = {
         indent = {
           indent_size = 1,

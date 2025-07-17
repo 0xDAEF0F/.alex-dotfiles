@@ -7,9 +7,6 @@ local config = wezterm.config_builder()
 -- ====================
 
 local function is_vim_process(pane)
-  -- get_foreground_process_name On Linux, macOS and Windows,
-  -- the process can be queried to determine this path. Other operating systems
-  -- (notably, FreeBSD and other unix systems) are not currently supported
   local process_name = pane:get_foreground_process_name()
   -- Only check the actual process name, not the full path
   local base_name = process_name:match("([^/\\]+)$") or process_name
@@ -209,19 +206,6 @@ config.scrollback_lines = 1000000
 -- Leader key (like tmux prefix)
 config.leader = { key = "a", mods = "CTRL" }
 
--- Mouse bindings
-config.mouse_bindings = {
-  -- Automatically enter copy mode when scrolling up
-  {
-    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
-    mods = "NONE",
-    action = act.Multiple({
-      act.ActivateCopyMode,
-      act.ScrollByCurrentEventWheelDelta,
-    }),
-  },
-}
-
 -- Key bindings
 config.keys = {
   -- Pass through special keys
@@ -239,7 +223,7 @@ config.keys = {
   {
     key = "V",
     mods = "LEADER",
-    action = act.SplitPane({ direction = "Right", size = { Percent = 30 } }),
+    action = act.SplitPane({ direction = "Right", size = { Percent = 35 } }),
   },
   { key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 
