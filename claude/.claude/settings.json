@@ -79,7 +79,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title '🛑' -message 'cc stopped' -sound Pop"
+            "command": "terminal-notifier -title '🛑' -message 'cc stopped'"
           }
         ]
       }
@@ -90,7 +90,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title '🔔' -message 'cc needs attention' -sound Pop"
+            "command": "terminal-notifier -title '🔔' -message 'cc needs attention'"
           }
         ]
       }
