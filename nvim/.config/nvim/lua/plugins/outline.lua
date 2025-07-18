@@ -25,4 +25,5 @@ return {
       markers = { "", "" },
     },
   },
+  enabled = false,
 }

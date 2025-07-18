@@ -154,8 +154,10 @@ config.colors = {
 }
 
 -- Font configuration
-config.font = wezterm.font("GeistMono Nerd Font")
-config.font_size = 17 -- font size that takes advantage of v screen
+-- config.font = wezterm.font("GeistMono Nerd Font")
+-- config.font_size = 17
+config.font = wezterm.font("Iosevka Nerd Font")
+config.font_size = 19
 
 -- Cursor
 config.force_reverse_video_cursor = true

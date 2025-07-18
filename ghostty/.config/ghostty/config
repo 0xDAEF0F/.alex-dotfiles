@@ -1,31 +1,76 @@
+# ====================
+# Appearance
+# ====================
+
+# macos-titlebar-style = "tabs"
 macos-titlebar-style = "hidden"
-# title = " " # in case its not hidden
-font-size=19
 
-window-width=4000
-window-height=4000
+# Initial window size
+window-width = 200
+window-height = 60
 
-font-family="Iosevka Nerd Font Mono"
+# Font configuration
+font-family = "GeistMono Nerd Font"
+font-size = 19
+
 theme = "kanso-ink"
 
-quit-after-last-window-closed=true
-confirm-close-surface = false
+# bytes
+scrollback-limit = 1000000
 
-cursor-style = block
-cursor-style-blink = true
+# ====================
+# Key Bindings
+# ====================
 
-shell-integration = detect
-shell-integration-features = cursor
+# Pass through special keys
+keybind = cmd+s=text:\x1bs
+keybind = ctrl+backspace=text:\x1b[127;5u
 
-mouse-hide-while-typing = true
+# Window/Pane management
+keybind = ctrl+x=close_surface
+keybind = ctrl+z=toggle_split_zoom
+
+# Split panes
+keybind = ctrl+a>v=new_split:right
+keybind = ctrl+a>s=new_split:down
+
+# Tab management (with leader key)
+keybind = ctrl+a>n=move_tab:1
+keybind = ctrl+a>p=move_tab:-1
+
+# Pane navigation
+keybind = alt+h=goto_split:left
+keybind = alt+n=goto_split:down
+keybind = alt+e=goto_split:up
+keybind = alt+i=goto_split:right
+
+# Resize panes (with leader key)
+keybind = ctrl+a>left=resize_split:left,30
+keybind = ctrl+a>right=resize_split:right,30
+keybind = ctrl+a>up=resize_split:up,30
+keybind = ctrl+a>down=resize_split:down,30
+
+# ====================
+# Mouse Configuration
+# ====================
+
+focus-follows-mouse = true
+
+copy-on-select = true
 clipboard-trim-trailing-spaces = true
 
-# send cmd keys as escape sequences for neovim (works through tmux)
-keybind = cmd+s=text:\x1bs
+# ====================
+# Shell Integration
+# ====================
 
-# fix ctrl+tab for terminal applications
-keybind = ctrl+tab=text:\x1b[9;5u
-keybind = ctrl+shift+tab=text:\x1b[1;5Z
+shell-integration-features = cursor,sudo,title
 
-# pass ctrl+backspace through to applications
-keybind = ctrl+backspace=text:\x1b[127;5u
+# ====================
+# Miscellaneous
+# ====================
+
+quit-after-last-window-closed = true
+confirm-close-surface = false
+
+# Window state saving
+window-save-state = always

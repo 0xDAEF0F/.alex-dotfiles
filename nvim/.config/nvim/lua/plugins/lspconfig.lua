@@ -36,7 +36,7 @@ return {
       desc = "LSP actions",
       callback = function(event)
         local opts = { buffer = event.buf }
-        
+
         -- Enable file operations capabilities
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client then
@@ -50,8 +50,8 @@ return {
                 didCreate = true,
                 willDelete = true,
                 didDelete = true,
-              }
-            }
+              },
+            },
           })
         end
 
@@ -62,6 +62,7 @@ return {
         end, opts)
         vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "<leader>t", vim.lsp.buf.type_definition, opts)
+        vim.keymap.set("n", "<leader>v", require("fzf-lua").lsp_workspace_diagnostics, opts)
 
         -- Toggle inlay hints keybind
         vim.keymap.set("n", "<C-.>", function()

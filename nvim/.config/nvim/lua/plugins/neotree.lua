@@ -26,6 +26,12 @@ return {
       "<cmd>Neotree show toggle<CR>",
       { desc = "toggle neotree and dont lose focus" }
     )
+    vim.keymap.set(
+      "n",
+      "<leader>e",
+      "<cmd>Neotree document_symbols<CR>",
+      { desc = "toggle document symbols" }
+    )
 
     -- add the refresh neo-tree here
     vim.api.nvim_create_autocmd("CursorHold", {
@@ -74,7 +80,7 @@ return {
         },
       },
       window = {
-        width = 25,
+        width = 30,
         mappings = {
           ["s"] = function()
             require("flash").jump()
