@@ -80,6 +80,7 @@ abbr -a gs "git status"
 abbr -a gd "git diff"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
+abbr -a gcl "git clean -fd"
 
 abbr -a grh "git reset --hard"
 abbr -a grs "git reset --soft"

@@ -21,6 +21,8 @@ font-size = 19
 
 theme = "kanso-ink"
 
+unfocused-split-opacity = 0.85
+
 # bytes
 scrollback-limit = 1000000
 
@@ -39,6 +41,8 @@ keybind = ctrl+z=toggle_split_zoom
 # Split panes
 keybind = ctrl+a>v=new_split:right
 keybind = ctrl+a>s=new_split:down
+keybind = ctrl+a>shift+v=new_split:left
+keybind = ctrl+a>shift+s=new_split:up
 
 # Tab management (with leader key)
 keybind = ctrl+a>n=move_tab:1
@@ -50,11 +54,11 @@ keybind = alt+n=goto_split:down
 keybind = alt+e=goto_split:up
 keybind = alt+i=goto_split:right
 
-# Resize panes (with leader key)
-keybind = ctrl+a>left=resize_split:left,30
-keybind = ctrl+a>right=resize_split:right,30
-keybind = ctrl+a>up=resize_split:up,30
-keybind = ctrl+a>down=resize_split:down,30
+# Direct resize bindings (hold cmd+ctrl)
+keybind = cmd+ctrl+left=resize_split:left,50
+keybind = cmd+ctrl+right=resize_split:right,50
+keybind = cmd+ctrl+up=resize_split:up,50
+keybind = cmd+ctrl+down=resize_split:down,50
 
 # ====================
 # Mouse Configuration

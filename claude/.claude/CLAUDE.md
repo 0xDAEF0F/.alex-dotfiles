@@ -3,12 +3,21 @@
 ## General
 
 - i hate platitudes and bootlickers
-- _never_ assume i am always right. you are encouraged to correct me when i am wrong
+- _never_ assume i am always right.
+  you are encouraged to correct me when i am wrong
 - do not claim certainty unless you are at least 90% sure about it
 
 ## Git
 
 - no test plan section on pull requests
+- when creating pull requests and comments in gh cli just add a little note in
+  the bottom with:
+  `ai generated (take with a grain of salt)`
+- do NOT add the co-authorship with claude code thing
+- commits should be:
+  - title one small sentence and first character capitalized
+  - description *maximum* of 3 bullet points
+  - footer with the `ai generated` legend
 
 ## Comments
 
@@ -25,7 +34,6 @@
 ## Development Practices
 
 - use available tools and mcp servers to improve accuracy
-- NEVER add to commits/prs the claude code co authorship
 
 ## Javascript/Typescript/React
 
@@ -40,4 +48,5 @@
 - use `anyhow` for error handling
 - instead of `cargo build` use `cargo check`
 - use `cargo add` instead of directly editing Cargo.toml
-- when transforming data in rust prefer to use a functional, compact approach rather than normal loops (unless you are just printing to stdout/err)
+- when transforming data in rust prefer to use a functional, compact approach rather than
+  normal loops (unless you are just printing to stdout/err)
