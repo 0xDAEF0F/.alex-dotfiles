@@ -69,6 +69,8 @@ abbr -a clc "claude --continue"
 abbr -a clr "claude --resume"
 abbr -a yolo "claude --dangerously-skip-permissions"
 
+abbr -a ze "zed . && exit"
+
 abbr -a pp pbpaste
 
 # Binds history pager to `C-r` just like the old times

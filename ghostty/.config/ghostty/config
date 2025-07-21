@@ -21,7 +21,7 @@ font-size = 19
 
 theme = "kanso-ink"
 
-unfocused-split-opacity = 0.85
+unfocused-split-opacity = 0.80
 
 # bytes
 scrollback-limit = 1000000

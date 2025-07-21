@@ -143,5 +143,5 @@ format = '[$symbol]($style)'
 format = '[$symbol]($style)'
 
 [git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
+ahead = "⇡ ${count}"
+behind = "⇣ ${count}"

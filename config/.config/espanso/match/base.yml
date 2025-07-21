@@ -7,7 +7,7 @@ matches:
     replace: "Note: you can use context7 mcp server to search through documentation in libraries. it almost always has the popular libraries."
 
   - trigger: ":rsd"
-    replace: "Note: you can use rust-docs mcp server to search for documentation about rust crates. it is powerful and uses vector embeddings."
+    replace: "Note: you can use rust-docs mcp server to search for documentation about rust crates. it is powerful and uses vector embeddings. first check the embedded crates before you embed/query something"
 
   - trigger: ":lspp"
     replace: "Note: you can use lsp mcp server to use lsp stuff like references, renames, definitions, etc."

@@ -10,13 +10,13 @@
 ## Git
 
 - no test plan section on pull requests
-- when creating pull requests and comments in gh cli just add a little note in
-  the bottom with:
-  `ai generated (take with a grain of salt)`
+- when creating pull requests and comments in gh cli just add a little note in the bottom
+  with:
+  `ai generated`
 - do NOT add the co-authorship with claude code thing
 - commits should be:
   - title one small sentence and first character capitalized
-  - description *maximum* of 3 bullet points
+  - description _maximum_ of 3 bullet points but if you can elabore with less its better
   - footer with the `ai generated` legend
 
 ## Comments

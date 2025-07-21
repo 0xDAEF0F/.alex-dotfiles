@@ -1,19 +1,7 @@
 // docs: "https://zed.dev/docs/configuring-zed"
 // default settings `zed: open default settings`
 {
-  "ssh_connections": [
-    {
-      "host": "ubuntu",
-      "projects": []
-    }
-  ],
   "on_last_window_closed": "quit_app",
-  "jupyter": {
-    "enabled": true,
-    "kernel_selections": {
-      "typescript": "deno"
-    }
-  },
   "project_panel": {
     "auto_fold_dirs": false
   },
@@ -26,10 +14,10 @@
     "enabled_in_text_threads": false
   },
   "tab_bar": {
-    "show": false
+    "show": true
   },
   "use_smartcase_search": true,
-  "icon_theme": "Zed",
+  "icon_theme": "Catppuccin Mocha",
   "ui_font_family": "Iosevka Nerd Font Mono",
   "vertical_scroll_margin": 12,
   "features": {
@@ -69,6 +57,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Nordfox"
+    "dark": "Kanso Ink"
   }
 }
