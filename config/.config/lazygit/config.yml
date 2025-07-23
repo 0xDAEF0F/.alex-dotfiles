@@ -1,3 +1,5 @@
+gui:
+  scrollHeight: 12  # Adjust this value - try 12-20 for faster scrolling
 git:
   paging:
     colorArg: always

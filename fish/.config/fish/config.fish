@@ -96,6 +96,7 @@ abbr -a gp "git push"
 abbr -a gsc "git stash clear"
 
 abbr -a gb "git branch"
+abbr -a gbd "git branch -D"
 abbr -a gc "git checkout"
 abbr -a gcmm "git checkout master || git checkout main"
 

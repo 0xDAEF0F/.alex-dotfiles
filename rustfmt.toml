@@ -2,10 +2,10 @@
 
 edition = "2024"
 
-max_width = 100
-use_field_init_shorthand = true
-hard_tabs = false
-tab_spaces = 3
+max_width = 100                 # default: true
+use_field_init_shorthand = true # default: true 
+hard_tabs = false               # default: false
+tab_spaces = 3                  # default: 4
 
 # Unstable features
 format_strings = true          # default: false

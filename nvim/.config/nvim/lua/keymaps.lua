@@ -28,14 +28,14 @@ end)
 vim.keymap.set("n", "*", function()
   local word = vim.fn.expand("<cword>")
   vim.fn.setreg("/", "\\C\\<" .. word .. "\\>")
-  vim.cmd("normal! n")
+  vim.cmd("normal! nzz")
 end)
 
 -- case-sensitive "#"
 vim.keymap.set("n", "#", function()
   local word = vim.fn.expand("<cword>")
   vim.fn.setreg("/", "\\C\\<" .. word .. "\\>")
-  vim.cmd("normal! N")
+  vim.cmd("normal! Nzz")
 end)
 
 -- Yank without newline

@@ -34,6 +34,9 @@ scrollback-limit = 1000000
 keybind = cmd+s=text:\x1bs
 keybind = ctrl+backspace=text:\x1b[127;5u
 
+# claude shit
+keybind = shift+enter=text:\n
+
 # Window/Pane management
 keybind = ctrl+x=close_surface
 keybind = ctrl+z=toggle_split_zoom
