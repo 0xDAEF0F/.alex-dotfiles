@@ -18,6 +18,9 @@ return {
         })
       end
       require("ufo").setup({
+        close_fold_kinds_for_ft = {
+          default = { "imports", "comment" },
+        },
         -- this is just to make the line a bit prettier (display how many lines folded)
         fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)
           local newVirtText = {}
@@ -70,6 +73,6 @@ return {
         return require("fold-cycle").close_all()
       end, { remap = true, silent = true, desc = "Fold-cycle: close all folds" })
     end,
+    enabled = not vim.g.vscode,
   },
-  enabled = not vim.g.vscode,
 }

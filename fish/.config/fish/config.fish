@@ -6,15 +6,15 @@ if status is-interactive
 
     starship init fish | source # starship prompt
 
-    zoxide init --cmd j fish | source # source zoxide
+    zoxide init fish | source # source zoxide
 
     # Override zoxide functions to add directory tracking
-    function j
+    function z
         __zoxide_z $argv
         track_current_dir
     end
 
-    function ji
+    function zz
         __zoxide_zi $argv
         track_current_dir
     end
@@ -98,6 +98,7 @@ abbr -a gsc "git stash clear"
 abbr -a gb "git branch"
 abbr -a gbd "git branch -D"
 abbr -a gc "git checkout"
+abbr -a gcb "git checkout -b"
 abbr -a gcmm "git checkout master || git checkout main"
 
 abbr -a gfa "git fetch --all --prune && git status"
@@ -105,9 +106,6 @@ abbr -a gl "git pull --ff-only"
 
 # Neovim abbreviations
 abbr -a n nvim
-
-# Zoxide "ji"
-abbr -a jj ji
 
 # utils
 abbr -a o "open ." # open file explorer
