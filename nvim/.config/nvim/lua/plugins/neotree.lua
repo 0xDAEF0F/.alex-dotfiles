@@ -80,7 +80,7 @@ return {
         },
       },
       window = {
-        width = 30,
+        width = 25,
         mappings = {
           ["s"] = function()
             require("flash").jump()

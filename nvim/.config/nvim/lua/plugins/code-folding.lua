@@ -19,7 +19,7 @@ return {
       end
       require("ufo").setup({
         close_fold_kinds_for_ft = {
-          default = { "imports", "comment" },
+          default = { "imports" },
         },
         -- this is just to make the line a bit prettier (display how many lines folded)
         fold_virt_text_handler = function(virtText, lnum, endLnum, width, truncate)

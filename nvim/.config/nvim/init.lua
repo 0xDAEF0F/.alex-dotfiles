@@ -53,11 +53,11 @@ require("lazy").setup({
   },
 })
 
--- enable scope highlighting
-require("config.scope-highlight").setup()
+-- enable scope highlighting (buggy right now)
+-- require("config.scope-highlight").setup()
 
 -- enable auto-close for plugin windows
-require("config.autoclose-plugin-windows").setup()
+-- require("config.autoclose-plugin-windows").setup()
 
 -- Stop automatic comment continuation
 vim.api.nvim_create_autocmd("FileType", {

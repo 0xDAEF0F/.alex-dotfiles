@@ -2,28 +2,23 @@
 
 ## General
 
-- i hate platitudes and bootlickers
+- i hate platitudes and sycophants
 - _never_ assume i am always right.
   you are encouraged to correct me when i am wrong
 - do not claim certainty unless you are at least 90% sure about it
-
-## Git
-
-- no test plan section on pull requests
-- when creating pull requests and comments in gh cli just add a little note in the bottom
-  with:
-  `ai generated`
-- do NOT add the co-authorship with claude code thing
-- commits should be:
-  - title one small sentence and first character capitalized
-  - description _maximum_ of 3 bullet points but if you can elabore with less its better
-  - footer with the `ai generated` legend
+- my development environment is macos
 
 ## Comments
 
 - skip comments if names are clear and behavior is intuitive
 - prefer self-documenting code over excessive comments
 - do not output markdown docs unless i ask explicitly for them
+
+## Git
+
+- when creating pull requests and comments in gh cli just add a little note in the bottom
+  with:
+  `ai generated`
 
 ## Code Quality
 

@@ -29,7 +29,6 @@ fish_add_path /opt/homebrew/bin # homebrew
 fish_add_path $HOME/.config/.foundry/bin # foundry
 fish_add_path $HOME/.zig/zig-macos # zig
 fish_add_path $HOME/.local/bin # local scripts
-fish_add_path $HOME/.claude/local # claude
 
 # `set -U`: universal variable shared across fish sessions (not exported)
 set -U fish_color_command blue
@@ -80,6 +79,7 @@ bind -M default \cr _atuin_search
 # Git abbreviations
 abbr -a gs "git status"
 abbr -a gd "git diff"
+abbr -a gds "git diff --staged"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
 abbr -a gcl "git clean -fd"
@@ -92,7 +92,6 @@ abbr -a gcm "git commit -m"
 abbr -a gca! "git commit --verbose --all --amend"
 abbr -a gpf "git push --force-with-lease"
 abbr -a gp "git push"
-
 abbr -a gsc "git stash clear"
 
 abbr -a gb "git branch"
@@ -129,6 +128,8 @@ abbr -a clippy "cargo clippy"
 abbr -a cfa "cargo fix --allow-dirty && cargo clippy --fix --allow-dirty && cargo +nightly fmt"
 abbr -a crw "cargo watch -x run"
 abbr -a rebuild "cargo clean && cargo build"
+
+abbr -a grbm "git fetch --all && git rebase origin/master"
 abbr -a grbi "git rebase --interactive"
 
 abbr -a testy "cargo nextest run --success-output immediate --no-capture"
@@ -159,9 +160,8 @@ abbr -a ta "tmux attach || tmux new -s alex"
 abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
-# Eza
-# Instead of doing `ls` we can do `eza`. `\e` is option/alt key
-bind -M insert \el 'commandline -r "eza"; commandline -f execute'
+# opt+l
+bind -M insert \el 'commandline -r "git status"; commandline -f execute'
 
 abbr -a ls eza # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
