@@ -74,8 +74,8 @@
       "Bash(rustc:*)"
     ]
   },
-  "model": "opus",
+  "model": "sonnet",
   "feedbackSurveyState": {
-    "lastShownTime": 1754060397436
+    "lastShownTime": 1754069573279
   }
 }

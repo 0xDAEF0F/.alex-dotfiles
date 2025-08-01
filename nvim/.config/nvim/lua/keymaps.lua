@@ -92,4 +92,8 @@ else
 
   -- Buffer cycling with C-Space
   vim.keymap.set("n", "<C-Space>", "<cmd>bnext<CR>", { desc = "Next buffer (cycle)" })
+
+  -- Window resizing with Ctrl+h/l
+  vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
+  vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
 end
