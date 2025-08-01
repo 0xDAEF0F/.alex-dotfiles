@@ -43,5 +43,15 @@ return {
     }
 
     alpha.setup(dashboard.config)
+
+    -- Auto-open neo-tree when alpha loads
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "AlphaReady",
+      callback = function()
+        vim.defer_fn(function()
+          vim.cmd("Neotree toggle")
+        end, 100)
+      end,
+    })
   end,
 }

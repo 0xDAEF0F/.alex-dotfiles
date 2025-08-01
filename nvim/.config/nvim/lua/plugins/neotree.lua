@@ -20,12 +20,7 @@ return {
   lazy = false,
 
   config = function()
-    vim.keymap.set(
-      "n",
-      "<C-e>",
-      "<cmd>Neotree show toggle<CR>",
-      { desc = "toggle neotree and dont lose focus" }
-    )
+    vim.keymap.set("n", "<C-e>", "<cmd>Neotree toggle<CR>", { desc = "toggle neotree and dont lose focus" })
     vim.keymap.set(
       "n",
       "<leader>e",
@@ -86,17 +81,23 @@ return {
             require("flash").jump()
           end,
           ["<C-f>"] = function()
-            require("fzf-lua-enchanted-files").files({
-              actions = {
-                ["ctrl-t"] = function()
-                  require("fzf-lua").oldfiles({
-                    query = require("fzf-lua").get_last_query(),
-                  })
-                end,
-              },
-              prompt = "Files (cwd)❯ ",
-            })
+            -- require("fzf-lua-enchanted-files").files({
+            --   actions = {
+            --     ["ctrl-t"] = function()
+            --       require("fzf-lua").oldfiles({
+            --         query = require("fzf-lua").get_last_query(),
+            --       })
+            --     end,
+            --   },
+            --   prompt = "Files (cwd)❯ ",
+            -- })
+            require("fff").toggle()
           end,
+          ["r"] = function()
+            vim.cmd("Neotree toggle")
+            require("persistence").load()
+          end,
+          ["R"] = "rename",
         },
       },
       filesystem = {
