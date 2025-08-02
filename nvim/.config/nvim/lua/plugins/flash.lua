@@ -1,7 +1,6 @@
 -- https://github.com/folke/flash.nvim
 
 local labels = "rtneiohysvafumkljcpgdqxbz"
-local utils = require("utils")
 
 return {
   "folke/flash.nvim",
@@ -43,10 +42,6 @@ return {
       mode = { "n", "x", "o" },
       function()
         require("flash").jump()
-        if vim.g.vscode then
-          utils.centerScreenOnCursor()
-          utils.registerJump()
-        end
       end,
       desc = "Flash",
     },

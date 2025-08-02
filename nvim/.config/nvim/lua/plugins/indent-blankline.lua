@@ -10,5 +10,4 @@ return {
       show_end = false, -- disable underline at the end of scope
     },
   },
-  enabled = not vim.g.vscode,
 }

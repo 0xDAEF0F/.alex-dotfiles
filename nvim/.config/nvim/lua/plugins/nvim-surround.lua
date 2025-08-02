@@ -6,5 +6,4 @@ return {
   config = function()
     require("nvim-surround").setup()
   end,
-  enabled = not vim.g.vscode,
 }

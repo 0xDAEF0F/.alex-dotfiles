@@ -51,7 +51,6 @@ return {
         end,
       })
     end,
-    enabled = not vim.g.vscode,
   },
   {
     "jghauser/fold-cycle.nvim",
@@ -73,6 +72,5 @@ return {
         return require("fold-cycle").close_all()
       end, { remap = true, silent = true, desc = "Fold-cycle: close all folds" })
     end,
-    enabled = not vim.g.vscode,
   },
 }

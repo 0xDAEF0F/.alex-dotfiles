@@ -40,5 +40,4 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter", -- optional
   },
-  enabled = not vim.g.vscode,
 }

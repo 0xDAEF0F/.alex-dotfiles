@@ -11,5 +11,4 @@ return {
   opts = {
     -- Config here
   },
-  enabled = not vim.g.vscode,
 }

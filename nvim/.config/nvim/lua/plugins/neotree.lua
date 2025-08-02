@@ -111,6 +111,4 @@ return {
       },
     })
   end,
-
-  enabled = not vim.g.vscode,
 }

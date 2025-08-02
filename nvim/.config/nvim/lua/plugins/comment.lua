@@ -9,5 +9,4 @@ return {
       line = "<C-c>",
     },
   },
-  enabled = not vim.g.vscode,
 }

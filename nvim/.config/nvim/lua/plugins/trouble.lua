@@ -9,5 +9,4 @@ return {
       desc = "Diagnostics (Trouble)",
     },
   },
-  enabled = not vim.g.vscode,
 }

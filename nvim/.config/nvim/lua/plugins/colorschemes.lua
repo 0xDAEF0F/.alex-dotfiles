@@ -4,7 +4,6 @@ return {
     "webhooked/kanso.nvim",
     lazy = false,
     priority = 1000,
-    enabled = not vim.g.vscode,
     config = function()
       vim.cmd.colorscheme("kanso-ink") -- mid dark
       -- vim.cmd.colorscheme("kanso") -- full dark

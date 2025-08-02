@@ -2,7 +2,6 @@
 -- https://github.com/mrcjkb/rustaceanvim
 return {
   "mrcjkb/rustaceanvim",
-  enabled = not vim.g.vscode,
   config = function()
     -- docs.rs
     vim.keymap.set("n", ")d", "<cmd>RustLsp openDocs<CR>")

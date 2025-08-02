@@ -71,5 +71,4 @@ return {
       end,
     })
   end,
-  enabled = not vim.g.vscode,
 }

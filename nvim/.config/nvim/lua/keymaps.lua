@@ -47,53 +47,48 @@ vim.keymap.set("n", "<leader>y", "<cmd>let @+ = expand('%')<CR>", { desc = "Yank
 vim.keymap.set("n", "<leader>yd", "<cmd>let @+ = expand('%:p:h')<CR>") -- dir
 vim.keymap.set("n", "<leader>yf", "<cmd>let @+ = expand('%:p')<CR>") -- file
 
--- vscode only keymaps
-if vim.g.vscode then
-  require("keymaps-vscode")
-else
-  -- map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
-  vim.keymap.set("n", "<M-s>", function()
-    require("conform").format({
-      lsp_format = "fallback",
-      timeout_ms = 500,
-    })
-    vim.cmd("w")
-  end, { desc = "Save and format with Cmd+S" })
-  -- save without formatting
-  vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
+-- map alt+s to save file (in reality its cmd+s, but nvim thinks its alt+s)
+vim.keymap.set("n", "<M-s>", function()
+  require("conform").format({
+    lsp_format = "fallback",
+    timeout_ms = 500,
+  })
+  vim.cmd("w")
+end, { desc = "Save and format with Cmd+S" })
+-- save without formatting
+vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
 
-  vim.keymap.set("n", "<C-q>", function()
-    vim.cmd("Neotree close")
-    vim.cmd("q!")
-  end)
+vim.keymap.set("n", "<C-q>", function()
+  vim.cmd("Neotree close")
+  vim.cmd("q!")
+end)
 
-  -- change the directory in nvim
-  vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>")
+-- change the directory in nvim
+vim.keymap.set("n", "<leader>cd", "<cmd>cd %:h<CR>")
 
-  -- Quickfix navigation
-  vim.keymap.set("n", "<M-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
-  vim.keymap.set("n", "<M-p>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
+-- Quickfix navigation
+vim.keymap.set("n", "<M-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
+vim.keymap.set("n", "<M-p>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
 
-  -- Toggle quickfix
-  vim.keymap.set("n", "<leader>cc", function()
-    local qf_exists = false
-    for _, win in pairs(vim.fn.getwininfo()) do
-      if win["quickfix"] == 1 then
-        qf_exists = true
-        break
-      end
+-- Toggle quickfix
+vim.keymap.set("n", "<leader>cc", function()
+  local qf_exists = false
+  for _, win in pairs(vim.fn.getwininfo()) do
+    if win["quickfix"] == 1 then
+      qf_exists = true
+      break
     end
-    if qf_exists then
-      vim.cmd("cclose")
-    else
-      vim.cmd("copen")
-    end
-  end, { desc = "Toggle quickfix window" })
+  end
+  if qf_exists then
+    vim.cmd("cclose")
+  else
+    vim.cmd("copen")
+  end
+end, { desc = "Toggle quickfix window" })
 
-  -- Buffer cycling with C-Space
-  vim.keymap.set("n", "<C-Space>", "<cmd>bnext<CR>", { desc = "Next buffer (cycle)" })
+-- Buffer cycling with C-Space
+vim.keymap.set("n", "<C-Space>", "<cmd>bnext<CR>", { desc = "Next buffer (cycle)" })
 
-  -- Window resizing with Ctrl+h/l
-  vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
-  vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })
-end
+-- Window resizing with Ctrl+h/l
+vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width" })

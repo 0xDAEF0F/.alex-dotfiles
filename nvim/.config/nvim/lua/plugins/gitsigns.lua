@@ -8,5 +8,4 @@ return {
     vim.keymap.set("n", "}}", "<cmd>lua require('gitsigns').nav_hunk('next')<CR>")
     vim.keymap.set("n", "{{", "<cmd>lua require('gitsigns').nav_hunk('prev')<CR>")
   end,
-  enabled = not vim.g.vscode,
 }
