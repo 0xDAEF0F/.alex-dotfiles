@@ -59,8 +59,18 @@ end, { desc = "Save and format with Cmd+S" })
 vim.keymap.set("n", "<leader>s", "<cmd>w<CR>")
 
 vim.keymap.set("n", "<C-q>", function()
-  vim.cmd("Neotree close")
-  vim.cmd("q!")
+  local manager = require("neo-tree.sources.manager")
+  local state = manager.get_state("filesystem")
+  if state and state.winid and vim.api.nvim_win_is_valid(state.winid) then
+    print("Closing NeoTree before quit")
+    vim.cmd("Neotree close")
+    vim.schedule(function()
+      vim.cmd("q!")
+    end)
+  else
+    print("NeoTree not open, skipping close")
+    vim.cmd("q!")
+  end
 end)
 
 -- change the directory in nvim

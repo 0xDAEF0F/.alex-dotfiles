@@ -81,17 +81,16 @@ return {
             require("flash").jump()
           end,
           ["<C-f>"] = function()
-            -- require("fzf-lua-enchanted-files").files({
-            --   actions = {
-            --     ["ctrl-t"] = function()
-            --       require("fzf-lua").oldfiles({
-            --         query = require("fzf-lua").get_last_query(),
-            --       })
-            --     end,
-            --   },
-            --   prompt = "Files (cwd)❯ ",
-            -- })
-            require("fff").toggle()
+            require("fzf-lua-enchanted-files").files({
+              actions = {
+                ["ctrl-t"] = function()
+                  require("fzf-lua").oldfiles({
+                    query = require("fzf-lua").get_last_query(),
+                  })
+                end,
+              },
+              prompt = "Files (cwd)❯ ",
+            })
           end,
           ["r"] = function()
             vim.cmd("Neotree toggle")

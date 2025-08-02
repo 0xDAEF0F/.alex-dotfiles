@@ -74,18 +74,18 @@ return {
       vim.keymap.set("n", "<C-b>", fzf.buffers)
 
       -- Enhanced files with toggle capability
-      -- vim.keymap.set("n", "<C-f>", function()
-      --   require("fzf-lua-enchanted-files").files({
-      --     actions = {
-      --       ["ctrl-t"] = function()
-      --         require("fzf-lua").oldfiles({
-      --           query = require("fzf-lua").get_last_query(),
-      --         })
-      --       end,
-      --     },
-      --     prompt = "Files (cwd)❯ ",
-      --   })
-      -- end, { desc = "Search files (ctrl-t to toggle to oldfiles)" })
+      vim.keymap.set("n", "<C-f>", function()
+        require("fzf-lua-enchanted-files").files({
+          actions = {
+            ["ctrl-t"] = function()
+              require("fzf-lua").oldfiles({
+                query = require("fzf-lua").get_last_query(),
+              })
+            end,
+          },
+          prompt = "Files (cwd)❯ ",
+        })
+      end, { desc = "Search files (ctrl-t to toggle to oldfiles)" })
 
       -- Search in neovim config
       vim.keymap.set("n", "<leader>sn", function()
