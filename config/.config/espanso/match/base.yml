@@ -1,13 +1,16 @@
 # https://espanso.org/docs/
 matches:
+  - trigger: ":tx"
+    replace: " think hard, answer in short. "
+
   - trigger: ":exa"
-    replace: "Note: you can use exa mcp server for semantic web search as well as github search if your `WebFetch` tool results need more refinement."
+    replace: " use exa mcp server. "
 
   - trigger: ":c7"
-    replace: "Note: you can use context7 mcp server to search through documentation in libraries. it almost always has the popular libraries."
+    replace: " use context7 mcp server. "
 
   - trigger: ":rsd"
-    replace: "Note: you can use rust-docs mcp server to search for documentation about rust crates. it is powerful and uses vector embeddings. first check the embedded crates before you embed/query something"
+    replace: " use rust docs mcp server. "
 
   - trigger: ":ctx"
     replace: "do you want to handle this new request/petition? is your context window still manageable? if not, give me a prompt so that i can reset context and re-feed it to you. you can attach some file names and symbol names if you want."

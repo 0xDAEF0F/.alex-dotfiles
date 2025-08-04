@@ -131,6 +131,7 @@ abbr -a rebuild "cargo clean && cargo build"
 
 abbr -a grbm "git fetch --all && git rebase origin/master"
 abbr -a grbi "git rebase --interactive"
+abbr -a grba "git rebase --abort"
 
 abbr -a testy "cargo nextest run --success-output immediate --no-capture"
 
