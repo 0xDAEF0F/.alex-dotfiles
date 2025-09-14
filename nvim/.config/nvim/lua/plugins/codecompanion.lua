@@ -19,16 +19,18 @@ return {
   end,
   opts = {
     adapters = {
-      openai = function()
-        return require("codecompanion.adapters").extend("openai", {
-          name = "openai",
-          schema = {
-            model = {
-              default = "gpt-4o",
+      http = {
+        openai = function()
+          return require("codecompanion.adapters").extend("openai", {
+            name = "openai",
+            schema = {
+              model = {
+                default = "gpt-4o",
+              },
             },
-          },
-        })
-      end,
+          })
+        end,
+      },
     },
     display = {
       inline = { layout = "vertical" },
