@@ -1,6 +1,6 @@
 [user]
-	name = Alex T
-	email = aletapia@proton.me
+    name = Alex T
+    email = aletapia@proton.me
 [core]
     ignorecase = false
     excludesfile = /Users/ale/.gitignore_global

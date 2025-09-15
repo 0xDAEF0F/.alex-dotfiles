@@ -2,8 +2,8 @@
 # Appearance
 # ====================
 
-# macos-titlebar-style = "tabs"
-macos-titlebar-style = "hidden"
+macos-titlebar-style = "tabs"
+# macos-titlebar-style = "hidden"
 
 # Initial window size
 window-width = 200

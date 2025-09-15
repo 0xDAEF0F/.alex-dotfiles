@@ -80,6 +80,7 @@ bind -M default \cr _atuin_search
 abbr -a gs "git status"
 abbr -a gd "git diff"
 abbr -a gds "git diff --staged"
+abbr -a gdc "git diff --cached"
 abbr -a glog "git log --color --graph --pretty --abbrev-commit"
 abbr -a grv "git remote -v"
 abbr -a gcl "git clean -fd"
@@ -162,7 +163,7 @@ abbr -a tls "tmux ls"
 abbr -a tks "tmux kill-server"
 
 # opt+l
-bind -M insert \el 'commandline -r "git status"; commandline -f execute'
+bind -M insert \el 'commandline -r "ls"; commandline -f execute'
 
 abbr -a ls eza # list dirs and files
 abbr -a ll "eza -a" # list dirs and files (hidden included)
